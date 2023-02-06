@@ -1,9 +1,19 @@
 import {BsFillTelephoneFill} from 'react-icons/bs'
 import {MdOutgoingMail} from 'react-icons/md'
 import { Link } from 'react-router-dom'
+import {AiOutlineDown} from 'react-icons/ai'
+import { AiOutlineUp } from "react-icons/ai";
+import { useState } from 'react';
+import FlyOutMenu from '../component/FlyOutMenu';
  
 
 const Header = () => {
+    const [arrow,setArrow] =useState(false)
+ const click=()=>{
+  setArrow(!arrow)
+ }
+
+
   return (
     <div  className='  w-full  py-5'>
     {/* header top */}
@@ -14,7 +24,7 @@ const Header = () => {
             <h3 className="font-bold">We privide flexible sevices</h3>
         </div>
 
-        <div className="flex gap-5 md:gap-10">
+        <div className="flex flex-col items-center gap-5 sm:flex-row md:gap-10">
             <div className="flex items-center gap-2">  
                 <MdOutgoingMail className='text-2xl'/>
                 <p>syncclouds@gmail.com</p>
@@ -23,10 +33,6 @@ const Header = () => {
                 <BsFillTelephoneFill/>
                 <p>+1234434365656</p>
             </div>
-           
-            
-            
-           
         </div>
 
     </div>
@@ -40,7 +46,7 @@ const Header = () => {
         <ul className='hidden md:flex items-center gap-10 '>
             <Link to={'/'} className="text-">Home</Link>
             <Link to={'/About'}>About</Link>
-            <Link to={'/Services'}>Services</Link>
+            <Link to={'/Services'} className='flex items-center gap-1' onClick={click}><div>Services</div> <div>{arrow?<AiOutlineUp/>:<AiOutlineDown/>}</div></Link>
             <Link to={'/Careers'}>Careers</Link>
             <Link to={'/Blog'}>Blog</Link>
             <Link to={'/Contact'}>Contact Us</Link>
@@ -48,6 +54,8 @@ const Header = () => {
            
         </ul>
     </div>
+
+   {arrow&& <FlyOutMenu/>}
     </div>
   )
 }

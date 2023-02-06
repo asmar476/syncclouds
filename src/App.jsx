@@ -4,6 +4,7 @@ import Services from './pages/Services'
 import Blog from './pages/Blog'
 import Contact from './pages/Contact'
 import { Routes,Route } from 'react-router-dom'
+import Careers from './pages/Careers'
 
 
 const App = () => {
@@ -13,8 +14,8 @@ const App = () => {
         <Route path='/' element={<Home/>}/>
         <Route path='/About' element={ <About/>}/>
         <Route path='/Services' element={<Services/>}/>
+        <Route path='/Careers' element={<Careers/>}/>
         <Route path='/Blog' element={ <Blog/>}/>
-      
      <Route path='/Contact' element={ <Contact/>}/>
      
       </Routes>
