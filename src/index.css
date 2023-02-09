@@ -1,24 +1,18 @@
 @tailwind base;
 @tailwind components;
+
+html,
+body{
+    font-family: 'Poppins',sans-serif;
+}
+
 @tailwind utilities;
 
-
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Source+Sans+Pro:wght@400;600;700&display=swap');
-
-
-
-body{
-    
-    font-family: 'Roboto', sans-serif;
-   
+.gradient-text{
+    background: -webkit-linear-gradient(left,#273C7F,#2374B1);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
-.container{
-    max-width: 1440px;
-    width: 100%;
-    margin:  0 auto;
-    padding-right: 3rem; 
-    padding-left: 3rem;
-      
-}
+
 
