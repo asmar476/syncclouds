@@ -13,6 +13,11 @@ module.exports = {
         secondryColor: ' #273C7F',
         secondryDark: '#13005A',
         secondryLight: '#1C82AD',
+
+        grayColorLight: '#E1E1E1',
+
+        bistcuitColor: '#EFE5CD'
+       
         
         
       },

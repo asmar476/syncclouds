@@ -1,8 +1,11 @@
 import Layout from "../layout/Layout"
+import PagesHero from "../common component/PagesHero"
 
 const Contact = () => {
   return (
-    <Layout>Contact</Layout>
+    <Layout>
+       <PagesHero data={'Maintenance'} />
+    </Layout>
   )
 }
 

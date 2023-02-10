@@ -7,30 +7,21 @@ import Hero from "../pages-component/HomePage/Hero"
 import OfferCard from "../pages-component/HomePage/OfferCard"
 import GetInTouch from '../pages-component/HomePage/GetInTouch'
 import Question from "../pages-component/HomePage/Question"
+import CircularAnimationSection from "../pages-component/HomePage/CircularAnimationSection"
 
 const Home = () => {
   return (
     <Layout>
-  {/* ////////////////// hero content //////////////////// */}
-      <Hero/>
-    
-
-
-{/* //////////////// offer section ///////////////////////////////////////// */}
-    
+      {/* ////////////////// hero content //////////////////// */}
+        <Hero/>
+      {/* //////////////// offer section ///////////////////////////////////////// */} 
         <OfferCard/>
-
-
-
       {/* ////////////////////////  get in touch section ////////////////// */}
-
-      <GetInTouch/>
+        <GetInTouch/>
       {/* circular aniamation */}
-
-
+       
       {/* Frequently Ask question */}
-
-    <Question/>
+      <Question/>
     </Layout>
   )
 }

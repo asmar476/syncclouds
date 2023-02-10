@@ -2,7 +2,7 @@
 const flyoutMenu = () => {
   return (
     <div >
-         <div className='fixed  top-[13%] right-[22.5%] lg:right-[24.5%] z-[10]  bg-darkGary rounded-xl hidden md:flex  gap-10 p-10'>
+         <div className='fixed  top-[13%] right-[22.5%] lg:right-[24.5%] z-[10]  bg-gray-300 rounded-xl hidden md:flex  gap-10 p-10'>
 
             <div>
               <ul className='space-y-5'>

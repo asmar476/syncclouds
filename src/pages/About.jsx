@@ -6,23 +6,23 @@ import Capibility from "../pages-component/AboutPage/Capibility"
 import Help from '../pages-component/AboutPage/Help'
 // import TextBadgeHeading from "../common component/TextBadgeHeading"
 import Awards from "../pages-component/AboutPage/Awards"
+import LookingFuture from "../pages-component/AboutPage/lookingFuture"
+import Hero from "../pages-component/AboutPage/Hero"
+import CompanyMOtivation from "../pages-component/AboutPage/CompanyMOtivation"
 const About = () => {
 
 
   return (
     <Layout>
-
+      <Hero/>
 {/* ////////////////////////////// hero section  /////////////////*/}
-      <div className='container mx-auto  px-10 py-20'>
-      <HeroComponent title1={'About'} title2={'Us'} description={'Are you embracing the power of digital transformation and beyond to stay competitive? We are at the forefront of Advanced technology and Software development services. Innovative development company providing full-fledged tech services across the globe, that help businesses streamline their processes and drive business growth.'}
-        buttonText={"Let's Talk"} Illustration={'aboutIllustration'}/>
-    </div>
+     
 {/* //////////////////////////// capibilities  /////////////////// */}
      <Capibility/>
 
     {/* ////////////////////// services ///////////////// */}
 
-   
+   <CompanyMOtivation/>
 
     {/* //////////////////////  Awards Section ////////////////*/}
 
@@ -34,6 +34,7 @@ const About = () => {
       <Help/>
     </div>
 
+    <LookingFuture/>
     </Layout>
   )
 }
