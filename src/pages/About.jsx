@@ -1,42 +1,40 @@
+import Layout from "../layout/Layout";
+import GetSynced from "../common component/GetSynced";
+import ContactForm from "../common component/ContactForm";
+import aboutIllustration from "../assets/About illustration/Group.svg";
+import HeroComponent from "../common component/HeroComponent";
+import ExpandYourHorizon from "../pages-component/AboutPage/ExpandYourHorizon";
+import InnovativeServices from "../pages-component/AboutPage/InnovativeServices";
+import OurTeam from "../pages-component/AboutPage/OurTeam";
+import ProjectProcedure from "../pages-component/AboutPage/ProjectProcedure";
 
-import Layout from "../layout/Layout"
-
-import HeroComponent from "../common component/HeroComponent"
-import Capibility from "../pages-component/AboutPage/Capibility"
-import Help from '../pages-component/AboutPage/Help'
-// import TextBadgeHeading from "../common component/TextBadgeHeading"
-import Awards from "../pages-component/AboutPage/Awards"
-import LookingFuture from "../pages-component/AboutPage/lookingFuture"
-import Hero from "../pages-component/AboutPage/Hero"
-import CompanyMOtivation from "../pages-component/AboutPage/CompanyMOtivation"
 const About = () => {
-
-
   return (
     <Layout>
-      <Hero/>
-{/* ////////////////////////////// hero section  /////////////////*/}
-     
-{/* //////////////////////////// capibilities  /////////////////// */}
-     <Capibility/>
-
-    {/* ////////////////////// services ///////////////// */}
-
-   <CompanyMOtivation/>
-
-    {/* //////////////////////  Awards Section ////////////////*/}
-
- <Awards/>
-
-    {/* ////////////////  help sewction //////////////////// */}
-
-    <div className='container mx-auto px-10 py-20'>
-      <Help/>
-    </div>
-
-    <LookingFuture/>
+      {/* / / / // /  hero section  /  / / // / /  */}
+      <HeroComponent
+        title1={"About"}
+        title2={"Us"}
+        description={
+          "Are you embracing the power of digital transformation and beyond to stay competitive? We are at the forefront of Advanced technology and Software development services. Innovative development company providing full-fledged tech services across the globe, that help businesses streamline their processes and drive business growth."
+        }
+        buttonText={"Let's Talk"}
+        Illustration={aboutIllustration}
+      />
+      {/* expand your digitsal horizon  */}
+      <ExpandYourHorizon />
+      {/* innvative services */}
+      <InnovativeServices />
+      {/* Our Team  */}
+      <OurTeam />
+      {/* project procedure */}
+      <ProjectProcedure />
+      {/* / / / / / / / get synced  / / / // /  / / */}
+      <GetSynced />
+      {/*  / // /  // /  contact from  / // / / / / / */}
+      <ContactForm />
     </Layout>
-  )
-}
+  );
+};
 
-export default About
+export default About;

@@ -1,31 +1,31 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ['./index.html',"./src/**/*.{js,jsx}"],
+  content: ["./index.html", "./src/**/*.{js,jsx}"],
   theme: {
     extend: {
-     
-      colors:{
-        primaryColor: '#2374B1',
-        primaryDark: '#0A2647',
-        primaryLight1:'background: #205295',
-        primaryLight2: 'background: #2C74B3',
-        
-        secondryColor: ' #273C7F',
-        secondryDark: '#13005A',
-        secondryLight: '#1C82AD',
+      colors: {
+        blueLight: " #001647",
+        blueDark: " #2261A2",
+        purpleLight: "#273C7F",
+        purpleDark: "#001647",
 
-        grayColorLight: '#E1E1E1',
+        gradientBlueDark: "#012781",
+        gradientBlueLight: "#104B96",
 
-        bistcuitColor: '#EFE5CD'
-       
-        
-        
+        borderColor: "#AFAFAF",
+        grayLight: "#F3F4FF  ",
+        grayDark: "#161822",
+
+        gradientGrayLight: "#E6E8EE",
+        gradientGrayDark: "#E1E1E1",
       },
-      container:{
-        margin: '0 auto'
-      }
+      lineHeight: {
+        lineHeightParag: "2rem",
+      },
+      container: {
+        margin: "0 auto",
+      },
     },
-    
   },
   plugins: [],
-}
+};
