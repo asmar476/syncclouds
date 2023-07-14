@@ -1,5 +1,5 @@
 import azmatImg from "../assets/TeamMemberImage/Azmat.png";
-import asmarImg from "../assets/TeamMemberImage/Asmar.png";
+// import asmarImg from "../assets/TeamMemberImage/Asmar.png";
 
 const TeamMemberData = [
   {
@@ -32,31 +32,15 @@ const TeamMemberData = [
     position: "Associate Software Engineer",
     img: azmatImg,
   },
-
   {
-    name: "Asmar",
-    position: "Junior Consultant",
-    img: asmarImg,
+    name: "Azmatullah",
+    position: "Associate Software Engineer",
+    img: azmatImg,
   },
   {
-    name: "Asmar",
-    position: "Junior Consultant",
-    img: asmarImg,
-  },
-  {
-    name: "Asmar",
-    position: "Junior Consultant",
-    img: asmarImg,
-  },
-  {
-    name: "Asmar",
-    position: "Junior Consultant",
-    img: asmarImg,
-  },
-  {
-    name: "Asmar",
-    position: "Junior Consultant",
-    img: asmarImg,
+    name: "Azmatullah",
+    position: "Associate Software Engineer",
+    img: azmatImg,
   },
 ];
 

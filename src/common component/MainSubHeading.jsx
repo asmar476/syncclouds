@@ -1,8 +1,10 @@
 const MainSubHeading = ({ my, ml, text, gradientText }) => {
   return (
-    <h2 className={`font-[550] text-[20px] md:text-[25.89px] ${my}`}>
+    <h2
+      className={`text-[#171923] font-[700] text-[20px] md:text-[41.89px] leading-[62.83px]${my}`}
+    >
       {text}
-      <span className={`gradient-text ${ml}`}>{gradientText}</span>
+      <span className="text-primary">{gradientText}</span>
     </h2>
   );
 };

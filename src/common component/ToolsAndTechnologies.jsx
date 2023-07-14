@@ -1,29 +1,120 @@
-import React from "react";
+import React, { useState } from "react";
 import MainSubHeading from "./MainSubHeading";
 import BoldParagraph from "./BoldParagraph";
 import react from "../assets/Tools and Technologies Icons/Framework Icons/Reactive.svg";
 import vue from "../assets/Tools and Technologies Icons/Web Icons/Vue.svg";
 import angular from "../assets/Tools and Technologies Icons/Web Icons/angular.svg";
 import sass from "../assets/Tools and Technologies Icons/Web Icons/saas.svg";
+import blackIcon from "../assets/icons/black.svg";
+import blueIcon from "../assets/icons/blue.svg";
+import bg from "../assets/Images/bgTools&tech.png";
+import map from "../assets/Images/map.png";
 
-const techArrary = [
-  { tech: "Frontend", array: [react, vue, angular, sass] },
-  { tech: "Backend", array: [react, vue, angular, sass] },
-  { tech: "Mobile ", array: [react, vue, angular, sass] },
-  { tech: "Cyber Security", array: [react, vue, angular, sass] },
-  { tech: "other", array: [react, vue, angular, sass] },
+const techArray = [
+  {
+    tech: "Frontend",
+    array: [
+      { name: "React", icon: react },
+      { name: "Vue", icon: vue },
+      { name: "Angular", icon: angular },
+      { name: "Sass", icon: sass },
+    ],
+  },
+  {
+    tech: "Backend",
+    array: [
+      { name: "Vue", icon: vue },
+      { name: "Angular", icon: angular },
+      { name: "React", icon: react },
+      { name: "Sass", icon: sass },
+    ],
+  },
+  {
+    tech: "Mobile",
+    array: [
+      { name: "Angular", icon: angular },
+      { name: "Sass", icon: sass },
+      { name: "React", icon: react },
+      { name: "Vue", icon: vue },
+    ],
+  },
+  {
+    tech: "Cyber Security",
+    array: [
+      { name: "Sass", icon: sass },
+      { name: "React", icon: react },
+      { name: "Vue", icon: vue },
+      { name: "Angular", icon: angular },
+    ],
+  },
+  {
+    tech: "Other",
+    array: [
+      { name: "Vue", icon: vue },
+      { name: "Angular", icon: angular },
+      { name: "React", icon: react },
+      { name: "Sass", icon: sass },
+    ],
+  },
 ];
 
 const ToolsAndTechnologies = ({ text, gradientText, description }) => {
+  const [selectedTech, setSelectedTech] = useState(techArray[0].tech);
+
+  const handleTechClick = (tech) => {
+    setSelectedTech(tech);
+  };
   return (
-    <div className="container mx-auto px-10 py-5 sm:py-10 lg:py-20">
-      <div className="flex flex-col items-center justify-center">
-        <MainSubHeading text={text} gradientText={gradientText} />
-        <p className="text-[#335775] font-[500] text-[16px] leading-[24px] max-w-[1000px] my-5 text-center">
-          {description}
-        </p>
+    <div className=" container relative flex justify-center mx-auto py-5 sm:py-10 h-[794px] lg:py-20">
+      {" "}
+      <img className="w-[1440px]" src={bg} alt="" />{" "}
+      <img className="absolute top-16" src={map} alt="" />
+      <div className="absolute top-40">
+        <div className="flex flex-col items-center justify-center">
+          <MainSubHeading text={text} gradientText={gradientText} />
+          <p className="text-[#434343] font-[500] text-[16px] leading-[24px] mb-10 max-w-[1000px] my-5 text-center">
+            {description}
+          </p>
+        </div>
+        {/* =========================================================================================================== */}
+        <div>
+          <div className="flex justify-around">
+            {techArray.map((item) => (
+              <button
+                key={item.tech}
+                className={`flex items-center font-bold${
+                  selectedTech === item.tech ? " selected text-primary" : ""
+                }`}
+                onClick={() => handleTechClick(item.tech)}
+              >
+                <img
+                  src={selectedTech === item.tech ? blueIcon : blackIcon}
+                  alt="Icon"
+                />
+                &nbsp; {item.tech}
+              </button>
+            ))}
+          </div>
+          <div className="flex justify-around">
+            {selectedTech &&
+              techArray
+                .find((item) => item.tech === selectedTech)
+                ?.array.map((techItem, index) => (
+                  <div
+                    className="flex gap-5 items-center bg-white px-3 py-2 mt-20 rounded-md"
+                    key={index}
+                  >
+                    <img width={50} src={techItem.icon} alt="Tech Icon" />
+                    <p className="text-[#212529] font-[600] text-[24px]">
+                      {techItem.name}
+                    </p>
+                  </div>
+                ))}
+          </div>
+        </div>
       </div>
-      <div className="hidden lg:block shadow-xl border-t border-l border-l-gray-200 border-t-gray-200 rounded-md px-[40px] py-[30px] mt-10">
+      {/* ========================================================================================================== */}
+      {/* <div className="hidden lg:block shadow-xl border-t border-l border-l-gray-200 border-t-gray-200 rounded-md px-[40px] py-[30px] mt-10">
         {techArrary.map((arr, index) => (
           <div key={index} className="flex items-center ">
             <div className=" flex items-center justify-center p-[10px] min-w-[200px] bg-gradient-to-r from-gradientBlueDark to-gradientBlueLight  my-5 rounded-md text-white">
@@ -43,9 +134,8 @@ const ToolsAndTechnologies = ({ text, gradientText, description }) => {
             </div>
           </div>
         ))}
-      </div>
-
-      <div className=" lg:hidden shadow-xl border-t border-l border-l-gray-200 border-t-gray-200 rounded-md px-[20px] md:px-[40px] mt-5 sm:mt-20">
+      </div> */}
+      {/* <div className=" lg:hidden shadow-xl border-t border-l border-l-gray-200 border-t-gray-200 rounded-md px-[20px] md:px-[40px] mt-5 sm:mt-20">
         {techArrary.map((arr, index) => (
           <div
             key={index}
@@ -70,7 +160,8 @@ const ToolsAndTechnologies = ({ text, gradientText, description }) => {
             </div>
           </div>
         ))}
-      </div>
+      </div> */}
+      {/* <img key={index} src={icon} alt="Tech Icon" className="tech-icon" /> */}
     </div>
   );
 };

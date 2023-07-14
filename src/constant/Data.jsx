@@ -10,7 +10,6 @@ import UIUXWhite from "../assets/SC White Icons/UI UXW.svg";
 import dmWhite from "../assets/SC White Icons/Digital MarketingW.svg";
 import cloudWhite from "../assets/SC White Icons/Clouds(Devops)W.svg";
 import csWhite from "../assets/SC White Icons/Cyber SecurityW.svg";
-
 export const offerData = [
   {
     id: "1",

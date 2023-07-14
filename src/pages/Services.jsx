@@ -1,5 +1,5 @@
 import Layout from "../layout/Layout";
-import servicesIllustration from "../assets/Services illustration/Frame.svg";
+import servicesIllustration from "../assets/Services illustration/servicesIllustration.svg";
 import HeroComponent from "../common component/HeroComponent";
 import GetSynced from "../common component/GetSynced";
 import ContactForm from "../common component/ContactForm";
@@ -10,6 +10,8 @@ import ExprtIdeation from "../pages-component/Services/ExprtIdeation";
 import WhySyncClouds from "../pages-component/Services/WhySyncClouds";
 import ToolsAndTechnologies from "../common component/ToolsAndTechnologies";
 import BuildingVision from "../pages-component/Services/BuildingVision";
+import WhatComesNext from "../pages-component/Services/WhatComesNext";
+import EntireCatalog from "../pages-component/Services/EntireCatalog";
 
 const Services = () => {
   return (
@@ -45,13 +47,16 @@ const Services = () => {
       <BuildingVision />
       {/* our client */}
       <OurClients />
+      {/* WhatComesNext  */}
+      <WhatComesNext />
+      {/* <EntireCatalog /> */}
+      <EntireCatalog />
       {/* FAQ Section */}
       <FaqSection />
       {/* get synced */}
       <GetSynced />
       {/* contact form  */}
       <ContactForm />
-
       {/*/////////////////// Capabilities section //////////////////// */}
       {/* <ServicesCapibilities/> */}
     </Layout>

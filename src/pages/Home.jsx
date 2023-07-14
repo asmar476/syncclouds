@@ -10,7 +10,6 @@ import GetSynced from "../common component/GetSynced";
 import ContactForm from "../common component/ContactForm";
 import FaqSection from "../common component/FaqSection";
 import ToolsAndTechnologies from "../common component/ToolsAndTechnologies";
-
 const Home = () => {
   return (
     <Layout>
@@ -21,7 +20,7 @@ const Home = () => {
       {/* //////////////// offer section ///////////////////////////////////////// */}
       <OfferCard />
       {/* ////////////////////////  get in touch section ////////////////// */}
-      <GetInTouch />
+      {/* <GetInTouch /> */}
       {/* Portfolio */}
       <Portfolio />
       {/* technologies */}
@@ -37,7 +36,7 @@ const Home = () => {
         <OurAim />
       </div>
       {/* testimonials */}
-      <Testimonials />
+      {/* <Testimonials /> */}
       {/* Get Synced */}
       <GetSynced />
       {/* contact form */}

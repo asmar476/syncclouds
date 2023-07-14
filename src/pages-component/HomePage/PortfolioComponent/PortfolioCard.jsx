@@ -1,22 +1,56 @@
 import React, { useState } from "react";
-import cardImage from "../../../assets/overlay image/image 33.png";
+import cardImage from "../../../assets/Images/Mask group.svg";
 import "./PortfolioCard.css";
+import chevronRight from "../../../assets/icons/Vector.svg";
+
+import web from "../../../assets/SC Icons SVG/Web & Mobile Development.svg";
+import mob from "../../../assets/SC Icons SVG/Mobile App Development.svg";
+import UIUX from "../../../assets/SC Icons SVG/User Experience & Design.svg";
 
 const cardData = [
-  { img: cardImage },
-  { img: cardImage },
-  { img: cardImage },
-  { img: cardImage },
-  { img: cardImage },
-  { img: cardImage },
+  {
+    icon: UIUX,
+    title: "UIUX  Designing",
+    img: cardImage,
+    description:
+      "Great design can speak to your users in thousands of ways that you can't. Get magnetic UX/UI design followed by a robust UX strategy to grab your user’s attention instantly.",
+  },
+  {
+    icon: mob,
+    title: "IOS App Development",
+    img: cardImage,
+    description:
+      "Great design can speak to your users in thousands of ways that you can't. Get magnetic UX/UI design followed by a robust UX strategy to grab your user’s attention instantly.",
+  },
+  {
+    icon: web,
+    title: "Web & Mobile Applications",
+    img: cardImage,
+    description:
+      "Great design can speak to your users in thousands of ways that you can't. Get magnetic UX/UI design followed by a robust UX strategy to grab your user’s attention instantly.",
+  },
 ];
-
 const PortfolioCard = () => {
   const [showOverlay, setShowOverlay] = useState(false);
   const [showIndex, setShowIndex] = useState("");
   return (
     <div className="grid grid-col-1 md:grid-cols-2 xl:grid-cols-3 gap-5">
       {cardData.map((data, index) => (
+        <div className="w-[408px] rounded-br-[100px] p-10 hover:bg-[#DAE2EA]">
+          <div className="flex items-center gap-6">
+            <img width={40} src={data.icon} alt="kdlj" />
+            <h4 className="font-[500] text-[18px]">{data.title}</h4>
+          </div>
+          <img className="my-10" width={"100%"} src={data.img} />
+          <p>{data.description}</p>
+          <div className="flex mt-10 gap-5">
+            <button className="font-[] text-[]">Read more</button>
+            <img src={chevronRight} alt="" />
+          </div>
+        </div>
+      ))}
+
+      {/* {cardData.map((data, index) => (
         <div
           key={index}
           className="relative bg-grayLight lg:h-[400px] overflow-hidden rounded-md"
@@ -46,7 +80,7 @@ const PortfolioCard = () => {
             </div>
           )}
         </div>
-      ))}
+      ))} */}
     </div>
   );
 };

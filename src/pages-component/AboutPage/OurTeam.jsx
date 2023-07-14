@@ -14,11 +14,11 @@ const OurTeam = () => {
   const [showOverlayIndex, setShowOverlayIndex] = useState("");
   return (
     <div className="container mx-auto px-10 my-20">
-      <div className="flex items-center justify-center text-center">
-        <MainSubHeading
-          text={"Give Your Dreams a Digital Reality with our Passionate Team"}
-        />
-      </div>
+      <h1 className="text-[50px] text-center font-[800] leading-[65px]">
+        Give Your Dreams a Digital Reality with our
+        <br />
+        <span className="text-[#002680]"> Passionate Team</span>
+      </h1>
       <div className="my-10">
         {" "}
         <Swiper

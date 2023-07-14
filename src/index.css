@@ -1,16 +1,18 @@
 @tailwind base;
 @tailwind components;
+@tailwind utilities;
 
 html,
 body {
   font-family: "Poppins", sans-serif;
+  /* width: 1440px; */
+  margin: 0 auto;
 }
 
-@tailwind utilities;
 
 .gradient-text {
   background: -webkit-linear-gradient(left, #273c7f, #2374b1);
-  -webkit-background-clip: text;
+background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
@@ -79,5 +81,94 @@ body {
 @media only screen and (max-width: 350px) {
   .hero-text {
     margin-top: 20px;
+  }
+}
+.overlayNav {
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top:0;
+  right: 0;
+  background-color:white;
+  overflow-x: hidden;
+  transition: 0.5s;
+} 
+.overlayNav.open {
+  width: 100%;
+}
+.overlayNav-content {
+  position: relative;
+  top: 10%;
+  width: 100%;
+  text-align: center;
+}
+.overlayNav a {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  color:#161822;
+  display: block;
+  transition: 0.3s;
+}
+.overlayNav a:hover,
+.overlayNav a:focus {
+  color:#161822;
+}
+.overlayNav .closebtn {
+  position: absolute;
+  font-size: 60px;
+}
+@media screen and (max-height: 450px) {
+  .overlayNav a {
+    font-size: 20px;
+  }
+  .overlayNav .closebtn {
+    font-size: 40px;  
+    right: 35px;
+  }
+}
+
+
+.pulse {
+  display: inline-block;
+  cursor: pointer;
+  box-shadow: 0 0 0 #273C7F(204, 169, 44, 0.4);
+  animation: pulse 2s infinite;
+}
+.pulse > span {
+  display: block;
+  margin: 5px 9px;
+  color: White;
+  font-family: Roboto, sans;
+  font-shadow: 0 0 0 1px white;
+}
+.pulse:hover {
+  animation: none;
+}
+
+@-webkit-keyframes pulse {
+  0% {
+    -webkit-box-shadow: 0 0 0 0 #273C7F(204, 169, 44, 0.4);
+  }
+  70% {
+    -webkit-box-shadow: 0 0 0 10px rgba(204, 169, 44, 0);
+  }
+  100% {
+    -webkit-box-shadow: 0 0 0 0 rgba(204, 169, 44, 0);
+  }
+}
+@keyframes pulse {
+  0% {
+    -moz-box-shadow: 0 0 0 0 #394c8d(204, 169, 44, 0.4);
+    box-shadow: 0 0 0 0 rgba(18, 25, 37, 0.4);
+  }
+  70% {
+    -moz-box-shadow: 0 0 0 10px rgba(204, 169, 44, 0);
+    box-shadow: 0 0 0 10px rgba(204, 169, 44, 0);
+  }
+  100% {
+    -moz-box-shadow: 0 0 0 0 rgba(204, 169, 44, 0);
+    box-shadow: 0 0 0 0 rgba(204, 169, 44, 0);
   }
 }

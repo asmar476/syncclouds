@@ -1,14 +1,18 @@
-import { FaFacebookF, FaTwitter } from "react-icons/fa";
-import { FaLinkedinIn } from "react-icons/fa";
-import { BsYoutube } from "react-icons/bs";
 import logo from "../assets/SyncCloudsLogo/updated SyncClouds-logo white.svg";
-import MainSubHeading from "../common component/MainSubHeading";
 import InnerPageHeading from "../common component/InnerPageHeading";
 import { Link } from "react-router-dom";
+import fb from "../assets/icons/fb.svg";
+import twitter from "../assets/icons/twiter.svg";
+import insta from "../assets/icons/insta.svg";
+import skype from "../assets/icons/skype.svg";
 
 const Footer = () => {
   return (
-    <div className=" ">
+    <div
+      style={{
+        background: "linear-gradient(90deg, #002680 58.76%, #1C67A6 106.96%)",
+      }}
+    >
       {/* <div className='container mx-auto px-10'>
     <div className='flex flex-col-reverse items-center justify-between gap-10 lg:gap-32 bg-secondryColor text-white  rounded-xl p-5  md:flex-row md:p-10'>
         <div className="flex flex-col justify-between  gap-10  max-w-[700px] ">
@@ -39,7 +43,7 @@ const Footer = () => {
     </div>
     </div> */}
 
-      <div className="bg-purpleLight py-10">
+      <div className=" py-10">
         {" "}
         <div className="container mx-auto px-10 flex flex-col  lg:flex-row space-y-10 lg:space-y-0  text-white">
           <div className=" flex items-center justify-center lg:flex-0 lg:items-start lg:justify-start">
@@ -96,10 +100,13 @@ const Footer = () => {
         </div>
       </div>
 
-      <div className="container px-5 mx-auto md:px-10  py-5 md: flex justify-center gap-2 md:justify-between items-center">
+      <div className="containe border-t-2 border-white mx-16 text-white px-5 md:px-10  py-5 md: flex justify-center gap-2 md:justify-between items-center">
         <div className="flex items-center gap-10">
           {" "}
-          <p className="text-xs md:text-base">Terms & Cindition</p>
+          <Link to={"/terms-conditions"} className="text-xs md:text-base">
+            Terms & Cindition
+          </Link>
+         
           <Link to={"/privacy-policy"} className="text-xs md:text-base">
             Privacy Policy
           </Link>
@@ -107,10 +114,10 @@ const Footer = () => {
 
         <div className="flex items-center gap-2 md:gap-6 text-base md:text-xl">
           <p className="text-sm">Follow Us On</p>
-          <FaFacebookF />
-          <FaLinkedinIn />
-          <BsYoutube />
-          <FaTwitter />
+          <img src={twitter} alt="" />
+          <img src={fb} alt="" />
+          <img src={insta} alt="" />
+          <img src={skype} alt="" />
         </div>
       </div>
     </div>

@@ -2,6 +2,7 @@ import React from "react";
 import MainSubHeading from "../../common component/MainSubHeading";
 import { visionData } from "../../constant/VisionGoalData";
 import ExpandCard from "./AboutExpandCard/ExpandCard";
+import aboutHorizon from "../../assets/About illustration/aboutHorizon.svg";
 
 const ExpandYourHorizon = () => {
   return (
@@ -16,6 +17,7 @@ const ExpandYourHorizon = () => {
           speed up growth. We have vowed to raise the bar for our client’s
           performance continually."
         </p>
+        <img src={aboutHorizon} alt="" />
       </div>
       {/*  / // / / / expand card / // / /  */}
       <div className="grid grid-cols-4 gap-5 mt-20">

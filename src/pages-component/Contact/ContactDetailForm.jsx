@@ -1,19 +1,33 @@
 import React from "react";
 import MainSubHeading from "../../common component/MainSubHeading";
-
+import image from "../../assets/contact/contactUs.svg";
+import ContactForm from "../../common component/ContactForm";
 const ContactDetailForm = () => {
   return (
     <div className="container mx-auto px-10 my-20">
       <div className="flex flex-col items-center justify-center text-center">
-        <MainSubHeading
-          text={"Let's talk about your project and make your dream a reality!"}
-        />
-        <p className="text-[#335775] font-[500] text-[16px] leading-[24px] max-w-[700px] my-5 text-center">
+        <h1 className="font-[600] text-[25.89px]">
+          Let's talk about your project and make your dream a reality!s
+        </h1>
+
+        <p className="text-body font-[400] text-[16px] leading-[24px] max-w-[700px] my-5 text-center">
           After receiving the following information, a member of our staff will
           contact you to go through the specifics of your project.
         </p>
       </div>
-      <div className="mt-10 mb-32">
+      <ContactForm />
+
+      <div className="flex justify-center items-center mx-auto">
+        <img className=" mt-14 md:mt-36" src={image} alt="" />
+      </div>
+    </div>
+  );
+};
+{
+  /* ================================================================== */
+}
+{
+  /* <div className="mt-10 mb-32">
         <form className="flex gap-20">
           <div className="w-[50%] space-y-5">
             <div className="flex flex-col">
@@ -63,12 +77,12 @@ const ContactDetailForm = () => {
             </div>
 
             <div className="flex flex-col">
-              {/* <label
+            <label
                 htmlFor="Email"
                 className="text-[16px] font-[600] leading-[24px]"
               >
                 Services Required
-              </label> */}
+              </label> 
               <select className="border border-black px-2 py-1 outline-none text-[16px] leading-[24px] font-[400]">
                 <option>Web Development</option>
                 <option>Mobile App Development</option>
@@ -99,9 +113,10 @@ const ContactDetailForm = () => {
             </button>
           </div>
         </form>
-      </div>
-    </div>
-  );
-};
+      </div> */
+}
+{
+  /* ======================================================================== */
+}
 
 export default ContactDetailForm;

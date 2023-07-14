@@ -4,6 +4,7 @@ import procedureOverlayImg3 from "../assets/overlay image/Frame1.svg";
 
 export const projectProcedureData = [
   {
+    id: 1,
     img: procedureOverlayImg1,
     title: "Analysis",
     description:
@@ -17,6 +18,7 @@ export const projectProcedureData = [
   },
 
   {
+    id: 2,
     img: procedureOverlayImg2,
     title: "Execution",
     description:
@@ -30,6 +32,7 @@ export const projectProcedureData = [
   },
 
   {
+    id: 3,
     img: procedureOverlayImg3,
     title: "Quality Assurance",
     description:
