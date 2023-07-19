@@ -1,5 +1,4 @@
 import Layout from "../layout/Layout";
-import servicesIllustration from "../assets/Services illustration/servicesIllustration.svg";
 import HeroComponent from "../common component/HeroComponent";
 import GetSynced from "../common component/GetSynced";
 import ContactForm from "../common component/ContactForm";
