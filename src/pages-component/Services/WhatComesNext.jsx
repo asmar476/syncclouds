@@ -1,7 +1,8 @@
 import React from "react";
-import Group1 from "../../assets/Services illustration/1Group.svg";
-import Group2 from "../../assets/Services illustration/2Group.svg";
-import Group3 from "../../assets/Services illustration/3Group.svg";
+import Group1 from "../../assets/Services/1Group.svg";
+import Group2 from "../../assets/Services/2Group.svg";
+import Group3 from "../../assets/Services/3Group.svg";
+
 
 function WhatComesNext() {
   return (

@@ -11,7 +11,7 @@ const ContactForm = () => {
     setSelectedFile(file);
   };
   return (
-    <div className="sm:flex gap-10 my-14 items-center justify-center">
+    <div className="md:flex  space-y-10 gap-10 my-14 items-center justify-center">
       <div className="bg-[#EDF2F7] rounded-sm  sm:w-[622px] p-[20px]">
         <h1 className="font-[500] text-[25.89px] text-[#171923]  mb-3 ">
           Book a Meeting
@@ -108,9 +108,12 @@ const ContactForm = () => {
             <div className="flex  md:items-center justify-center gap-3 ">
               <input className="h-[20px] w-[20px] md:mt-0" type="checkbox" />
               <p className="text-center text-[14px] md:text-[16px] font-[400] leading-[24px]">
-                We will get back to you within 24 hours,guaranted
+                I want an NDA to protect my idea.
               </p>
             </div>
+            <p className="text-center text-[14px] md:text-[16px] font-[400] leading-[24px] mt-2">
+              We will get back to you within 24 hours, guaranted
+            </p>
             <button className="font-[600] leading-[24px] mt-5 text-white bg-[#002680] w-full py-[5px] md:py-[10px] rounded-sm">
               Send a request
             </button>

@@ -33,7 +33,6 @@ const About = () => {
                 digital experience. Get In Touch
               </p>
             </div>
-
             <Link to={"/contact"}>
               <button
                 className="bg-[#00315A] mt-10 text-white

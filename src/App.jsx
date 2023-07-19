@@ -5,7 +5,6 @@ import Contact from "./pages/Contact";
 import { Routes, Route } from "react-router-dom";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsAndConditions from "./pages/TermsAndConditions";
-
 export const maintenancePage = () => {
   return <h1>Under Maintenance</h1>;
 };

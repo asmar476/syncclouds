@@ -5,7 +5,181 @@ import fb from "../assets/icons/fb.svg";
 import twitter from "../assets/icons/twiter.svg";
 import insta from "../assets/icons/insta.svg";
 import skype from "../assets/icons/skype.svg";
+// import React from 'react'
+// import { Row, Col } from 'antd'
+// import logo from '../../Assets/Images/Footer/SC-White logo.png'
+// import fb from '../../Assets/Images/Footer/fb.svg'
+// import Skype from '../../Assets/Images/Footer/skype.svg'
+// import twitter from '../../Assets/Images/Footer/twitter.svg'
+// import insta from '../../Assets/Images/Footer/insta.svg'
+// import locationIcon from '../../Assets/Icons/map-pin.svg'
+// import { Link, useNavigate } from 'react-router-dom'
+// export default function Footer () {
+//   const navigate = useNavigate()
+//   const handlePrivacyPolicyClick = () => {
+//     navigate('/privacy-policy')
+//     window.scrollTo({ top: 0, behavior: 'smooth' })
+//   }
+//   const handleAboutUsClick = () => {
+//     navigate('/about-us')
+//     window.scrollTo({ top: 0, behavior: 'smooth' })
+//   }
+//   return (
+//     <footer className='mt-20'>
+//       <Row
+//         className='bg-gradient-to-r from-[#002680] to-[#1C67A6]    text-white p-16'
+//         justify='center'
+//         gutter={[16, 16]}
+//       >
+//         <Col xs={24} md={12} lg={6} className=''>
+//           <img className='sm:h-11 mb-5' src={logo} alt='small' />
+//           <p className='pr-16 text-md'>
+//             SyncClouds is the only way for your business solution in digital
+//             marketing that allows businesses to accept process.
+//           </p>
+//         </Col>
+//         <Col xs={24} md={12} lg={6}>
+//           <h2 className='font-semibold text-[20px] my-2'>SERVICES</h2>
+//           <div className=' space-y-1'>
+//             <p>Web App Development</p>
+//             <p>Mobile App Development</p>
+//             <p>UI/UX Designing</p>
+//             <p>Cyber Security</p>
+//             <p>Digital Marketing</p>
+//           </div>
+//         </Col>
+//         <Col xs={24} md={12} lg={6}>
+//           <h2 className='font-semibold text-[20px]  my-2'>COMPANY</h2>
+//           <div className='space-y-1 '>
+//             <p>
+//               {' '}
+//               <Link to='/about-us' onClick={handleAboutUsClick}>
+//                 About Us
+//               </Link>
+//             </p>
+//             <p>Career</p>
+//             <p>Life at SyncClouds</p>
+//             <p>View and Blogs</p>
+//           </div>{' '}
+//         </Col>
+//         <Col xs={24} md={12} lg={6}>
+//           <h2 className='font-semibold text-[20px]   my-2'>OFFICE</h2>
+//           <div className='flex '>
+//             <img
+//               className='w-[30px] md:w-[55px]'
+//               src={locationIcon}
+//               width='55px'
+//             />{' '}
+//             {/* <img className='hidden sm:block' src={locationIcon} />{' '} */}
+//             &nbsp;&nbsp;&nbsp;&nbsp;
+//             <p>
+//               Shop No M-35,36. Mezzanine Floor, Gold Point Shoping Mall,
+//               Rawalpindi, Pakistan
+//             </p>
+//           </div>
+//           <br />
+//           <h2 className='font-medium text-lg'>Emails</h2>
+//           <p>&nbsp;&nbsp;&nbsp;&nbsp;Contact Us at:</p>
+//           <p>&nbsp;&nbsp;&nbsp;&nbsp;hello@syncclouds.com</p>
+//           <br />
+//           <p>&nbsp;&nbsp;&nbsp;&nbsp;We are hiring:</p>
+//           <p>&nbsp;&nbsp;&nbsp;&nbsp;hr@syncclouds.com</p>
+//         </Col>
+//       </Row>
+//       {/* ========================================end footer web view ========================================== */}
+//       <div className='hidden sm:flex space-y-1 items-center justify-between px-16 text-[12px] font-medium'>
+//         <div className='flex '>
+//           <h6 className='sm:mr-5 lg:mr-16'>Terms & Conditions </h6>
+//           <h6>
+//             <Link to='/privacy-policy' onClick={handlePrivacyPolicyClick}>
+//               Privacy Policy
+//             </Link>
+//           </h6>
+//         </div>
+//         <div className='flex  space-x-3  items-center'>
+//           <h6>Follow Us</h6>
+//           <Link
+//             to='https://twitter.com/syncclouds'
+//             className='cursor-pointer ml-2'
+//             target='_blank'
+//             rel='noopener noreferrer'
+//           >
+//             <img src={twitter} />
+//           </Link>
+//           <Link
+//             to='https://facebook.com/syncclouds'
+//             className='cursor-pointer ml-2'
+//             target='_blank'
+//             rel='noopener noreferrer'
+//           >
+//             <img src={fb} alt='facebook' />
+//           </Link>
+//           <Link
+//             to='https://www.instagram.com/syncclouds/'
+//             className='cursor-pointer ml-2'
+//             target='_blank'
+//             rel='noopener noreferrer'
+//           >
+//             <img src={insta} alt='instagram' />
+//           </Link>
+//           <Link
+//             to='https://join.skype.com/invite/x12P8vdREjqJ'
+//             className='cursor-pointer ml-2'
+//             target='_blank'
+//             rel='noopener noreferrer'
+//           >
+//             <img src={Skype} alt='skype' />
+//           </Link>
+//         </div>
+//       </div>
 
+//       {/* ==================================================mobile screen======================================= */}
+//       <div className='sm:hidden flex flex-col space-y-3 items-center justify-center text-[12px] font-medium'>
+//         <h6 className=''>Terms & Conditions </h6>
+//         <h6>
+//           <Link to='/privacy-policy' onClick={handlePrivacyPolicyClick}>
+//             Privacy Policy
+//           </Link>
+//         </h6>
+//         <div className='flex  space-x-3  items-center'>
+//           <h6>Follow Us</h6>
+//           <Link
+//             to='https://twitter.com/syncclouds'
+//             className='cursor-pointer ml-2'
+//             target='_blank'
+//             rel='noopener noreferrer'
+//           >
+//             <img src={twitter} />
+//           </Link>
+//           <Link
+//             to='https://facebook.com/syncclouds'
+//             className='cursor-pointer ml-2'
+//             target='_blank'
+//             rel='noopener noreferrer'
+//           >
+//             <img src={fb} alt='facebook' />
+//           </Link>
+//           <Link
+//             to='https://www.instagram.com/syncclouds/'
+//             className='cursor-pointer ml-2'
+//             target='_blank'
+//             rel='noopener noreferrer'
+//           >
+//             <img src={insta} alt='instagram' />
+//           </Link>
+//           <Link
+//             to='https://join.skype.com/invite/x12P8vdREjqJ'
+//             className='cursor-pointer ml-2'
+//             target='_blank'
+//             rel='noopener noreferrer'
+//           >
+//             <img src={Skype} alt='skype' />
+//           </Link>
+//         </div>
+//       </div>
+//     </footer>
+//   )
+// }
 const Footer = () => {
   return (
     <div
@@ -106,7 +280,6 @@ const Footer = () => {
           <Link to={"/terms-conditions"} className="text-xs md:text-base">
             Terms & Cindition
           </Link>
-         
           <Link to={"/privacy-policy"} className="text-xs md:text-base">
             Privacy Policy
           </Link>
@@ -114,10 +287,39 @@ const Footer = () => {
 
         <div className="flex items-center gap-2 md:gap-6 text-base md:text-xl">
           <p className="text-sm">Follow Us On</p>
-          <img src={twitter} alt="" />
-          <img src={fb} alt="" />
-          <img src={insta} alt="" />
-          <img src={skype} alt="" />
+          <Link
+            to="https://twitter.com/syncclouds"
+            className="cursor-pointer ml-2"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img src={twitter} />
+          </Link>
+          <Link
+            to="https://facebook.com/syncclouds"
+            className="cursor-pointer ml-2"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img src={fb} alt="facebook" />
+          </Link>
+          <Link
+            to="https://www.instagram.com/syncclouds/"
+            className="cursor-pointer ml-2"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img src={insta} alt="instagram" />
+          </Link>
+          <Link
+            to="https://join.skype.com/invite/x12P8vdREjqJ"
+            className="cursor-pointer ml-2"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img src={skype} alt="skype" />
+          </Link>
+
         </div>
       </div>
     </div>

@@ -1,7 +1,18 @@
 import React from "react";
 import MainSubHeading from "../../common component/MainSubHeading";
-import image from "../../assets/contact/contactUs.svg";
+import CompletelyAccessible from "../../assets/Images/CompletelyAccessible.svg";
+import QualifiedAgents from "../../assets/Images/QualifiedAgents.svg";
+import StaffAugmentation from "../../assets/Images/StaffAugmentation.svg";
+import AdequatePrice from "../../assets/Images/AdequatePrice.svg";
+import ExceptionalOffers from "../../assets/Images/ExceptionalOffers.svg";
 import ContactForm from "../../common component/ContactForm";
+const Images = [
+  CompletelyAccessible,
+  QualifiedAgents,
+  StaffAugmentation,
+  AdequatePrice,
+  ExceptionalOffers,
+];
 const ContactDetailForm = () => {
   return (
     <div className="container mx-auto px-10 my-20">
@@ -16,9 +27,12 @@ const ContactDetailForm = () => {
         </p>
       </div>
       <ContactForm />
-
-      <div className="flex justify-center items-center mx-auto">
-        <img className=" mt-14 md:mt-36" src={image} alt="" />
+      <div className="p-5 grid gap-10 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+        {Images.map((img, ind) => (
+          <div key={ind}>
+            <img src={img} alt="" />
+          </div>
+        ))}
       </div>
     </div>
   );

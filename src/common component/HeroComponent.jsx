@@ -22,7 +22,7 @@ const HeroComponent = ({
           <p className="text-sm md:text-lg text-justify lg:text-left mt-5 max-w-[750px]">
             {description2}
           </p>
-          {buttonText !== "" && <ButtonLight text={buttonText} />}
+          {buttonText !== "" && <ButtonDark text={buttonText} />}
         </div>
         <img
           src={Illustration}

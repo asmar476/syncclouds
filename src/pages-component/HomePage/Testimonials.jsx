@@ -3,7 +3,6 @@ import MainSubHeading from "../../common component/MainSubHeading";
 import TestimonialCard from "./TestimonialsCards/TestimonialCard";
 import grayoverlay from "../../assets/overlay image/Frame  gray 14534.svg";
 // import bg_lines from "../../assets/Images/Group.svg";
-
 const Testimonials = () => {
   return (
     <div className="relative container mx-auto px-10 py-20 lg:py-40 z-0">
@@ -19,7 +18,6 @@ const Testimonials = () => {
             about the transformative power of our software in driving their
             growth.
           </p>
-
           <div className="w-[408px]">
             <TestimonialCard />
           </div>

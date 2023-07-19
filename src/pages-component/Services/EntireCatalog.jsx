@@ -1,36 +1,47 @@
 import React, { useState } from "react";
-import img from "../../assets/Services illustration/catalogServices.svg";
+import img from "../../assets/Services/catalogServices.svg";
+import arrowRight from "../../assets/icons/blue-arrow-right.svg";
 const cardsData = [
   {
     title: "Services",
     content:
       "Sync Cloudss is equipped with the tools, technology, and domain knowledge necessary to produce various professional software development services. We assist our clients in creating and capturing value and enhancing company outcomes by eliminating the operational inefficiencies that impede growth.",
+    img: img,
+
   },
   {
     title: "Technologies",
     content:
       "We create adaptable, scalable software development solutions for our clients to help them become more creative and practical, which speeds up the description process.",
+    img: img,
   },
   {
     title: "Solutions",
     content:
       "We are a software development services company offering a comprehensive range of engineering services to Fortune 1000 firms and international organizations, whether a consumer-focused app or a revolutionary enterprise-class solution.",
+    img: img,
   },
   {
     title: "Platforms",
     content:
       "Are you prepared to prevent dangers, quicken transformation, and ignite revenue growth? Put, go digital. We utilize the most recent tools, technologies, and platforms to accelerate our transformation initiatives and enhance your business outcomes.",
+    img: img,
   },
   {
     title: "Team Expansion",
     content:
       "Our culture values finding software developers with the appropriate knowledge and intense levels of commitment quickly. Team extension is an improved, contemporary iteration of the committed team strategy.",
+    img: img,
   },
 ];
 function EntireCatalog() {
   const [isHovered, setIsHovered] = useState(false);
   const [cardIndex, setCardIndex] = useState("");
+  const [selectedCard, setSelectedCard] = useState(cardsData[0]);
 
+  const handleCardClick = (card) => {
+    setSelectedCard(card);
+  };
   return (
     <div>
       <div className="mt-10 container mx-auto px-5 flex flex-col items center justify-center space-y-6">
@@ -38,16 +49,43 @@ function EntireCatalog() {
         <h2 className="font-[600] text-center text-[14px] md:text-[25px]">
           Entire Catalog of Services
         </h2>
-        <p className="text-center text-[#335775]">
+        <p className="text-center text-body">
           Our service offerings include system integration, complete lifecycle
           management of custom products, <br /> apps, and services, and
           strategic IT and technology consulting.
         </p>
-        <div className="flex">
-          <div className="bg-[#EDF2F7]"></div>
-          <div></div>
-          <div className="">
-            <img src={img} alt="" />
+
+        <div className="flex items-center  gap-4">
+          <div>
+            <ul className="bg-[#EDF2F7] rounded pl-8 pr-14 py-8 space-y-4 mr-16">
+              {cardsData.map((card, index) => (
+                <li
+                  className={`cursor-pointer font-[600] text-[22px] flex gap-2${
+                    selectedCard === card ? "selected text-primary gap-2" : ""
+                  }`}
+                  key={index}
+                  onClick={() => handleCardClick(card)}
+                >
+                  {card.title}
+                  {selectedCard === card && <img src={arrowRight} alt="" />}
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div className="w-[527px]">
+            {selectedCard && (
+              <div>
+                <h2 className="text-primary  font-[600] text-[25.89px]">
+                  {selectedCard.title}
+                </h2>
+                <p>{selectedCard.content}</p>
+              </div>
+            )}
+          </div>
+          <div>
+            {selectedCard && (
+              <img src={selectedCard.img} alt={selectedCard.title} />
+            )}
           </div>
         </div>
 

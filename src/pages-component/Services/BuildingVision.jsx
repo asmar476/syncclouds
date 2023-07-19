@@ -3,7 +3,7 @@ import MainSubHeading from "../../common component/MainSubHeading";
 import { BsChevronDown, BsChevronUp } from "react-icons/bs";
 import InnerPageHeading from "../../common component/InnerPageHeading";
 import { servicesSoftwareSteps } from "../../constant/ServicesSoftwaredevelopmentStepsData";
-import SDLCIllustration from "../../assets/Services illustration/SDLC.svg";
+import SDLCIllustration from "../../assets/Services/SDLC.svg";
 const BuildingVision = () => {
   const [questionOpen, setQuestionOpen] = useState(false);
   const [quesIndex, setQuesIndex] = useState([]);
