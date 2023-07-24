@@ -6,7 +6,7 @@ import profile from "../../../assets/Images/Vector.svg";
 const TestimonialCard = () => {
   return (
     <>
-      <div className="px-8 py-5 testimonial-card">
+      <div className="px-8 py-5 testimonial-card bg-white">
         <div className="flex items-center justify-between">
           <h5 className="text-[14px] text-primary md:text-[16px] font-[600] leading-[24px]">
             Asmar Tamjid

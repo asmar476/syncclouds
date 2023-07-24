@@ -1,32 +1,10 @@
-import HeroComponent from "../../common component/HeroComponent";
-import logo2 from "../../assets/dummy logos/logo2.png";
-import logo5 from "../../assets/dummy logos/logo5.png";
-import logo6 from "../../assets/dummy logos/logo6.png";
-import logo7 from "../../assets/dummy logos/logo7.png";
-import logo8 from "../../assets/dummy logos/logo8.png";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, Pagination, Scrollbar, Navigation } from "swiper";
-import { Link, useNavigate } from "react-router-dom";
-
-import "swiper/css";
-import "swiper/css/autoplay";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
-import "swiper/css/scrollbar";
-
-import ButtonLight from "../../common component/ButtonLight";
-import ButtonDark from "../../common component/ButtonDark";
+import { Link } from "react-router-dom";
 import clouds from "../../assets/Images/Main.svg";
-import homeIllustration1 from "../../assets/home illustration/cloud.svg";
-import homeIllustration2 from "../../assets/home illustration/Illustration SVG.svg";
-import homeIllustration3 from "../../assets/home illustration/Home icon.svg";
-import clooud from "../../assets/overlay image/Vector.svg";
-import MainHeading from "../../common component/MainHeading";
 import arrowRight from "../../assets/icons/arrow-right.svg";
 import bluearrowRight from "../../assets/icons/blue-arrow-right.svg";
 import blurPlus from "../../assets/home illustration/Ellipse 196.svg";
 import arrowUp from "../../assets/icons/arrow-up-circle.svg";
-
+import { Tooltip } from "antd";
 const Hero = () => {
   return (
     <div
@@ -39,7 +17,7 @@ const Hero = () => {
       <div className="hidden lg:flex flex-col lg:flex-row items-center justify-around">
         <div className="w-[622px] space-y-10 ">
           <h1 className="text-[50px] font-[800] leading-[65px]">
-            Unlock your Business's Potential
+            Unlock your Business's Potential&nbsp;
             <span className="text-[#002680]">
               with the best Software Company
             </span>
@@ -75,10 +53,7 @@ const Hero = () => {
             </Link>
             <div className="flex gap-3  px-3 py-2 rounded-sm border border-[#002680]">
               <Link to={"/contact"}>
-                <button
-                  className=" text-[18px]
-            font-[550] text-[#002680]"
-                >
+                <button className=" text-[18px] font-[550] text-[#002680]">
                   Our Services
                 </button>
               </Link>
@@ -88,16 +63,18 @@ const Hero = () => {
         </div>
         <div>
           <img src={clouds} alt="" />
-          <div className=" right-[5%] top-[70%] fixed z-[100] bg-gray-300  h-[60px]  w-[60px]  rounded-full">
-            <img
-              onClick={() => {
-                window.scrollTo({ top: 0, behavior: "smooth" });
-              }}
-              className="cursor-pointer right-[5.4%] top-[70.65%] fixed z-[100]"
-              src={arrowUp}
-              alt="arrow up"
-              width={45}
-            />
+          <div className=" flex items-center justify-center right-[5%] top-[70%] fixed z-[100] bg-gray-300  h-[50px]  w-[50px]  rounded-full">
+            <Tooltip title="Scroll to Top">
+              <img
+                onClick={() => {
+                  window.scrollTo({ top: 0, behavior: "smooth" });
+                }}
+                className="cursor-pointer  fixed z-[100]"
+                src={arrowUp}
+                alt="arrow up"
+                width={40}
+              />
+            </Tooltip>
           </div>
         </div>{" "}
         {/* <img
@@ -120,7 +97,7 @@ const Hero = () => {
             }}
             className="w-[30px] cursor-pointer left-[41%] top-[25%] fixed z-[100]"
             src={arrowUp}
-            alt=""
+            alt="scrol up icon"
           />
         </div>
       </div>

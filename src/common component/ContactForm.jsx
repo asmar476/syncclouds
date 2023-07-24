@@ -1,8 +1,6 @@
 import React from "react";
-import checkIcon from "../assets/reviewStar/Group 12839.svg";
 import consultant from "../assets/Images/consultant.png";
 import attachmentIcon from "../assets/icons/attachmentIcon.svg";
-import { FiCamera } from "react-icons/fi";
 import { useState } from "react";
 const ContactForm = () => {
   const [selectedFile, setSelectedFile] = useState(null);
@@ -10,8 +8,31 @@ const ContactForm = () => {
     const file = event.target.files[0];
     setSelectedFile(file);
   };
+
+  const handleDragEnter = (event) => {
+    event.preventDefault();
+    event.stopPropagation();
+  };
+
+  const handleDragLeave = (event) => {
+    event.preventDefault();
+    event.stopPropagation();
+  };
+
+  const handleDragOver = (event) => {
+    event.preventDefault();
+    event.stopPropagation();
+    event.dataTransfer.dropEffect = "copy"; // This indicates that the file will be copied when dropped
+  };
+
+  const handleDrop = (event) => {
+    event.preventDefault();
+    event.stopPropagation();
+    const file = event.dataTransfer.files[0];
+    setSelectedFile(file);
+  };
   return (
-    <div className="md:flex  space-y-10 gap-10 my-14 items-center justify-center">
+    <div className="md:flex  space-y-10 md:space-y-0 gap-10 my-14 items-center justify-center">
       <div className="bg-[#EDF2F7] rounded-sm  sm:w-[622px] p-[20px]">
         <h1 className="font-[500] text-[25.89px] text-[#171923]  mb-3 ">
           Book a Meeting
@@ -49,8 +70,10 @@ const ContactForm = () => {
         </div>
       </div>
       <div className="bg-[#EDF2F7] rounded-sm sm:w-[622px]">
-        <form className="px-[10px] md:px-[30px] py-[20px] md:py-[40px]">
-          <h5 className="font-medium">Write a Message</h5>{" "}
+        <form className="px-[10px] md:px-[30px] py-[20px] md:py-[24px]">
+          <h5 className="font-[500] text-[25.89px] text-[#171923]  mb-3 ">
+            Write a Message
+          </h5>
           <div>
             <input
               type="text"
@@ -64,16 +87,25 @@ const ContactForm = () => {
               type="email"
               placeholder="Email"
             />
-
             <input
               className="my-2  py-[10px] px-3 text-[14px] md:text-[16px] font-[400] leading-[24px] w-[100%] border-b border-b-gray-200 placeholder-black outline-none"
               type="text"
               placeholder="Phone Number"
             />
           </div>
-          <div className="gap-2 bg-white relative my-2  py-[10px] px-3">
-            <div className="flex gap-2 items-center">
-              {" "}
+          {/* ============================================================================================= */}
+          <div
+            className="gap-2 bg-white relative my-2  py-[10px] px-3"
+            onDrop={handleDrop}
+            onDragOver={handleDragOver}
+            onDragEnter={handleDragEnter}
+            onDragLeave={handleDragLeave}
+          >
+            <div
+              className={`flex gap-2 items-center ${
+                selectedFile ? "bg-green-100" : "bg-white"
+              }`}
+            >
               <div className="cursor-pointer py-2 rounded-md ">
                 <img src={attachmentIcon} alt="Uploaded" />
               </div>
@@ -98,23 +130,24 @@ const ContactForm = () => {
               No Images - only DOC, DOCX, PDF ODT up to 10 MB
             </p>
           </div>
+          {/* ============================================================================================== */}
           <div className="mt-2  pt-[10px] px-3 text-[14px] md:text-[16px] font-[400] leading-[24px] w-[100%]  placeholder-black outline-none">
             <textarea
-              className="w-[100%] placeholder-black  h-[100px] p-2 "
+              className="w-[100%] placeholder-black  min-h-[118px] max-h-[500px] p-2 "
               placeholder="Message"
             ></textarea>
           </div>
-          <div className="mt-5">
+          <div className="mt-1">
             <div className="flex  md:items-center justify-center gap-3 ">
               <input className="h-[20px] w-[20px] md:mt-0" type="checkbox" />
-              <p className="text-center text-[14px] md:text-[16px] font-[400] leading-[24px]">
+              <p className="text-center text-[14px] md:text-[16px] font-[400]">
                 I want an NDA to protect my idea.
               </p>
             </div>
-            <p className="text-center text-[14px] md:text-[16px] font-[400] leading-[24px] mt-2">
+            <p className="text-center text-[14px] md:text-[16px] font-[400] leading-[24px] mt-1">
               We will get back to you within 24 hours, guaranted
             </p>
-            <button className="font-[600] leading-[24px] mt-5 text-white bg-[#002680] w-full py-[5px] md:py-[10px] rounded-sm">
+            <button className="font-[600] leading-[24px] mt-3 text-white bg-[#002680] w-full py-[5px] md:py-[10px] rounded-sm">
               Send a request
             </button>
           </div>

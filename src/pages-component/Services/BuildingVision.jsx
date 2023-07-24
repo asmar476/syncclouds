@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import MainSubHeading from "../../common component/MainSubHeading";
-import { BsChevronDown, BsChevronUp } from "react-icons/bs";
+// import { BsChevronDown, BsChevronUp } from "react-icons/bs";
+import { chevronUp, chevrondown } from "../../common component/Images";
 import InnerPageHeading from "../../common component/InnerPageHeading";
 import { servicesSoftwareSteps } from "../../constant/ServicesSoftwaredevelopmentStepsData";
 import SDLCIllustration from "../../assets/Services/SDLC.svg";
@@ -63,19 +64,23 @@ const BuildingVision = () => {
                   }}
                 >
                   {quesIndex.includes(index) ? (
-                    <BsChevronUp className="text-xl text-white" />
+                    <img src={chevronUp} className="text-xl text-white" />
                   ) : (
-                    <BsChevronDown className="text-xl " />
+                    <img src={chevrondown} className="text-xl " />
                   )}
                 </div>
               </div>
-              {quesIndex.includes(index) && (
-                <div className="py-3 px-5">
-                  <p className="text-[14px] leading-[21px] font-[400]">
-                    {arr.description}
-                  </p>
-                </div>
-              )}
+              <div
+                className={` transition-all duration-200 ease-in overflow-hidden${
+                  quesIndex.includes(index)
+                    ? "open transition-all duration-500 pl-4 py-3 "
+                    : " pl-4 h-[0] py-0" /* Add the 'open' class when the accordion is open */
+                } `}
+              >
+                <p className="text-[14px] leading-[21px] font-[400]">
+                  {arr.description}
+                </p>
+              </div>
             </div>
           ))}
         </div>

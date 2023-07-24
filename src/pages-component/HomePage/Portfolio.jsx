@@ -4,36 +4,39 @@ import PortfolioCard from "./PortfolioComponent/PortfolioCard";
 import CustomSelect from "../../common component/CustomSelect";
 import black from "../../assets/icons/black.svg";
 import blue from "../../assets/icons/blue.svg";
-
+import bg from "../../assets/Images/bgTools&tech.png";
+import map from "../../assets/Images/map.png";
 const Portfolio = () => {
   return (
     <div className="container mx-auto px-10 py-10 lg:py-20">
       <div className="flex flex-col items-center gap-5">
         <MainSubHeading text={"Port"} gradientText={"folio"} />
         <div className="md:flex gap-5 hidden">
-          <div className="px-[30px] py-[10px] rounded-sm bg-primary text-white">
-            <p>All</p>
+          <div className="px-[30px] py-[10px] rounded-sm cursor-pointer hover:shadow-lg bg-primary text-white">
+            <button>All</button>
           </div>
-          <div className="px-[30px] py-[10px] rounded-sm border border-primary text-primary font-[500] text-[18px]  ">
-            <p>Social Media Marketing</p>
+          <div className="px-[30px] py-[10px] rounded-sm cursor-pointer hover:shadow-lg border border-primary text-primary font-[500] text-[18px]  ">
+            <button>Social Media Marketing</button>
           </div>
-          <div className="px-[30px] py-[10px] rounded-sm border border-primary text-primary font-[500] text-[18px]  ">
-            <p>Content Marketing</p>
+          <div className="px-[30px] py-[10px] rounded-sm cursor-pointer hover:shadow-lg border border-primary text-primary font-[500] text-[18px]  ">
+            <button>Content Marketing</button>
           </div>
-          <div className="px-[30px] py-[10px] rounded-sm border border-primary text-primary font-[500] text-[18px]  ">
-            <p>Hire A Developer</p>
+          <div className="px-[30px] py-[10px] rounded-sm cursor-pointer hover:shadow-lg border border-primary text-primary font-[500] text-[18px]  ">
+            <button>Hire A Developer</button>
           </div>
-          <div className="px-[30px] py-[10px] rounded-sm border border-primary text-primary font-[500] text-[18px]  ">
-            <p>Hire A Team</p>
+          <div className="px-[30px] py-[10px] rounded-sm cursor-pointer hover:shadow-lg border border-primary text-primary font-[500] text-[18px]  ">
+            <button>Hire A Team</button>
           </div>
         </div>
         <div className="md:hidden">
           <CustomSelect />
         </div>
       </div>
-      <div className="mt-10 mx-auto">
+      <div className="mt-10 mb-12 mx-auto">
         <PortfolioCard />
       </div>
+      <img className="h-screen w-[1440px] absolute mt-10" src={bg} alt="" />{" "}
+      <img className="w-[1440px] absolute" src={map} alt="" />
     </div>
   );
 };

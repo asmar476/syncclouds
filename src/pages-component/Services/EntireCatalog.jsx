@@ -7,7 +7,6 @@ const cardsData = [
     content:
       "Sync Cloudss is equipped with the tools, technology, and domain knowledge necessary to produce various professional software development services. We assist our clients in creating and capturing value and enhancing company outcomes by eliminating the operational inefficiencies that impede growth.",
     img: img,
-
   },
   {
     title: "Technologies",
@@ -38,30 +37,31 @@ function EntireCatalog() {
   const [isHovered, setIsHovered] = useState(false);
   const [cardIndex, setCardIndex] = useState("");
   const [selectedCard, setSelectedCard] = useState(cardsData[0]);
-
   const handleCardClick = (card) => {
     setSelectedCard(card);
   };
   return (
     <div>
-      <div className="mt-10 container mx-auto px-5 flex flex-col items center justify-center space-y-6">
+      <div className="mt-10 container mx-auto flex flex-col items center justify-center space-y-6">
         {/* <div className='w-full container mx-auto my-10 flex flex-col items-center justify-center'> */}
-        <h2 className="font-[600] text-center text-[14px] md:text-[25px]">
-          Entire Catalog of Services
-        </h2>
-        <p className="text-center text-body">
-          Our service offerings include system integration, complete lifecycle
-          management of custom products, <br /> apps, and services, and
-          strategic IT and technology consulting.
-        </p>
-
-        <div className="flex items-center  gap-4">
+        <div className="mb-8 space-y-3">
+          {" "}
+          <h2 className="font-[600] text-center text-[14px] md:text-[25px]">
+            Entire Catalog of Services
+          </h2>
+          <p className="text-center text-body">
+            Our service offerings include system integration, complete lifecycle
+            management of custom products, <br /> apps, and services, and
+            strategic IT and technology consulting.
+          </p>
+        </div>
+        <div className=" flex items-center justify-center">
           <div>
-            <ul className="bg-[#EDF2F7] rounded pl-8 pr-14 py-8 space-y-4 mr-16">
+            <ul className="bg-[#EDF2F7] rounded px-16 w-[350px] py-12 space-y-4">
               {cardsData.map((card, index) => (
                 <li
-                  className={`cursor-pointer font-[600] text-[22px] flex gap-2${
-                    selectedCard === card ? "selected text-primary gap-2" : ""
+                  className={`cursor-pointer font-[600] text-[22px] flex ${
+                    selectedCard === card ? "selected text-primary" : ""
                   }`}
                   key={index}
                   onClick={() => handleCardClick(card)}
@@ -72,19 +72,27 @@ function EntireCatalog() {
               ))}
             </ul>
           </div>
-          <div className="w-[527px]">
+
+          <div className="flex items-center  justify-between shadow">
+            <div className="w-[527px] pl-16">
+              {selectedCard && (
+                <div>
+                  <h2 className="text-primary  font-[600] mb-5 text-[25.89px]">
+                    {selectedCard.title}
+                  </h2>
+                  <p className="text-body text-[18px]">
+                    {selectedCard.content}
+                  </p>
+                </div>
+              )}
+            </div>
+
             {selectedCard && (
-              <div>
-                <h2 className="text-primary  font-[600] text-[25.89px]">
-                  {selectedCard.title}
-                </h2>
-                <p>{selectedCard.content}</p>
-              </div>
-            )}
-          </div>
-          <div>
-            {selectedCard && (
-              <img src={selectedCard.img} alt={selectedCard.title} />
+              <img
+                width={310}
+                src={selectedCard.img}
+                alt={selectedCard.title}
+              />
             )}
           </div>
         </div>

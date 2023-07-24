@@ -2,17 +2,34 @@ import React from "react";
 import image from "../assets/privacyPloicy/headerImage.png";
 import Layout from "../layout/Layout";
 import PrivacyHeading from "../common component/PrivacyHeading";
-
+import arrowUp from "../assets/icons/arrow-up-circle.svg";
+import { Tooltip } from "antd";
 function PrivacyPolicy() {
   return (
     <Layout>
       <div className="bg-[#EDF2F7] py-7">
+        <div className=" flex items-center justify-center right-[1%] top-[70%] fixed z-[100] bg-gray-300  h-[50px]  w-[50px]  rounded-full">
+          <Tooltip title="Scroll to Top">
+            <img
+              onClick={() => {
+                window.scrollTo({ top: 0, behavior: "smooth" });
+              }}
+              className="cursor-pointer  fixed z-[100]"
+              src={arrowUp}
+              alt="arrow up"
+              width={40}
+            />
+          </Tooltip>
+        </div>{" "}
         <div className="lg:flex justify-between items-center py-10 lg:py-0 px-3 bg-primary text-center font-[700] text-[] md:text-[35px] xl:text-[41.89px] text-white my-5">
           <img className="hidden lg:block" src={image} alt="" />
           <h1>SyncClouds Privacy Statement</h1>
           <img className="hidden lg:block" src={image} alt="" />
         </div>
-        <div className="bg-white rounded mx-24 border px-7 py-12 border-gray-300">
+        <div className="bg-white rounded mx-24 border px-7 py-10 border-gray-300">
+          <h3 className="border-b border-gray-300 italic text-[18px] mb-6 font-[500]">
+            Last Updated: 6 July 2023
+          </h3>
           <PrivacyHeading
             h="Introduction"
             p="SyncClouds is dedicated to offering services that adhere to privacy regulations. So that you are aware of how your personal information is handled and safeguarded, we work to make our Privacy Policy as simple, transparent, and understandable as possible.

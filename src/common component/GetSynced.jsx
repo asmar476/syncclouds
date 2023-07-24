@@ -19,7 +19,7 @@ const GetSynced = () => {
             className="h-[44px] px-5 w-[459px] rounded-sm border border-gray-100 outline-none"
           />
           <div className="">
-            <button className="text-[#3c3f47] font-[600] h-[44px] bg-white rounded-sm px-5">
+            <button className="text-primary font-[600] h-[44px] bg-white rounded-sm px-5">
               Subscribe
             </button>
           </div>

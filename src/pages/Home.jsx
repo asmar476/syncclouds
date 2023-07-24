@@ -1,15 +1,13 @@
 import Layout from "../layout/Layout";
 import Hero from "../pages-component/HomePage/Hero";
 import OfferCard from "../pages-component/HomePage/OfferCard";
-import GetInTouch from "../pages-component/HomePage/GetInTouch";
 import Portfolio from "../pages-component/HomePage/Portfolio";
 import OurClients from "../common component/OurClients";
 import OurAim from "../pages-component/HomePage/OurAim";
-import Testimonials from "../pages-component/HomePage/Testimonials";
 import GetSynced from "../common component/GetSynced";
 import ContactForm from "../common component/ContactForm";
-import FaqSection from "../common component/FaqSection";
 import ToolsAndTechnologies from "../common component/ToolsAndTechnologies";
+import HomeFaq from "../pages-component/HomePage/HomeFaq";
 const Home = () => {
   return (
     <Layout>
@@ -30,7 +28,7 @@ const Home = () => {
         description={"We Love using latest tech to our advantage."}
       />
       {/* faq  */}
-      <FaqSection />
+      <HomeFaq />
       {/* our aim */}
       <div className="relative">
         <OurAim />

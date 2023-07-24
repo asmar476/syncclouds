@@ -1,106 +1,42 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import MainSubHeading from "../../common component/MainSubHeading";
 import InnerPageHeading from "../../common component/InnerPageHeading";
-import ButtonLight from "../../common component/ButtonLight";
-import { BsChevronDown, BsChevronUp } from "react-icons/bs";
-const questionArray = [
-  { id: 1 },
-  { id: 2 },
-  { id: 3 },
-  { id: 4 },
-  { id: 5 },
-  { id: 6 },
-  { id: 7 },
-  { id: 8 },
-  { id: 9 },
-  { id: 10 },
-  { id: 11 },
-  { id: 12 },
-];
+import { aboutFaq } from "../../constant/FAQS";
+import FaqSection from "../../common component/FaqSection";
 const InnovativeServices = () => {
   const [quesIndex, setQuesIndex] = useState(0);
   return (
-    <div className="container mx-auto px-10 my-20">
-      <div className="flex flex-col items-center justify-center">
-        <div className="flex flex-col items-center text-center">
-          {" "}
-          <div className="flex">
-            <MainSubHeading
-              text={"Transforming"}
-              gradientText={" Ideas Into Reality  "}
-            />{" "}
-            <MainSubHeading text={" Through Our"} />
-          </div>
-          <MainSubHeading text={""} gradientText={"  Innovative Services"} />
-        </div>
-        <p className="text-[#335775] font-[500] text-[16px] leading-[24px] max-w-[1000px] mt-10">
-          Together, Our Team Brings a Diverse Range Of Services To Our Clients.
-        </p>
-      </div>
+    <div className="container flex flex-col justify-center mx-auto px-10">
+      <h1 className="text-center text-[41.89px]  font-[700] leading-[65px]">
+        Transforming
+        <span className="text-[#002680]"> Ideas Into Reality</span>
+        &nbsp;Through Our <br />
+        <span className="text-[#002680]"> Innovative Services</span>
+      </h1>
 
-      <div className="my-20 flex items-center justify-between gap-32">
+      <div className="flex mt-10 justify-between">
         <div className="space-y-5">
+          {" "}
+          <p className=" font-[600] text-[18px] leading-[24px] max-w-[1000px] mt-10">
+            Together, Our Team Brings a Diverse Range Of Services To Our
+            Clients.
+          </p>
           <InnerPageHeading text={"You Think. We Build."} />
-          <p className="text-[#335775] font-[400] text-[16px] leading-[24px] max-w-[600px]">
+          <p className="text-body font-[400] text-[18px] leading-[24px] max-w-[622px]">
             We create cutting-edge services and implement data-driven marketing
             campaigns that drive customer engagement, enhance brand awareness,
             and deliver measurable results that help our clients achieve their
             business goals.
           </p>
-          <ButtonLight text={"Let’s get started"} />
+          <Link to={"/contact"}>
+            <button className=" text-[18px] font-[500] bg-[#002680] text-white px-3 py-2 rounded mt-10">
+              Let's Get Started
+            </button>
+          </Link>
         </div>
-        <div className="w-[50%] space-y-[10px]">
-          {questionArray.map((arr, index) => (
-            <div>
-              {index < 6 && (
-                <div className="accordian">
-                  <div
-                    className={`flex items-center gap-3 h-[60px]${
-                      quesIndex === index
-                        ? "  bg-gradient-to-r from-gradientBlueDark to-gradientBlueLight  "
-                        : "bg-white"
-                    } rounded-tl-md rounded-tr-md justify-between p-[10px]`}
-                  >
-                    <InnerPageHeading
-                      text={"What is a software company?"}
-                      textColor={`${
-                        quesIndex === index ? "text-white" : "text-black"
-                      }`}
-                    />
-                    <div
-                      className={`${
-                        quesIndex === index
-                          ? "bg-purpleDark bg-opacity-[0.2]"
-                          : ""
-                      } rounded-full p-1`}
-                      onClick={() => {
-                        if (quesIndex === index) {
-                          setQuesIndex("");
-                        } else {
-                          setQuesIndex(index);
-                        }
-                      }}
-                    >
-                      {quesIndex === index ? (
-                        <BsChevronUp className="text-xl text-white" />
-                      ) : (
-                        <BsChevronDown className="text-xl " />
-                      )}
-                    </div>
-                  </div>
-                  {quesIndex === index && (
-                    <div className="px-4 py-2">
-                      <p className="text-[14px] leading-[21px] font-[400] ">
-                        Lorem ipsum, dolor sit amet consectetur adipisicing
-                        elit. Nam inventore quidem dolores deserunt magnam
-                        maxime quasi non dignissimos, fugit magni.
-                      </p>
-                    </div>
-                  )}
-                </div>
-              )}
-            </div>
-          ))}
+        <div className="w-[700px]">
+          <FaqSection faqData={aboutFaq} />
         </div>
       </div>
     </div>

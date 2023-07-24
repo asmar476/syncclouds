@@ -9,7 +9,6 @@ body {
   margin: 0 auto;
 }
 
-
 .gradient-text {
   background: -webkit-linear-gradient(left, #273c7f, #2374b1);
 background-clip: text;
@@ -24,6 +23,16 @@ background-clip: text;
   box-shadow: 0 0 10px 0 rgb(223, 222, 222);
 }
 
+.accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease !important; /* Set the transition duration and easing */
+}
+
+.accordion-content.open {
+  max-height: 500px !important; /* Adjust the max-height value to accommodate your content */
+  transition: max-height 0.3s ease !important; /* Set the transition duration and easing */
+}
 .testimonial-card {
   box-shadow: 0 0 10px 0 rgb(223, 222, 222);
 }
@@ -141,7 +150,7 @@ background-clip: text;
   margin: 5px 9px;
   color: White;
   font-family: Roboto, sans;
-  font-shadow: 0 0 0 1px white;
+ 
 }
 .pulse:hover {
   animation: none;

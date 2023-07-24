@@ -36,7 +36,10 @@ const PortfolioCard = () => {
   return (
     <div className="grid grid-col-1 md:grid-cols-2 xl:grid-cols-3 gap-5">
       {cardData.map((data, index) => (
-        <div className="w-[408px] rounded-br-[100px] p-10 hover:bg-[#DAE2EA]">
+        <div
+          key={index}
+          className="w-[408px] rounded-br-[100px] p-10 hover:bg-[#DAE2EA]"
+        >
           <div className="flex items-center gap-6">
             <img width={40} src={data.icon} alt="kdlj" />
             <h4 className="font-[500] text-[18px]">{data.title}</h4>

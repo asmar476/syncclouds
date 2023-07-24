@@ -1,169 +1,318 @@
-import React, { useState } from "react";
+import styled, { keyframes, css } from "styled-components";
+import React from "react";
 import MainSubHeading from "./MainSubHeading";
 import BoldParagraph from "./BoldParagraph";
-import react from "../assets/Tools and Technologies Icons/Framework Icons/Reactive.svg";
-import vue from "../assets/Tools and Technologies Icons/Web Icons/Vue.svg";
-import angular from "../assets/Tools and Technologies Icons/Web Icons/angular.svg";
-import sass from "../assets/Tools and Technologies Icons/Web Icons/saas.svg";
-import blackIcon from "../assets/icons/black.svg";
-import blueIcon from "../assets/icons/blue.svg";
-import bg from "../assets/Images/bgTools&tech.png";
-import map from "../assets/Images/map.png";
-
-const techArray = [
-  {
-    tech: "Frontend",
-    array: [
-      { name: "React", icon: react },
-      { name: "Vue", icon: vue },
-      { name: "Angular", icon: angular },
-      { name: "Sass", icon: sass },
-    ],
-  },
-  {
-    tech: "Backend",
-    array: [
-      { name: "Vue", icon: vue },
-      { name: "Angular", icon: angular },
-      { name: "React", icon: react },
-      { name: "Sass", icon: sass },
-    ],
-  },
-  {
-    tech: "Mobile",
-    array: [
-      { name: "Angular", icon: angular },
-      { name: "Sass", icon: sass },
-      { name: "React", icon: react },
-      { name: "Vue", icon: vue },
-    ],
-  },
-  {
-    tech: "Cyber Security",
-    array: [
-      { name: "Sass", icon: sass },
-      { name: "React", icon: react },
-      { name: "Vue", icon: vue },
-      { name: "Angular", icon: angular },
-    ],
-  },
-  {
-    tech: "Other",
-    array: [
-      { name: "Vue", icon: vue },
-      { name: "Angular", icon: angular },
-      { name: "React", icon: react },
-      { name: "Sass", icon: sass },
-    ],
-  },
-];
-
-const ToolsAndTechnologies = ({ text, gradientText, description }) => {
-  const [selectedTech, setSelectedTech] = useState(techArray[0].tech);
-
-  const handleTechClick = (tech) => {
-    setSelectedTech(tech);
-  };
+import { FE, BE, CS, other } from "../constant/TechData";
+// import { Swiper, SwiperSlide } from "swiper/react";
+// import { Autoplay, Pagination, Scrollbar, Navigation } from "swiper";
+// import "swiper/css";
+// import "swiper/css/autoplay";
+// import "swiper/css/navigation";
+// import "swiper/css/pagination";
+// import "swiper/css/scrollbar";
+// import bg from "../assets/Images/bgTools&tech.png";
+// import map from "../assets/Images/map.png";
+function ToolsAndTechnologies() {
   return (
-    <div className=" container relative flex justify-center mx-auto py-5 sm:py-10 h-[794px] lg:py-20">
-      {" "}
-      <img className="w-[1440px]" src={bg} alt="" />{" "}
-      <img className="absolute top-16" src={map} alt="" />
-      <div className="absolute top-40">
-        <div className="flex flex-col items-center justify-center">
-          <MainSubHeading text={text} gradientText={gradientText} />
-          <p className="text-[#434343] font-[500] text-[16px] leading-[24px] mb-10 max-w-[1000px] my-5 text-center">
-            {description}
-          </p>
+    <div className="container relative mb-28 mx-auto px-10">
+      <div className="">
+        <div className="flex flex-col mt-10 items-center">
+          <MainSubHeading text={"Techno"} gradientText={"logies"} ml={"ml-2"} />
+          <BoldParagraph text={"We Love using latest tec to our advantage."} />
         </div>
-        {/* =========================================================================================================== */}
-        <div>
-          <div className="flex justify-around">
-            {techArray.map((item) => (
-              <button
-                key={item.tech}
-                className={`flex items-center font-bold${
-                  selectedTech === item.tech ? " selected text-primary" : ""
-                }`}
-                onClick={() => handleTechClick(item.tech)}
-              >
-                <img
-                  src={selectedTech === item.tech ? blueIcon : blackIcon}
-                  alt="Icon"
-                />
-                &nbsp; {item.tech}
-              </button>
-            ))}
-          </div>
-          <div className="flex justify-around">
-            {selectedTech &&
-              techArray
-                .find((item) => item.tech === selectedTech)
-                ?.array.map((techItem, index) => (
-                  <div
-                    className="flex gap-5 items-center bg-white px-3 py-2 mt-20 rounded-md"
-                    key={index}
-                  >
-                    <img width={50} src={techItem.icon} alt="Tech Icon" />
-                    <p className="text-[#212529] font-[600] text-[24px]">
-                      {techItem.name}
-                    </p>
-                  </div>
+        {/* ============================================================================================ */}
+        <div className="">
+          <h1 className="pl-8 font-semibold text-[20.89px]">Front End</h1>{" "}
+          <Wrapper>
+            <Marquee>
+              <MarqueeGroup>
+                {FE.map((el, index) => (
+                  <ImageGroup key={index}>
+                    <img src={el} />
+                  </ImageGroup>
                 ))}
-          </div>
-        </div>
-      </div>
-      {/* ========================================================================================================== */}
-      {/* <div className="hidden lg:block shadow-xl border-t border-l border-l-gray-200 border-t-gray-200 rounded-md px-[40px] py-[30px] mt-10">
-        {techArrary.map((arr, index) => (
-          <div key={index} className="flex items-center ">
-            <div className=" flex items-center justify-center p-[10px] min-w-[200px] bg-gradient-to-r from-gradientBlueDark to-gradientBlueLight  my-5 rounded-md text-white">
-              {" "}
-              <h3 className="font-[600]">{arr.tech}</h3>
-            </div>
-            <div className=" flex items-center justify-around w-full">
-              {arr.array.map((icon, index) => (
-                <div className="flex items-center gap-3">
-                  {" "}
-                  <div className="flex items-center justify-center h-[60px] w-[60px] rounded-lg bg-primaryBgColor">
-                    <img key={index} src={icon} className="h-[50px] w-[50px]" />
-                  </div>
-                  <p className="">react</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        ))}
-      </div> */}
-      {/* <div className=" lg:hidden shadow-xl border-t border-l border-l-gray-200 border-t-gray-200 rounded-md px-[20px] md:px-[40px] mt-5 sm:mt-20">
-        {techArrary.map((arr, index) => (
-          <div
-            key={index}
-            className="flex flex-col justify-evenly border-b border-b-gray-300"
+              </MarqueeGroup>
+              <MarqueeGroup>
+                {FE.map((el, index) => (
+                  <ImageGroup key={index}>
+                    <img src={el} />
+                  </ImageGroup>
+                ))}
+              </MarqueeGroup>
+            </Marquee>
+          </Wrapper>
+          {/* <Swiper
+            modules={[Navigation, Pagination, Scrollbar, Autoplay]}
+            spaceBetween={50}
+            slidesPerView={4}
+            // slidesPerGroup={1}
+            breakpoints={{
+              1236: {
+                slidesPerView: 4,
+              },
+              600: {
+                slidesPerView: 3,
+                spaceBetween: 30,
+              },
+              400: {
+                slidesPerView: 2,
+              },
+              200: {
+                slidesPerView: 1,
+              },
+            }}
+            loop={true}
+            draggable={true}
+            autoplay={{
+              delay: 1000,
+              disableOnInteraction: false,
+              reverseDirection: true,
+            }}
           >
-            <div className=" flex items-center p-[5px] md:p-[10px] min-w-[200px]   my-5 rounded-md ">
-              <h3 className="font-[600]">{arr.tech}</h3>
-            </div>
-            <div className=" flex items-center justify-between w-full mb-2">
-              {arr.array.map((icon, index) => (
-                <div className="flex items-center justify-between gap-1 md:gap-3">
-                  {" "}
-                  <div className="flex items-center md:justify-center h-[50px] w-[50px] md:h-[60px] md:w-[60px] rounded-lg bg-primaryBgColor">
-                    <img
-                      key={index}
-                      src={icon}
-                      className="h-[40px] w-[40px] sm:h-[50px] sm:w-[50px]"
-                    />
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        ))}
-      </div> */}
-      {/* <img key={index} src={icon} alt="Tech Icon" className="tech-icon" /> */}
+            {FE.map((logo, index) => (
+              <SwiperSlide key={index}>
+                <img
+                  src={logo}
+                  alt={`Client Logo ${index + 1}`}
+                  className="h-[100px] md:h-[150px] w-[150px] md:w-[250px]"
+                />
+              </SwiperSlide>
+            ))}
+          </Swiper> */}
+        </div>
+        {/* ========================================================================== */}
+        <div className="">
+          <h1 className="pl-8 font-semibold text-[20.89px]">Back End</h1>{" "}
+          <Wrapper>
+            <Marquee>
+              <MarqueeGroup2>
+                {BE.map((el, index) => (
+                  <ImageGroup key={index}>
+                    <img width={500} src={el} />
+                  </ImageGroup>
+                ))}
+              </MarqueeGroup2>
+              <MarqueeGroup2>
+                {BE.map((el, index) => (
+                  <ImageGroup key={index}>
+                    <img width={500} src={el} />
+                  </ImageGroup>
+                ))}
+              </MarqueeGroup2>
+            </Marquee>
+          </Wrapper>{" "}
+          {/* <Swiper
+            modules={[Navigation, Pagination, Scrollbar, Autoplay]}
+            spaceBetween={50}
+            slidesPerView={4}
+            breakpoints={{
+              1236: {
+                slidesPerView: 4,
+              },
+              600: {
+                slidesPerView: 3,
+                spaceBetween: 30,
+              },
+              400: {
+                slidesPerView: 2,
+              },
+              200: {
+                slidesPerView: 1,
+              },
+            }}
+            loop={true}
+            draggable={true}
+            autoplay={{
+              delay: 2000,
+              disableOnInteraction: false,
+              reverseDirection: false,
+            }}
+          >
+            {BE.map((logo, index) => (
+              <SwiperSlide key={index}>
+                <img
+                  src={logo}
+                  alt={`Client Logo ${index + 1}`}
+                  className="h-[100px] md:h-[150px] w-[150px] md:w-[250px]"
+                />
+              </SwiperSlide>
+            ))}
+          </Swiper> */}
+        </div>
+        {/* ========================================================================== */}
+        <div className="">
+          <h1 className="pl-8 font-semibold text-[20.89px]">Cyber Security</h1>{" "}
+          <Wrapper>
+            <Marquee>
+              <MarqueeGroup>
+                {CS.map((el, index) => (
+                  <ImageGroup key={index}>
+                    <img width={500} src={el} />
+                  </ImageGroup>
+                ))}
+              </MarqueeGroup>
+              <MarqueeGroup>
+                {CS.map((el, index) => (
+                  <ImageGroup key={index}>
+                    <img src={el} />
+                  </ImageGroup>
+                ))}
+              </MarqueeGroup>
+            </Marquee>
+          </Wrapper>{" "}
+          {/* <Swiper
+            modules={[Navigation, Pagination, Scrollbar, Autoplay]}
+            spaceBetween={50}
+            slidesPerView={4}
+            breakpoints={{
+              1236: {
+                slidesPerView: 4,
+              },
+              600: {
+                slidesPerView: 3,
+                spaceBetween: 30,
+              },
+              400: {
+                slidesPerView: 2,
+              },
+              200: {
+                slidesPerView: 1,
+              },
+            }}
+            loop={true}
+            draggable={true}
+            autoplay={{
+              delay: 1000,
+              disableOnInteraction: false,
+              reverseDirection: true,
+            }}
+          >
+            {CS.map((logo, index) => (
+              <SwiperSlide key={index}>
+                <img
+                  src={logo}
+                  alt={`Client Logo ${index + 1}`}
+                  className="h-[100px] md:h-[150px] w-[150px] md:w-[250px]"
+                />
+              </SwiperSlide>
+            ))}
+          </Swiper> */}
+        </div>
+        {/* ========================================================================== */}
+        <div className="">
+          <h1 className="pl-8 font-semibold text-[20.89px]">Other</h1>{" "}
+          <Wrapper>
+            <Marquee>
+              <MarqueeGroup2>
+                {other.map((el, index) => (
+                  <ImageGroup key={index}>
+                    <img src={el} />
+                  </ImageGroup>
+                ))}
+              </MarqueeGroup2>
+              <MarqueeGroup2>
+                {BE.map((el, index) => (
+                  <ImageGroup key={index}>
+                    <img src={el} />
+                  </ImageGroup>
+                ))}
+              </MarqueeGroup2>
+            </Marquee>
+          </Wrapper>{" "}
+          {/* <Swiper
+            modules={[Navigation, Pagination, Scrollbar, Autoplay]}
+            spaceBetween={50}
+            slidesPerView={4}
+            breakpoints={{
+              1236: {
+                slidesPerView: 4,
+              },
+              600: {
+                slidesPerView: 3,
+                spaceBetween: 30,
+              },
+              400: {
+                slidesPerView: 2,
+              },
+              200: {
+                slidesPerView: 1,
+              },
+            }}
+            loop={true}
+            draggable={true}
+            autoplay={{
+              delay: 2000,
+              disableOnInteraction: false,
+              reverseDirection: false,
+            }}
+          >
+            {other.map((logo, index) => (
+              <SwiperSlide key={index}>
+                <img
+                  src={logo}
+                  alt={`Client Logo ${index + 1}`}
+                  className="h-[100px] md:h-[150px] w-[150px] md:w-[250px]"
+                />
+              </SwiperSlide>
+            ))}
+          </Swiper> */}
+        </div>
+        {/* ========================================================================== */}
+        {/* <img className="absolute w-[1440px]" src={bg} alt="" />{" "} */}
+      </div>
     </div>
   );
-};
+}
 
 export default ToolsAndTechnologies;
+
+const Wrapper = styled.div`
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+`;
+const Marquee = styled.div`
+  display: flex;
+  width: 1300px;
+  height: 150px;
+  overflow: hidden;
+  user-select: none;
+  mask-image: linear-gradient(
+    to right,
+    hsl(0 0% 0% / 0),
+    hsl(0 0% 0% / 1) 10%,
+    hsl(0 0% 0% / 1) 90%,
+    hsl(0 0% 0% / 0)
+  );
+`;
+const scrollX = keyframes`
+  from {
+    left: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+`;
+const common = css`
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  white-space: nowrap;
+  width: 200%;
+  animation: ${scrollX} 30s linear infinite;
+`;
+const MarqueeGroup = styled.div`
+  ${common}
+`;
+const MarqueeGroup2 = styled.div`
+  ${common}
+  animation-direction: reverse;
+  animation-delay: -3s;
+`;
+const ImageGroup = styled.div`
+  display: grid;
+  place-items: center;
+  width: 70rem;
+`;

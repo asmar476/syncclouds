@@ -7,8 +7,9 @@ const SoftwareSolution = () => {
   const [showOverlay, setShowOverlay] = useState(false);
   const [showIndex, setShowIndex] = useState("");
   return (
-    <div className="container mx-auto">
-      <div className=" container mx-auto px-10  my-20">
+    <div className="realtive ">
+      {/* <img className="w-full" src={bgImage} alt="imge" /> */}
+      <div className=" flex flex-col items-center justify-center container mx-auto px-10  my-20">
         <div className="flex flex-col items-center justify-center ">
           <MainSubHeading
             text={"Our Experts Craft Custom "}
@@ -19,7 +20,7 @@ const SoftwareSolution = () => {
             our best-in-class services for everyone.
           </p>
         </div>
-        <div className="text-center grid grid-cols-3">
+        <div className="text-center gap-20  grid grid-cols-3">
           {softwareSolutionData.map((data, index) => (
             <div
               // onMouseEnter={() => {
@@ -31,12 +32,12 @@ const SoftwareSolution = () => {
               //   setShowIndex("");
               // }}
               key={index}
-              className="relative z-0 max-w-[400px] min-h-[400px] flex items-center justify-center flex-col gap-10 box-shadow  pb-5 my-5"
+              className=" bg-white w-[400px] py-10 h-[193px] flex items-center justify-center gap-5 flex-col box-shadow  pb-5 my-5"
             >
               {showOverlay && index === showIndex ? (
-                <img src={data.img} className="h-[260px] w-[250px]" />
+                <img src={data.img} width={98} alt="icon" />
               ) : (
-                <img src={data.img} className={`h-[164px] w-[156px]`} />
+                <img src={data.img} width={98} alt="icon" />
               )}
               {
                 <div
@@ -46,11 +47,13 @@ const SoftwareSolution = () => {
                       : "translate-y-[0px] transition-all duration-200 ease-in"
                   }`}
                 >
-                  <MainSubHeading gradientText={data.title} />
+                  <h1 className="font-[600] text-[18px] gradient-text">
+                    {data.title}
+                  </h1>
                 </div>
               }
               {showOverlay && index === showIndex && (
-                <div className="absolute inset-0 bg-white bg-opacity-90  text-black w-full h-full flex">
+                <div className=" bg-white bg-opacity-90  text-black w-full h-full flex">
                   <div className="space-y-5 mt-10">
                     {data.list1.map((li, index) => (
                       <div>
@@ -73,7 +76,7 @@ const SoftwareSolution = () => {
               )}
             </div>
           ))}
-        </div>
+        </div>{" "}
       </div>
     </div>
   );

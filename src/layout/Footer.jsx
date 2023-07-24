@@ -1,10 +1,141 @@
 import logo from "../assets/SyncCloudsLogo/updated SyncClouds-logo white.svg";
 import InnerPageHeading from "../common component/InnerPageHeading";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import fb from "../assets/icons/fb.svg";
 import twitter from "../assets/icons/twiter.svg";
 import insta from "../assets/icons/insta.svg";
 import skype from "../assets/icons/skype.svg";
+import { Row, Col } from "antd";
+const Footer = () => {
+  const navigate = useNavigate();
+  const handlePrivacyPolicyClick = () => {
+    navigate("/privacy-policy");
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+  const handleAboutUsClick = () => {
+    navigate("/about-us");
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+  return (
+    <div
+      className="text-white"
+      style={{
+        background: "linear-gradient(90deg, #002680 58.76%, #1C67A6 106.96%)",
+      }}
+    >
+      <Row className=" p-16" justify="center" gutter={[16, 16]}>
+        <Col xs={24} md={12} lg={6} className="">
+          <img className="sm:h-11 mb-5" src={logo} alt="small" />
+          <p className="pr-16 text-[16px] font-[400]">
+            SyncClouds is the only way for your business solution in digital
+            marketing that allows businesses to accept process.
+          </p>
+        </Col>
+        <Col xs={24} md={12} lg={6}>
+          <h2 className="font-[500] text-[18px] my-2">SERVICES</h2>
+          <div className=" space-y-1 font-[400] text-[16px]">
+            <p>Web App Development</p>
+            <p>Mobile App Development</p>
+            <p>UI/UX Designing</p>
+            <p>Cyber Security</p>
+            <p>Digital Marketing</p>
+          </div>
+        </Col>
+        <Col xs={24} md={12} lg={6}>
+          <h2 className="font-[500] text-[18px]  my-2">COMPANY</h2>
+          <div className="space-y-1 font-[400] text-[16px] ">
+            <p>
+              {" "}
+              <Link to="/about-us" onClick={handleAboutUsClick}>
+                About Us
+              </Link>
+            </p>
+            <p>Career</p>
+            <p>Life at SyncClouds</p>
+            <p>View and Blogs</p>
+          </div>{" "}
+        </Col>
+        <Col xs={24} md={12} lg={6}>
+          <h2 className="font-[500] text-[18px] my-2">OFFICE</h2>
+          <div className=" ">
+            {/* <img
+            className="w-[30px] md:w-[55px]"
+            src={locationIcon}
+            width="55px"
+          />{" "} */}
+            {/* <img className='hidden sm:block' src={locationIcon} />{' '} */}
+
+            <p className="text-sm sm:text-[16px] font-[500]">
+              Shop No M-35,36. Mezzanine Floor, Gold Point Shoping Mall,
+              Rawalpindi, Pakistan
+            </p>
+          </div>
+          <br />
+          <h2 className="font-medium text-lg">Emails</h2>
+          <div className="text-sm sm:text-[16px] font-[500]">
+            {" "}
+            <p>Contact Us at:</p>
+            <p>hello@syncclouds.com</p>
+          </div>
+          <br />
+          <div className="text-sm sm:text-[16px] font-[500]">
+            {" "}
+            <p>We are hiring:</p>
+            <p>hr@syncclouds.com</p>
+          </div>
+        </Col>
+      </Row>
+      <div className="containe border-t-2 border-white mx-16 text-white px-5 md:px-10  py-5 md: flex justify-center gap-2 md:justify-between items-center">
+        <div className="flex items-center gap-10">
+          <Link to={"/terms-conditions"} className="text-xs md:text-base">
+            Terms & Cindition
+          </Link>
+          <Link to={"/privacy-policy"} className="text-xs md:text-base">
+            Privacy Policy
+          </Link>
+        </div>
+        <div className="flex items-center gap-2 md:gap-6 text-base md:text-xl">
+          <p className="text-sm sm:text-[16px] font-[500]">Follow Us On</p>
+          <Link
+            to="https://twitter.com/syncclouds"
+            className="cursor-pointer ml-2"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img src={twitter} />
+          </Link>
+          <Link
+            to="https://facebook.com/syncclouds"
+            className="cursor-pointer ml-2"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img src={fb} alt="facebook" />
+          </Link>
+          <Link
+            to="https://www.instagram.com/syncclouds/"
+            className="cursor-pointer ml-2"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img src={insta} alt="instagram" />
+          </Link>
+          <Link
+            to="https://join.skype.com/invite/x12P8vdREjqJ"
+            className="cursor-pointer ml-2"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img src={skype} alt="skype" />
+          </Link>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default Footer;
+
 // import React from 'react'
 // import { Row, Col } from 'antd'
 // import logo from '../../Assets/Images/Footer/SC-White logo.png'
@@ -40,7 +171,7 @@ import skype from "../assets/icons/skype.svg";
 //         </Col>
 //         <Col xs={24} md={12} lg={6}>
 //           <h2 className='font-semibold text-[20px] my-2'>SERVICES</h2>
-//           <div className=' space-y-1'>
+//           <div className=' space-y-1 font-[400] text-[16px]'>
 //             <p>Web App Development</p>
 //             <p>Mobile App Development</p>
 //             <p>UI/UX Designing</p>
@@ -180,14 +311,9 @@ import skype from "../assets/icons/skype.svg";
 //     </footer>
 //   )
 // }
-const Footer = () => {
-  return (
-    <div
-      style={{
-        background: "linear-gradient(90deg, #002680 58.76%, #1C67A6 106.96%)",
-      }}
-    >
-      {/* <div className='container mx-auto px-10'>
+
+{
+  /* <div className='container mx-auto px-10'>
     <div className='flex flex-col-reverse items-center justify-between gap-10 lg:gap-32 bg-secondryColor text-white  rounded-xl p-5  md:flex-row md:p-10'>
         <div className="flex flex-col justify-between  gap-10  max-w-[700px] ">
             <div className='lg:pb-20'>
@@ -215,115 +341,5 @@ const Footer = () => {
           <img src={footerIllustrator} alt=""   className='min-h-[200] min-w-[200px] lg:min-h-[400] :min-w-[400px] w-[100%] h-[100%]' />
         </div>
     </div>
-    </div> */}
-
-      <div className=" py-10">
-        {" "}
-        <div className="container mx-auto px-10 flex flex-col  lg:flex-row space-y-10 lg:space-y-0  text-white">
-          <div className=" flex items-center justify-center lg:flex-0 lg:items-start lg:justify-start">
-            <div className=" text-center mr-10 max-w-[300px] lg:text-left">
-              <div className="mb-5 flex justify-center lg:justify-start">
-                <img
-                  src={logo}
-                  alt="SyncClouds logo"
-                  className="w-[150px] sm:w-[100%]"
-                />
-              </div>
-              <p>
-                SyncCloud is the only way for your business solution in digital
-                marketing that allows businesses to accept, process.
-              </p>
-            </div>
-          </div>
-
-          <div className="flex-1 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
-            <div>
-              <InnerPageHeading text={"Company"} />
-              <ul className=" space-y-4 mt-5  text-sm md:text-base">
-                <li>Review</li>
-                <li>Blog</li>
-                <li>Careers</li>
-                <li>Discovery Form</li>
-              </ul>
-            </div>
-
-            <div>
-              <InnerPageHeading text={"Services"} />
-              <ul className="space-y-4 mt-5   text-sm md:text-base">
-                <li>Web & Mob development</li>
-                <li>User Experience Design</li>
-                <li>Video Production & Photography</li>
-                <li>Digital Marketing</li>
-                <li>Clouds(DevOps)</li>
-                <li>Cyber Security</li>
-              </ul>
-            </div>
-
-            <div>
-              <InnerPageHeading text={"Services"} />
-              <ul className="space-y-4 mt-5   text-sm md:text-base">
-                <li>Web & Mob development</li>
-                <li>User Experience Design</li>
-                <li>Video Production & Photography</li>
-                <li>Digital Marketing</li>
-                <li>Clouds(DevOps)</li>
-                <li>Cyber Security</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div className="containe border-t-2 border-white mx-16 text-white px-5 md:px-10  py-5 md: flex justify-center gap-2 md:justify-between items-center">
-        <div className="flex items-center gap-10">
-          {" "}
-          <Link to={"/terms-conditions"} className="text-xs md:text-base">
-            Terms & Cindition
-          </Link>
-          <Link to={"/privacy-policy"} className="text-xs md:text-base">
-            Privacy Policy
-          </Link>
-        </div>
-
-        <div className="flex items-center gap-2 md:gap-6 text-base md:text-xl">
-          <p className="text-sm">Follow Us On</p>
-          <Link
-            to="https://twitter.com/syncclouds"
-            className="cursor-pointer ml-2"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <img src={twitter} />
-          </Link>
-          <Link
-            to="https://facebook.com/syncclouds"
-            className="cursor-pointer ml-2"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <img src={fb} alt="facebook" />
-          </Link>
-          <Link
-            to="https://www.instagram.com/syncclouds/"
-            className="cursor-pointer ml-2"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <img src={insta} alt="instagram" />
-          </Link>
-          <Link
-            to="https://join.skype.com/invite/x12P8vdREjqJ"
-            className="cursor-pointer ml-2"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <img src={skype} alt="skype" />
-          </Link>
-
-        </div>
-      </div>
-    </div>
-  );
-};
-
-export default Footer;
+    </div> */
+}

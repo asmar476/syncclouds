@@ -1,8 +1,6 @@
 import Layout from "../layout/Layout";
-import HeroComponent from "../common component/HeroComponent";
 import GetSynced from "../common component/GetSynced";
 import ContactForm from "../common component/ContactForm";
-import FaqSection from "../common component/FaqSection";
 import OurClients from "../common component/OurClients";
 import SoftwareSolution from "../pages-component/Services/SoftwareSolution";
 import ExprtIdeation from "../pages-component/Services/ExprtIdeation";
@@ -12,6 +10,7 @@ import WhatComesNext from "../pages-component/Services/WhatComesNext";
 import EntireCatalog from "../pages-component/Services/EntireCatalog";
 import ToolsAndTech from "../pages-component/Services/ToolsAndTech";
 import ServicesHero from "../pages-component/Services/ServicesHero";
+import TwoColFAQs from "../pages-component/Services/TwoColFAQs";
 const Services = () => {
   return (
     <Layout>
@@ -33,7 +32,7 @@ const Services = () => {
       {/* <EntireCatalog /> */}
       <EntireCatalog />
       {/* FAQ Section */}
-      <FaqSection />
+      <TwoColFAQs />
       {/* get synced */}
       <GetSynced />
       {/* contact form  */}

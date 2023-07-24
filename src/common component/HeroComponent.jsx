@@ -12,9 +12,9 @@ const HeroComponent = ({
   Illustration,
 }) => {
   return (
-    <div className="container mx-auto  px-10 py-10 md:py-32 md:mt-10">
-      <div className="flex flex-col xl:gap-10 items-center justify-between space-y-10 lg:space-y-0 lg:flex-row">
-        <div className="space-y-10 text-center  lg:text-left ">
+    <div className="mx-auto container  px-10 py-10 md:py-32 md:mt-10">
+      <div className="flex flex-col xl:gap-10 items-center justify-center space-x-10 space-y-10 lg:space-y-0 lg:flex-row">
+        <div className="space-y-10 text-center  w-[617px] lg:text-left ">
           <MainHeading text1={title1} gradientText={title2} text2={title3} />
           <p className="text-sm md:text-lg text-justify lg:text-left max-w-[750px]">
             {description}

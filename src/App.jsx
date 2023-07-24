@@ -5,12 +5,11 @@ import Contact from "./pages/Contact";
 import { Routes, Route } from "react-router-dom";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsAndConditions from "./pages/TermsAndConditions";
+// import BookMyCall from "./common component/BookMyCall";
 export const maintenancePage = () => {
   return <h1>Under Maintenance</h1>;
 };
-
 const App = () => {
-  
   return (
     <div>
       <Routes>
@@ -20,6 +19,8 @@ const App = () => {
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         <Route path="/terms-conditions" element={<TermsAndConditions />} />
         <Route path="/contact" element={<Contact />} />
+        {/* <Route path="/book-call" element={<BookMyCall />} /> */}
+
         {/* <Route path='*' element={<maintenancePage/>}/> */}
       </Routes>
     </div>

@@ -8,17 +8,23 @@ import "swiper/css/autoplay";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
-
+import tri1 from "../../assets/About illustration/triangle1.svg";
+import tri2 from "../../assets/About illustration/triangle2.svg";
+import tri3 from "../../assets/About illustration/aboutTeam.svg";
 const OurTeam = () => {
   const [showOverlay, setShowOverlay] = useState(false);
   const [showOverlayIndex, setShowOverlayIndex] = useState("");
   return (
-    <div className="container mx-auto px-10 my-20">
+    <div className="  mx-auto px-10 my-24">
+      <img className="absolute left-0" src={tri3} alt="bg side image" />
+
       <h1 className="text-[50px] text-center font-[800] leading-[65px]">
         Give Your Dreams a Digital Reality with our
         <br />
         <span className="text-[#002680]"> Passionate Team</span>
       </h1>
+      <br />
+      <br />
       <div className="my-10">
         {" "}
         <Swiper
@@ -82,6 +88,7 @@ const OurTeam = () => {
           ))}
         </Swiper>
       </div>
+      
     </div>
   );
 };

@@ -3,11 +3,25 @@ import React, { useState } from "react";
 import { projectProcedureData } from "../../constant/ProjectProcedure";
 import InnerPageHeading from "../../common component/InnerPageHeading";
 import { BsDot } from "react-icons/bs";
+import tri1 from "../../assets/About illustration/triangle1.svg";
+import tri2 from "../../assets/About illustration/triangle2.svg";
 
 const ProjectProcedure = () => {
   return (
-    <div className="container mx-auto px-10 my-20">
-      <div className="flex flex-col items-center justify-center">
+    <div className=" relative mx-auto px-20 my-20">
+      <img
+        width={150}
+        className="absolute z-[-1] top-[-60px] right-0"
+        src={tri1}
+        alt="triangle1"
+      />
+      <img
+        width={270}
+        className="absolute z-[-1] top-[-40px] right-[-30px]"
+        src={tri2}
+        alt="triangle2"
+      />
+      <div className="flex flex-col  items-center justify-center">
         <div className="text-center flex">
           <h1 className="font-[700] text-[20px] md:text-[41.89px] leading-[62.83px]">
             SyncClouds{" "}
@@ -20,7 +34,7 @@ const ProjectProcedure = () => {
           accurately, and with attention to detail.
         </p>
       </div>
-      <div className="grid grid-cols-3 my-32 gap-10 ">
+      <div className="bg-white grid grid-cols-3 my-32 gap-10 ">
         {projectProcedureData.map((data, index) => (
           <div
             key={index}

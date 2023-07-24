@@ -1,12 +1,11 @@
 import React from "react";
-import BoldParagraph from "../../common component/BoldParagraph";
-import languages from "../../assets/Services/servicesTandT/languages.svg";
-import db from "../../assets/Services/servicesTandT/db.svg";
-import cloud from "../../assets/Services/servicesTandT/cloud.svg";
-import web from "../../assets/Services/servicesTandT/web.svg";
-import mobile from "../../assets/Services/servicesTandT/mobile.svg";
-import framwork from "../../assets/Services/servicesTandT/framework.svg";
-const Images = [languages, framwork, mobile, web, db, cloud];
+import languages from "../../assets/Images/TandT1.svg";
+import db from "../../assets/Images/TandT3.svg";
+import cloud from "../../assets/Images/TandT2.svg";
+import web from "../../assets/Images/TandT6.svg";
+import mobile from "../../assets/Images/TandT4.svg";
+import framwork from "../../assets/Images/TandT5.svg";
+const Images = [web, db, cloud, languages, framwork, mobile];
 function ToolsAndTech() {
   return (
     <div>
@@ -17,20 +16,17 @@ function ToolsAndTech() {
           Tools & Technologies Our
           <span className="gradient-text"> Software Developers Use</span>
         </h2>
-        <div className="text-center text-body">
-          {" "}
-          <BoldParagraph
-            text={
-              "With extensive knowledge in every field required for dependable software development, Sync Clouds has developed into a competitor on a global scale in the field of software engineering."
-            }
-          />
-          <div className="p-5 grid gap-10 grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
-            {Images.map((img, ind) => (
-              <div key={ind}>
-                <img src={img} alt="" />
-              </div>
-            ))}
-          </div>
+        <p className="text-body text-center text-[16px] md:text-[20px] font-[500] w-[800px]">
+          "With extensive knowledge in every field required for dependable
+          software development, Sync Clouds has developed into a competitor on a
+          global scale in the field of software engineering."
+        </p>
+        <div className="p-5 grid gap-10 grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
+          {Images.map((img, ind) => (
+            <div key={ind}>
+              <img src={img} alt="" />
+            </div>
+          ))}
         </div>
       </div>
     </div>

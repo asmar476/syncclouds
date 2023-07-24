@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import Dropdown from "../assets/icons/chevron-down.svg";
+import Dropdown from "../assets/icons/chevron-down1.svg";
 import close from "../assets/icons/x.svg";
 // import MenuOutlined from "../assets/icons/menuIcon.svg";
 import { MenuOutlined } from "@ant-design/icons";

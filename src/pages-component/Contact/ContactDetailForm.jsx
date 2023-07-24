@@ -6,16 +6,27 @@ import StaffAugmentation from "../../assets/Images/StaffAugmentation.svg";
 import AdequatePrice from "../../assets/Images/AdequatePrice.svg";
 import ExceptionalOffers from "../../assets/Images/ExceptionalOffers.svg";
 import ContactForm from "../../common component/ContactForm";
-const Images = [
-  CompletelyAccessible,
-  QualifiedAgents,
-  StaffAugmentation,
-  AdequatePrice,
-  ExceptionalOffers,
-];
+import { Tooltip } from "antd";
+import arrowUp from "../../assets/icons/arrow-up-circle.svg";
+import MainHeading from "../../common component/MainHeading";
+const Images = [CompletelyAccessible, QualifiedAgents, StaffAugmentation];
+const Images2 = [AdequatePrice, ExceptionalOffers];
 const ContactDetailForm = () => {
   return (
-    <div className="container mx-auto px-10 my-20">
+    <div className="container mx-auto px-10 ">
+      <div className="flex items-center justify-center right-[5%] top-[70%] fixed z-[100] bg-gray-300  h-[50px]  w-[50px]  rounded-full">
+        <Tooltip title="Scroll to Top">
+          <img
+            onClick={() => {
+              window.scrollTo({ top: 0, behavior: "smooth" });
+            }}
+            className="cursor-pointer  fixed z-[100]"
+            src={arrowUp}
+            alt="arrow up"
+            width={40}
+          />
+        </Tooltip>
+      </div>{" "}
       <div className="flex flex-col items-center justify-center text-center">
         <h1 className="font-[600] text-[25.89px]">
           Let's talk about your project and make your dream a reality!s
@@ -27,8 +38,18 @@ const ContactDetailForm = () => {
         </p>
       </div>
       <ContactForm />
-      <div className="p-5 grid gap-10 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+    <div className="text-center mt-28 mb-16">
+      <MainSubHeading text={"Why "} gradientText={"Choose Us"} />
+    </div>
+      <div className="flex  flex-col lg:flex-row items-center justify-center">
         {Images.map((img, ind) => (
+          <div key={ind}>
+            <img src={img} alt="" />
+          </div>
+        ))}
+      </div>
+      <div className="flex  flex-col lg:flex-row items-center justify-center">
+        {Images2.map((img, ind) => (
           <div key={ind}>
             <img src={img} alt="" />
           </div>

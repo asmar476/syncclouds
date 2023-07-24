@@ -1,43 +1,42 @@
 import React from "react";
 import MainSubHeading from "../../common component/MainSubHeading";
 import TestimonialCard from "./TestimonialsCards/TestimonialCard";
-import grayoverlay from "../../assets/overlay image/Frame  gray 14534.svg";
-// import bg_lines from "../../assets/Images/Group.svg";
+import bgLines from "../../assets/Images/abstracts.png";
 const Testimonials = () => {
   return (
-    <div className="relative container mx-auto px-10 py-20 lg:py-40 z-0">
-      {/* <img className=" top-32 h-[80%] right-0" src={bg_lines} alt="" /> */}
-      <div className=" top-0">
-        <div className="flex justify-between">
+    <div className="relative  mx-auto pr-20 pb-10 mb-20 z-0">
+      <img className="absolute right-0 top-0 z-[-1]" src={bgLines} alt="" />
+      <div className="z-[1] ">
+        <div className=" pl-28 pt-20 flex justify-between">
           <div className="w-[408px]">
             <MainSubHeading text={"Testi"} gradientText={"monials"} />
+            <p className=" mt-10 w-[408px]">
+              From startups to enterprise giants, our software solutions have
+              revolutionized businesses worldwide. Discover why our clients rave
+              about the transformative power of our software in driving their
+              growth.
+            </p>
           </div>
-          <p className="w-[408px]">
-            From startups to enterprise giants, our software solutions have
-            revolutionized businesses worldwide. Discover why our clients rave
-            about the transformative power of our software in driving their
-            growth.
-          </p>
-          <div className="w-[408px]">
-            <TestimonialCard />
-          </div>
-        </div>
-        <div className="flex justify-between">
-          <div className="w-[408px]">
-            <TestimonialCard />
-          </div>
-          <div className="w-[408px]">
-            <TestimonialCard />
-          </div>
-          <div className="w-[408px]">
-            <TestimonialCard />
+          <div className="flex gap-10 pr-10">
+            <div className="space-y-12">
+              <div className="w-[408px] ">
+                <TestimonialCard />
+              </div>
+              <div className="w-[408px]">
+                <TestimonialCard />
+              </div>
+            </div>{" "}
+            <div className="space-y-12">
+              <div className="w-[408px]">
+                <TestimonialCard />
+              </div>
+              <div className="w-[408px]">
+                <TestimonialCard />
+              </div>
+            </div>{" "}
           </div>
         </div>
       </div>
-      {/* <img
-        src={grayoverlay}
-        className="absolute hidden md:block top-[108px] left-0 sm:left-10 z-[-10] mt-[-20px]"
-  /> */}
     </div>
   );
 };
