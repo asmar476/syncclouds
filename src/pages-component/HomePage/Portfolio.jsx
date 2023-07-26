@@ -12,31 +12,40 @@ const Portfolio = () => {
       <div className="flex flex-col items-center gap-5">
         <MainSubHeading text={"Port"} gradientText={"folio"} />
         <div className="md:flex gap-5 hidden">
-          <div className="px-[30px] py-[10px] rounded-sm cursor-pointer hover:shadow-lg bg-primary text-white">
-            <button>All</button>
+            <button className="px-[30px] py-[10px] rounded-sm cursor-pointer hover:shadow-lg bg-primary text-white">
+              All
+            </button>
+          <div className="px-[30px] py-[10px] rounded-sm cursor-pointer hover:shadow-lg border border-primary text-primary font-[500] text-[18px]  ">
+            <button className="cursor-pointer hover:shadow-lg">
+              Social Media Marketing
+            </button>
           </div>
           <div className="px-[30px] py-[10px] rounded-sm cursor-pointer hover:shadow-lg border border-primary text-primary font-[500] text-[18px]  ">
-            <button>Social Media Marketing</button>
+            <button className="cursor-pointer hover:shadow-lg">
+              Content Marketing
+            </button>
           </div>
+          <button className="px-[30px] py-[10px] rounded-sm cursor-pointer hover:shadow-lg border border-primary text-primary font-[500] text-[18px] ">
+            Hire A Developer
+          </button>
+
           <div className="px-[30px] py-[10px] rounded-sm cursor-pointer hover:shadow-lg border border-primary text-primary font-[500] text-[18px]  ">
-            <button>Content Marketing</button>
-          </div>
-          <div className="px-[30px] py-[10px] rounded-sm cursor-pointer hover:shadow-lg border border-primary text-primary font-[500] text-[18px]  ">
-            <button>Hire A Developer</button>
-          </div>
-          <div className="px-[30px] py-[10px] rounded-sm cursor-pointer hover:shadow-lg border border-primary text-primary font-[500] text-[18px]  ">
-            <button>Hire A Team</button>
+            <button className="cursor-pointer hover:shadow-lg">
+              Hire A Team
+            </button>
           </div>
         </div>
         <div className="md:hidden">
           <CustomSelect />
         </div>
       </div>
-      <div className="mt-10 mb-12 mx-auto">
+      <div className="mt-10 mb-10 mx-auto">
         <PortfolioCard />
       </div>
-      <img className="h-screen w-[1440px] absolute mt-10" src={bg} alt="" />{" "}
-      <img className="w-[1440px] absolute" src={map} alt="" />
+      <div className="flex justify-center">
+        <img className="h-[92%] absolute" src={bg} alt="" />{" "}
+        <img className="w-[1440px] absolute" src={map} alt="" />
+      </div>
     </div>
   );
 };

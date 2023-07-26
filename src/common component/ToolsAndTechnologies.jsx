@@ -3,6 +3,8 @@ import React from "react";
 import MainSubHeading from "./MainSubHeading";
 import BoldParagraph from "./BoldParagraph";
 import { FE, BE, CS, other } from "../constant/TechData";
+import bg from "../assets/Images/bgTools&tech.png";
+import map from "../assets/Images/map.png";
 // import { Swiper, SwiperSlide } from "swiper/react";
 // import { Autoplay, Pagination, Scrollbar, Navigation } from "swiper";
 // import "swiper/css";
@@ -10,19 +12,20 @@ import { FE, BE, CS, other } from "../constant/TechData";
 // import "swiper/css/navigation";
 // import "swiper/css/pagination";
 // import "swiper/css/scrollbar";
-// import bg from "../assets/Images/bgTools&tech.png";
-// import map from "../assets/Images/map.png";
+
 function ToolsAndTechnologies() {
   return (
-    <div className="container relative mb-28 mx-auto px-10">
+    <div className="container relative mb-5 mx-auto px-10">
+      {/* <img className="h-[92%] absolute" src={bg} alt="" />{" "}
+      <img className="w-[1440px] absolute" src={map} alt="" /> */}
       <div className="">
-        <div className="flex flex-col mt-10 items-center">
+        <div className="flex flex-col items-center">
           <MainSubHeading text={"Techno"} gradientText={"logies"} ml={"ml-2"} />
           <BoldParagraph text={"We Love using latest tec to our advantage."} />
         </div>
         {/* ============================================================================================ */}
         <div className="">
-          <h1 className="pl-8 font-semibold text-[20.89px]">Front End</h1>{" "}
+          <h1 className="pl-8 font-semibold text-[20.89px]">Front End</h1>
           <Wrapper>
             <Marquee>
               <MarqueeGroup>

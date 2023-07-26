@@ -4,7 +4,6 @@ import bg from "../../assets/Images/ourAimBg.svg";
 import bgCircle from "../../assets/Images/halfCircle.svg";
 import ourAimData from "../../constant/OurAimData";
 import CountUp from "react-countup";
-CountUp;
 const OurAim = () => {
   const itemsPerRow = 3;
   const totalSections = ourAimData.length;

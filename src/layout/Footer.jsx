@@ -18,7 +18,7 @@ const Footer = () => {
   };
   return (
     <div
-      className="text-white"
+      className="w-[100%] text-white"
       style={{
         background: "linear-gradient(90deg, #002680 58.76%, #1C67A6 106.96%)",
       }}
@@ -66,7 +66,7 @@ const Footer = () => {
             {/* <img className='hidden sm:block' src={locationIcon} />{' '} */}
 
             <p className="text-sm sm:text-[16px] font-[500]">
-              Shop No M-35,36. Mezzanine Floor, Gold Point Shoping Mall,
+              Office No. M-35,36. Mezzanine Floor, Gold Point Shoping Mall,
               Rawalpindi, Pakistan
             </p>
           </div>
@@ -88,7 +88,7 @@ const Footer = () => {
       <div className="containe border-t-2 border-white mx-16 text-white px-5 md:px-10  py-5 md: flex justify-center gap-2 md:justify-between items-center">
         <div className="flex items-center gap-10">
           <Link to={"/terms-conditions"} className="text-xs md:text-base">
-            Terms & Cindition
+            Terms & Conditions
           </Link>
           <Link to={"/privacy-policy"} className="text-xs md:text-base">
             Privacy Policy

@@ -1,42 +1,11 @@
 import React, { useState } from "react";
-import img from "../../assets/Services/catalogServices.svg";
 import arrowRight from "../../assets/icons/blue-arrow-right.svg";
-const cardsData = [
-  {
-    title: "Services",
-    content:
-      "Sync Cloudss is equipped with the tools, technology, and domain knowledge necessary to produce various professional software development services. We assist our clients in creating and capturing value and enhancing company outcomes by eliminating the operational inefficiencies that impede growth.",
-    img: img,
-  },
-  {
-    title: "Technologies",
-    content:
-      "We create adaptable, scalable software development solutions for our clients to help them become more creative and practical, which speeds up the description process.",
-    img: img,
-  },
-  {
-    title: "Solutions",
-    content:
-      "We are a software development services company offering a comprehensive range of engineering services to Fortune 1000 firms and international organizations, whether a consumer-focused app or a revolutionary enterprise-class solution.",
-    img: img,
-  },
-  {
-    title: "Platforms",
-    content:
-      "Are you prepared to prevent dangers, quicken transformation, and ignite revenue growth? Put, go digital. We utilize the most recent tools, technologies, and platforms to accelerate our transformation initiatives and enhance your business outcomes.",
-    img: img,
-  },
-  {
-    title: "Team Expansion",
-    content:
-      "Our culture values finding software developers with the appropriate knowledge and intense levels of commitment quickly. Team extension is an improved, contemporary iteration of the committed team strategy.",
-    img: img,
-  },
-];
+import { servicesCatalog } from "../../constant/PrivacyAndTermsData";
+servicesCatalog;
 function EntireCatalog() {
   const [isHovered, setIsHovered] = useState(false);
   const [cardIndex, setCardIndex] = useState("");
-  const [selectedCard, setSelectedCard] = useState(cardsData[0]);
+  const [selectedCard, setSelectedCard] = useState(servicesCatalog[0]);
   const handleCardClick = (card) => {
     setSelectedCard(card);
   };
@@ -58,7 +27,7 @@ function EntireCatalog() {
         <div className=" flex items-center justify-center">
           <div>
             <ul className="bg-[#EDF2F7] rounded px-16 w-[350px] py-12 space-y-4">
-              {cardsData.map((card, index) => (
+              {servicesCatalog.map((card, index) => (
                 <li
                   className={`cursor-pointer font-[600] text-[22px] flex ${
                     selectedCard === card ? "selected text-primary" : ""

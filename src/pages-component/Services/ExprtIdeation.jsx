@@ -10,7 +10,6 @@ const data = [
   { icon: three, title: "Success Stories", start: 10, end: 150 },
   { icon: four, title: "Amplified Business", start: 10, end: 150 },
 ];
-
 const ExprtIdeation = () => {
   return (
     <div className="flex items-center justify-between flex-col bg-gradient-to-r from-gradientBlueDark to-gradientBlueLight">

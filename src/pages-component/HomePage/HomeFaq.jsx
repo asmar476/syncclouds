@@ -21,7 +21,7 @@ function HomeFaq() {
             Services & Solutions to revolutionize your data synchronization
             experience. Don't wait, and connect with us for more information!
           </p>
-          <img className="absolute top-20 left-[20%]" src={qMark} alt="" />
+          <img className="absolute top-32 left-[15%]" src={qMark} alt="queationMark" />
         </div>
         <div className="w-[50%]">
           <FaqSection faqData={faqData} />

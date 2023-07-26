@@ -16,21 +16,24 @@ const OfferCard = () => {
   const [hover, setHover] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [currentIndexArrowChange, setCurrentIndexArrowChange] = useState(0);
-  const length = offerData.length - 1;
-  console.log("len", length);
+  const length = offerData.length - 2;
+  // console.log("len", length);
   const upFunc = () => {
     carouselRef.current.slidePrev();
-    console.log("current", carouselRef.current);
+    setCurrentIndexArrowChange(carouselRef.current.state.activeIndex);
   };
   const downFunc = () => {
     carouselRef.current.slideNext();
-    console.log("current", carouselRef.current);
+    setCurrentIndexArrowChange(carouselRef.current.state.activeIndex);
   };
+
+  // console.log("current index", currentIndexArrowChange);
 
   return (
     <div
       style={{
-        background: " linear-gradient(to top,#EFF1F7, #FFFFFF)",
+        background:
+          "linear-gradient(180deg, rgba(0, 38, 128, 0) 0%, rgba(0, 38, 128, 0.05) 100%)",
       }}
       className="relative pb-20"
     >
@@ -41,10 +44,10 @@ const OfferCard = () => {
         }}
         className="w-[50%] absolute"
       /> */}
-      <img className="absolute  h-[120vh] right-0 w-[160]" src={s} alt="" />{" "}
-      <div className="container mx-auto">
+      <img className="absolute opacity-60 w-full" src={s} alt="" />
+      <div className="relative container mx-auto">
         <div className=" flex justify-between pl-28">
-          <div className=" w-[622px]">
+          <div className="w-[622px]">
             <h1 className="text-[41.89px] font-[700]">
               Bespoke IT Services{" "}
               <span className="text-primary">SyncClouds</span>
@@ -54,7 +57,7 @@ const OfferCard = () => {
               deliver ultimate profitability."
             </p>
             <img
-              className="absolute top-[5%] left-[10%] w-[35%]"
+              className="absolute top-[5%] left-[4%] w-[35%]"
               src={linesHero}
               alt=""
             />
@@ -64,9 +67,8 @@ const OfferCard = () => {
             ref={carouselRef}
             verticalMode
             itemsToShow={2}
-            showArrows={false}
             pagination={false}
-
+            showArrows={false}
             // enableAutoPlay
             // autoPlaySpeed={1000}
             // isRTL={false}
@@ -103,26 +105,38 @@ const OfferCard = () => {
             ))}
           </Carousel>
         </div>{" "}
-        <div className="cursor-pointer absolute  right-[15%] top-0">
+        <button
+          disabled={currentIndexArrowChange === 0 && true}
+          onClick={() => {
+            upFunc();
+          }}
+        >
           <img
-            onClick={() => {
-              upFunc();
-            }}
+            className={`absolute  right-0 top-0 ${
+              currentIndexArrowChange === 0
+                ? "opacity-50 cursor-not-allowed"
+                : "cursor-pointer"
+            }`}
             src={arrowUp}
             alt=""
           />
-        </div>
-        <div
-          className={`absolute  right-[15%] top-[45%] ${
-            currentIndex !== length
-              ? "cursor-pointer"
-              : "opacity-50 cursor-not-allowed"
-          }`}
+        </button>
+        <button
+          onClick={downFunc}
+          disabled={currentIndexArrowChange === length && true}
         >
-          <img onClick={downFunc} src={arrowDown} alt="" />
-        </div>
-        {/* ===========================================================  ~ ~ =========================================================== */}
-        <div className=" pl-40   flex">
+          <img
+            className={`absolute  right-0 top-[45%] ${
+              currentIndexArrowChange === length
+                ? "opacity-50 cursor-not-allowed"
+                : "cursor-pointer"
+            }`}
+            src={arrowDown}
+            alt=""
+          />
+        </button>
+        {/* ===================================================================================== */}
+        <div className="  pl-40   flex">
           <div className="w-[581px]">
             <MainSubHeading
               className=" text-left"
@@ -134,7 +148,7 @@ const OfferCard = () => {
             <div className=" flex">
               <div>
                 <img
-                  className="absolute bottom-[6.5%] left-[14.7%]"
+                  className="absolute bottom-[6.5%] left-[8%]"
                   src={line}
                   alt="line"
                 />

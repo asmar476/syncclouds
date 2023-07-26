@@ -12,13 +12,15 @@ const BuildingVision = () => {
     <div className="container mx-auto px-10 py-20">
       <div className="flex items-center justify-center flex-col text-center">
         <MainSubHeading text={"Building Your Vision, One Step at a Time"} />
-        <p className="text-[#335775] font-[500] text-[16px] leading-[24px] max-w-[800px] my-5 text-center">
+        <p className="text-[#335775] font-[500] text-[16px] leading-[24px] max-w-[800px] mt-5 text-center">
           Our 8-step development process brings your software vision to life,
           ensuring every step is thoughtfully crafted and executed.
         </p>
       </div>
-
-      <div className="flex  justify-between my-20">
+      <div className="flex space-y-10 lg:space-y-0 lg:flex-row-reverse flex-col justify-center lg:justify-between my-20">
+        <div>
+          <img src={SDLCIllustration} />
+        </div>
         <div className="w-[100%] lg:w-[40%] space-y-5">
           {servicesSoftwareSteps.map((arr, index) => (
             <div key={index} className="accordian rounded-md">
@@ -83,10 +85,6 @@ const BuildingVision = () => {
               </div>
             </div>
           ))}
-        </div>
-
-        <div>
-          <img src={SDLCIllustration} />
         </div>
       </div>
     </div>

@@ -181,3 +181,12 @@ background-clip: text;
     box-shadow: 0 0 0 0 rgba(204, 169, 44, 0);
   }
 }
+.rec-arrow-down:hover,.rec-arrow-up:hover{
+background-color: #012781 !important;
+
+}.rec-arrow{
+  top: 10px !important;
+  height: 50px!important;
+  width: 30px!important;
+  }
+  

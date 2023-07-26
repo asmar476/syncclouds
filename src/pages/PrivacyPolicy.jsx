@@ -4,10 +4,11 @@ import Layout from "../layout/Layout";
 import PrivacyHeading from "../common component/PrivacyHeading";
 import arrowUp from "../assets/icons/arrow-up-circle.svg";
 import { Tooltip } from "antd";
+import { privacy } from "../constant/PrivacyAndTermsData";
 function PrivacyPolicy() {
   return (
     <Layout>
-      <div className="bg-[#EDF2F7] py-7">
+      <div className="bg-[#EDF2F7] pb-5 md:py-7">
         <div className=" flex items-center justify-center right-[1%] top-[70%] fixed z-[100] bg-gray-300  h-[50px]  w-[50px]  rounded-full">
           <Tooltip title="Scroll to Top">
             <img
@@ -21,14 +22,14 @@ function PrivacyPolicy() {
             />
           </Tooltip>
         </div>{" "}
-        <div className="lg:flex justify-between items-center py-10 lg:py-0 px-3 bg-primary text-center font-[700] text-[] md:text-[35px] xl:text-[41.89px] text-white my-5">
+        <div className="lg:flex justify-between items-center py-3 md:py-5 lg:py-0  px-3 bg-primary text-center font-[700] text-[] md:text-[35px] xl:text-[41.89px] text-white my-5">
           <img className="hidden lg:block" src={image} alt="" />
           <h1>SyncClouds Privacy Statement</h1>
           <img className="hidden lg:block" src={image} alt="" />
         </div>
-        <div className="bg-white rounded mx-24 border px-7 py-10 border-gray-300">
-          <h3 className="border-b border-gray-300 italic text-[18px] mb-6 font-[500]">
-            Last Updated: 6 July 2023
+        <div className="bg-white rounded mx-5 md:mx-24 border px-7 py-5 md:mb-0 md:py-10 border-gray-300">
+          <h3 className="border-b border-gray-300 italic text-sm md:text-[20px] mb-6 font-[500]">
+            Last Updated: 25 July 2023
           </h3>
           <PrivacyHeading
             h="Introduction"
@@ -39,28 +40,16 @@ function PrivacyPolicy() {
             h="Information We Collect"
             p="We may collect certain information from you when you use our services. This information may include the following:"
           />
-          <h5 className="font-[500] text-[#171923] text-[18px]">
-            Personal Information
-          </h5>
-          <p className="font-[400] text-[18px] text-body leading-[27px] mb-[27px]">
-            When you sign up for an account or contact us through one of our
-            services, we may gather your name, email address, and other contact
-            details.
-          </p>
-          <h5 className="font-[500] text-[#171923] text-[18px]">
-            Usage Information
-          </h5>
-          <p className="font-[400] text-[18px] text-body leading-[27px] mb-[27px]">
-            We may keep track of the pages you view, the features you use, and
-            the activities you do when using our services
-          </p>
-          <h5 className="font-[500] text-[#171923] text-[18px]">
-            Device Information
-          </h5>
-          <p className="font-[400] text-[18px] text-body leading-[27px] mb-[27px]">
-            WWe may compile data about the type of device, operating system, and
-            browser that you use to access our services
-          </p>
+          {privacy.map((item, index) => (
+            <div key={index}>
+              <h5 className="font-[600] text-[#171923] text-[12px] md:text-[18px]">
+                {item.heading}
+              </h5>
+              <p className="font-[400] text-[12px] md:text-[18px] text-body leading-[20px] md:leading-[27px] mb-5">
+                {item.paragraph}
+              </p>
+            </div>
+          ))}
           <PrivacyHeading
             h="How We Use Your Information"
             p="When you sign up for an account or contact us through one of our services, we may gather your name, email address, and other contact details."
@@ -92,7 +81,6 @@ In addition, the information obtained via cookies may be linked to personal info
     </Layout>
   );
 }
-
 export default PrivacyPolicy;
 
 // import React from "react";

@@ -9,7 +9,7 @@ function ServicesHero() {
   return (
     <>
       <div className=" relative mx-auto">
-        <div className=" flex items-center justify-center right-[5%] top-[70%] fixed z-[100] bg-gray-300  h-[50px]  w-[50px]  rounded-full">
+        <div className=" flex items-center justify-center right-[5%] top-[70%] fixed z-[100] bg-[#EAEEF7]  h-[50px]  w-[50px]  rounded-full">
           <Tooltip title="Scroll to Top">
             <img
               onClick={() => {
@@ -60,7 +60,6 @@ function ServicesHero() {
             />
           </div>
         </div>
-       
       </div>
     </>
   );

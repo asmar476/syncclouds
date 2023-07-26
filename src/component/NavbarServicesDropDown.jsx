@@ -12,7 +12,7 @@ import WEB3 from "../assets/SC Icons SVG/Web 3.0.svg";
 import MV from "../assets/SC Icons SVG/Meta Verse.svg";
 import cloud from "../assets/SC Icons SVG/Clouds Devops.svg";
 import NFTs from "../assets/SC Icons SVG/NFTs.svg";
-const Services = () => {
+const NavbarServicesDropDown = () => {
   return (
     <div className=" z-0 bg-white services-drop-down w-full rounded-md px-20 py-10 mt-1 ">
       <div className="relative flex items-center justify-between z-0">
@@ -91,4 +91,4 @@ const Services = () => {
   );
 };
 
-export default Services;
+export default NavbarServicesDropDown;

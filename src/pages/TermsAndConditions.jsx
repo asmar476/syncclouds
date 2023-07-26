@@ -4,23 +4,14 @@ import Layout from "../layout/Layout";
 import PrivacyHeading from "../common component/PrivacyHeading";
 import arrowUp from "../assets/icons/arrow-up-circle.svg";
 import { Tooltip } from "antd";
-const forbiddenItems = [
-  "Take part in any activity that might harm, impair, or overtax the Website.",
-  "Attempt to get illegal access to user accounts, computer systems, networks, or SyncClouds.",
-  "Use a false name or other forms of identification or otherwise misrepresent your association with a person or organization.",
-  "Submit any content related to your usage of SyncClouds that is defamatory, offensive, or objectionable.",
-  "Utilize SyncClouds to break any rules or laws in force.",
-];
-const forbiddenItems2 = [
-  "Republish content from SyncClouds.",
-  "Distribute, lease, or sublicense SyncClouds content.",
-  "Reproduce, duplicate, or clone SyncClouds content.",
-  "Equalize content from SyncClouds unless it was created with redistribution in mind.",
-];
+import {
+  termsCondition1,
+  termsCondition2,
+} from "../constant/PrivacyAndTermsData";
 function TermsAndConditions() {
   return (
     <Layout>
-      <div className="bg-[#EDF2F7] py-7">
+      <div className="bg-[#EDF2F7] pb-5 md:py-7">
         <div className=" flex items-center justify-center right-[1%] top-[70%] fixed z-[100] bg-gray-300  h-[50px]  w-[50px]  rounded-full">
           <Tooltip title="Scroll to Top">
             <img
@@ -34,14 +25,14 @@ function TermsAndConditions() {
             />
           </Tooltip>
         </div>{" "}
-        <div className="lg:flex justify-between items-center py-10 lg:py-0 px-3 bg-primary text-center font-[700] text-[] md:text-[35px] xl:text-[41.89px] text-white my-5">
+        <div className="lg:flex justify-between items-center py-3 md:py-5 lg:py-0  px-3 bg-primary text-center font-[700] text-[] md:text-[35px] xl:text-[41.89px] text-white my-5">
           <img className="hidden lg:block" src={image} alt="" />
           <h1>SyncClouds Terms And Conditions</h1>
           <img className="hidden lg:block" src={image} alt="" />
         </div>
-        <div className="bg-white rounded mx-24 border px-7 py-12 border-gray-300">
-          <h3 className="border-b border-gray-300 italic text-[18px] mb-6 font-[500]">
-            Last Updated: 6 July 2023
+        <div className="bg-white rounded mx-5 md:mx-24 border px-7 py-5 md:mb-0 md:py-10 border-gray-300">
+          <h3 className="border-b border-gray-300 italic text-sm md:text-[20px] mb-6 font-[500]">
+            Last Updated: 25 July 2023
           </h3>
           <PrivacyHeading
             h="Terms and Conditions"
@@ -77,10 +68,10 @@ function TermsAndConditions() {
             h="License"
             p="The Website and its content are the property of SyncClouds or its licensors unless otherwise specified. They all have reserved intellectual property rights"
           />
-          <div className="font-[400] text-[18px] text-body leading-[27px] mb-5">
+          <div className="font-[400] text-[12px] md:text-[18px] text-body  leading-[20px] md:leading-[27px] mb-5">
             <p>You are not allowed to:</p>
             <ul>
-              {forbiddenItems2.map((item, index) => (
+              {termsCondition2.map((item, index) => (
                 <li key={index}>{item}</li>
               ))}
             </ul>
@@ -96,9 +87,9 @@ function TermsAndConditions() {
             p="You acknowledge that you won't:
           "
           />
-          <div className="font-[400] text-[18px] text-body leading-[27px] mb-5">
+          <div className="font-[400] text-[12px] md:text-[18px] text-body  leading-[20px] md:leading-[27px] mb-5">
             <ul>
-              {forbiddenItems.map((item, index) => (
+              {termsCondition1.map((item, index) => (
                 <li key={index}>{item}</li>
               ))}
             </ul>

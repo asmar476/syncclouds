@@ -1,7 +1,11 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Dropdown from "../assets/icons/chevron-down1.svg";
+import up from "../assets/icons/chevron-up.svg";
 import close from "../assets/icons/x.svg";
+import NavbarServicesDropDown from "../component/NavbarServicesDropDown";
+// import { AiOutlineDown,AiOutlineUp} from "react-icons/ai";
+// import { AiOutlineUp } from "react-icons/ai";
 // import MenuOutlined from "../assets/icons/menuIcon.svg";
 import { MenuOutlined } from "@ant-design/icons";
 import SC_logo from "../assets/Images/Navbar/navlogo.svg";
@@ -10,8 +14,16 @@ import ButtonDark from "../common component/ButtonDark";
 const Header = () => {
   const navigate = useNavigate();
   const handleClick = () => {
-    navigate("/book-a-call");
+    navigate("/book-call");
   };
+  const [arrow, setArrow] = useState(false);
+  const [arrowCompany, setArrowCompany] = useState(false);
+  const click = () => {
+    setArrow(!arrow);
+  };
+
+  const [showServices, setShowServices] = useState(false);
+
   const [isOpen, setIsOpen] = useState(false);
   const openNav = () => {
     setIsOpen(true);
@@ -24,7 +36,7 @@ const Header = () => {
       {/* <div className='mb-2'> </div> */}
       <nav
         style={{ boxShadow: "0px 0px 20px rgba(0, 0, 0, 0.1)" }}
-        className="flex justify-between items-center px-9 md:px-20 mb-4 py-3"
+        className="flex justify-between items-center px-9 lg:px-10 py-3"
       >
         <div className="flex items-center">
           <Link to="/">
@@ -35,8 +47,26 @@ const Header = () => {
         <div>
           <ul className=" text-[10px] text-primary font-[500] lg:text-[16px] hidden sm:flex items-center space-x-3 lg:space-x-7">
             <li className="flex justify-center   items-center text-grey-600">
-              <a href="/services">Services&nbsp;</a>
-              <img className=" mr-2" src={Dropdown} />
+              <Link
+                to={"/services"}
+                className=" flex items-center gap-1 hover:text-primaryColor "
+                onClick={click}
+                onMouseEnter={() => {
+                  setShowServices(true);
+                }}
+                onMouseLeave={() => {
+                  setShowServices(false);
+                }}
+              >
+                <div>Services</div>{" "}
+                <div>
+                  {arrow ? (
+                    <img src={up} />
+                  ) : (
+                    <img className="w-4 md:w-5 lg:w-6" src={Dropdown} />
+                  )}
+                </div>
+              </Link>
             </li>
             <li className="">
               <a href="#porfolio">Portfolio</a>
@@ -49,7 +79,7 @@ const Header = () => {
             </li>
             <li className="flex justify-center  items-center">
               <a href="/about">Company&nbsp;</a>
-              <img className="" src={Dropdown} />
+              <img className="w-4 md:w-5 lg:w-6" src={Dropdown} />
             </li>
             <li className="">
               <Link to={"/contact"}>
@@ -59,7 +89,11 @@ const Header = () => {
               </Link>
             </li>
           </ul>
-
+          {showServices && (
+            <div className="absolute top-14  left-0 w-[100%] z-[100]">
+              <NavbarServicesDropDown />
+            </div>
+          )}
           {/* =============================================== ~ MOBILE NAVBAR ~ ================================================ */}
           <div className="sm:hidden">
             <MenuOutlined className="text-[20px] mt-2 " onClick={openNav} />

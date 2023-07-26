@@ -64,7 +64,7 @@ const ContactForm = () => {
             Legal Information
           </h1>
           <p className="text-[#434343]">
-            Shop No M-35,36. Mezzanine Floor, Gold Point Shopping Mall,
+            Office No. M-35,36. Mezzanine Floor, Gold Point Shopping Mall,
             Rawalpindi, Pakistan
           </p>
         </div>
@@ -95,18 +95,19 @@ const ContactForm = () => {
           </div>
           {/* ============================================================================================= */}
           <div
-            className="gap-2 bg-white relative my-2  py-[10px] px-3"
+            className="gap-2 cursor-pointer bg-white relative my-2  py-[10px] px-3"
             onDrop={handleDrop}
             onDragOver={handleDragOver}
             onDragEnter={handleDragEnter}
             onDragLeave={handleDragLeave}
+            onClick={handleFileChange}
           >
             <div
               className={`flex gap-2 items-center ${
                 selectedFile ? "bg-green-100" : "bg-white"
               }`}
             >
-              <div className="cursor-pointer py-2 rounded-md ">
+              <div className=" py-2 rounded-md ">
                 <img src={attachmentIcon} alt="Uploaded" />
               </div>
               <label>
@@ -118,11 +119,11 @@ const ContactForm = () => {
                 />
                 {selectedFile ? (
                   <p className="font-[550]">
-                    "{selectedFile.name}"{" "}
+                    "{selectedFile.name}
                     <span className="font-[400]">is selected</span>
                   </p>
                 ) : (
-                  <p className="font-[600] text-[16px]">Add Attachment</p>
+                  <p className=" font-[600] text-[16px]">Add Attachment</p>
                 )}
               </label>
             </div>
@@ -131,13 +132,13 @@ const ContactForm = () => {
             </p>
           </div>
           {/* ============================================================================================== */}
-          <div className="mt-2  pt-[10px] px-3 text-[14px] md:text-[16px] font-[400] leading-[24px] w-[100%]  placeholder-black outline-none">
+          <div className="mt-2 flex justify-center pt-[10px]  text-[14px] md:text-[16px] font-[400] leading-[24px]  placeholder-black outline-none">
             <textarea
-              className="w-[100%] placeholder-black  min-h-[118px] max-h-[500px] p-2 "
+              className="w-full placeholder-black  min-h-[105px] max-h-[500px] p-2 "
               placeholder="Message"
             ></textarea>
           </div>
-          <div className="mt-1">
+          <div className="mt-3">
             <div className="flex  md:items-center justify-center gap-3 ">
               <input className="h-[20px] w-[20px] md:mt-0" type="checkbox" />
               <p className="text-center text-[14px] md:text-[16px] font-[400]">

@@ -1,12 +1,9 @@
 import React, { useState } from "react";
 import cardImage from "../../../assets/Images/Mask group.svg";
-import "./PortfolioCard.css";
 import chevronRight from "../../../assets/icons/Vector.svg";
-
 import web from "../../../assets/SC Icons SVG/Web & Mobile Development.svg";
 import mob from "../../../assets/SC Icons SVG/Mobile App Development.svg";
 import UIUX from "../../../assets/SC Icons SVG/User Experience & Design.svg";
-
 const cardData = [
   {
     icon: UIUX,
@@ -31,8 +28,7 @@ const cardData = [
   },
 ];
 const PortfolioCard = () => {
-  const [showOverlay, setShowOverlay] = useState(false);
-  const [showIndex, setShowIndex] = useState("");
+
   return (
     <div className="grid grid-col-1 md:grid-cols-2 xl:grid-cols-3 gap-5">
       {cardData.map((data, index) => (
