@@ -23,7 +23,7 @@ const Footer = () => {
         background: "linear-gradient(90deg, #002680 58.76%, #1C67A6 106.96%)",
       }}
     >
-      <Row className=" p-16" justify="center" gutter={[16, 16]}>
+      <Row className=" p-10 sm:p-16" justify="center" gutter={[16, 16]}>
         <Col xs={24} md={12} lg={6} className="">
           <img className="sm:h-11 mb-5" src={logo} alt="small" />
           <p className="pr-16 text-[16px] font-[400]">
@@ -85,49 +85,97 @@ const Footer = () => {
           </div>
         </Col>
       </Row>
-      <div className="containe border-t-2 border-white mx-16 text-white px-5 md:px-10  py-5 md: flex justify-center gap-2 md:justify-between items-center">
-        <div className="flex items-center gap-10">
-          <Link to={"/terms-conditions"} className="text-xs md:text-base">
-            Terms & Conditions
-          </Link>
-          <Link to={"/privacy-policy"} className="text-xs md:text-base">
-            Privacy Policy
-          </Link>
+      {/* +++++++++++++++++++++++++++++++++++++++++ web view +++++++++++++++++++++++++++++++++++++++++++++++++ */}
+
+      <div className="hidden border-t-2 border-white mx-0 sm:mx-16 font-semibold text-[12px] md:text-base text-white px-10  py-5 md:flex justify-between">
+        <div className="flex items-center justify-between gap-16 lg:gap-32">
+          <Link to={"/terms-conditions"}>Terms & Conditions</Link>
+          <Link to={"/privacy-policy"}>Privacy Policy</Link>
         </div>
-        <div className="flex items-center gap-2 md:gap-6 text-base md:text-xl">
-          <p className="text-sm sm:text-[16px] font-[500]">Follow Us On</p>
-          <Link
-            to="https://twitter.com/syncclouds"
-            className="cursor-pointer ml-2"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <img src={twitter} />
-          </Link>
-          <Link
-            to="https://facebook.com/syncclouds"
-            className="cursor-pointer ml-2"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <img src={fb} alt="facebook" />
-          </Link>
-          <Link
-            to="https://www.instagram.com/syncclouds/"
-            className="cursor-pointer ml-2"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <img src={insta} alt="instagram" />
-          </Link>
-          <Link
-            to="https://join.skype.com/invite/x12P8vdREjqJ"
-            className="cursor-pointer ml-2"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <img src={skype} alt="skype" />
-          </Link>
+        <div className="flex items-center justify-between lg:gap-24 ">
+          <p className="">Follow Us On</p>
+          <div className="flex">
+            <Link
+              to="https://twitter.com/syncclouds"
+              className="cursor-pointer ml-2"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img src={twitter} />
+            </Link>
+            <Link
+              to="https://facebook.com/syncclouds"
+              className="cursor-pointer ml-2"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img src={fb} alt="facebook" />
+            </Link>
+            <Link
+              to="https://www.instagram.com/syncclouds/"
+              className="cursor-pointer ml-2"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img src={insta} alt="instagram" />
+            </Link>
+            <Link
+              to="https://join.skype.com/invite/x12P8vdREjqJ"
+              className="cursor-pointer ml-2"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img src={skype} alt="skype" />
+            </Link>
+          </div>
+        </div>
+      </div>
+      {/* +++++++++++++++++++++++++++++++++++++++++ mobile view +++++++++++++++++++++++++++++++++++++++++++++++++ */}
+      <div className="md:hidden border-t-2 font-semibold  border-white text-[12px] sm:text-[16px] text-white px-10  py-5">
+        <div className="flex items-center   justify-between">
+          <Link to={"/terms-conditions"}>Terms & Conditions</Link>
+          <Link to={"/privacy-policy"}>Privacy Policy</Link>
+        </div>
+        <div className=" mt-5 pb-5 flex justify-between items-center">
+          <p className="">Follow Us On</p>
+          <div className="flex">
+            <Link
+              to="https://twitter.com/syncclouds"
+              className="cursor-pointer ml-2"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img className="w-[16px] sm:w-[25px]" src={twitter} />
+            </Link>
+            <Link
+              to="https://facebook.com/syncclouds"
+              className="cursor-pointer ml-2"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img className="w-[16px] sm:w-[25px]" src={fb} alt="facebook" />
+            </Link>
+            <Link
+              to="https://www.instagram.com/syncclouds/"
+              className="cursor-pointer ml-2"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                className="w-[16px] sm:w-[25px]"
+                src={insta}
+                alt="instagram"
+              />
+            </Link>
+            <Link
+              to="https://join.skype.com/invite/x12P8vdREjqJ"
+              className="cursor-pointer ml-2"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img className="w-[16px] sm:w-[25px]" src={skype} alt="skype" />
+            </Link>
+          </div>
         </div>
       </div>
     </div>

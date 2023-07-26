@@ -15,7 +15,7 @@ import map from "../assets/Images/map.png";
 
 function ToolsAndTechnologies() {
   return (
-    <div className="container relative mb-5 mx-auto px-10">
+    <div className="container relative mb-10 mx-auto px-10">
       {/* <img className="h-[92%] absolute" src={bg} alt="" />{" "}
       <img className="w-[1440px] absolute" src={map} alt="" /> */}
       <div className="">
@@ -279,7 +279,7 @@ const Wrapper = styled.div`
 const Marquee = styled.div`
   display: flex;
   width: 1300px;
-  height: 150px;
+  height: 125px;
   overflow: hidden;
   user-select: none;
   mask-image: linear-gradient(
@@ -303,7 +303,7 @@ const common = css`
   align-items: center;
   justify-content: space-around;
   white-space: nowrap;
-  width: 200%;
+  width: 180%;
   animation: ${scrollX} 30s linear infinite;
 `;
 const MarqueeGroup = styled.div`

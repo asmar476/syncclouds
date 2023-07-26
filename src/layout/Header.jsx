@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import Dropdown from "../assets/icons/chevron-down1.svg";
 import up from "../assets/icons/chevron-up.svg";
 import close from "../assets/icons/x.svg";
+
 import NavbarServicesDropDown from "../component/NavbarServicesDropDown";
 // import { AiOutlineDown,AiOutlineUp} from "react-icons/ai";
 // import { AiOutlineUp } from "react-icons/ai";
@@ -36,7 +37,7 @@ const Header = () => {
       {/* <div className='mb-2'> </div> */}
       <nav
         style={{ boxShadow: "0px 0px 20px rgba(0, 0, 0, 0.1)" }}
-        className="flex justify-between items-center px-9 lg:px-10 py-3"
+        className="flex w-full justify-between items-center px-9 lg:px-10 py-3"
       >
         <div className="flex items-center">
           <Link to="/">
@@ -69,16 +70,16 @@ const Header = () => {
               </Link>
             </li>
             <li className="">
-              <a href="#porfolio">Portfolio</a>
+              <Link to="/">Portfolio</Link>
             </li>{" "}
             <li className="">
-              <a href="#technologies">Technologies</a>
+              <Link to="/">Technologies</Link>
             </li>
             <li className="">
-              <a href="/contact">Industry</a>
+              <Link to="/">Industry</Link>
             </li>
             <li className="flex justify-center  items-center">
-              <a href="/about">Company&nbsp;</a>
+              <Link to="/about">Company&nbsp;</Link>
               <img className="w-4 md:w-5 lg:w-6" src={Dropdown} />
             </li>
             <li className="">

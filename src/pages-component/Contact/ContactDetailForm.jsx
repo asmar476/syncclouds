@@ -38,20 +38,20 @@ const ContactDetailForm = () => {
         </p>
       </div>
       <ContactForm />
-    <div className="text-center mt-28 mb-16">
-      <MainSubHeading text={"Why "} gradientText={"Choose Us"} />
-    </div>
+      <div className="text-center mt-28 mb-16">
+        <MainSubHeading text={"Why "} gradientText={"Choose Us"} />
+      </div>
       <div className="flex  flex-col lg:flex-row items-center justify-center">
         {Images.map((img, ind) => (
           <div key={ind}>
-            <img src={img} alt="" />
+            <img className="w-[1000px] sm:w-[400px]" src={img} alt="" />
           </div>
         ))}
       </div>
       <div className="flex  flex-col lg:flex-row items-center justify-center">
         {Images2.map((img, ind) => (
           <div key={ind}>
-            <img src={img} alt="" />
+            <img className="w-[1000px] sm:w-[400px]" src={img} alt="" />
           </div>
         ))}
       </div>

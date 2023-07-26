@@ -37,6 +37,36 @@ const OfferCard = () => {
       }}
       className="relative pb-20"
     >
+      <button
+        disabled={currentIndexArrowChange === 0 && true}
+        onClick={() => {
+          upFunc();
+        }}
+      >
+        <img
+          className={`absolute  right-[5%] top-5   ${
+            currentIndexArrowChange === 0
+              ? "opacity-50 cursor-not-allowed"
+              : "cursor-pointer"
+          }`}
+          src={arrowUp}
+          alt=""
+        />
+      </button>
+      <button
+        onClick={downFunc}
+        disabled={currentIndexArrowChange === length && true}
+      >
+        <img
+          className={`absolute  right-[5%] top-[45%] ${
+            currentIndexArrowChange === length
+              ? "opacity-50 cursor-not-allowed"
+              : "cursor-pointer"
+          }`}
+          src={arrowDown}
+          alt=""
+        />
+      </button>
       {/* <div
         style={{
           background:
@@ -45,7 +75,7 @@ const OfferCard = () => {
         className="w-[50%] absolute"
       /> */}
       <img className="absolute opacity-60 w-full" src={s} alt="" />
-      <div className="relative container mx-auto">
+      <div className=" container mx-auto">
         <div className=" flex justify-between pl-28">
           <div className="w-[622px]">
             <h1 className="text-[41.89px] font-[700]">
@@ -57,7 +87,7 @@ const OfferCard = () => {
               deliver ultimate profitability."
             </p>
             <img
-              className="absolute top-[5%] left-[4%] w-[35%]"
+              className="absolute top-[6%] left-[2%] w-[45%]"
               src={linesHero}
               alt=""
             />
@@ -105,36 +135,6 @@ const OfferCard = () => {
             ))}
           </Carousel>
         </div>{" "}
-        <button
-          disabled={currentIndexArrowChange === 0 && true}
-          onClick={() => {
-            upFunc();
-          }}
-        >
-          <img
-            className={`absolute  right-0 top-0 ${
-              currentIndexArrowChange === 0
-                ? "opacity-50 cursor-not-allowed"
-                : "cursor-pointer"
-            }`}
-            src={arrowUp}
-            alt=""
-          />
-        </button>
-        <button
-          onClick={downFunc}
-          disabled={currentIndexArrowChange === length && true}
-        >
-          <img
-            className={`absolute  right-0 top-[45%] ${
-              currentIndexArrowChange === length
-                ? "opacity-50 cursor-not-allowed"
-                : "cursor-pointer"
-            }`}
-            src={arrowDown}
-            alt=""
-          />
-        </button>
         {/* ===================================================================================== */}
         <div className="  pl-40   flex">
           <div className="w-[581px]">
@@ -148,7 +148,7 @@ const OfferCard = () => {
             <div className=" flex">
               <div>
                 <img
-                  className="absolute bottom-[6.5%] left-[8%]"
+                  className="absolute bottom-[6.5%] left-[7.5%]"
                   src={line}
                   alt="line"
                 />
@@ -181,7 +181,7 @@ const OfferCard = () => {
           </div>
           <div className="flex">
             <img
-              className="absolute bottom-[38%]"
+              className="absolute  bottom-[38%]"
               src={curlArrow}
               alt="curl arrow"
             />

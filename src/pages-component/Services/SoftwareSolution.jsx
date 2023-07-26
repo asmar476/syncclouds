@@ -20,7 +20,7 @@ const SoftwareSolution = () => {
             our best-in-class services for everyone.
           </p>
         </div>
-        <div className="text-center gap-20  grid grid-cols-3">
+        <div className="text-center space-x-10 grid md:grid-cols-2 lg:grid-cols-3">
           {softwareSolutionData.map((data, index) => (
             <div
               // onMouseEnter={() => {
@@ -32,7 +32,7 @@ const SoftwareSolution = () => {
               //   setShowIndex("");
               // }}
               key={index}
-              className=" bg-white w-[400px] py-10 h-[193px] flex items-center justify-center gap-5 flex-col box-shadow  pb-5 my-5"
+              className=" bg-white mx-3 w-[400px] py-10 h-[193px] flex items-center justify-center gap-5 flex-col box-shadow  pb-5 my-5"
             >
               {showOverlay && index === showIndex ? (
                 <img src={data.img} width={98} alt="icon" />

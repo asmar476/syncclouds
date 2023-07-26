@@ -18,7 +18,7 @@ const ExprtIdeation = () => {
           Expert Ideation At Positions
         </h2>
       </div>
-      <div className="flex items-center justify-between gap-40   my-10">
+      <div className="grid md:grid-cols-2 lg:grid-cols-4  my-10">
         {data.map((position, index) => (
           <div
             key={index}

@@ -12,7 +12,7 @@ const Hero = () => {
         background:
           " linear-gradient(180deg, rgba(0, 38, 128, 0) 0%, rgba(0, 38, 128, 0.05) 100%)",
       }}
-      className="px-10 mt-20 sm:mt-0 md:py-8 mb-10"
+      className="px-10 mt-20 sm:mt-0 md:py-28 mb-10"
     >
       <div className="flex md:flex-row flex-col lg:flex-row items-center justify-center gap-0  lg:gap-10">
         <div className="sm:w-[500px] md:w-[622px] space-y-10 ">

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import arrowRight from "../../assets/icons/blue-arrow-right.svg";
-import { servicesCatalog } from "../../constant/PrivacyAndTermsData";
+import { servicesCatalog } from "../../constant/Data";
 servicesCatalog;
 function EntireCatalog() {
   const [isHovered, setIsHovered] = useState(false);
@@ -14,7 +14,6 @@ function EntireCatalog() {
       <div className="mt-10 container mx-auto flex flex-col items center justify-center space-y-6">
         {/* <div className='w-full container mx-auto my-10 flex flex-col items-center justify-center'> */}
         <div className="mb-8 space-y-3">
-          {" "}
           <h2 className="font-[600] text-center text-[14px] md:text-[25px]">
             Entire Catalog of Services
           </h2>

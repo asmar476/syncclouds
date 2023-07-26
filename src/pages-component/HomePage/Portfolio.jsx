@@ -43,8 +43,8 @@ const Portfolio = () => {
         <PortfolioCard />
       </div>
       <div className="flex justify-center">
-        <img className="h-[92%] absolute" src={bg} alt="" />{" "}
-        <img className="w-[1440px] absolute" src={map} alt="" />
+        <img className="h-[850px] absolute" src={bg} alt="" />{" "}
+        <img className="absolute" src={map} alt="" />
       </div>
     </div>
   );

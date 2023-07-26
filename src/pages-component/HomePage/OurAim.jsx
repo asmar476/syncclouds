@@ -4,6 +4,7 @@ import bg from "../../assets/Images/ourAimBg.svg";
 import bgCircle from "../../assets/Images/halfCircle.svg";
 import ourAimData from "../../constant/OurAimData";
 import CountUp from "react-countup";
+import VisibilitySensor from "react-visibility-sensor";
 const OurAim = () => {
   const itemsPerRow = 3;
   const totalSections = ourAimData.length;
@@ -12,11 +13,11 @@ const OurAim = () => {
   return (
     <div className="bg-[#F8FCFF]">
       <div className="relative">
-        <div className="flex justify-end mr-28">
+        <div className="flex justify-end">
           <img className="" width={1300} src={bg} />
           <img width={310} className="absolute top-20 left-0" src={bgCircle} />
         </div>
-        <div className="absolute top-0 ml-20 container mx-auto py-[16px] sm:py-[30px] sm:px-0">
+        <div className="absolute top-0 container mx-auto py-[16px] sm:py-[30px] sm:px-0">
           <div className="flex flex-col items-center justify-center">
             <h2 className="text-center text-[20px] md:text-[25.89px] font-[0700] leading-[38.83px max-w-[550px] ">
               Our Aim: From Disruptive Creativity to <br />{" "}
@@ -43,7 +44,11 @@ const OurAim = () => {
                           redraw={true}
                           duration={5}
                         >
-                          {({ countUpRef, start }) => <span ref={countUpRef} />}
+                          {({ countUpRef, start }) => (
+                            <VisibilitySensor onChange={start} delayedCall>
+                              <span ref={countUpRef} />
+                            </VisibilitySensor>
+                          )}
                         </CountUp>
                         <span>+</span>
                       </p>
