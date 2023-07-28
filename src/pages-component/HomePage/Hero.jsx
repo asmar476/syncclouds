@@ -14,7 +14,7 @@ const Hero = () => {
       }}
       className="px-10 mt-20 sm:mt-0 md:py-28 mb-10"
     >
-      <div className="flex md:flex-row flex-col lg:flex-row items-center justify-center gap-0  lg:gap-10">
+      <div className="max-w-[1440px] w-[100%] mx-auto flex md:flex-row flex-col lg:flex-row items-center justify-center gap-0  lg:gap-10">
         <div className="sm:w-[500px] md:w-[622px] space-y-10 ">
           <h1 className="text-[30px] lg:text-[50px] font-[800] md:leading-[65px] leading-[45px]">
             Unlock your Business's Potential&nbsp;

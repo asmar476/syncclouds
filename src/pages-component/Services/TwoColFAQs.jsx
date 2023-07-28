@@ -9,7 +9,7 @@ function TwoColFAQs() {
   return (
     <>
       <div className="text-center mt-28 mb-16">
-        <MainSubHeading text={"Frequentaly "} gradientText={"Ask Questions"} />
+        <MainSubHeading text={"Frequently "} gradientText={"Ask Questions"} />
         <p className="text-body font-[500] text-[18px] leading-[24px] my-5">
           Discover the power of Sync Clouds with our FAQs section!
         </p>

@@ -3,7 +3,7 @@ import { Tooltip } from "antd";
 import aboutIllustration from "../../assets/About illustration/aboutIllustration.svg";
 import ExpandYourHorizon from "../AboutPage/ExpandYourHorizon";
 import { Link } from "react-router-dom";
-const AboutHero = () => {
+const   AboutHero = () => {
   return (
     <>
       <div className=" flex items-center justify-center right-[5%] top-[70%] fixed z-[100] bg-gray-300  h-[50px]  w-[50px] rounded-full">

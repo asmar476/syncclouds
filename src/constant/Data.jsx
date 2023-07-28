@@ -10,13 +10,16 @@ import UIUXWhite from "../assets/SC White Icons/UI UXW.svg";
 import dmWhite from "../assets/SC White Icons/Digital MarketingW.svg";
 import cloudWhite from "../assets/SC White Icons/Clouds(Devops)W.svg";
 import csWhite from "../assets/SC White Icons/Cyber SecurityW.svg";
-import img from "../assets/Services/catalogServices.svg";
+import se from "../assets/Services/servicesCatalog/Services 1.svg";
+import t1 from "../assets/Services/servicesCatalog/Technologies 1.svg";
+import so from "../assets/Services/servicesCatalog/Solution 1.svg";
+import p from "../assets/Services/servicesCatalog/Platforms 1.svg";
+import t2 from "../assets/Services/servicesCatalog/Team Expansion 1.svg";
 import Dropdown from "../assets/icons/chevron-down1.svg";
 import image1 from "../assets/Services/WhyChooseSC/image1.svg";
 import image2 from "../assets/Services/WhyChooseSC/image2.svg";
 import image3 from "../assets/Services/WhyChooseSC/image3.svg";
 import image4 from "../assets/Services/WhyChooseSC/image4.svg";
-
 export const features = [
   {
     image: image1,
@@ -124,30 +127,30 @@ export const servicesCatalog = [
     title: "Services",
     content:
       "Sync Clouds is equipped with the tools, technology, and domain knowledge necessary to produce various professional software development services. We assist our clients in creating and capturing value and enhancing company outcomes by eliminating the operational inefficiencies that impede growth.",
-    img: img,
+    img: se,
   },
   {
     title: "Technologies",
     content:
       "We create adaptable, scalable software development solutions for our clients to help them become more creative and practical, which speeds up the description process.",
-    img: img,
+    img: t1,
   },
   {
     title: "Solutions",
     content:
       "We are a software development services company offering a comprehensive range of engineering services to Fortune 1000 firms and international organizations, whether a consumer-focused app or a revolutionary enterprise-class solution.",
-    img: img,
+    img: so,
   },
   {
     title: "Platforms",
     content:
       "Are you prepared to prevent dangers, quicken transformation, and ignite revenue growth? Put, go digital. We utilize the most recent tools, technologies, and platforms to accelerate our transformation initiatives and enhance your business outcomes.",
-    img: img,
+    img: p,
   },
   {
     title: "Team Expansion",
     content:
       "Our culture values finding software developers with the appropriate knowledge and intense levels of commitment quickly. Team extension is an improved, contemporary iteration of the committed team strategy.",
-    img: img,
+    img: t2,
   },
 ];

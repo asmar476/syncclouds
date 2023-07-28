@@ -11,6 +11,10 @@ import curlArrow from "../../assets/Images/Frame.svg";
 import arrowDown from "../../assets/icons/black-arrow-down.svg";
 import arrowUp from "../../assets/icons/black_arrow-up.svg";
 import s from "../../assets/Images/S.svg";
+const style = {
+  background:
+    "linear-gradient(180deg, rgba(0, 38, 128, 0) 0%, rgba(0, 38, 128, 0.05) 100%)",
+};
 const OfferCard = () => {
   const carouselRef = useRef();
   const [hover, setHover] = useState(false);
@@ -26,171 +30,174 @@ const OfferCard = () => {
     carouselRef.current.slideNext();
     setCurrentIndexArrowChange(carouselRef.current.state.activeIndex);
   };
-
   // console.log("current index", currentIndexArrowChange);
-
   return (
-    <div
-      style={{
-        background:
-          "linear-gradient(180deg, rgba(0, 38, 128, 0) 0%, rgba(0, 38, 128, 0.05) 100%)",
-      }}
-      className="relative pb-20"
-    >
-      <button
-        disabled={currentIndexArrowChange === 0 && true}
-        onClick={() => {
-          upFunc();
-        }}
-      >
+    <div style={style} className="relative pb-20">
+      <div className="overflow-hidden">
         <img
-          className={`absolute  right-[5%] top-5   ${
-            currentIndexArrowChange === 0
-              ? "opacity-50 cursor-not-allowed"
-              : "cursor-pointer"
-          }`}
-          src={arrowUp}
+          className="absolute opacity-60 max-h-[1250px] z-0 w-full"
+          src={s}
           alt=""
         />
-      </button>
-      <button
-        onClick={downFunc}
-        disabled={currentIndexArrowChange === length && true}
-      >
-        <img
-          className={`absolute  right-[5%] top-[45%] ${
-            currentIndexArrowChange === length
-              ? "opacity-50 cursor-not-allowed"
-              : "cursor-pointer"
-          }`}
-          src={arrowDown}
-          alt=""
-        />
-      </button>
-      {/* <div
+      </div>
+      <div className="container mx-auto max-w-[1600px] w-[100%] ">
+        {/* <div
+
         style={{
           background:
             "radial-gradient(circle, rgba(234,237,245,1) 0%, rgba(255,255,255,1) 100%)",
         }}
         className="w-[50%] absolute"
       /> */}
-      <img className="absolute opacity-60 w-full" src={s} alt="" />
-      <div className=" container mx-auto">
-        <div className=" flex justify-between pl-28">
-          <div className="w-[622px]">
-            <h1 className="text-[41.89px] font-[700]">
-              Bespoke IT Services{" "}
-              <span className="text-primary">SyncClouds</span>
-            </h1>
-            <p className="  mt-5 text-body">
-              Make a statement and drive revenue with our trusted IT services to
-              deliver ultimate profitability."
-            </p>
-            <img
-              className="absolute top-[6%] left-[2%] w-[45%]"
-              src={linesHero}
-              alt=""
-            />
-          </div>
-          {/* ============================================= ~ vertical swiper cards ~ ============================================== */}
-          <Carousel
-            ref={carouselRef}
-            verticalMode
-            itemsToShow={2}
-            pagination={false}
-            showArrows={false}
-            // enableAutoPlay
-            // autoPlaySpeed={1000}
-            // isRTL={false}
-          >
-            {offerData.map((card, index) => (
-              <div
-                key={card.id}
-                onMouseEnter={() => {
-                  setHover(true), setCurrentIndex(index);
-                }}
-                onMouseLeave={() => {
-                  setHover(false);
-                  setCurrentIndex("");
-                }}
-              >
-                <div className="  mb-5 flex flex-col  p-5 w-[600px] bg-white z-[100] rounded shadow-lg hover:bg-blueDark hover:text-white  ">
-                  <div className="  w-[50px] rounded-full ">
-                    <img
-                      src={
-                        hover && currentIndex === index
-                          ? card.iconWhite
-                          : card.icon
-                      }
-                    />
-                  </div>
-                  <div className="pt-10">
-                    <InnerPageHeading text={`${card.title}`} />
-                    <p className="text-[14px] md:text-[16px]  leading-[20px] md:leading-[30px] mb-10">
-                      {card.description}
-                    </p>
+        <div className="container relative mx-auto">
+          <div className=" flex justify-between pl-0 md:pl-16 xl:pl-28">
+            <div className="max-w-[622px]">
+              <h1 className="text-[41.89px] font-[700]">
+                Bespoke IT Services{" "}
+                <span className="text-primary">SyncClouds</span>
+              </h1>
+              <p className="  mt-5 text-body">
+                Make a statement and drive revenue with our trusted IT services
+                to deliver ultimate profitability."
+              </p>
+              <img
+                className="absolute top-[6%] left-[2%] w-[45%]"
+                src={linesHero}
+                alt=""
+              />
+            </div>
+            {/* ============================================= ~ vertical swiper cards ~ ============================================== */}
+            <Carousel
+              ref={carouselRef}
+              verticalMode
+              itemsToShow={2}
+              pagination={false}
+              showArrows={false}
+              // enableAutoPlay
+              // autoPlaySpeed={1000}
+              // isRTL={false}
+            >
+              {offerData.map((card, index) => (
+                <div
+                  key={card.id}
+                  onMouseEnter={() => {
+                    setHover(true), setCurrentIndex(index);
+                  }}
+                  onMouseLeave={() => {
+                    setHover(false);
+                    setCurrentIndex("");
+                  }}
+                >
+                  <div className="  mb-5 flex flex-col   p-2 lg:p-5 max-w-[600px] bg-white z-[100] rounded shadow-lg hover:bg-blueDark hover:text-white  ">
+                    <div className="  w-[50px] rounded-full ">
+                      <img
+                        src={
+                          hover && currentIndex === index
+                            ? card.iconWhite
+                            : card.icon
+                        }
+                      />
+                    </div>
+                    <div className="pt-10">
+                      <InnerPageHeading text={`${card.title}`} />
+                      <p className="text-[14px] md:text-[16px]  leading-[20px] md:leading-[30px] mb-10">
+                        {card.description}
+                      </p>
+                    </div>
                   </div>
                 </div>
-              </div>
-            ))}
-          </Carousel>
-        </div>{" "}
-        {/* ===================================================================================== */}
-        <div className="  pl-40   flex">
-          <div className="w-[581px]">
-            <MainSubHeading
-              className=" text-left"
-              my={"my-5"}
-              ml={"ml-2"}
-              text={"Transform digital experience with"}
-              gradientText={" SyncClouds"}
-            />
-            <div className=" flex">
-              <div>
-                <img
-                  className="absolute bottom-[6.5%] left-[7.5%]"
-                  src={line}
-                  alt="line"
-                />
-              </div>
-              <div className="">
-                {" "}
-                <h4 className="text-primary leading-[38px] mt-4 mb-7 text-[25.89px] font-[600]">
-                  Boost Your business Expansion!
-                </h4>
-                <p>
-                  Sync Clouds is committed to providing everyone with complete
-                  custom software development services. No matter what, there is
-                  always a chance to flourish, stand out, acquire, and rise..
-                </p>
-                <h6 className="my-5 font-[600] ">
-                  Future Building Using Software, Innovation, And Technology
-                </h6>
-                <p>
-                  Today's world is dominated by technology, so businesses and
-                  people can survive. We have a global clientele because of our
-                  unmatched solutions and innovative methods.
-                </p>
-                <Link to={"/contact"}>
-                  <button className=" border border-primary rounded-sm py-2 px-4 mt-10 hover:bg-primary hover:text-white hover:text-bold text-primary">
-                    Get In Touch
-                  </button>
-                </Link>
+              ))}
+            </Carousel>
+            <button
+              className=""
+              disabled={currentIndexArrowChange === 0 && true}
+              onClick={() => {
+                upFunc();
+              }}
+            >
+              <img
+                className={`absolute z-[100] right-0 top-5  ${
+                  currentIndexArrowChange === 0
+                    ? "opacity-50 cursor-not-allowed"
+                    : "cursor-pointer"
+                }`}
+                src={arrowUp}
+                alt=""
+              />
+            </button>
+            <button
+              onClick={downFunc}
+              disabled={currentIndexArrowChange === length && true}
+            >
+              <img
+                className={`absolute z-[100]  right-[0] top-[45%] ${
+                  currentIndexArrowChange === length
+                    ? "opacity-50 cursor-not-allowed"
+                    : "cursor-pointer"
+                }`}
+                src={arrowDown}
+                alt=""
+              />
+            </button>{" "}
+          </div>{" "}
+          {/* ===================================================================================== */}
+          <div className="  pl-40   flex">
+            <div className="w-[581px]">
+              <MainSubHeading
+                className=" text-left"
+                my={"my-5"}
+                ml={"ml-2"}
+                text={"Transform digital experience with"}
+                gradientText={" SyncClouds"}
+              />
+              <div className=" flex">
+                <div>
+                  <img
+                    className="absolute  left-[7.5%]"
+                    src={line}
+                    alt="line"
+                  />
+                </div>
+                <div className="">
+                  {" "}
+                  <h4 className="text-primary leading-[38px] mt-4 mb-7 text-[25.89px] font-[600]">
+                    Boost Your business Expansion!
+                  </h4>
+                  <p>
+                    Sync Clouds is committed to providing everyone with complete
+                    custom software development services. No matter what, there
+                    is always a chance to flourish, stand out, acquire, and
+                    rise..
+                  </p>
+                  <h6 className="my-5 font-[600] ">
+                    Future Building Using Software, Innovation, And Technology
+                  </h6>
+                  <p>
+                    Today's world is dominated by technology, so businesses and
+                    people can survive. We have a global clientele because of
+                    our unmatched solutions and innovative methods.
+                  </p>
+                  <Link to={"/contact"}>
+                    <button className=" border border-primary rounded-sm py-2 px-4 mt-10 hover:bg-primary hover:text-white hover:text-bold text-primary">
+                      Get In Touch
+                    </button>
+                  </Link>
+                </div>
               </div>
             </div>
-          </div>
-          <div className="flex">
-            <img
-              className="absolute  bottom-[38%]"
-              src={curlArrow}
-              alt="curl arrow"
-            />
-            <img
-              className="ml-52"
-              width={500}
-              src={transform}
-              alt="tranform image"
-            />
+            <div className="flex">
+              <img
+                className="absolute  bottom-[38%]"
+                src={curlArrow}
+                alt="curl arrow"
+              />
+              <img
+                className="ml-52"
+                width={500}
+                src={transform}
+                alt="tranform image"
+              />
+            </div>
           </div>
         </div>
       </div>

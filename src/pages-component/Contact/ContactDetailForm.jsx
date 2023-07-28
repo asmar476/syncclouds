@@ -44,14 +44,22 @@ const ContactDetailForm = () => {
       <div className="flex  flex-col lg:flex-row items-center justify-center">
         {Images.map((img, ind) => (
           <div key={ind}>
-            <img className="w-[1000px] sm:w-[400px]" src={img} alt="" />
+            <img
+              className="w-[1000px] sm:w-[400px]"
+              src={img}
+              alt={`image ${ind}`}
+            />
           </div>
         ))}
       </div>
       <div className="flex  flex-col lg:flex-row items-center justify-center">
         {Images2.map((img, ind) => (
           <div key={ind}>
-            <img className="w-[1000px] sm:w-[400px]" src={img} alt="" />
+            <img
+              className="w-[1000px] sm:w-[400px]"
+              src={img}
+              alt={`image${ind}`}
+            />
           </div>
         ))}
       </div>

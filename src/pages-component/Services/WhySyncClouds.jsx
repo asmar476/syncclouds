@@ -11,7 +11,7 @@ const WhySyncClouds = () => {
       </div>
       <div className="grid md:grid-cols-2 lg:grid-cols-4 container mx-auto px-10  my-5">
         {features.map((data, i) => (
-          <div className="flex flex-col space-y-5 items-center justify-center">
+          <div key={i} className="flex flex-col space-y-5 items-center justify-center">
             <img src={data.image} alt="data.alt" />
             <InnerPageHeading text={data.text} />
           </div>

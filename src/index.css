@@ -1,12 +1,15 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
+*{
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
 html,
 body {
   font-family: "Poppins", sans-serif;
-  width: 1440px;  
-  margin: 0 auto;
+  /* width: 1440px;   */
 }
 
 .gradient-text {
@@ -190,3 +193,6 @@ background-color: #012781 !important;
   width: 30px!important;
   }
   
+  .ant-row{
+    margin: 0!important;
+  }

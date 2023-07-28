@@ -6,10 +6,14 @@ import "swiper/css/autoplay";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
-import Amazone from "../assets/Images/Amazone.svg";
-import cocaCola from "../assets/Images/coca-cola-logo-svgrepo-com 1.svg";
-import kia from "../assets/Images/Kia_Motors-Logo.wine 1.svg";
-import tesla from "../assets/Images/Tesla,_Inc.-Logo.wine 1.svg";
+import Amazone from "../assets/Images/Amazon_(company)-Logo.wine 1.svg";
+import cocaCola from "../assets/Images/coca-cola-logo-svgrepo-com 2.svg";
+import kia from "../assets/Images/kia.svg";
+import tesla from "../assets/Images/Tesla,_Inc.-Logo.wine 2.svg";
+// import Amazone from "../assets/Images/Amazone.svg";
+// import cocaCola from "../assets/Images/coca-cola-logo-svgrepo-com 1.svg";
+// import kia from "../assets/Images/Kia_Motors-Logo.wine 1.svg";
+// import tesla from "../assets/Images/Tesla,_Inc.-Logo.wine 1.svg";
 import MainSubHeading from "./MainSubHeading";
 import BoldParagraph from "./BoldParagraph";
 

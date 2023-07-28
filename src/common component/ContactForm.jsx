@@ -48,7 +48,7 @@ const ContactForm = () => {
       errors.file = "File size must be less than 10 MB";
     }
     if (!formData.agreement) {
-      errors.agreement = "You  agree to the NDA";
+      errors.agreement = "Kindly agree to the NDA by check in the box";
     }
     setFormErrors(errors);
     return Object.keys(errors).length === 0;
@@ -90,8 +90,8 @@ const ContactForm = () => {
   };
 
   return (
-    <div className="md:flex space-y-10 md:space-y-0 gap-10 my-14 items-center justify-center">
-      <div className="bg-[#EDF2F7] rounded-sm sm:w-[622px] p-[20px]">
+    <div className="flex md:flex-row flex-col space-y-10 md:space-y-0 gap-10 my-14 items-center justify-center">
+      <div className="bg-[#EDF2F7] rounded-sm max-w-[622px] p-[20px]">
         <h1 className="font-[500] text-[25.89px] text-[#171923] mb-3">
           Book a Meeting
         </h1>
@@ -99,7 +99,7 @@ const ContactForm = () => {
           Do you want to talk to us directly? Book a meeting with Jakub from
           business development.
         </p>{" "}
-        <div className="sm:flex space-y-10 sm:space-y-0 mb-16 mt-10 justify-between">
+        <div className="flex flex-col sm:flex-row md:flex-col lg:flex-row space-y-10 sm:space-y-0 mb-16 mt-10 justify-between">
           <div>
             <img className="w-full sm:w-[250px]" src={consultant} alt="" />
           </div>
@@ -127,7 +127,7 @@ const ContactForm = () => {
           </p>
         </div>
       </div>
-      <div className="bg-[#EDF2F7] rounded-sm sm:w-[622px]">
+      <div className="bg-[#EDF2F7] rounded-sm max-w-[622px]">
         <form
           className="px-[10px] md:px-[30px] py-[20px] md:py-[24px]"
           onSubmit={handleSubmit}
@@ -151,34 +151,40 @@ const ContactForm = () => {
             )}
           </div>
           <div className="sm:flex gap-5">
-            <input
-              className={`my-2 py-[10px] px-3 text-[14px] md:text-[16px] font-[400] leading-[24px] w-[100%] border-b ${
-                formErrors.email ? "border-red-500" : "border-b-gray-200"
-              } placeholder-black outline-none`}
-              type="email"
-              placeholder="Email"
-              name="email"
-              value={formData.email}
-              onChange={handleInputChange}
-            />
-            {formErrors.email && (
-              <p className="text-red-500 text-xs mt-1">{formErrors.email}</p>
-            )}
-            <input
-              className={`my-2 py-[10px] px-3 text-[14px] md:text-[16px] font-[400] leading-[24px] w-[100%] border-b ${
-                formErrors.phoneNumber ? "border-red-500" : "border-b-gray-200"
-              } placeholder-black outline-none`}
-              type="text"
-              placeholder="Phone Number"
-              name="phoneNumber"
-              value={formData.phoneNumber}
-              onChange={handleInputChange}
-            />
-            {formErrors.phoneNumber && (
-              <p className="text-red-500 text-xs mt-1">
-                {formErrors.phoneNumber}
-              </p>
-            )}
+            <div>
+              <input
+                className={`my-2 py-[10px] px-3 text-[14px] md:text-[16px] font-[400] leading-[24px] w-[100%] border-b ${
+                  formErrors.email ? "border-red-500" : "border-b-gray-200"
+                } placeholder-black outline-none`}
+                type="email"
+                placeholder="Email"
+                name="email"
+                value={formData.email}
+                onChange={handleInputChange}
+              />
+              {formErrors.email && (
+                <p className="text-red-500 text-xs mt-1">{formErrors.email}</p>
+              )}
+            </div>
+            <div>
+              <input
+                className={`my-2 py-[10px] px-3 text-[14px] md:text-[16px] font-[400] leading-[24px] w-[100%] border-b ${
+                  formErrors.phoneNumber
+                    ? "border-red-500"
+                    : "border-b-gray-200"
+                } placeholder-black outline-none`}
+                type="text"
+                placeholder="Phone Number"
+                name="phoneNumber"
+                value={formData.phoneNumber}
+                onChange={handleInputChange}
+              />
+              {formErrors.phoneNumber && (
+                <p className="text-red-500 text-xs mt-1">
+                  {formErrors.phoneNumber}
+                </p>
+              )}
+            </div>
           </div>
           <div
             className={`gap-2 cursor-pointer bg-white relative my-2  py-[10px] px-3 ${
@@ -236,9 +242,9 @@ const ContactForm = () => {
               value={formData.message}
               onChange={handleInputChange}
             ></textarea>
-            {formErrors.message && (
+            {/* {formErrors.message && (
               <p className="text-red-500 text-xs mt-1">{formErrors.message}</p>
-            )}
+            )} */}
           </div>
           <div className="mt-3">
             <div className="flex md:items-center justify-center gap-3">
@@ -254,7 +260,7 @@ const ContactForm = () => {
               </p>
             </div>
             {formErrors.agreement && (
-              <p className="text-red-500 text-xs mt-1">
+              <p className="pl-8  text-red-500 text-center text-xs mt-1 mb-4">
                 {formErrors.agreement}
               </p>
             )}

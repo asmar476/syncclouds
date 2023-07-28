@@ -3,7 +3,7 @@ import PrimaryButton from "./PrimaryButton";
 
 const GetSynced = () => {
   return (
-    <div className="bg-primary px-[88px] py-16 flex items-center justify-center flex-col">
+    <div className="bg-primary mt-20 px-[88px] py-16 flex items-center justify-center flex-col">
       <div className="flex flex-col items-center text-center space-y-6  md:gap-[15px] max-w-[600px]">
         <h2 className="text-[20px] text-white md:text-[25.89px] font-[600] leading-[38.83px]">
           Get Synced Up With SyncClouds

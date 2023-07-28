@@ -1,6 +1,4 @@
-import heroIllutration from "../assets/Group-12783.svg";
 import ButtonDark from "./ButtonDark";
-import ButtonLight from "./ButtonLight";
 import MainHeading from "./MainHeading";
 const HeroComponent = ({
   title1,

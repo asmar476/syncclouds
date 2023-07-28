@@ -15,7 +15,7 @@ import map from "../assets/Images/map.png";
 
 function ToolsAndTechnologies() {
   return (
-    <div className="container relative mb-10 mx-auto px-10">
+    <div className="container relative mb-10 mx-auto pl-14 pr-10">
       {/* <img className="h-[92%] absolute" src={bg} alt="" />{" "}
       <img className="w-[1440px] absolute" src={map} alt="" /> */}
       <div className="">
@@ -25,7 +25,7 @@ function ToolsAndTechnologies() {
         </div>
         {/* ============================================================================================ */}
         <div className="">
-          <h1 className="pl-8 font-semibold text-[20.89px]">Front End</h1>
+          <h1 className=" font-semibold text-[20.89px]">Front End</h1>
           <Wrapper>
             <Marquee>
               <MarqueeGroup>
@@ -85,7 +85,7 @@ function ToolsAndTechnologies() {
         </div>
         {/* ========================================================================== */}
         <div className="">
-          <h1 className="pl-8 font-semibold text-[20.89px]">Back End</h1>{" "}
+          <h1 className=" font-semibold text-[20.89px]">Back End</h1>{" "}
           <Wrapper>
             <Marquee>
               <MarqueeGroup2>
@@ -144,7 +144,7 @@ function ToolsAndTechnologies() {
         </div>
         {/* ========================================================================== */}
         <div className="">
-          <h1 className="pl-8 font-semibold text-[20.89px]">Cyber Security</h1>{" "}
+          <h1 className=" font-semibold text-[20.89px]">Cyber Security</h1>{" "}
           <Wrapper>
             <Marquee>
               <MarqueeGroup>
@@ -203,7 +203,7 @@ function ToolsAndTechnologies() {
         </div>
         {/* ========================================================================== */}
         <div className="">
-          <h1 className="pl-8 font-semibold text-[20.89px]">Other</h1>{" "}
+          <h1 className=" font-semibold text-[20.89px]">Other</h1>{" "}
           <Wrapper>
             <Marquee>
               <MarqueeGroup2>
@@ -278,7 +278,7 @@ const Wrapper = styled.div`
 `;
 const Marquee = styled.div`
   display: flex;
-  width: 1300px;
+  width: 1200px;
   height: 125px;
   overflow: hidden;
   user-select: none;

@@ -12,9 +12,9 @@ const Portfolio = () => {
       <div className="flex flex-col items-center gap-5">
         <MainSubHeading text={"Port"} gradientText={"folio"} />
         <div className="md:flex gap-5 hidden">
-            <button className="px-[30px] py-[10px] rounded-sm cursor-pointer hover:shadow-lg bg-primary text-white">
-              All
-            </button>
+          <button className="px-[30px] py-[10px] rounded-sm cursor-pointer hover:shadow-lg bg-primary text-white">
+            All
+          </button>
           <div className="px-[30px] py-[10px] rounded-sm cursor-pointer hover:shadow-lg border border-primary text-primary font-[500] text-[18px]  ">
             <button className="cursor-pointer hover:shadow-lg">
               Social Media Marketing
@@ -43,7 +43,7 @@ const Portfolio = () => {
         <PortfolioCard />
       </div>
       <div className="flex justify-center">
-        <img className="h-[850px] absolute" src={bg} alt="" />{" "}
+        <img className="h-[800px] absolute" src={bg} alt="" />{" "}
         <img className="absolute" src={map} alt="" />
       </div>
     </div>

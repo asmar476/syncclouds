@@ -4,6 +4,7 @@ import two from "../../assets/Services/SC Icons White SVG/Customer Software Solu
 import three from "../../assets/Services/SC Icons White SVG/Success Stories.svg";
 import four from "../../assets/Services/SC Icons White SVG/Amplified Business.svg";
 import CountUp from "react-countup";
+import VisibilitySensor from "react-visibility-sensor";
 const data = [
   { icon: one, title: "Advanced Process", start: 10, end: 150 },
   { icon: two, title: "Costumer Software Solution", start: 10, end: 150 },
@@ -12,9 +13,9 @@ const data = [
 ];
 const ExprtIdeation = () => {
   return (
-    <div className="flex items-center justify-between flex-col bg-gradient-to-r from-gradientBlueDark to-gradientBlueLight">
+    <div className="pt-8 bg-gradient-to-r from-gradientBlueDark to-gradientBlueLight">
       <div className=" mt-10 ">
-        <h2 className="text-[20px] md:text-[25.89px] font-[600] leading-[30px] md:leading-[38.83px] text-white mt-10">
+        <h2 className="text-[20px] text-center md:text-[25.89px] font-[600] leading-[30px] md:leading-[38.83px] text-white mt-10">
           Expert Ideation At Positions
         </h2>
       </div>
@@ -32,7 +33,9 @@ const ExprtIdeation = () => {
                 redraw={true}
                 duration={5}
               >
-                {({ countUpRef, start }) => <span ref={countUpRef} />}
+                <VisibilitySensor>
+                  {({ countUpRef, start }) => <span ref={countUpRef} />}
+                </VisibilitySensor>
               </CountUp>{" "}
               +
             </h3>
