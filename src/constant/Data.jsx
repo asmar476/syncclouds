@@ -4,22 +4,83 @@ import UIUX from "../assets/SC Icons SVG/User Experience & Design.svg";
 import dm from "../assets/SC Icons SVG/Digital Marketing.svg";
 import cloud from "../assets/SC Icons SVG/Clouds Devops.svg";
 import cs from "../assets/SC Icons SVG/cyber Security-01.svg";
+import testimonial from "../assets/Images/Vector.svg";
+
 import webWhite from "../assets/SC White Icons/Web App DevelopmentW.svg";
 import mobWhite from "../assets/SC White Icons/Mobile App DevelopmentW.svg";
 import UIUXWhite from "../assets/SC White Icons/UI UXW.svg";
 import dmWhite from "../assets/SC White Icons/Digital MarketingW.svg";
 import cloudWhite from "../assets/SC White Icons/Clouds(Devops)W.svg";
 import csWhite from "../assets/SC White Icons/Cyber SecurityW.svg";
+
 import se from "../assets/Services/servicesCatalog/Services 1.svg";
 import t1 from "../assets/Services/servicesCatalog/Technologies 1.svg";
 import so from "../assets/Services/servicesCatalog/Solution 1.svg";
 import p from "../assets/Services/servicesCatalog/Platforms 1.svg";
 import t2 from "../assets/Services/servicesCatalog/Team Expansion 1.svg";
+
 import Dropdown from "../assets/icons/chevron-down1.svg";
 import image1 from "../assets/Services/WhyChooseSC/image1.svg";
 import image2 from "../assets/Services/WhyChooseSC/image2.svg";
 import image3 from "../assets/Services/WhyChooseSC/image3.svg";
 import image4 from "../assets/Services/WhyChooseSC/image4.svg";
+
+import kia from "../assets/Images/kia.svg";
+import tesla from "../assets/Images/Tesla,_Inc.-Logo.wine 2.svg";
+import Amazon from "../assets/Images/Amazon_(company)-Logo.wine 1.svg";
+import cocaCola from "../assets/Images/coca-cola-logo-svgrepo-com 2.svg";
+// import kia from "../assets/Images/Kia_Motors-Logo.wine 1.svg";
+// import tesla from "../assets/Images/Tesla,_Inc.-Logo.wine 1.svg";
+// import Amazon from "../assets/Images/Amazone.svg";
+// import cocaCola from "../assets/Images/coca-cola-logo-svgrepo-com 1.svg";
+
+export const clientLogos = [
+  { id: 1, src: kia },
+  { id: 2, src: tesla },
+  { id: 3, src: Amazon },
+  { id: 4, src: cocaCola },
+  { id: 5, src: kia },
+  { id: 6, src: tesla },
+  { id: 7, src: Amazon },
+  { id: 8, src: cocaCola },
+];
+
+export const TestimonialData = [
+  {
+    profileImage: testimonial,
+    summary:
+      "Everything melancholy uncommonly but solicitude inhabiting projection off. Connection stimulated estimating long. departure ourselves very extreme.",
+    name: "Asmar Tamjid",
+    rating: 5,
+    designation: "React js dev",
+  },
+  {
+    profileImage: testimonial,
+    summary:
+      "Everything melancholy uncommonly but solicitude inhabiting projection off. Connection stimulated estimating long. departure ourselves very extreme.",
+    name: "Aqdas",
+    rating: 5,
+
+    designation: "React Native dev",
+  },
+  {
+    profileImage: testimonial,
+    summary:
+      "Everything melancholy uncommonly but solicitude inhabiting projection off. Connection stimulated estimating long. departure ourselves very extreme.",
+    name: "Azmat",
+    rating: 5,
+    designation: "React js dev",
+  },
+  {
+    profileImage: testimonial,
+    summary:
+      "Everything melancholy uncommonly but solicitude inhabiting projection off. Connection stimulated estimating long. departure ourselves very extreme.",
+    name: "Maria",
+    rating: 5,
+    designation: "React js dev",
+  },
+];
+
 export const features = [
   {
     image: image1,

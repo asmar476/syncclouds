@@ -13,17 +13,15 @@ const Home = () => {
     <Layout>
       <Hero />
       <OurClients />
-      <OfferCard />
+      {/* <OfferCard /> */}
       <Portfolio />
-      <ToolsAndTechnologies
+      {/* <ToolsAndTechnologies
         text={"Techno"}
         gradientText={"logies"}
         description={"We Love using latest tech to our advantage."}
-      />
+      /> */}
       <HomeFaq />
-      <div className="relative">
-        <OurAim />
-      </div>
+      <OurAim />
       <GetSynced />
       <ContactForm />
     </Layout>

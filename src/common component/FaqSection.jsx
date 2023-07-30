@@ -4,23 +4,26 @@ import { chevronUp, chevrondown } from "./Images";
 const FaqSection = ({ faqData }) => {
   const [quesIndex, setQuesIndex] = useState([0]);
   return (
-    <div className="w-[100%] space-y-5">
+    <div className="space-y-5">
       {faqData.map((arr, index) => (
         <div key={index}>
           <div className="accordian ">
             <div
-              className={`flex items-center gap-3 h-[60px]${
+              className={`flex items-center gap-3${
                 quesIndex.includes(index)
                   ? "  text-white transition-all duration-500 delay-3 bg-gradient-to-r from-gradientBlueDark to-gradientBlueLight "
                   : "text-black"
               } rounded-tl-md rounded-tr-md justify-between p-[10px]`}
             >
-              <InnerPageHeading
-                text={arr.h}
-                textColor={`${
-                  quesIndex.includes(index) ? "  text-white" : "text-black"
-                }`}
-              />
+              <div className="w-[90%]">
+                <InnerPageHeading
+                  text={arr.h}
+                  textColor={`${
+                    quesIndex.includes(index) ? "  text-white" : "text-black"
+                  }`}
+                />
+              </div>
+
               <div
                 className={`${
                   quesIndex.includes(index)
@@ -43,10 +46,10 @@ const FaqSection = ({ faqData }) => {
                 {quesIndex.includes(index) ? (
                   <img
                     src={chevronUp}
-                    className="text-xl transition-all duration-700 delay-3 text-white"
+                    className="w-[22px] text-xl transition-all duration-700 delay-3 text-white"
                   />
                 ) : (
-                  <img src={chevrondown} className="text-xl " />
+                  <img src={chevrondown} className="text-xl w-[22px]" />
                 )}
               </div>
             </div>

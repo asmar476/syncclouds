@@ -90,34 +90,38 @@ const ContactForm = () => {
   };
 
   return (
-    <div className="flex md:flex-row flex-col space-y-10 md:space-y-0 gap-10 my-14 items-center justify-center">
-      <div className="bg-[#EDF2F7] rounded-sm max-w-[622px] p-[20px]">
+    <div className="flex lg:flex-row flex-col-reverse space-y-10 md:space-y-0 mt-14 sm:mb-14 items-center justify-center">
+      <div className="bg-[#EDF2F7] mt-10 lg:mt-0 rounded-sm w-[90%] mx-5 md:max-w-[622px] px-4 pt-5 pb-12 ">
         <h1 className="font-[500] text-[25.89px] text-[#171923] mb-3">
           Book a Meeting
         </h1>
-        <p className="text-[#434343]">
+        <p className="text-[12px] sm:text-[16px]  text-[#434343]">
           Do you want to talk to us directly? Book a meeting with Jakub from
           business development.
         </p>{" "}
-        <div className="flex flex-col sm:flex-row md:flex-col lg:flex-row space-y-10 sm:space-y-0 mb-16 mt-10 justify-between">
+        <div className="flex flex-col sm:flex-row mb-4 md:mb-16 md:mt-10  justify-between">
           <div>
-            <img className="w-full sm:w-[250px]" src={consultant} alt="" />
+            <img
+              className="w-[90%]  mx-5 sm:w-[250px] md:w-[90%] lg:w-[250px]"
+              src={consultant}
+              alt=""
+            />
           </div>
           <div className="">
-            <h1 className="font-[500] text-[25.89px] text-[#171923]">
+            <h1 className="mt-8 lg:mt-0 font-[600] text-[14px] sm:text-[25.89px] text-[#171923]">
               Pitter Vick
             </h1>
-            <div className="space-y-2 mt-2 mb-10">
+            <div className="font-[500] text-[12px] sm:text-[16px] space-y-2 mt-2 mb- md:mb-10 text-[#434343]">
               <p className="text-[#434343]">Consultant</p>
               <p className="text-[#434343]">+12345678910</p>
               <p className="text-[#434343] ">johndoe@example.com</p>
             </div>
-            <button className="font-[600] leading-[24px] text-white bg-[#002680] w-full py-[5px] md:py-[10px] rounded-sm">
+            <button className="mt-3 font-[600] text-white bg-[#002680] w-full py-[10px] rounded-sm">
               Send a request
             </button>
           </div>
         </div>
-        <div className="pt-3 border-t-2 border-[#ccc8c8]">
+        <div className="hidden sm:block pt-3 border-t-2 border-[#ccc8c8]">
           <h1 className="font-[500] text-[25.89px] text-[#171923] leading-[38.83px]">
             Legal Information
           </h1>
@@ -126,8 +130,17 @@ const ContactForm = () => {
             Rawalpindi, Pakistan
           </p>
         </div>
+        <div className="sm:hidden">
+          <h1 className="font-[600] text-[14px] text-[#171923]">
+            Legal Information
+          </h1>
+          <p className="text-[12px] text-[#434343]">
+            Office No. M-35,36. Mezzanine Floor, Gold Point Shopping Mall,
+            Rawalpindi, Pakistan
+          </p>
+        </div>
       </div>
-      <div className="bg-[#EDF2F7] rounded-sm max-w-[622px]">
+      <div className="bg-[#EDF2F7] text-body px-4 mb-10 md:px-0 mx-5 w-[90%] md:max-w-[622px] rounded-sm">
         <form
           className="px-[10px] md:px-[30px] py-[20px] md:py-[24px]"
           onSubmit={handleSubmit}
@@ -150,7 +163,7 @@ const ContactForm = () => {
               <p className="text-red-500 text-xs mt-1">{formErrors.name}</p>
             )}
           </div>
-          <div className="sm:flex gap-5">
+          <div className="flex flex-col sm:flex-row md:flex-col lg:flex-row sm:gap-5 md:gap-0 lg:gap-5">
             <div>
               <input
                 className={`my-2 py-[10px] px-3 text-[14px] md:text-[16px] font-[400] leading-[24px] w-[100%] border-b ${
@@ -224,7 +237,7 @@ const ContactForm = () => {
                 )}
               </label>
             </div>
-            <p className="text-[#8D8D8D]">
+            <p className="text-[12px] xl:text-[16px] text-[#8D8D8D]">
               No Images - only DOC, DOCX, PDF ODT up to 10 MB
             </p>
           </div>
@@ -234,7 +247,7 @@ const ContactForm = () => {
 
           <div className="mt-2 justify-center pt-[10px] text-[14px] md:text-[16px] font-[400] leading-[24px] placeholder-black outline-none">
             <textarea
-              className={`w-full placeholder-black min-h-[105px] max-h-[500px] p-2 ${
+              className={`w-full placeholder-black   min-h-[141px] max-h-[355px] p-2 ${
                 formErrors.message ? "border-red-500" : ""
               }`}
               placeholder="Message"
@@ -255,7 +268,7 @@ const ContactForm = () => {
                 checked={formData.agreement}
                 onChange={handleInputChange}
               />
-              <p className="text-center text-[14px] md:text-[16px] font-[400]">
+              <p className="text-center text-[13px] lg:text-[16px] font-[400]">
                 I want an NDA to protect my idea.
               </p>
             </div>
@@ -264,7 +277,7 @@ const ContactForm = () => {
                 {formErrors.agreement}
               </p>
             )}
-            <p className="text-center text-[14px] md:text-[16px] font-[400] leading-[24px] mt-1">
+            <p className="text-center text-[13px] lg:text-[16px] font-[400] leading-[24px] mt-1">
               We will get back to you within 24 hours, guaranteed.
             </p>
             <button
