@@ -33,115 +33,119 @@ const OfferCard = () => {
   // console.log("current index", currentIndexArrowChange);
   return (
     <div style={style} className="relative pb-20">
-      <div className="overflow-hidden">
+      {/* <div className="overflow-hidden">
         <img
           className="absolute opacity-60 max-h-[1250px] z-0 w-full"
           src={s}
           alt=""
         />
-      </div>
-      <div className="container mx-auto max-w-[1600px] w-[100%] ">
+      </div> */}
+      <div className="max-w-[1200px] 2xl:max-w-[1400px] w-[100%] mx-auto my-5 px-10 xl:px-0  ">
         {/* <div
+          style={{
+            background:
+              "radial-gradient(circle, rgba(234,237,245,1) 0%, rgba(255,255,255,1) 100%)",
+          }}
+          className="w-[50%] absolute"
+        /> */}
+        <img
+          className="absolute top-[20%] xl:top-[15%] left-0 w-[45%]"
+          src={linesHero}
+          alt=""
+        />
+        <div className="relative flex justify-between flex-col  lg:flex-row w-full">
+          <div className="relative">
+            <h1 className="text-[41.89px] font-[700]">
+              Bespoke IT Services{" "}
+              <span className="text-primary">SyncClouds</span>
+            </h1>
+            <p className="  mt-5 text-body xl:max-w-full">
+              Make a statement and drive revenue with our trusted IT services to
+              deliver ultimate profitability."
+            </p>
+            {/* <img
+              className="absolute top-[30%] -left-20 w-[800px] "
+              src={linesHero}
+              alt=""
+            /> */}
+          </div>
+          {/* ============================================= ~ vertical swiper cards ~ ============================================== */}
+          <Carousel
+            ref={carouselRef}
+            verticalMode
+            itemsToShow={2}
+            pagination={false}
+            showArrows={false}
 
-        style={{
-          background:
-            "radial-gradient(circle, rgba(234,237,245,1) 0%, rgba(255,255,255,1) 100%)",
-        }}
-        className="w-[50%] absolute"
-      /> */}
-        <div className="container relative mx-auto">
-          <div className=" flex justify-between pl-0 md:pl-16 xl:pl-28">
-            <div className="max-w-[622px]">
-              <h1 className="text-[41.89px] font-[700]">
-                Bespoke IT Services{" "}
-                <span className="text-primary">SyncClouds</span>
-              </h1>
-              <p className="  mt-5 text-body">
-                Make a statement and drive revenue with our trusted IT services
-                to deliver ultimate profitability."
-              </p>
-              <img
-                className="absolute top-[6%] left-[2%] w-[45%]"
-                src={linesHero}
-                alt=""
-              />
-            </div>
-            {/* ============================================= ~ vertical swiper cards ~ ============================================== */}
-            <Carousel
-              ref={carouselRef}
-              verticalMode
-              itemsToShow={2}
-              pagination={false}
-              showArrows={false}
-              // enableAutoPlay
-              // autoPlaySpeed={1000}
-              // isRTL={false}
-            >
-              {offerData.map((card, index) => (
-                <div
-                  key={card.id}
-                  onMouseEnter={() => {
-                    setHover(true), setCurrentIndex(index);
-                  }}
-                  onMouseLeave={() => {
-                    setHover(false);
-                    setCurrentIndex("");
-                  }}
-                >
-                  <div className="  mb-5 flex flex-col   p-2 lg:p-5 max-w-[600px] bg-white z-[100] rounded shadow-lg hover:bg-blueDark hover:text-white  ">
-                    <div className="  w-[50px] rounded-full ">
-                      <img
-                        src={
-                          hover && currentIndex === index
-                            ? card.iconWhite
-                            : card.icon
-                        }
-                      />
-                    </div>
-                    <div className="pt-10">
-                      <InnerPageHeading text={`${card.title}`} />
-                      <p className="text-[14px] md:text-[16px]  leading-[20px] md:leading-[30px] mb-10">
-                        {card.description}
-                      </p>
-                    </div>
+            // enableAutoPlay
+            // autoPlaySpeed={1000}
+            // isRTL={false}
+          >
+            {offerData.map((card, index) => (
+              <div
+                key={card.id}
+                onMouseEnter={() => {
+                  setHover(true), setCurrentIndex(index);
+                }}
+                onMouseLeave={() => {
+                  setHover(false);
+                  setCurrentIndex("");
+                }}
+              >
+                <div className="  mb-5 flex flex-col   p-2 lg:p-5 max-w-[500px] xl:max-w-[600px] bg-white z-[100] rounded shadow-lg hover:bg-blueDark hover:text-white  ">
+                  <div className="  w-[50px] rounded-full ">
+                    <img
+                      src={
+                        hover && currentIndex === index
+                          ? card.iconWhite
+                          : card.icon
+                      }
+                    />
+                  </div>
+                  <div className="pt-10">
+                    <InnerPageHeading text={`${card.title}`} />
+                    <p className="text-[14px] md:text-[16px]  leading-[20px] md:leading-[30px] mb-10">
+                      {card.description}
+                    </p>
                   </div>
                 </div>
-              ))}
-            </Carousel>
-            <button
-              className=""
-              disabled={currentIndexArrowChange === 0 && true}
-              onClick={() => {
-                upFunc();
-              }}
-            >
-              <img
-                className={`absolute z-[100] right-0 top-5  ${
-                  currentIndexArrowChange === 0
-                    ? "opacity-50 cursor-not-allowed"
-                    : "cursor-pointer"
-                }`}
-                src={arrowUp}
-                alt=""
-              />
-            </button>
-            <button
-              onClick={downFunc}
-              disabled={currentIndexArrowChange === length && true}
-            >
-              <img
-                className={`absolute z-[100]  right-[0] top-[45%] ${
-                  currentIndexArrowChange === length
-                    ? "opacity-50 cursor-not-allowed"
-                    : "cursor-pointer"
-                }`}
-                src={arrowDown}
-                alt=""
-              />
-            </button>{" "}
-          </div>{" "}
-          {/* ===================================================================================== */}
-          <div className="  pl-40   flex">
+              </div>
+            ))}
+          </Carousel>
+          <button
+            className=""
+            disabled={currentIndexArrowChange === 0 && true}
+            onClick={() => {
+              upFunc();
+            }}
+          >
+            <img
+              className={`absolute z-[100] right-[-3%] xl:right-0 top-5  ${
+                currentIndexArrowChange === 0
+                  ? "opacity-50 cursor-not-allowed"
+                  : "cursor-pointer"
+              }`}
+              src={arrowUp}
+              alt=""
+            />
+          </button>
+          <button
+            onClick={downFunc}
+            disabled={currentIndexArrowChange === length && true}
+          >
+            <img
+              className={`absolute z-[100] right-[-3%] xl:right-0 bottom-[15%] ${
+                currentIndexArrowChange === length
+                  ? "opacity-50 cursor-not-allowed"
+                  : "cursor-pointer"
+              }`}
+              src={arrowDown}
+              alt=""
+            />
+          </button>{" "}
+        </div>{" "}
+        {/* ===================================================================================== */}
+        {/* <div className="  pl-40   flex">
             <div className="w-[581px]">
               <MainSubHeading
                 className=" text-left"
@@ -198,8 +202,7 @@ const OfferCard = () => {
                 alt="tranform image"
               />
             </div>
-          </div>
-        </div>
+          </div> */}
       </div>
     </div>
   );
