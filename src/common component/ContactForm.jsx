@@ -99,10 +99,10 @@ const ContactForm = () => {
           Do you want to talk to us directly? Book a meeting with Jakub from
           business development.
         </p>{" "}
-        <div className="flex flex-col sm:flex-row mb-4 md:mb-16 md:mt-10  justify-between">
+        <div className="flex flex-col sm:flex-row mb-4 md:mb-16 md:mt-10  items-center justify-between mx-10 ">
           <div>
             <img
-              className="w-[90%]  mx-5 sm:w-[250px] md:w-[90%] lg:w-[250px]"
+              className="w-[90%]   sm:w-[250px] md:w-[90%] lg:w-[270px]"
               src={consultant}
               alt=""
             />

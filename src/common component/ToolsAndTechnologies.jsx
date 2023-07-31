@@ -15,9 +15,9 @@ import map from "../assets/Images/map.png";
 
 function ToolsAndTechnologies() {
   return (
-    <div className="container relative mb-10 mx-auto pl-14 pr-10">
-      {/* <img className="h-[92%] absolute" src={bg} alt="" />{" "}
-      <img className="w-[1440px] absolute" src={map} alt="" /> */}
+    <div className="container relative mx-auto pl-14 pr-10">
+      {/* <img className="w-full absolute" src={bg} alt="" />{" "}
+      <img className="absolute" src={map} alt="" /> */}
       <div className="">
         <div className="flex flex-col items-center">
           <MainSubHeading text={"Techno"} gradientText={"logies"} ml={"ml-2"} />

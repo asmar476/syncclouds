@@ -11,11 +11,7 @@ import MainSubHeading from "../../common component/MainSubHeading";
 import TestimonialCard from "./TestimonialsCards/TestimonialCard";
 import bgLines from "../../assets/Images/abstracts.png";
 import bglines2 from "../../assets/Images/abstracts.svg";
-import Carousel from "react-elastic-carousel";
 import { TestimonialData } from "../../constant/Data";
-const cardStyle = {
-  boxShadow: "0 2px 8px rgba(0, 0, 0, 0.1)",
-};
 const Testimonials = () => {
   return (
     <>
@@ -71,7 +67,7 @@ const Testimonials = () => {
           about the transformative power of our software in driving their
           growth.
         </p>
-      </div>{" "}
+      </div>
       <div className="sm:hidden my-10  bg-white mx-10">
         <Swiper
           modules={[Navigation, Pagination, Scrollbar, Autoplay]}

@@ -1,8 +1,5 @@
 import React from "react";
-
 import { StarFilled, StarOutlined } from "@ant-design/icons";
-import { TestimonialData } from "../../../constant/Data";
-
 const cardStyle = {
   boxShadow: "0 2px 8px rgba(0, 0, 0, 0.1)",
 };

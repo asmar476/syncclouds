@@ -6,7 +6,7 @@ import { faqData } from "../../constant/FAQS";
 function HomeFaq() {
   return (
     <div className="container mx-auto px-10 py-5 sm:py-10 lg:py-20">
-      <div className="relative lg:flex-row flex flex-col items-center justify-center gap-20 ">
+      <div className="relative lg:flex-row flex flex-col  justify-center gap-20 ">
         <div className=" text-[#434343] sm:w-[540px]">
           <MainSubHeading
             text={"Frequently Asked "}
@@ -22,7 +22,7 @@ function HomeFaq() {
             experience. Don't wait, and connect with us for more information!
           </p>
           <img
-            className="absolute top-32 left-[15%]"
+            className="absolute top-32 left-[25%] sm:left-[30%] md:left-[30%] lg:left-[15%]"
             src={qMark}
             alt="queationMark"
           />

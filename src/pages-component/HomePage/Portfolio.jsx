@@ -42,10 +42,10 @@ const Portfolio = () => {
       <div className="mt-10 mb-10 mx-auto">
         <PortfolioCard />
       </div>
-      <div className="flex justify-center">
-        <img className="h-[800px] absolute" src={bg} alt="" />{" "}
+      {/* <div className="">
+        <img className="w-full h-screen absolute" src={bg} alt="" />{" "}
         <img className="absolute" src={map} alt="" />
-      </div>
+      </div> */}
     </div>
   );
 };
