@@ -59,7 +59,7 @@ const OurAim = () => {
             ))}
           </div>
         </div>
-        <div className="hidden sm:block mt-28 z-[100]">
+        <div className="hidden mb-5 sm:block  z-[100]">
           <Testimonials />
         </div>
       </div>

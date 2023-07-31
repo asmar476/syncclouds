@@ -5,21 +5,15 @@ import BoldParagraph from "./BoldParagraph";
 import { FE, BE, CS, other } from "../constant/TechData";
 import bg from "../assets/Images/bgTools&tech.png";
 import map from "../assets/Images/map.png";
-// import { Swiper, SwiperSlide } from "swiper/react";
-// import { Autoplay, Pagination, Scrollbar, Navigation } from "swiper";
-// import "swiper/css";
-// import "swiper/css/autoplay";
-// import "swiper/css/navigation";
-// import "swiper/css/pagination";
-// import "swiper/css/scrollbar";
 
 function ToolsAndTechnologies() {
   return (
-    <div className="container relative mx-auto pl-14 pr-10">
-      {/* <img className="w-full absolute" src={bg} alt="" />{" "}
-      <img className="absolute" src={map} alt="" /> */}
+    <div className="container w-[100%] max-width-[1440px] z-[100] relative mx-auto pt-8 lg:pt-10 px-6">
+      <img className="md:block z-[-1] absolute" src={bg} alt="" />{" "}
+      <img className="md:hidden h-screen z-[-1] absolute" src={bg} alt="" />{" "}
+      <img className="absolute" src={map} alt="" />
       <div className="">
-        <div className="flex flex-col items-center">
+        <div className="flex flex-col items-center mt-10 lg:mt-20">
           <MainSubHeading text={"Techno"} gradientText={"logies"} ml={"ml-2"} />
           <BoldParagraph text={"We Love using latest tec to our advantage."} />
         </div>
@@ -44,50 +38,12 @@ function ToolsAndTechnologies() {
               </MarqueeGroup>
             </Marquee>
           </Wrapper>
-          {/* <Swiper
-            modules={[Navigation, Pagination, Scrollbar, Autoplay]}
-            spaceBetween={50}
-            slidesPerView={4}
-            // slidesPerGroup={1}
-            breakpoints={{
-              1236: {
-                slidesPerView: 4,
-              },
-              600: {
-                slidesPerView: 3,
-                spaceBetween: 30,
-              },
-              400: {
-                slidesPerView: 2,
-              },
-              200: {
-                slidesPerView: 1,
-              },
-            }}
-            loop={true}
-            draggable={true}
-            autoplay={{
-              delay: 1000,
-              disableOnInteraction: false,
-              reverseDirection: true,
-            }}
-          >
-            {FE.map((logo, index) => (
-              <SwiperSlide key={index}>
-                <img
-                  src={logo}
-                  alt={`Client Logo ${index + 1}`}
-                  className="h-[100px] md:h-[150px] w-[150px] md:w-[250px]"
-                />
-              </SwiperSlide>
-            ))}
-          </Swiper> */}
         </div>
         {/* ========================================================================== */}
         <div className="">
           <h1 className=" font-semibold text-[20.89px]">Back End</h1>{" "}
           <Wrapper>
-            <Marquee>
+            <Marquee className="sm:[500px] md:w-[800px] lg:w-[1200px] ">
               <MarqueeGroup2>
                 {BE.map((el, index) => (
                   <ImageGroup key={index}>
@@ -104,43 +60,6 @@ function ToolsAndTechnologies() {
               </MarqueeGroup2>
             </Marquee>
           </Wrapper>{" "}
-          {/* <Swiper
-            modules={[Navigation, Pagination, Scrollbar, Autoplay]}
-            spaceBetween={50}
-            slidesPerView={4}
-            breakpoints={{
-              1236: {
-                slidesPerView: 4,
-              },
-              600: {
-                slidesPerView: 3,
-                spaceBetween: 30,
-              },
-              400: {
-                slidesPerView: 2,
-              },
-              200: {
-                slidesPerView: 1,
-              },
-            }}
-            loop={true}
-            draggable={true}
-            autoplay={{
-              delay: 2000,
-              disableOnInteraction: false,
-              reverseDirection: false,
-            }}
-          >
-            {BE.map((logo, index) => (
-              <SwiperSlide key={index}>
-                <img
-                  src={logo}
-                  alt={`Client Logo ${index + 1}`}
-                  className="h-[100px] md:h-[150px] w-[150px] md:w-[250px]"
-                />
-              </SwiperSlide>
-            ))}
-          </Swiper> */}
         </div>
         {/* ========================================================================== */}
         <div className="">
@@ -163,43 +82,6 @@ function ToolsAndTechnologies() {
               </MarqueeGroup>
             </Marquee>
           </Wrapper>{" "}
-          {/* <Swiper
-            modules={[Navigation, Pagination, Scrollbar, Autoplay]}
-            spaceBetween={50}
-            slidesPerView={4}
-            breakpoints={{
-              1236: {
-                slidesPerView: 4,
-              },
-              600: {
-                slidesPerView: 3,
-                spaceBetween: 30,
-              },
-              400: {
-                slidesPerView: 2,
-              },
-              200: {
-                slidesPerView: 1,
-              },
-            }}
-            loop={true}
-            draggable={true}
-            autoplay={{
-              delay: 1000,
-              disableOnInteraction: false,
-              reverseDirection: true,
-            }}
-          >
-            {CS.map((logo, index) => (
-              <SwiperSlide key={index}>
-                <img
-                  src={logo}
-                  alt={`Client Logo ${index + 1}`}
-                  className="h-[100px] md:h-[150px] w-[150px] md:w-[250px]"
-                />
-              </SwiperSlide>
-            ))}
-          </Swiper> */}
         </div>
         {/* ========================================================================== */}
         <div className="">
@@ -222,43 +104,6 @@ function ToolsAndTechnologies() {
               </MarqueeGroup2>
             </Marquee>
           </Wrapper>{" "}
-          {/* <Swiper
-            modules={[Navigation, Pagination, Scrollbar, Autoplay]}
-            spaceBetween={50}
-            slidesPerView={4}
-            breakpoints={{
-              1236: {
-                slidesPerView: 4,
-              },
-              600: {
-                slidesPerView: 3,
-                spaceBetween: 30,
-              },
-              400: {
-                slidesPerView: 2,
-              },
-              200: {
-                slidesPerView: 1,
-              },
-            }}
-            loop={true}
-            draggable={true}
-            autoplay={{
-              delay: 2000,
-              disableOnInteraction: false,
-              reverseDirection: false,
-            }}
-          >
-            {other.map((logo, index) => (
-              <SwiperSlide key={index}>
-                <img
-                  src={logo}
-                  alt={`Client Logo ${index + 1}`}
-                  className="h-[100px] md:h-[150px] w-[150px] md:w-[250px]"
-                />
-              </SwiperSlide>
-            ))}
-          </Swiper> */}
         </div>
         {/* ========================================================================== */}
         {/* <img className="absolute w-[1440px]" src={bg} alt="" />{" "} */}
@@ -270,7 +115,7 @@ function ToolsAndTechnologies() {
 export default ToolsAndTechnologies;
 
 const Wrapper = styled.div`
-  width: 100%;
+  max-width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -278,9 +123,9 @@ const Wrapper = styled.div`
 `;
 const Marquee = styled.div`
   display: flex;
-  width: 1200px;
-  height: 125px;
   overflow: hidden;
+  height: 120px;
+  max-width: 1200px;
   user-select: none;
   mask-image: linear-gradient(
     to right,
@@ -303,7 +148,8 @@ const common = css`
   align-items: center;
   justify-content: space-around;
   white-space: nowrap;
-  width: 180%;
+  width: 150%;
+  height: 100px;
   animation: ${scrollX} 30s linear infinite;
 `;
 const MarqueeGroup = styled.div`
@@ -319,3 +165,28 @@ const ImageGroup = styled.div`
   place-items: center;
   width: 70rem;
 `;
+
+// @media screen and (min-width: 425px) {
+//   max-width: 425px;
+//   height: 60px;
+// }
+
+// @media screen and (min-width: 768px) {
+//   max-width: 768px;
+//   height: 105px;
+// }
+
+// @media screen and (min-width: 1024px) {
+//   max-width: 1024px;
+//   height: 105px;
+// }
+
+// @media screen and (min-width: 1280px) {
+//   max-width: 800px;
+//   height: 105px;
+// }
+
+// @media screen and (min-width: 1440px) {
+//   max-width: 1200px;
+//   height: 60px;
+// }

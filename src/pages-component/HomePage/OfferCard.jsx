@@ -48,111 +48,191 @@ const OfferCard = () => {
           }}
           className="w-[50%] absolute"
         /> */}
-        <div className="relative flex items-center lg:items-start text-center lg:text-left lg:justify-between flex-col  lg:flex-row w-full">
-          <div className="relative mb-20 lg:mb-0 max-w-[600px] lg:max-w-full">
-            <h1 className="text-[28px] md:text-[41.89px] font-[700]">
-              Bespoke IT Services{" "}
-              <span className="text-primary">SyncClouds</span>
-            </h1>
-            <p className="  mt-5 text-body xl:max-w-full">
-              Make a statement and drive revenue with our trusted IT services to
-              deliver ultimate profitability."
-            </p>
+        <div className="hidden lg:block">
+          <div className="relative flex items-center lg:items-start text-center lg:text-left lg:justify-between flex-col  lg:flex-row w-full">
+            <div className="relative mb-20 lg:mb-0 max-w-[600px] lg:max-w-full">
+              <h1 className="text-[28px] md:text-[41.89px] font-[700]">
+                Bespoke IT Services{" "}
+                <span className="text-primary">SyncClouds</span>
+              </h1>
+              <p className="  mt-5 text-body xl:max-w-full">
+                Make a statement and drive revenue with our trusted IT services
+                to deliver ultimate profitability."
+              </p>
 
-            {/* <img
+              {/* <img
               className="absolute top-[10%] xl:top-[15%] left-0 w-[48%] xl:w-[45%]"
               src={linesHero}
               alt=""
             /> */}
-            {/* <img
+              {/* <img
               className="absolute top-[30%] -left-20 w-[800px] "
               src={linesHero}
               alt=""
             /> */}
-          </div>
-          <div className="hidden lg:block">
-            {" "}
-            <img
-              className="absolute top-[32%]  2xl:top-[15%] -left-[90px] 2xl:-left-[100px] w-[55%] xl:w-[50%] "
-              src={linesHero}
-              alt=""
-            />
-          </div>
-          {/* ============================================= ~ vertical swiper cards ~ ============================================== */}
-          <Carousel
-            ref={carouselRef}
-            verticalMode
-            itemsToShow={2}
-            pagination={false}
-            showArrows={false}
+            </div>
+            <div className="hidden lg:block">
+              {" "}
+              <img
+                className="absolute top-[32%]  2xl:top-[15%] -left-[90px] 2xl:-left-[100px] w-[55%] xl:w-[50%] "
+                src={linesHero}
+                alt=""
+              />
+            </div>
+            {/* ============================================= ~ vertical swiper cards ~ ============================================== */}
+            <Carousel
+              className="lg:block hidden"
+              ref={carouselRef}
+              verticalMode
+              itemsToShow={2}
+              pagination={false}
+              showArrows={false}
 
-            // enableAutoPlay
-            // autoPlaySpeed={1000}
-            // isRTL={false}
-          >
-            {offerData.map((card, index) => (
-              <div
-                key={card.id}
-                onMouseEnter={() => {
-                  setHover(true), setCurrentIndex(index);
-                }}
-                onMouseLeave={() => {
-                  setHover(false);
-                  setCurrentIndex("");
-                }}
-              >
-                <div className="  mb-5 flex flex-col   p-2 lg:p-5 max-w-[500px] xl:max-w-[600px] bg-white z-[100] rounded shadow-lg hover:bg-blueDark hover:text-white  ">
-                  <div className="  w-[50px] rounded-full ">
-                    <img
-                      src={
-                        hover && currentIndex === index
-                          ? card.iconWhite
-                          : card.icon
-                      }
-                    />
-                  </div>
-                  <div className="pt-10">
-                    <InnerPageHeading text={`${card.title}`} />
-                    <p className="text-[14px] md:text-[16px]  leading-[20px] md:leading-[30px] mb-10">
-                      {card.description}
-                    </p>
+              // enableAutoPlay
+              // autoPlaySpeed={1000}
+              // isRTL={false}
+            >
+              {offerData.map((card, index) => (
+                <div
+                  key={card.id}
+                  onMouseEnter={() => {
+                    setHover(true), setCurrentIndex(index);
+                  }}
+                  onMouseLeave={() => {
+                    setHover(false);
+                    setCurrentIndex("");
+                  }}
+                >
+                  <div className="  mb-5 flex flex-col   p-2 lg:p-5 max-w-[500px] xl:max-w-[600px] bg-white z-[100] rounded shadow-lg hover:bg-blueDark hover:text-white  ">
+                    <div className="  w-[50px] rounded-full ">
+                      <img
+                        src={
+                          hover && currentIndex === index
+                            ? card.iconWhite
+                            : card.icon
+                        }
+                      />
+                    </div>
+                    <div className="pt-10">
+                      <InnerPageHeading text={`${card.title}`} />
+                      <p className="text-[14px] md:text-[16px]  leading-[20px] md:leading-[30px] mb-10">
+                        {card.description}
+                      </p>
+                    </div>
                   </div>
                 </div>
-              </div>
-            ))}
-          </Carousel>
-          <button
-            className=""
-            disabled={currentIndexArrowChange === 0 && true}
-            onClick={() => {
-              upFunc();
-            }}
-          >
-            <img
-              className={`absolute z-[100] right-[-3%] xl:right-0 top-5  ${
-                currentIndexArrowChange === 0
-                  ? "opacity-50 cursor-not-allowed"
-                  : "cursor-pointer"
-              }`}
-              src={arrowUp}
+              ))}
+            </Carousel>
+            <button
+              className=""
+              disabled={currentIndexArrowChange === 0 && true}
+              onClick={() => {
+                upFunc();
+              }}
+            >
+              <img
+                className={`hidden lg:block absolute z-[100] right-[-3%] xl:right-0 top-5  ${
+                  currentIndexArrowChange === 0
+                    ? "opacity-50 cursor-not-allowed"
+                    : "cursor-pointer"
+                }`}
+                src={arrowUp}
+                alt=""
+              />
+            </button>
+            <button
+              onClick={downFunc}
+              disabled={currentIndexArrowChange === length && true}
+            >
+              <img
+                className={`hidden lg:block absolute z-[100] right-[-3%] xl:right-0 bottom-[15%] ${
+                  currentIndexArrowChange === length
+                    ? "opacity-50 cursor-not-allowed"
+                    : "cursor-pointer"
+                }`}
+                src={arrowDown}
+                alt=""
+              />
+            </button>{" "}
+          </div>{" "}
+        </div>
+
+        <div className="lg:hidden ">
+          <div className="relative flex items-center lg:items-start text-center lg:text-left lg:justify-between flex-col  lg:flex-row w-full">
+            <div className="relative mb-20 lg:mb-0 max-w-[600px] lg:max-w-full">
+              <h1 className="text-[28px] md:text-[41.89px] font-[700]">
+                Bespoke IT Services{" "}
+                <span className="text-primary">SyncClouds</span>
+              </h1>
+              <p className="  mt-5 text-body xl:max-w-full">
+                Make a statement and drive revenue with our trusted IT services
+                to deliver ultimate profitability."
+              </p>
+
+              {/* <img
+              className="absolute top-[10%] xl:top-[15%] left-0 w-[48%] xl:w-[45%]"
+              src={linesHero}
               alt=""
-            />
-          </button>
-          <button
-            onClick={downFunc}
-            disabled={currentIndexArrowChange === length && true}
-          >
-            <img
-              className={`absolute z-[100] right-[-3%] xl:right-0 bottom-[15%] ${
-                currentIndexArrowChange === length
-                  ? "opacity-50 cursor-not-allowed"
-                  : "cursor-pointer"
-              }`}
-              src={arrowDown}
+            /> */}
+              {/* <img
+              className="absolute top-[30%] -left-20 w-[800px] "
+              src={linesHero}
               alt=""
-            />
-          </button>{" "}
-        </div>{" "}
+            /> */}
+            </div>
+            <div className="hidden lg:block">
+              {" "}
+              <img
+                className="absolute top-[32%]  2xl:top-[15%] -left-[90px] 2xl:-left-[100px] w-[55%] xl:w-[50%] "
+                src={linesHero}
+                alt=""
+              />
+            </div>
+            {/* ============================================= ~ vertical swiper cards ~ ============================================== */}
+            <Carousel
+              className="lg:block hidden"
+              ref={carouselRef}
+              verticalMode
+              itemsToShow={2}
+              pagination={false}
+              showArrows={true}
+              enableAutoPlay
+              autoPlaySpeed={1000}
+              isRTL={false}
+            >
+              {offerData.map((card, index) => (
+                <div
+                  key={card.id}
+                  onMouseEnter={() => {
+                    setHover(true), setCurrentIndex(index);
+                  }}
+                  onMouseLeave={() => {
+                    setHover(false);
+                    setCurrentIndex("");
+                  }}
+                >
+                  <div className="  mb-5 flex flex-col   p-2 lg:p-5 max-w-[500px] xl:max-w-[600px] bg-white z-[100] rounded shadow-lg hover:bg-blueDark hover:text-white  ">
+                    <div className="  w-[50px] rounded-full ">
+                      <img
+                        src={
+                          hover && currentIndex === index
+                            ? card.iconWhite
+                            : card.icon
+                        }
+                      />
+                    </div>
+                    <div className="pt-10">
+                      <InnerPageHeading text={`${card.title}`} />
+                      <p className="text-[14px] md:text-[16px]  leading-[20px] md:leading-[30px] mb-10">
+                        {card.description}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </Carousel>
+          </div>{" "}
+        </div>
         {/* ===================================================================================== */}
         <div className=" relative    flex flex-col lg:flex-row mt-20 md:mt-32 lg:-mt-10 xl:mt-0   gap-10">
           <div className="flex-1 text-center lg:text-left relative ">

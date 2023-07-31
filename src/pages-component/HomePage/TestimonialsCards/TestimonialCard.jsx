@@ -32,7 +32,7 @@ const TestimonialCard = ({
 }) => {
   return (
     <>
-      <div key={i} style={cardStyle} className="bg-white py-7 px-5">
+      <div key={i}  className="bg-white py-3 px-5">
         <div className="flex items-center justify-between mb-3">
           <h3
             style={{ color: "hsla(226, 53%, 33%, 1)" }}
@@ -42,7 +42,7 @@ const TestimonialCard = ({
           </h3>{" "}
           <img className="w-[62px]" src={profileImage} alt="Profile" />
         </div>
-        <p className="md:w-[339px] leading-[24px] text-sm sm:text-[10px] md:text-[16px] font-[400] pb-1">
+        <p className="max-w-[339px] leading-[24px] text-sm font-[400] pb-1">
           {summary}
         </p>
         <hr className="border-t border-gray-300 mt-3 md:mt-7  mb-3 md:mb-5" />

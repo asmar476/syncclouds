@@ -76,7 +76,7 @@ export const TestimonialData = [
     summary:
       "Everything melancholy uncommonly but solicitude inhabiting projection off. Connection stimulated estimating long. departure ourselves very extreme.",
     name: "Maria",
-    rating: 5,
+    rating: 4,
     designation: "React js dev",
   },
 ];

@@ -5,33 +5,62 @@ import FaqSection from "../../common component/FaqSection";
 import { faqData } from "../../constant/FAQS";
 function HomeFaq() {
   return (
-    <div className="container mx-auto px-10 py-5 sm:py-10 lg:py-20">
-      <div className="relative lg:flex-row flex flex-col  justify-center gap-20 ">
-        <div className=" text-[#434343] sm:w-[540px]">
+    <>
+      <div className="hidden md:block container mx-auto pl-5 py-5 sm:py-10 lg:py-20">
+        <div className="relative lg:flex-row flex flex-col items-center lg:items-start justify-center gap-5 lg:justify-between ">
+          <div className=" text-[#434343] mb-10 text-center lg:text-left w-[540px]">
+            <MainSubHeading
+              text={"Frequently Asked "}
+              gradientText={"Questions"}
+            />
+            <p className="leaing-[27px] text-[18px] my-5 font-[600] text-[#434343]">
+              Discover the power of Sync Clouds with our FAQs section!
+            </p>
+            <p>
+              Discover the power of Sync Clouds with our FAQs section!
+              <br /> Explore commonly asked questions, gain valuable insights,
+              and visit our Services & Solutions to revolutionize your data
+              synchronization experience. Don't wait, and connect with us for
+              more information!
+            </p>
+            <img
+              className="absolute md:w-[140px] lg:w-[200px] top-28 md:left-[40%] lg:left-[11%]"
+              src={qMark}
+              alt="questionMark"
+            />
+          </div>
+          <div className="lg:max-w-[50%]">
+            <FaqSection faqData={faqData} />
+          </div>{" "}
+        </div>
+      </div>
+      {/* ========================================= mob view ======================================== */}
+      <div className="relative md:hidden flex flex-col items-center justify-center px-5 md:px-20 ">
+        <div className=" text-[#434343] text-center text-[24px] sm:text-[28px] w-[327px]">
           <MainSubHeading
             text={"Frequently Asked "}
             gradientText={"Questions"}
           />
-          <p className="leaing-[27px] text-[18px] my-5 font-[600] text-[#434343]">
+          <p className="leaing-[27px] text-[14px] sm:text-[18px] my-6 font-[600] text-body">
             Discover the power of Sync Clouds with our FAQs section!
           </p>
-          <p>
-            Discover the power of Sync Clouds with our FAQs section! Explore
-            commonly asked questions, gain valuable insights, and visit our
-            Services & Solutions to revolutionize your data synchronization
+          <p className="text-[12px] leading-[18px] mb-16">
+            Discover the power of Sync Clouds with our FAQs section! <br />
+            Explore commonly asked questions, gain valuable insights, and visit
+            our Services & Solutions to revolutionize your data synchronization
             experience. Don't wait, and connect with us for more information!
           </p>
-          <img
-            className="absolute top-32 left-[25%] sm:left-[30%] md:left-[30%] lg:left-[15%]"
-            src={qMark}
-            alt="queationMark"
-          />
+          <center>
+            <img
+              className="absolute top-10 left-[30%] sm:left-[35%]"
+              src={qMark}
+              alt="queationMark"
+            />
+          </center>
         </div>
-        <div className="lg:max-w-[50%]">
-          <FaqSection faqData={faqData} />
-        </div>{" "}
+        <FaqSection faqData={faqData} />
       </div>
-    </div>
+    </>
   );
 }
 

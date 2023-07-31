@@ -15,7 +15,7 @@ const Hero = () => {
       }}
       className="px-10 mt-20 sm:mt-0 pt-10 pb-20 mb-10"
     >
-      <div className="hidden max-w-[1440px] w-[100%] mx-auto sm:flex flex-col md:flex-row items-center justify-center gap-0  lg:gap-10">
+      <div className="hidden max-w-[1440px] w-[100%] mx-auto md:flex flex-col md:flex-row items-center justify-center gap-0  lg:gap-10">
         <div className="sm:w-[500px] md:w-[622px] space-y-10 ">
           <h1 className="text-[30px] lg:text-[50px] font-[800] md:leading-[65px] leading-[45px]">
             Unlock your Business's Potential&nbsp;
@@ -65,7 +65,7 @@ const Hero = () => {
         </div>
         <div>
           <img className="hidden md:block w-[580px]" src={clouds} alt="" />
-          <div className=" hidden sm:flex items-center justify-center right-[5%] top-[70%] fixed z-[100] bg-gray-300  h-[50px]  w-[50px]  rounded-full">
+          {/* <div className=" hidden sm:flex items-center justify-center right-[5%] top-[70%] fixed z-[100] bg-gray-300  h-[50px]  w-[50px]  rounded-full">
             <Tooltip title="Scroll to Top">
               <img
                 onClick={() => {
@@ -77,7 +77,7 @@ const Hero = () => {
                 width={40}
               />
             </Tooltip>
-          </div>
+          </div> */}
         </div>
         {/* <img
           className="absolute right-0 top-[100px] opacity-100"
@@ -86,9 +86,9 @@ const Hero = () => {
         /> */}
       </div>
       {/* ============================================================================ */}
-      <div className="sm:hidden flex items-center  max-w-[1440px] w-[100%] mx-auto">
+      <div className="md:hidden flex items-center justify-center max-w-[1440px] w-[100%] mx-auto">
         <div className="sm:w-[500px] md:w-[622px] space-y-10 ">
-          <h1 className="text-center text-[30px] lg:text-[50px] font-[800] md:leading-[65px] leading-[45px]">
+          <h1 className="text-center text-[30px] sm:text-[41px] font-[800] sm:leading-[65px] leading-[45px]">
             Unlock your Business's Potential&nbsp;
             <span className="text-[#002680]">
               with the best Software Company
@@ -147,7 +147,7 @@ const Hero = () => {
           </div>
         </div>
         <div>
-          <div className=" flex items-center justify-center right-[5%] top-[70%] fixed z-[100] bg-gray-300  h-[50px]  w-[50px]  rounded-full">
+          {/* <div className=" flex items-center justify-center right-[5%] top-[70%] fixed z-[100] bg-gray-300  h-[50px]  w-[50px]  rounded-full">
             <Tooltip title="Scroll to Top">
               <img
                 onClick={() => {
@@ -159,7 +159,7 @@ const Hero = () => {
                 width={40}
               />
             </Tooltip>
-          </div>
+          </div> */}
         </div>
         {/* <img
           className="absolute right-0 top-[100px] opacity-100"

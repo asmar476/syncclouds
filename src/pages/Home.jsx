@@ -11,19 +11,15 @@ import HomeFaq from "../pages-component/HomePage/HomeFaq";
 const Home = () => {
   return (
     <Layout>
-      {/* <Hero /> */}
-      {/* <OurClients /> */}
+      <Hero />
+      <OurClients />
       <OfferCard />
-      {/* <Portfolio /> */}
-      {/* <ToolsAndTechnologies
-        text={"Techno"}
-        gradientText={"logies"}
-        description={"We Love using latest tech to our advantage."}
-      /> */}
-      {/* <HomeFaq /> */}
-      {/* <OurAim /> */}
-      {/* <GetSynced /> */}
-      {/* <ContactForm /> */}
+      <Portfolio />
+      <ToolsAndTechnologies />
+      <HomeFaq />
+      <OurAim />
+      <GetSynced />
+      <ContactForm />
     </Layout>
   );
 };

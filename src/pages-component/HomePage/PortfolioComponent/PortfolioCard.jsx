@@ -28,19 +28,18 @@ const cardData = [
   },
 ];
 const PortfolioCard = () => {
-
   return (
-    <div className="grid grid-col-1 md:grid-cols-2 xl:grid-cols-3 gap-5">
+    <div className="flex justify-center items-center gap-0 lg:gap-16 flex-wrap ">
       {cardData.map((data, index) => (
         <div
           key={index}
-          className="w-[408px] rounded-br-[100px] p-10 hover:bg-[#DAE2EA]"
+          className="max-w-[408px] rounded-br-[100px] mt-10 py-10 px-10 hover:bg-[#DAE2EA]"
         >
           <div className="flex items-center gap-6">
-            <img width={40} src={data.icon} alt="kdlj" />
-            <h4 className="font-[500] text-[18px]">{data.title}</h4>
+            <img width={40} src={data.icon} alt="portfoliocard" />
+            <h4 className="text-left font-[500] text-[18px]">{data.title}</h4>
           </div>
-          <img className="my-10" width={"100%"} src={data.img} />
+          <img className="my-8" width={"100%"} src={data.img} />
           <p>{data.description}</p>
           <div className="flex mt-10 gap-5">
             <button className="font-[] text-[]">Read more</button>

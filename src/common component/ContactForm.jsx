@@ -247,7 +247,7 @@ const ContactForm = () => {
 
           <div className="mt-2 justify-center pt-[10px] text-[14px] md:text-[16px] font-[400] leading-[24px] placeholder-black outline-none">
             <textarea
-              className={`w-full placeholder-black   min-h-[141px] max-h-[355px] p-2 ${
+              className={`w-full placeholder-black   min-h-[153px] max-h-[355px] p-2 ${
                 formErrors.message ? "border-red-500" : ""
               }`}
               placeholder="Message"

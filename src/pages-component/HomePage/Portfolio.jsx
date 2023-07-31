@@ -8,44 +8,35 @@ import bg from "../../assets/Images/bgTools&tech.png";
 import map from "../../assets/Images/map.png";
 const Portfolio = () => {
   return (
-    <div className="container mx-auto px-10 py-10 lg:py-20">
-      <div className="flex flex-col items-center gap-5">
+    <div className="container mx-auto mt-12 p-5">
+      <div className="flex flex-col justify-between items-center">
         <MainSubHeading text={"Port"} gradientText={"folio"} />
-        <div className="md:flex gap-5 hidden">
-          <button className="px-[30px] py-[10px] rounded-sm cursor-pointer hover:shadow-lg bg-primary text-white">
+        <div className="flex flex-wrap items-center justify-center gap-9 lg:gap-20">
+          <button className="px-7 text-[18px] font-semibold py-2 rounded-sm cursor-pointer border border-primary hover:shadow-lg bg-primary text-white">
             All
           </button>
-          <div className="px-[30px] py-[10px] rounded-sm cursor-pointer hover:shadow-lg border border-primary text-primary font-[500] text-[18px]  ">
-            <button className="cursor-pointer hover:shadow-lg">
-              Social Media Marketing
-            </button>
-          </div>
-          <div className="px-[30px] py-[10px] rounded-sm cursor-pointer hover:shadow-lg border border-primary text-primary font-[500] text-[18px]  ">
-            <button className="cursor-pointer hover:shadow-lg">
-              Content Marketing
-            </button>
-          </div>
-          <button className="px-[30px] py-[10px] rounded-sm cursor-pointer hover:shadow-lg border border-primary text-primary font-[500] text-[18px] ">
+          <button className="px-5 py-2 py-rounded-sm cursor-pointer hover:shadow-lg border border-primary text-primary font-[500] text-[18px]">
+            Social Media Marketing
+          </button>
+          <button className="px-5 py-2 py-rounded-sm cursor-pointer hover:shadow-lg border border-primary text-primary font-[500] text-[18px]">
+            Content Marketing
+          </button>
+          <button className="rounded-sm px-5 py-2 py-rounded-sm cursor-pointer hover:shadow-lg border border-primary text-primary font-[500] text-[18px]">
             Hire A Developer
           </button>
-
-          <div className="px-[30px] py-[10px] rounded-sm cursor-pointer hover:shadow-lg border border-primary text-primary font-[500] text-[18px]  ">
-            <button className="cursor-pointer hover:shadow-lg">
-              Hire A Team
-            </button>
-          </div>
+          <button className="px-5 py-2 py-rounded-sm cursor-pointer hover:shadow-lg border border-primary text-primary font-[500] text-[18px]">
+            Hire A Team
+          </button>
         </div>
-        <div className="md:hidden">
-          <CustomSelect />
-        </div>
+        {/* <div className="md:hidden"><CustomSelect /></div> */}
       </div>
-      <div className="mt-10 mb-10 mx-auto">
+      <div className=" mx-auto">
         <PortfolioCard />
       </div>
-      {/* <div className="">
-        <img className="w-full h-screen absolute" src={bg} alt="" />{" "}
-        <img className="absolute" src={map} alt="" />
-      </div> */}
+      <center>
+        {" "}
+  
+      </center>
     </div>
   );
 };
