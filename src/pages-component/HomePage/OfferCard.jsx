@@ -33,13 +33,13 @@ const OfferCard = () => {
   // console.log("current index", currentIndexArrowChange);
   return (
     <div style={style} className="relative pb-20">
-      {/* <div className="overflow-hidden">
+      <div className="overflow-hidden">
         <img
           className="absolute opacity-60 max-h-[1250px] z-0 w-full"
           src={s}
           alt=""
         />
-      </div> */}
+      </div>
       <div className="max-w-[1200px] 2xl:max-w-[1400px] w-[100%] mx-auto my-5 px-10 xl:px-0  ">
         {/* <div
           style={{
@@ -48,14 +48,9 @@ const OfferCard = () => {
           }}
           className="w-[50%] absolute"
         /> */}
-        <img
-          className="absolute top-[20%] xl:top-[15%] left-0 w-[45%]"
-          src={linesHero}
-          alt=""
-        />
-        <div className="relative flex justify-between flex-col  lg:flex-row w-full">
-          <div className="relative">
-            <h1 className="text-[41.89px] font-[700]">
+        <div className="relative flex items-center lg:items-start text-center lg:text-left lg:justify-between flex-col  lg:flex-row w-full">
+          <div className="relative mb-20 lg:mb-0 max-w-[600px] lg:max-w-full">
+            <h1 className="text-[28px] md:text-[41.89px] font-[700]">
               Bespoke IT Services{" "}
               <span className="text-primary">SyncClouds</span>
             </h1>
@@ -63,11 +58,25 @@ const OfferCard = () => {
               Make a statement and drive revenue with our trusted IT services to
               deliver ultimate profitability."
             </p>
+
+            {/* <img
+              className="absolute top-[10%] xl:top-[15%] left-0 w-[48%] xl:w-[45%]"
+              src={linesHero}
+              alt=""
+            /> */}
             {/* <img
               className="absolute top-[30%] -left-20 w-[800px] "
               src={linesHero}
               alt=""
             /> */}
+          </div>
+          <div className="hidden lg:block">
+            {" "}
+            <img
+              className="absolute top-[32%]  2xl:top-[15%] -left-[90px] 2xl:-left-[100px] w-[55%] xl:w-[50%] "
+              src={linesHero}
+              alt=""
+            />
           </div>
           {/* ============================================= ~ vertical swiper cards ~ ============================================== */}
           <Carousel
@@ -145,234 +154,68 @@ const OfferCard = () => {
           </button>{" "}
         </div>{" "}
         {/* ===================================================================================== */}
-        {/* <div className="  pl-40   flex">
-            <div className="w-[581px]">
-              <MainSubHeading
-                className=" text-left"
-                my={"my-5"}
-                ml={"ml-2"}
-                text={"Transform digital experience with"}
-                gradientText={" SyncClouds"}
+        <div className=" relative    flex flex-col lg:flex-row mt-20 md:mt-32 lg:-mt-10 xl:mt-0   gap-10">
+          <div className="flex-1 text-center lg:text-left relative ">
+            <div className="hidden lg:block">
+              <img
+                className="absolute  left-[-10px] bottom-0 2xl:top-[37.5%]"
+                src={line}
+                alt="line"
               />
-              <div className=" flex">
-                <div>
-                  <img
-                    className="absolute  left-[7.5%]"
-                    src={line}
-                    alt="line"
-                  />
-                </div>
-                <div className="">
-                  {" "}
-                  <h4 className="text-primary leading-[38px] mt-4 mb-7 text-[25.89px] font-[600]">
-                    Boost Your business Expansion!
-                  </h4>
-                  <p>
-                    Sync Clouds is committed to providing everyone with complete
-                    custom software development services. No matter what, there
-                    is always a chance to flourish, stand out, acquire, and
-                    rise..
-                  </p>
-                  <h6 className="my-5 font-[600] ">
-                    Future Building Using Software, Innovation, And Technology
-                  </h6>
-                  <p>
-                    Today's world is dominated by technology, so businesses and
-                    people can survive. We have a global clientele because of
-                    our unmatched solutions and innovative methods.
-                  </p>
-                  <Link to={"/contact"}>
-                    <button className=" border border-primary rounded-sm py-2 px-4 mt-10 hover:bg-primary hover:text-white hover:text-bold text-primary">
-                      Get In Touch
-                    </button>
-                  </Link>
-                </div>
+            </div>
+            <MainSubHeading
+              className="text-center w-full lg:text-left lg:max-w-[400px] "
+              my={"lg:my-5"}
+              ml={"lg:ml-2"}
+              text={"Transform digital experience with"}
+              gradientText={" SyncClouds"}
+            />
+            <div className=" flex">
+              <div className="">
+                {" "}
+                <h4 className="text-primary leading-[38px] mt-4 mb-7 text-[22px] lg:text-[25.89px] font-[600]">
+                  Boost Your business Expansion!
+                </h4>
+                <p>
+                  Sync Clouds is committed to providing everyone with complete
+                  custom software development services. No matter what, there is
+                  always a chance to flourish, stand out, acquire, and rise..
+                </p>
+                <h6 className="my-5 font-[600] ">
+                  Future Building Using Software, Innovation, And Technology
+                </h6>
+                <p>
+                  Today's world is dominated by technology, so businesses and
+                  people can survive. We have a global clientele because of our
+                  unmatched solutions and innovative methods.
+                </p>
+                <Link to={"/contact"}>
+                  <button className=" border border-primary rounded-sm py-2 px-4 mt-10 hover:bg-primary hover:text-white hover:text-bold text-primary">
+                    Get In Touch
+                  </button>
+                </Link>
               </div>
             </div>
-            <div className="flex">
-              <img
-                className="absolute  bottom-[38%]"
-                src={curlArrow}
-                alt="curl arrow"
-              />
-              <img
-                className="ml-52"
-                width={500}
-                src={transform}
-                alt="tranform image"
-              />
-            </div>
-          </div> */}
+          </div>
+
+          <div className="flex-1 lg:self-end">
+            <img
+              className="sm:min-w-[400px] sm:min-h-[400px] "
+              src={transform}
+              alt="tranform image"
+            />
+          </div>
+          <div className="flex">
+            <img
+              className="absolute left-[50%] translate-x-[-60%] top-[20%]  "
+              src={curlArrow}
+              alt="curl arrow"
+            />
+          </div>
+        </div>
       </div>
     </div>
   );
 };
 
 export default OfferCard;
-// import { offerData } from "../../constant/Data";
-// import MainSubHeading from "../../common component/MainSubHeading";
-// import BoldParagraph from "../../common component/BoldParagraph";
-// import React, { useState } from "react";
-// import linesHero from "../../assets/Images/lines-hero 1.svg";
-// import line from "../../assets/Images/line.svg";
-// import linesHero2 from "../../assets/Images/Bespoke IT Services By SyncClouds.svg";
-// import curlArrow from "../../assets/Images/Frame.svg";
-// import arrowDown from "../../assets/icons/black-arrow-down.svg";
-// import arrowUp from "../../assets/icons/black_arrow-up.svg";
-// import InnerPageHeading from "../../common component/InnerPageHeading";
-// import { Link } from "react-router-dom";
-// import s from "../../assets/Images/S.svg";
-// import transform from "../../assets/Images/Transform Digital Experience with SyncClouds-01.svg";
-// import Carousel from "react-elastic-carousel";
-// const OfferCard = () => {
-//   const carouselRef = React.useRef();
-//   const [hover, setHover] = useState(false);
-//   const [currentIndex, setCurrentIndex] = useState("");
-//   const upFunc = () => {
-//     const currentItemIndex = carouselRef.current.getCurrentItem();
-//     if (currentItemIndex > 0) {
-//       carouselRef.current.slidePrev();
-//     }
-//   };
-
-//   const downFunc = () => {
-//     const currentItemIndex = carouselRef.current.getCurrentItem();
-//     if (currentItemIndex < offerData.length - 1) {
-//       carouselRef.current.slideNext();
-//     }
-//   };
-//   return (
-//     <div className="relative bg-[#f3f4f9] pl-20 ">
-//       <div className="pt-20 container mx-auto">
-//         {/* <img src={s} alt="" />{" "} */}
-//         <div className="flex items-center justify-around">
-//           <div className="flex w-[622px] flex-col">
-//             {/* <Headin2 data={'What We Offer'}/> */}
-//             <MainSubHeading
-//               className=" text-left"
-//               my={"my-5"}
-//               ml={"ml-2"}
-//               text={"Bespoke IT Services By"}
-//               gradientText={" SyncClouds"}
-//             />
-//             <BoldParagraph
-//               text={
-//                 " Make a statement and drive revenue with our trusted IT services to deliver ultimate profitability."
-//               }
-//             />
-//             <img src={linesHero} alt="" />
-//           </div>
-//           {/* ============================================= ~ vertical swiper cards ~ ============================================== */}
-//           <Carousel
-//             ref={carouselRef}
-//             verticalMode
-//             pagination={false}
-//             showArrows={false}
-//             itemsToShow={2}
-//           >
-//             {offerData.map((card, index) => (
-//               <div
-//                 key={card.id}
-//                 onMouseEnter={() => {
-//                   setHover(true), setCurrentIndex(index);
-//                 }}
-//                 onMouseLeave={() => {
-//                   setHover(false);
-//                   setCurrentIndex("");
-//                 }}
-//               >
-//                 <div className="relative  mb-5 flex flex-col  p-5 w-[600px] bg-white  rounded shadow-lg hover:bg-blueDark hover:text-white lg:max-h-[300px] xl:max-h-[330px] ">
-//                   <div className="  w-[50px] rounded-full ">
-//                     <img
-//                       src={
-//                         hover && currentIndex === index
-//                           ? card.iconWhite
-//                           : card.icon
-//                       }
-//                     />
-//                   </div>
-//                   <div className="pt-10">
-//                     <InnerPageHeading text={`${card.title}`} />
-//                     <p className="text-[14px] md:text-[16px]  leading-[20px] md:leading-[30px] mb-10">
-//                       {card.description}
-//                     </p>
-//                   </div>
-//                 </div>
-//               </div>
-//             ))}
-//           </Carousel>
-//           <div className="grid gap-10 h-[56.5vh] xl:gap-5">
-//             <div
-//               className={`cursor-pointer  right-[15%] top-[7%] ${
-//                 currentIndex === 0 ? "cursor-not-allowed" : ""
-//               }`}
-//             >
-//               <img onClick={upFunc} src={arrowUp} alt="" />
-//             </div>
-//             <div
-//               className={`cursor-pointer  right-[15%] top-[48%] ${
-//                 currentIndex === offerData.length - 1
-//                   ? "cursor-not-allowed"
-//                   : ""
-//               }`}
-//             >
-//               <img onClick={downFunc} src={arrowDown} alt="" />
-//             </div>
-//           </div>
-//         </div>
-//         {/* ===========================================================  ~ ~ =========================================================== */}
-//         <div className="flex">
-//           <div className="w-[581px]">
-//             <MainSubHeading
-//               className=" text-left"
-//               my={"my-5"}
-//               ml={"ml-2"}
-//               text={"Transform digital experience with"}
-//               gradientText={" SyncClouds"}
-//             />
-
-//             <div className="relative flex">
-//               <div>
-//                 <img
-//                   className="  top-5 h-[360px]"
-//                   src={line}
-//                   alt="line"
-//                 />
-//               </div>
-//               <div className="ml-20">
-//                 {" "}
-//                 <h4 className="text-primary leading-[38px] mt-4 mb-7 text-[25.89px] font-[600]">
-//                   Boost Your business Expansion!
-//                 </h4>
-//                 <p>
-//                   Sync Clouds is committed to providing everyone with complete
-//                   custom software development services. No matter what, there is
-//                   always a chance to flourish, stand out, acquire, and rise..
-//                 </p>
-//                 <h6 className="my-5 font-[600] ">
-//                   Future Building Using Software, Innovation, And Technology
-//                 </h6>
-//                 <p>
-//                   Today's world is dominated by technology, so businesses and
-//                   people can survive. We have a global clientele because of our
-//                   unmatched solutions and innovative methods.
-//                 </p>
-//                 <Link to={"/contact"}>
-//                   <button className=" border border-primary rounded-sm py-2 px-4 mt-10 hover:bg-primary hover:text-white hover:text-bold text-primary">
-//                     Get In Touch
-//                   </button>
-//                 </Link>
-//               </div>
-//             </div>
-//           </div>
-//           <div className="flex">
-//             <img src={curlArrow} alt="curl arrow" />
-//             <img width={500} src={transform} alt="tranform image" />
-//           </div>
-//         </div>
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default OfferCard;
