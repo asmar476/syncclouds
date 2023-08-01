@@ -140,7 +140,7 @@ const ContactForm = () => {
           </p>
         </div>
       </div>
-      <div className="bg-[#EDF2F7] text-body px-4 mb-10 md:px-0 mx-5 w-[90%] md:max-w-[622px] rounded-sm">
+      <div className="bg-[#EDF2F7] text-black px-4 mb-10 md:px-0 mx-5 w-[90%] md:max-w-[622px] rounded-sm">
         <form
           className="px-[10px] md:px-[30px] py-[20px] md:py-[24px]"
           onSubmit={handleSubmit}
@@ -154,13 +154,15 @@ const ContactForm = () => {
               placeholder="Name"
               className={`my-2 py-[10px] px-3 text-[14px] md:text-[16px] font-[400] leading-[24px] w-[100%] border-b ${
                 formErrors.name ? "border-red-500" : "border-b-gray-200"
-              } placeholder-black outline-none`}
+              } placeholder-gray-400 outline-none`}
               name="name"
               value={formData.name}
               onChange={handleInputChange}
             />
             {formErrors.name && (
-              <p className="text-red-500 text-xs mt-1">{formErrors.name}</p>
+              <p className="text-red-500 text-xs font-semibold mt-1">
+                {formErrors.name}
+              </p>
             )}
           </div>
           <div className="flex flex-col sm:flex-row md:flex-col lg:flex-row sm:gap-5 md:gap-0 lg:gap-5">
@@ -168,7 +170,7 @@ const ContactForm = () => {
               <input
                 className={`my-2 py-[10px] px-3 text-[14px] md:text-[16px] font-[400] leading-[24px] w-[100%] border-b ${
                   formErrors.email ? "border-red-500" : "border-b-gray-200"
-                } placeholder-black outline-none`}
+                } placeholder-gray-400 outline-none`}
                 type="email"
                 placeholder="Email"
                 name="email"
@@ -176,7 +178,9 @@ const ContactForm = () => {
                 onChange={handleInputChange}
               />
               {formErrors.email && (
-                <p className="text-red-500 text-xs mt-1">{formErrors.email}</p>
+                <p className="text-red-500 text-xs font-semibold mt-1">
+                  {formErrors.email}
+                </p>
               )}
             </div>
             <div>
@@ -185,15 +189,15 @@ const ContactForm = () => {
                   formErrors.phoneNumber
                     ? "border-red-500"
                     : "border-b-gray-200"
-                } placeholder-black outline-none`}
+                } placeholder-gray-400 outline-none`}
                 type="text"
-                placeholder="Phone Number"
+                placeholder="Phone"
                 name="phoneNumber"
                 value={formData.phoneNumber}
                 onChange={handleInputChange}
               />
               {formErrors.phoneNumber && (
-                <p className="text-red-500 text-xs mt-1">
+                <p className="text-red-500 text-xs font-semibold mt-1">
                   {formErrors.phoneNumber}
                 </p>
               )}
@@ -242,12 +246,14 @@ const ContactForm = () => {
             </p>
           </div>
           {formErrors.file && (
-            <p className="text-red-500 text-xs mt-1">{formErrors.file}</p>
+            <p className="text-red-500 text-xs font-semibold mt-1">
+              {formErrors.file}
+            </p>
           )}
 
-          <div className="mt-2 justify-center pt-[10px] text-[14px] md:text-[16px] font-[400] leading-[24px] placeholder-black outline-none">
+          <div className="mt-2 justify-center pt-[10px] text-[14px] md:text-[16px] font-[400] leading-[24px] placeholder-gray-400 outline-none">
             <textarea
-              className={`w-full placeholder-black   min-h-[153px] max-h-[355px] p-2 ${
+              className={`w-full placeholder-gray-400   min-h-[153px] max-h-[355px] p-2 ${
                 formErrors.message ? "border-red-500" : ""
               }`}
               placeholder="Message"
@@ -256,7 +262,7 @@ const ContactForm = () => {
               onChange={handleInputChange}
             ></textarea>
             {/* {formErrors.message && (
-              <p className="text-red-500 text-xs mt-1">{formErrors.message}</p>
+              <p className="text-red-500 text-xs font-semibold mt-1">{formErrors.message}</p>
             )} */}
           </div>
           <div className="mt-3">
@@ -273,7 +279,7 @@ const ContactForm = () => {
               </p>
             </div>
             {formErrors.agreement && (
-              <p className="pl-8  text-red-500 text-center text-xs mt-1 mb-4">
+              <p className="pl-8  text-red-500 text-center text-xs mt-1 mb-4 font-semibold">
                 {formErrors.agreement}
               </p>
             )}

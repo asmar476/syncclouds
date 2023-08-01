@@ -192,7 +192,30 @@ background-color: #012781 !important;
   height: 50px!important;
   width: 30px!important;
   }
-  
+  .fcRlZe{
+    color: white!important;
+    background-color: #012781 !important;
+    font-size: 1.2em !important;
+    height: 40px !important;
+    width: 45px !important;
+    display: flex !important;
+    justify-content: center!important ;
+    align-items: center!important;
+    min-width:10px!important;
+    border: 1px solid 012781 !important;
+    margin-right: 20px; margin-left: 20px;
+  }
+  .cIuHOQ{
+    font-size: 1.2em !important;
+    margin-left: 20px;
+    margin-right: 20px;
+    height: 40px !important;
+    width: 45px !important;
+    display: flex !important;
+    justify-content: center!important ;
+    align-items: center!important;
+    min-width:10px!important;
+  }
   .ant-row{
     margin: 0!important;
   }

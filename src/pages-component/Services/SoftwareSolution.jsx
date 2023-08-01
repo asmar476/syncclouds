@@ -7,10 +7,10 @@ const SoftwareSolution = () => {
   const [showOverlay, setShowOverlay] = useState(false);
   const [showIndex, setShowIndex] = useState("");
   return (
-    <div className="realtive ">
-      {/* <img className="w-full" src={bgImage} alt="imge" /> */}
-      <div className=" flex flex-col items-center justify-center container mx-auto px-10  my-20">
-        <div className="flex flex-col items-center justify-center ">
+    <div className="relative z-[0] ">
+      <img className="w-full top-36 absolute z-[-1]" src={bgImage} alt="imge" />
+      <div className=" flex flex-col items-center justify-center container mx-auto px-10  mb-20">
+        <div className="flex flex-col items-center justify-center">
           <MainSubHeading
             text={"Our Experts Craft Custom "}
             gradientText={"Software Solutions"}
@@ -20,7 +20,27 @@ const SoftwareSolution = () => {
             our best-in-class services for everyone.
           </p>
         </div>
-        <div className="text-center space-x-10 grid md:grid-cols-2 lg:grid-cols-3">
+        <div className="flex mt-10 lg:mt-32 flex-wrap items-center justify-center">
+          {softwareSolutionData.map((data, index) => (
+            <div
+              key={index}
+              className=" bg-white mx-3 w-[400px] py-10 h-[193px] flex items-center justify-center gap-5 flex-col box-shadow  pb-5 mb-5"
+            >
+              <img src={data.img} width={98} alt="icon" />
+              <h1 className="font-[600] text-[18px] gradient-text">
+                {data.title}
+              </h1>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+};
+export default SoftwareSolution;
+
+{
+  /* <div className="flex flex-wrap lg:justify-between items-center justify-center">
           {softwareSolutionData.map((data, index) => (
             <div
               // onMouseEnter={() => {
@@ -76,10 +96,5 @@ const SoftwareSolution = () => {
               )}
             </div>
           ))}
-        </div>{" "}
-      </div>
-    </div>
-  );
-};
-
-export default SoftwareSolution;
+        </div>{" "} */
+}

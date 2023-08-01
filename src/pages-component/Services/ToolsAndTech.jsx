@@ -5,11 +5,12 @@ import cloud from "../../assets/Images/TandT2.svg";
 import web from "../../assets/Images/TandT6.svg";
 import mobile from "../../assets/Images/TandT4.svg";
 import framwork from "../../assets/Images/TandT5.svg";
+import Carousel from "react-elastic-carousel";
 const Images = [web, db, cloud, languages, framwork, mobile];
 function ToolsAndTech() {
   return (
     <div>
-      <div className="flex flex-col items-center justify-center">
+      <div className="hidden sm:flex flex-col items-center justify-center">
         <h2
           className={`text-[#171923] font-[700] text-[20px] md:text-[25.89px] leading-[62.83px]`}
         >
@@ -28,6 +29,24 @@ function ToolsAndTech() {
             </div>
           ))}
         </div>
+      </div>
+      <div className="sm:hidden">
+        <Carousel
+          className="lg:block hidden"
+          // ref={carouselRef}
+          itemsToShow={1}
+          pagination={false}
+          showArrows={true}
+          // enableAutoPlay
+          // autoPlaySpeed={1000}
+          // isRTL={false}
+        >
+          {Images.map((img, ind) => (
+            <div key={ind}>
+              <img src={img} alt="" />
+            </div>
+          ))}
+        </Carousel>
       </div>
     </div>
   );

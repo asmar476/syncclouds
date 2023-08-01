@@ -42,6 +42,501 @@ const TeamMemberData = [
     position: "Associate Software Engineer",
     img: azmatImg,
   },
+  {
+    name: "Azmatullah",
+    position: "Associate Software Engineer",
+    img: azmatImg,
+  },
+  {
+    name: "Azmatullah",
+    position: "Associate Software Engineer",
+    img: azmatImg,
+  },
+  {
+    name: "Azmatullah",
+    position: "Associate Software Engineer",
+    img: azmatImg,
+  },
+  {
+    name: "Azmatullah",
+    position: "Associate Software Engineer",
+    img: azmatImg,
+  },
+  {
+    name: "Azmatullah",
+    position: "Associate Software Engineer",
+    img: azmatImg,
+  },
+  {
+    name: "Azmatullah",
+    position: "Associate Software Engineer",
+    img: azmatImg,
+  },
+  {
+    name: "Azmatullah",
+    position: "Associate Software Engineer",
+    img: azmatImg,
+  },
+  {
+    name: "Azmatullah",
+    position: "Associate Software Engineer",
+    img: azmatImg,
+  },
+  {
+    name: "Azmatullah",
+    position: "Associate Software Engineer",
+    img: azmatImg,
+  },
+  {
+    name: "Azmatullah",
+    position: "Associate Software Engineer",
+    img: azmatImg,
+  },
+  {
+    name: "Azmatullah",
+    position: "Associate Software Engineer",
+    img: azmatImg,
+  },
+  {
+    name: "Azmatullah",
+    position: "Associate Software Engineer",
+    img: azmatImg,
+  },
+  {
+    name: "Azmatullah",
+    position: "Associate Software Engineer",
+    img: azmatImg,
+  },
+  {
+    name: "Azmatullah",
+    position: "Associate Software Engineer",
+    img: azmatImg,
+  },
+  {
+    name: "Azmatullah",
+    position: "Associate Software Engineer",
+    img: azmatImg,
+  },
+  {
+    name: "Azmatullah",
+    position: "Associate Software Engineer",
+    img: azmatImg,
+  },
+  {
+    name: "Azmatullah",
+    position: "Associate Software Engineer",
+    img: azmatImg,
+  },
+  {
+    name: "Azmatullah",
+    position: "Associate Software Engineer",
+    img: azmatImg,
+  },
+  {
+    name: "Azmatullah",
+    position: "Associate Software Engineer",
+    img: azmatImg,
+  },
+  {
+    name: "Azmatullah",
+    position: "Associate Software Engineer",
+    img: azmatImg,
+  },
+  {
+    name: "Azmatullah",
+    position: "Associate Software Engineer",
+    img: azmatImg,
+  },
+  {
+    name: "Azmatullah",
+    position: "Associate Software Engineer",
+    img: azmatImg,
+  },
+  {
+    name: "Azmatullah",
+    position: "Associate Software Engineer",
+    img: azmatImg,
+  },
+  {
+    name: "Azmatullah",
+    position: "Associate Software Engineer",
+    img: azmatImg,
+  },
+  {
+    name: "Azmatullah",
+    position: "Associate Software Engineer",
+    img: azmatImg,
+  },
+  {
+    name: "Azmatullah",
+    position: "Associate Software Engineer",
+    img: azmatImg,
+  },
+  {
+    name: "Azmatullah",
+    position: "Associate Software Engineer",
+    img: azmatImg,
+  },
+  {
+    name: "Azmatullah",
+    position: "Associate Software Engineer",
+    img: azmatImg,
+  },
+  {
+    name: "Azmatullah",
+    position: "Associate Software Engineer",
+    img: azmatImg,
+  },
+  {
+    name: "Azmatullah",
+    position: "Associate Software Engineer",
+    img: azmatImg,
+  },
+  {
+    name: "Azmatullah",
+    position: "Associate Software Engineer",
+    img: azmatImg,
+  },
+  {
+    name: "Azmatullah",
+    position: "Associate Software Engineer",
+    img: azmatImg,
+  },
+  {
+    name: "Azmatullah",
+    position: "Associate Software Engineer",
+    img: azmatImg,
+  },
+  {
+    name: "Azmatullah",
+    position: "Associate Software Engineer",
+    img: azmatImg,
+  },
+  {
+    name: "Azmatullah",
+    position: "Associate Software Engineer",
+    img: azmatImg,
+  },
+  {
+    name: "Azmatullah",
+    position: "Associate Software Engineer",
+    img: azmatImg,
+  },
+  {
+    name: "Azmatullah",
+    position: "Associate Software Engineer",
+    img: azmatImg,
+  },
+  {
+    name: "Azmatullah",
+    position: "Associate Software Engineer",
+    img: azmatImg,
+  },
+  {
+    name: "Azmatullah",
+    position: "Associate Software Engineer",
+    img: azmatImg,
+  },
+  {
+    name: "Azmatullah",
+    position: "Associate Software Engineer",
+    img: azmatImg,
+  },
+  {
+    name: "Azmatullah",
+    position: "Associate Software Engineer",
+    img: azmatImg,
+  },
+  {
+    name: "Azmatullah",
+    position: "Associate Software Engineer",
+    img: azmatImg,
+  },
+  {
+    name: "Azmatullah",
+    position: "Associate Software Engineer",
+    img: azmatImg,
+  },
+  {
+    name: "Azmatullah",
+    position: "Associate Software Engineer",
+    img: azmatImg,
+  },
+  {
+    name: "Azmatullah",
+    position: "Associate Software Engineer",
+    img: azmatImg,
+  },
+  {
+    name: "Azmatullah",
+    position: "Associate Software Engineer",
+    img: azmatImg,
+  },
+  {
+    name: "Azmatullah",
+    position: "Associate Software Engineer",
+    img: azmatImg,
+  },
+  {
+    name: "Azmatullah",
+    position: "Associate Software Engineer",
+    img: azmatImg,
+  },
+  {
+    name: "Azmatullah",
+    position: "Associate Software Engineer",
+    img: azmatImg,
+  },
+  {
+    name: "Azmatullah",
+    position: "Associate Software Engineer",
+    img: azmatImg,
+  },
+  {
+    name: "Azmatullah",
+    position: "Associate Software Engineer",
+    img: azmatImg,
+  },
+  {
+    name: "Azmatullah",
+    position: "Associate Software Engineer",
+    img: azmatImg,
+  },
+  {
+    name: "Azmatullah",
+    position: "Associate Software Engineer",
+    img: azmatImg,
+  },
+  {
+    name: "Azmatullah",
+    position: "Associate Software Engineer",
+    img: azmatImg,
+  },
+  {
+    name: "Azmatullah",
+    position: "Associate Software Engineer",
+    img: azmatImg,
+  },
+  {
+    name: "Azmatullah",
+    position: "Associate Software Engineer",
+    img: azmatImg,
+  },
+  {
+    name: "Azmatullah",
+    position: "Associate Software Engineer",
+    img: azmatImg,
+  },
+  {
+    name: "Azmatullah",
+    position: "Associate Software Engineer",
+    img: azmatImg,
+  },
+  {
+    name: "Azmatullah",
+    position: "Associate Software Engineer",
+    img: azmatImg,
+  },
+  {
+    name: "Azmatullah",
+    position: "Associate Software Engineer",
+    img: azmatImg,
+  },
+  {
+    name: "Azmatullah",
+    position: "Associate Software Engineer",
+    img: azmatImg,
+  },
+  {
+    name: "Azmatullah",
+    position: "Associate Software Engineer",
+    img: azmatImg,
+  },
+  {
+    name: "Azmatullah",
+    position: "Associate Software Engineer",
+    img: azmatImg,
+  },
+  {
+    name: "Azmatullah",
+    position: "Associate Software Engineer",
+    img: azmatImg,
+  },
+  {
+    name: "Azmatullah",
+    position: "Associate Software Engineer",
+    img: azmatImg,
+  },
+  {
+    name: "Azmatullah",
+    position: "Associate Software Engineer",
+    img: azmatImg,
+  },
+  {
+    name: "Azmatullah",
+    position: "Associate Software Engineer",
+    img: azmatImg,
+  },
+  {
+    name: "Azmatullah",
+    position: "Associate Software Engineer",
+    img: azmatImg,
+  },
+  {
+    name: "Azmatullah",
+    position: "Associate Software Engineer",
+    img: azmatImg,
+  },
+  {
+    name: "Azmatullah",
+    position: "Associate Software Engineer",
+    img: azmatImg,
+  },
+  {
+    name: "Azmatullah",
+    position: "Associate Software Engineer",
+    img: azmatImg,
+  },
+  {
+    name: "Azmatullah",
+    position: "Associate Software Engineer",
+    img: azmatImg,
+  },
+  {
+    name: "Azmatullah",
+    position: "Associate Software Engineer",
+    img: azmatImg,
+  },
+  {
+    name: "Azmatullah",
+    position: "Associate Software Engineer",
+    img: azmatImg,
+  },
+  {
+    name: "Azmatullah",
+    position: "Associate Software Engineer",
+    img: azmatImg,
+  },
+  {
+    name: "Azmatullah",
+    position: "Associate Software Engineer",
+    img: azmatImg,
+  },
+  {
+    name: "Azmatullah",
+    position: "Associate Software Engineer",
+    img: azmatImg,
+  },
+  {
+    name: "Azmatullah",
+    position: "Associate Software Engineer",
+    img: azmatImg,
+  },
+  {
+    name: "Azmatullah",
+    position: "Associate Software Engineer",
+    img: azmatImg,
+  },
+  {
+    name: "Azmatullah",
+    position: "Associate Software Engineer",
+    img: azmatImg,
+  },
+  {
+    name: "Azmatullah",
+    position: "Associate Software Engineer",
+    img: azmatImg,
+  },
+  {
+    name: "Azmatullah",
+    position: "Associate Software Engineer",
+    img: azmatImg,
+  },
+  {
+    name: "Azmatullah",
+    position: "Associate Software Engineer",
+    img: azmatImg,
+  },
+  {
+    name: "Azmatullah",
+    position: "Associate Software Engineer",
+    img: azmatImg,
+  },
+  {
+    name: "Azmatullah",
+    position: "Associate Software Engineer",
+    img: azmatImg,
+  },
+  {
+    name: "Azmatullah",
+    position: "Associate Software Engineer",
+    img: azmatImg,
+  },
+  {
+    name: "Azmatullah",
+    position: "Associate Software Engineer",
+    img: azmatImg,
+  },
+  {
+    name: "Azmatullah",
+    position: "Associate Software Engineer",
+    img: azmatImg,
+  },
+  {
+    name: "Azmatullah",
+    position: "Associate Software Engineer",
+    img: azmatImg,
+  },
+  {
+    name: "Azmatullah",
+    position: "Associate Software Engineer",
+    img: azmatImg,
+  },
+  {
+    name: "Azmatullah",
+    position: "Associate Software Engineer",
+    img: azmatImg,
+  },
+  {
+    name: "Azmatullah",
+    position: "Associate Software Engineer",
+    img: azmatImg,
+  },
+  {
+    name: "Azmatullah",
+    position: "Associate Software Engineer",
+    img: azmatImg,
+  },
+  {
+    name: "Azmatullah",
+    position: "Associate Software Engineer",
+    img: azmatImg,
+  },
+  {
+    name: "Azmatullah",
+    position: "Associate Software Engineer",
+    img: azmatImg,
+  },
+  {
+    name: "Azmatullah",
+    position: "Associate Software Engineer",
+    img: azmatImg,
+  },
+  {
+    name: "Azmatullah",
+    position: "Associate Software Engineer",
+    img: azmatImg,
+  },
+  {
+    name: "Azmatullah",
+    position: "Associate Software Engineer",
+    img: azmatImg,
+  },
+  {
+    name: "Azmatullah",
+    position: "Associate Software Engineer",
+    img: azmatImg,
+  },
 ];
 
 export default TeamMemberData;

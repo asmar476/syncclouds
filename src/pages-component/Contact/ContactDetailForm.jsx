@@ -9,7 +9,13 @@ import ContactForm from "../../common component/ContactForm";
 import { Tooltip } from "antd";
 import arrowUp from "../../assets/icons/arrow-up-circle.svg";
 import MainHeading from "../../common component/MainHeading";
-const Images = [CompletelyAccessible, QualifiedAgents, StaffAugmentation];
+const Images = [
+  CompletelyAccessible,
+  QualifiedAgents,
+  StaffAugmentation,
+  AdequatePrice,
+  ExceptionalOffers,
+];
 const Images2 = [AdequatePrice, ExceptionalOffers];
 const ContactDetailForm = () => {
   return (
@@ -41,24 +47,13 @@ const ContactDetailForm = () => {
       <div className="text-center mt-28 mb-16">
         <MainSubHeading text={"Why "} gradientText={"Choose Us"} />
       </div>
-      <div className="flex  flex-col lg:flex-row items-center justify-center">
+      <div className="flex flex-wrap flex-col lg:flex-row items-center justify-center">
         {Images.map((img, ind) => (
           <div key={ind}>
             <img
-              className="w-[1000px] sm:w-[400px]"
+              className="w-[100%]"
               src={img}
               alt={`image ${ind}`}
-            />
-          </div>
-        ))}
-      </div>
-      <div className="flex  flex-col lg:flex-row items-center justify-center">
-        {Images2.map((img, ind) => (
-          <div key={ind}>
-            <img
-              className="w-[1000px] sm:w-[400px]"
-              src={img}
-              alt={`image${ind}`}
             />
           </div>
         ))}

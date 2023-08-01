@@ -29,7 +29,7 @@ function ServicesHero() {
         />
         <div className="">
           <div className="  flex p-20 flex-col xl:gap-32 items-center justify-center  space-y-10 lg:space-y-0 lg:flex-row">
-            <div className="space-y-10 text-center w-[622px] lg:text-left ">
+            <div className="space-y-10 text-center max-w-[630px] lg:text-left ">
               <h1 className="text-[41.89px]  font-[700] leading-[65px]">
                 Elevate Your Business with{" "}
                 <span className="text-[#002680]">
@@ -60,6 +60,7 @@ function ServicesHero() {
             />
           </div>
         </div>
+        <SoftwareSolution />
       </div>
     </>
   );

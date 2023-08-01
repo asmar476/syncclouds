@@ -15,9 +15,9 @@ const ExpandYourHorizon = () => {
         <p className="text-body font-[500] text-[16px] leading-[24px] max-w-[1000px] my-5">
           For our clients, the services we provide can increase productivity and
           speed up growth. We have vowed to raise the bar for our client’s
-          performance continually."
+          performance continually.
         </p>
-        <img src={aboutHorizon} alt="" />
+        <img className="w-full" src={aboutHorizon} alt="" />
       </div>
       {/*  / // / / / expand card / // / /  */}
       {/* <div className="grid grid-cols-4 gap-5 mt-20">

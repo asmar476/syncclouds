@@ -8,19 +8,21 @@ import tri2 from "../../assets/About illustration/triangle2.svg";
 
 const ProjectProcedure = () => {
   return (
-    <div className=" relative mx-auto px-20 my-20">
-      <img
-        width={150}
-        className="absolute z-[-1] top-[-60px] right-0"
-        src={tri1}
-        alt="triangle1"
-      />
-      <img
-        width={270}
-        className="absolute z-[-1] top-[-40px] right-[-30px]"
-        src={tri2}
-        alt="triangle2"
-      />
+    <div className="relative mx-auto px-5 my-20">
+      <div className="hidden 2xl:block">
+        <img
+          width={150}
+          className="absolute z-[-1] top-[-60px] right-0"
+          src={tri1}
+          alt="triangle1"
+        />
+        <img
+          width={270}
+          className="absolute z-[-1] top-[-40px] right-0"
+          src={tri2}
+          alt="triangle2"
+        />
+      </div>
       <div className="flex flex-col  items-center justify-center">
         <div className="text-center flex">
           <h1 className="font-[700] text-[20px] md:text-[41.89px] leading-[62.83px]">
@@ -29,17 +31,17 @@ const ProjectProcedure = () => {
           </h1>
         </div>
 
-        <p className="text-body font-[500] text-[16px] leading-[24px] max-w-[1000px] mt-5">
+        <p className="text-body text-center font-[500] text-[18px] leading-[24px] w-[783] mt-5">
           Our 3-step process ensures that every task is completed efficiently,
           accurately, and with attention to detail.
         </p>
       </div>
-      <div className="bg-white grid grid-cols-3 my-32 gap-10 ">
+      <div className="bg-white flex  items-center justify-center flex-wrap mt-28 gap-5 md:gap-16 lg:gap-32">
         {projectProcedureData.map((data, index) => (
           <div
             key={index}
-            className={`border border-gray rounded-tr-[40px]  p-7 space-y-3  rounded ${
-              index === 1 ? "-translate-y-14" : ""
+            className={`max-w-[408px] border border-gray rounded-tr-[40px]  pb-5 px-5 space-y-3 rounded ${
+              index === 1 ? "2xl:-translate-y-14" : ""
             }`}
           >
             <div className="flex justify-between">
@@ -51,10 +53,7 @@ const ProjectProcedure = () => {
               </h1>
               <img width={96} src={data.img} />
             </div>
-            <div className="font-[600] mt-5 text-[25.89px]">
-              <InnerPageHeading text={data.title} />
-            </div>
-
+            <h1 className="font-[600] text-[25.89px]">{data.title}</h1>
             <p>{data.description}</p>
             <ul>
               {data.listData.map((li, index) => (

@@ -16,7 +16,7 @@ const Services = () => {
     <Layout>
       <ServicesHero />
       {/* software solution */}
-      <SoftwareSolution />
+      {/* <SoftwareSolution /> */}
       {/* Expert Ideation */}
       <ExprtIdeation />
       {/* Why syncClouds */}
