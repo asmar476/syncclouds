@@ -8,14 +8,18 @@ const SoftwareSolution = () => {
   const [showIndex, setShowIndex] = useState("");
   return (
     <div className="relative z-[0] ">
-      <img className="w-full top-36 absolute z-[-1]" src={bgImage} alt="imge" />
+      <img
+        className="hidden lg:block lg:w-full top-36 absolute z-[-1]"
+        src={bgImage}
+        alt="imge"
+      />
       <div className=" flex flex-col items-center justify-center container mx-auto px-10  mb-20">
         <div className="flex flex-col items-center justify-center">
           <MainSubHeading
             text={"Our Experts Craft Custom "}
             gradientText={"Software Solutions"}
           />
-          <p className="text-[#335775] font-[500] text-[16px] leading-[24px] max-w-[800px] my-5 text-center">
+          <p className="text-[#335775] font-[500] text-[16px] leading-[24px] md:w-[622px] my-5 text-center">
             Skyrocket your sales by providing 24/7 access to your business with
             our best-in-class services for everyone.
           </p>
@@ -24,7 +28,7 @@ const SoftwareSolution = () => {
           {softwareSolutionData.map((data, index) => (
             <div
               key={index}
-              className=" bg-white mx-3 w-[400px] py-10 h-[193px] flex items-center justify-center gap-5 flex-col box-shadow  pb-5 mb-5"
+              className=" bg-white mx-3 w-[350px] py-10 h-[193px] flex items-center justify-center gap-5 flex-col box-shadow  pb-5 mb-5"
             >
               <img src={data.img} width={98} alt="icon" />
               <h1 className="font-[600] text-[18px] gradient-text">

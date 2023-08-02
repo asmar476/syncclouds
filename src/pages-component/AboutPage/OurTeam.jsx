@@ -16,21 +16,22 @@ const OurTeam = () => {
   const [showOverlay, setShowOverlay] = useState(false);
   const [showOverlayIndex, setShowOverlayIndex] = useState("");
   return (
-    <div className="  mx-auto px-10 my-24">
-      <img className="absolute left-0" src={tri3} alt="bg side image" />
+    <div className="relative z-[-1] mx-auto px-5 md:px-24  my-24">
+      <img
+        className="hidden md:block absolute top-40 z-[100] left-0"
+        src={tri3}
+        alt="bg side image"
+      />
       <div className="flex justify-center items-center">
-        {" "}
-        <h1 className="text-center text-[14px] md:text-[30px] lg:text-[41.89px] w-[327px] md:w-[622px] lg:w-[900px]  font-[700]">
+        <h1 className="text-center text-[14px] md:text-[25px] lg:text-[36.89px] w-[327px]  md:w-[950px]  font-[700]">
           Give Your Dreams a Digital Reality with our
           <br />
           <span className="text-[#002680]"> Passionate Team</span>
         </h1>
       </div>
-
       <br />
       <br />
-      <div className="hidden sm:block my-10">
-        {" "}
+      <div className="hidden z-[-1] sm:block my-10">
         <Swiper
           modules={[Navigation, Pagination, Scrollbar, Autoplay]}
           spaceBetween={50}
@@ -56,7 +57,7 @@ const OurTeam = () => {
           {TeamMemberData.map((data, index) => (
             <SwiperSlide id={index}>
               <div
-                className="relative z-0 w-[300px]  h-[300px] bg-purpleLight flex  justify-center rounded overflow-hidden"
+                className="relative z-0 w-[320px]  h-[300px] bg-purpleLight flex  justify-center rounded overflow-hidden"
                 onMouseEnter={() => {
                   setShowOverlay(true);
                   setShowOverlayIndex(index);
@@ -89,17 +90,16 @@ const OurTeam = () => {
           ))}
         </Swiper>
       </div>
-
       <div className="sm:hidden">
         <Carousel
           className="lg:block hidden"
-          // ref={carouselRef}
           itemsToShow={1}
           pagination={false}
           showArrows={true}
-          enableAutoPlay
-          autoPlaySpeed={1000}
-          isRTL={false}
+          // ref={carouselRef}
+          // enableAutoPlay
+          // autoPlaySpeed={1000}
+          // isRTL={false}
         >
           {TeamMemberData.map((data, index) => (
             <div

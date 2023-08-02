@@ -7,7 +7,7 @@ import CountUp from "react-countup";
 import VisibilitySensor from "react-visibility-sensor";
 const data = [
   { icon: one, title: "Advanced Process", start: 10, end: 150 },
-  { icon: two, title: "Costumer Software Solution", start: 10, end: 150 },
+  { icon: two, title: "Customer Software Solution", start: 10, end: 150 },
   { icon: three, title: "Success Stories", start: 10, end: 150 },
   { icon: four, title: "Amplified Business", start: 10, end: 150 },
 ];
@@ -39,7 +39,7 @@ const ExprtIdeation = () => {
               </CountUp>{" "}
               +
             </h3>
-            <p className="text-[16px] font-[600] leading-[24px] text-white">
+            <p className="text-[12px] sm:text-[16px] font-[600] leading-[24px] text-white">
               {position.title}
             </p>
           </div>

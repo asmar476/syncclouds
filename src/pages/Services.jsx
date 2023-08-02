@@ -30,7 +30,7 @@ const Services = () => {
       {/* WhatComesNext  */}
       <WhatComesNext />
       {/* <EntireCatalog /> */}
-      <EntireCatalog />
+      {/* <EntireCatalog /> */}
       {/* FAQ Section */}
       <TwoColFAQs />
       {/* get synced */}

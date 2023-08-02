@@ -11,7 +11,7 @@ const smallScreen = [s1, s2, s3];
 function WhatComesNext() {
   return (
     <>
-      <div className="mt-16 mb-10 container mx-auto">
+      <div className="mt-16 container mx-auto">
         {" "}
         <h3 className="font-semibold text-center text-xl md:text-2xl ">
           What Comes Next?

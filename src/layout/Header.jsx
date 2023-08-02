@@ -129,7 +129,7 @@ const Header = () => {
                   <a href="/about">Company </a> &nbsp;&nbsp;&nbsp;
                   <img src={Dropdown} />{" "}
                 </div>
-                <Link to="/contact-us">
+                <Link to="/contact">
                   <button className="pulse bg-[#273C7F] text-white rounded-full py-1 px-4">
                     Book a Call
                   </button>

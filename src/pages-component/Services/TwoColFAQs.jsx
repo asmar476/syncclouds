@@ -8,15 +8,17 @@ function TwoColFAQs() {
   const lastFourFaqs = faqData.slice(4);
   return (
     <>
-      <div className="text-center mt-28 mb-16">
-        <MainSubHeading text={"Frequently "} gradientText={"Ask Questions"} />
-        <p className="text-body font-[500] text-[18px] leading-[24px] my-5">
+      <div>
+        <div className="px-10 text-center  mb-7 md:mt-28">
+          <MainSubHeading text={"FAQS"} gradientText={""} />
+          {/* <p className="text-body font-[500] lsm:text-[12px] sm:text-[18px] leading-[24px] mt-5">
           Discover the power of Sync Clouds with our FAQs section!
-        </p>
-      </div>
-      <div className=" my-20 space-y-5 lg:space-y-0 lg:flex justify-center gap-10 px-14 ">
-        <FaqSection faqData={firstFourFaqs} />
-        <FaqSection faqData={lastFourFaqs} />
+        </p> */}
+        </div>
+        <div className=" mb-20 space-y-5 lg:space-y-0 lg:flex justify-center gap-10 px-10">
+          <FaqSection faqData={firstFourFaqs} />
+          <FaqSection faqData={lastFourFaqs} />
+        </div>
       </div>
     </>
   );

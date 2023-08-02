@@ -23,9 +23,9 @@ function EntireCatalog() {
             strategic IT and technology consulting.
           </p>
         </div>
-        <div className=" flex items-center justify-center">
+        <div className=" flex md:flex-row flex-col items-center justify-center md:justify-between">
           <div>
-            <ul className="bg-[#EDF2F7] rounded px-16 w-[350px] py-12 space-y-4">
+            <ul className="bg-[#EDF2F7] rounded ml-3 px-16 w-[350px] py-12 space-y-4">
               {servicesCatalog.map((card, index) => (
                 <li
                   className={`cursor-pointer font-[600] text-[22px] flex ${
@@ -41,14 +41,14 @@ function EntireCatalog() {
             </ul>
           </div>
 
-          <div className="flex items-center  justify-between shadow">
-            <div className="w-[527px] pl-16">
+          <div className="flex md:flex-row flex-col items-center justify-center md:justify-between shadow">
+            <div className="w-[350px] md:w-[527px] pl-5 lg:pl-16">
               {selectedCard && (
                 <div>
                   <h2 className="text-primary  font-[600] mb-5 text-[25.89px]">
                     {selectedCard.title}
                   </h2>
-                  <p className="text-body text-[18px]">
+                  <p className="text-body w-[327px] text-[12px] lg:text-[18px]">
                     {selectedCard.content}
                   </p>
                 </div>

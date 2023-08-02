@@ -201,9 +201,9 @@ body {
   .fcRlZe{
     color: white!important;
     background-color: #012781 !important;
-    font-size: 1.2em !important;
-    height: 40px !important;
-    width: 45px !important;
+    font-size: 0.7em !important;
+    height: 30px !important;
+    width: 50px !important;
     display: flex !important;
     justify-content: center!important ;
     align-items: center!important;
@@ -212,11 +212,11 @@ body {
     margin-right: 20px; margin-left: 20px;
   }
   .cIuHOQ{
-    font-size: 1.2em !important;
+    font-size: 0.7em !important;
     margin-left: 20px;
     margin-right: 20px;
-    height: 40px !important;
-    width: 45px !important;
+    height: 30px !important;
+    width: 50px !important;
     display: flex !important;
     justify-content: center!important ;
     align-items: center!important;

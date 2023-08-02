@@ -29,7 +29,10 @@ const InnovativeServices = () => {
             business goals.
           </p>
           <Link to={"/contact"}>
-            <button className=" mb-10 text-[18px] font-[500] bg-[#002680] text-white px-3 py-2 rounded mt-10">
+            <button
+              className=" mb-10 text-[18px] font-[500] bg-[#00315A]
+ text-white px-[24px] py-[12px] rounded-[2px] mt-10"
+            >
               Let's Get Started
             </button>
           </Link>

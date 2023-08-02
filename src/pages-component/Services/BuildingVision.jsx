@@ -5,22 +5,23 @@ import { chevronUp, chevrondown } from "../../common component/Images";
 import InnerPageHeading from "../../common component/InnerPageHeading";
 import { servicesSoftwareSteps } from "../../constant/ServicesSoftwaredevelopmentStepsData";
 import SDLCIllustration from "../../assets/Services/SDLC.svg";
+import smallsdlc from "../../assets/Services/smlSdlc.svg";
+import mobBg from "../../assets/Services/mobileService.svg";
 const BuildingVision = () => {
   const [questionOpen, setQuestionOpen] = useState(false);
   const [quesIndex, setQuesIndex] = useState([]);
   return (
-    <div className="container mx-auto px-10 py-20">
+    <div className="container mx-auto px-2 sm:px-10 pt-10">
       <div className="flex items-center justify-center flex-col text-center">
-        <MainSubHeading text={"Building Your Vision, One Step at a Time"} />
-        <p className="text-[#335775] font-[500] text-[16px] leading-[24px] max-w-[800px] mt-5 text-center">
+        <h3 className="font-[600] text-14px ">
+          Building Your Vision, One Step at a Time
+        </h3>
+        <p className="text-[#335775] font-[400] text-[12px] md:font-[500] md:text-[16px] leading-[24px] max-w-[800px] my-5 text-center">
           Our 8-step development process brings your software vision to life,
           ensuring every step is thoughtfully crafted and executed.
         </p>
       </div>
-      <div className="flex space-y-10 lg:space-y-0 lg:flex-row-reverse flex-col justify-center lg:justify-between my-20">
-        <div>
-          <img src={SDLCIllustration} />
-        </div>
+      <div className="flex space-y-4 lg:space-y-0 lg:flex-row flex-col justify-center lg:justify-between px-3 mb-20">
         <div className="w-[100%] lg:w-[40%] space-y-5">
           {servicesSoftwareSteps.map((arr, index) => (
             <div key={index} className="accordian rounded-md">
@@ -85,6 +86,12 @@ const BuildingVision = () => {
               </div>
             </div>
           ))}
+        </div>
+        <div>
+          <img className="hidden lg:block" src={SDLCIllustration} />
+        </div>
+        <div>
+          <img className="w-full lg:hidden" src={smallsdlc} />
         </div>
       </div>
     </div>

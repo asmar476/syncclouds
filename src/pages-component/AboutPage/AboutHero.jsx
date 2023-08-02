@@ -20,14 +20,14 @@ const AboutHero = () => {
         </Tooltip>
       </div>
       <div className="container mx-auto py-10">
-        <div className="ml-5 flex flex-col xl:gap-10 items-center justify-between md:gap-5 lg:gap-0 space-y-10 md:space-y-0 md:flex-row">
+        <div className="ml-5 flex flex-col xl:gap-10 items-center justify-center md:gap-5 lg:gap-0 space-y-10 md:space-y-0 md:flex-row">
           <div className="max-w-[622px] md:space-y-5 text-center  md:text-left ">
             <div>
               <h1 className="text-[28px] md:text-[50px] text-[#002680] font-[700] leading-[65px]">
                 About Us
               </h1>
             </div>
-            <div className=" text-body font-500 leading-[27px] text-[18px] text-sm md:text-left w-[400px] md:w-[450px] lg:w-[600px]">
+            <div className=" text-body px-4font-500 leading-[27px] md:text-[18px] text-sm md:text-left w-[327px] md:w-[450px] lg:w-[600px]">
               <p className="mb-10 ">
                 SyncClouds is an industry-leading Digital Transformation and
                 Engineering Firm offering end-to-end software development
@@ -43,7 +43,7 @@ const AboutHero = () => {
             </div>
             <Link to={"/contact"}>
               <button
-                className="bg-[#00315A] mt-10 text-white
+                className="bg-[#00315A] mt-10 text-white font-semibold
               px-3 py-2 rounded-[0.18rem]"
               >
                 Get In Touch

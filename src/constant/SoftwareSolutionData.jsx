@@ -66,20 +66,6 @@ export const softwareSolutionData = [
     ],
   },
 
-  {
-    title: "Digital Marketing",
-    img: DM,
-    list1: [
-      { li: " Social media marketing" },
-      { li: "Pay-per-Click (PPC)" },
-      { li: "Search Engine Optimization (SEO) " },
-    ],
-    list2: [
-      { li: "Email marketing" },
-      { li: "Content writing" },
-      { li: " Affiliate marketing " },
-    ],
-  },
 
   {
     title: "Digital Marketing",
