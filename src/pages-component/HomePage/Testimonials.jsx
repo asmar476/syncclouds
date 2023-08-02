@@ -15,16 +15,12 @@ import { TestimonialData } from "../../constant/Data";
 const Testimonials = () => {
   return (
     <>
-      <div className="relative hidden sm:block py-10 mx-auto pr-5 z-0">
+      <div className="relative hidden sm:block max-w-[1200px] xl:max-w-[1440px] w-[100%] mx-auto  px-10  sm:px-20  z-0">
         <div>
-          <img
-            className="absolute right-0 top-0 z-[-1]"
-            src={bgLines}
-            alt=""
-          />
+          <img className="absolute right-0 top-0 z-[-1]" src={bgLines} alt="" />
           <div className=" ">
             <div className=" flex lg:flex-row  gap-2 items-center lg:items-start flex-col justify-center lg:justify-around">
-              <div className="p-3 w-[350px] text-center lg:text-left">
+              <div className="p-3 max-w-[350px] xl:w-full text-center lg:text-left">
                 <MainSubHeading text={"Testi"} gradientText={"monials"} />
                 <p className=" mt-3  text-[14px] lg:text-[18px] text-body max-w-[408px]">
                   <span className="font-semibold">
@@ -56,10 +52,10 @@ const Testimonials = () => {
         </div>
       </div>
       {/* ======================================== mob view ============================================== */}
-      <div className="  flex relative flex-col items-center justify-center mx-5 sm:hidden pt-7">
-        <img className="absolute top-0 z-[-1] max-w-[1440px]" src={bglines2} alt="" />
+      <div className="  flex relative flex-col items-center justify-center sm:hidden pt-7">
+        <img className="absolute top-0 z-[-1] w-full" src={bglines2} alt="" />
         <MainSubHeading text={"Testi"} gradientText={"monials"} />
-        <p className=" mt-5 text-[18px] text-body text-center w-[408px]">
+        <p className=" mt-5 text-[18px] text-body text-center max-w-[408px]">
           <span className="font-semibold">Client Stories of Success</span>
           <br />
           From startups to enterprise giants, our software solutions have

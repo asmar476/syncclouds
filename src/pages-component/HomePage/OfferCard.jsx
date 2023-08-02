@@ -32,15 +32,15 @@ const OfferCard = () => {
   };
   // console.log("current index", currentIndexArrowChange);
   return (
-    <div style={style} className="relative pb-20">
-      <div className="overflow-hidden">
+    <div style={style} className="relative ">
+      <div className="overflow-hidden hidden lg:block">
         <img
           className="absolute opacity-60 max-h-[1250px] z-0 w-full"
           src={s}
           alt=""
         />
       </div>
-      <div className="max-w-[1200px] 2xl:max-w-[1400px] w-[100%] mx-auto my-5 px-10 xl:px-0  ">
+      <div className="max-w-[1200px] xl:max-w-[1440px] w-[100%] mx-auto  px-10  sm:px-20  pb-20  sm:my-10">
         {/* <div
           style={{
             background:
@@ -48,14 +48,14 @@ const OfferCard = () => {
           }}
           className="w-[50%] absolute"
         /> */}
-        <div className="hidden lg:block">
-          <div className="relative flex items-center lg:items-start text-center lg:text-left lg:justify-between flex-col  lg:flex-row w-full">
-            <div className="relative mb-20 lg:mb-0 max-w-[600px] lg:max-w-full">
-              <h1 className="text-[28px] md:text-[41.89px] font-[700]">
-                Bespoke IT Services{" "}
+        <div className="">
+          <div className="relative flex items-center lg:items-start text-center lg:text-left lg:justify-between flex-col gap-5 xl:gap-0  lg:flex-row w-full my-10">
+            <div className="relative mb-10 sm:mb-20 lg:mb-0 max-w-full md:max-w-[600px] lg:max-w-full">
+              <h1 className="text-[28px] xl:text-[41.89px] font-[700]">
+                Bespoke IT Services By
                 <span className="text-primary">SyncClouds</span>
               </h1>
-              <p className="  mt-5 text-body xl:max-w-full">
+              <p className="  mt-5 text-body w-full lg:w-[300px]  xl:w-[350px] xl:max-w-full">
                 Make a statement and drive revenue with our trusted IT services
                 to deliver ultimate profitability."
               </p>
@@ -74,7 +74,7 @@ const OfferCard = () => {
             <div className="hidden lg:block">
               {" "}
               <img
-                className="absolute top-[32%]  2xl:top-[15%] -left-[90px] 2xl:-left-[100px] w-[55%] xl:w-[50%] "
+                className="absolute bottom-5 -left-[110px] xl:top-[8%]   xl:-left-[130px] w-[52%]  xl:w-[55%]     "
                 src={linesHero}
                 alt=""
               />
@@ -113,9 +113,9 @@ const OfferCard = () => {
                         }
                       />
                     </div>
-                    <div className="pt-10">
+                    <div className="pt-5 xl:pt-10">
                       <InnerPageHeading text={`${card.title}`} />
-                      <p className="text-[14px] md:text-[16px]  leading-[20px] md:leading-[30px] mb-10">
+                      <p className="text-[14px] md:text-[16px]  leading-[20px] md:leading-[30px] mb-5 xl:mb-10">
                         {card.description}
                       </p>
                     </div>
@@ -131,7 +131,7 @@ const OfferCard = () => {
               }}
             >
               <img
-                className={`hidden lg:block absolute z-[100] right-[-3%] xl:right-0 top-5  ${
+                className={`absolute z-[100] right-[-3%] xl:right-0 top-5  ${
                   currentIndexArrowChange === 0
                     ? "opacity-50 cursor-not-allowed"
                     : "cursor-pointer"
@@ -145,7 +145,7 @@ const OfferCard = () => {
               disabled={currentIndexArrowChange === length && true}
             >
               <img
-                className={`hidden lg:block absolute z-[100] right-[-3%] xl:right-0 bottom-[15%] ${
+                className={` absolute z-[100] right-[-3%] xl:right-0 bottom-[15%] ${
                   currentIndexArrowChange === length
                     ? "opacity-50 cursor-not-allowed"
                     : "cursor-pointer"
@@ -157,88 +157,12 @@ const OfferCard = () => {
           </div>{" "}
         </div>
 
-        <div className="lg:hidden ">
-          <div className="relative flex items-center lg:items-start text-center lg:text-left lg:justify-between flex-col  lg:flex-row w-full">
-            <div className="relative mb-20 lg:mb-0 max-w-[600px] lg:max-w-full">
-              <h1 className="text-[28px] md:text-[41.89px] font-[700]">
-                Bespoke IT Services{" "}
-                <span className="text-primary">SyncClouds</span>
-              </h1>
-              <p className="  mt-5 text-body xl:max-w-full">
-                Make a statement and drive revenue with our trusted IT services
-                to deliver ultimate profitability."
-              </p>
-
-              {/* <img
-              className="absolute top-[10%] xl:top-[15%] left-0 w-[48%] xl:w-[45%]"
-              src={linesHero}
-              alt=""
-            /> */}
-              {/* <img
-              className="absolute top-[30%] -left-20 w-[800px] "
-              src={linesHero}
-              alt=""
-            /> */}
-            </div>
-            <div className="hidden lg:block">
-              {" "}
-              <img
-                className="absolute top-[32%]  2xl:top-[15%] -left-[90px] 2xl:-left-[100px] w-[55%] xl:w-[50%] "
-                src={linesHero}
-                alt=""
-              />
-            </div>
-            {/* ============================================= ~ vertical swiper cards ~ ============================================== */}
-            <Carousel
-              className="lg:block hidden"
-              ref={carouselRef}
-              verticalMode
-              itemsToShow={2}
-              pagination={false}
-              showArrows={true}
-              enableAutoPlay
-              autoPlaySpeed={1000}
-              isRTL={false}
-            >
-              {offerData.map((card, index) => (
-                <div
-                  key={card.id}
-                  onMouseEnter={() => {
-                    setHover(true), setCurrentIndex(index);
-                  }}
-                  onMouseLeave={() => {
-                    setHover(false);
-                    setCurrentIndex("");
-                  }}
-                >
-                  <div className="  mb-5 flex flex-col   p-2 lg:p-5 max-w-[500px] xl:max-w-[600px] bg-white z-[100] rounded shadow-lg hover:bg-blueDark hover:text-white  ">
-                    <div className="  w-[50px] rounded-full ">
-                      <img
-                        src={
-                          hover && currentIndex === index
-                            ? card.iconWhite
-                            : card.icon
-                        }
-                      />
-                    </div>
-                    <div className="pt-10">
-                      <InnerPageHeading text={`${card.title}`} />
-                      <p className="text-[14px] md:text-[16px]  leading-[20px] md:leading-[30px] mb-10">
-                        {card.description}
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </Carousel>
-          </div>{" "}
-        </div>
         {/* ===================================================================================== */}
-        <div className=" relative    flex flex-col lg:flex-row mt-20 md:mt-32 lg:-mt-10 xl:mt-0   gap-10">
+        <div className=" relative  flex flex-col lg:flex-row mt-0 xl:-mt-5 lg:-mt-28 2xl:mt-0   gap-10">
           <div className="flex-1 text-center lg:text-left relative ">
             <div className="hidden lg:block">
               <img
-                className="absolute  left-[-10px] bottom-0 2xl:top-[37.5%]"
+                className="absolute -left-[45px] top-[26%]  xl:-left-[38px] xl:top-[39.5%]"
                 src={line}
                 alt="line"
               />
@@ -252,8 +176,7 @@ const OfferCard = () => {
             />
             <div className=" flex">
               <div className="">
-                {" "}
-                <h4 className="text-primary leading-[38px] mt-4 mb-7 text-[22px] lg:text-[25.89px] font-[600]">
+                <h4 className="text-primary leading-[38px] xl:mt-4 mb-7 text-[22px] xl:text-[25.89px] font-[600]">
                   Boost Your business Expansion!
                 </h4>
                 <p>
@@ -270,7 +193,7 @@ const OfferCard = () => {
                   unmatched solutions and innovative methods.
                 </p>
                 <Link to={"/contact"}>
-                  <button className=" border border-primary rounded-sm py-2 px-4 mt-10 hover:bg-primary hover:text-white hover:text-bold text-primary">
+                  <button className=" border border-primary rounded-sm py-2 px-4 mt-5 xl:mt-10 hover:bg-primary hover:text-white hover:text-bold text-primary">
                     Get In Touch
                   </button>
                 </Link>
@@ -278,16 +201,16 @@ const OfferCard = () => {
             </div>
           </div>
 
-          <div className="flex-1 lg:self-end">
+          <div className="flex-1 lg:self-end lg:pt-32 xl:pt-0">
             <img
               className="sm:min-w-[400px] sm:min-h-[400px] "
               src={transform}
               alt="tranform image"
             />
           </div>
-          <div className="flex">
+          <div className=" hidden xl:flex">
             <img
-              className="absolute left-[50%] translate-x-[-60%] top-[20%]  "
+              className="absolute left-[49%] xl:left-[50%] translate-x-[-60%] top-[30%] xl:top-[20%]  "
               src={curlArrow}
               alt="curl arrow"
             />

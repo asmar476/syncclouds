@@ -6,7 +6,7 @@ import { faqData } from "../../constant/FAQS";
 function HomeFaq() {
   return (
     <>
-      <div className="hidden md:block container mx-auto pl-5 py-5 sm:py-10 lg:py-20">
+      <div className="hidden md:block max-w-[1200px] xl:max-w-[1440px] w-[100%] mx-auto  px-10  sm:px-20 py-10">
         <div className="relative lg:flex-row flex flex-col items-center lg:items-start justify-center gap-5 lg:justify-between ">
           <div className=" text-[#434343] mb-10 text-center lg:text-left w-[540px]">
             <MainSubHeading

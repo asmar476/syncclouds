@@ -37,7 +37,7 @@ const Header = () => {
       {/* <div className='mb-2'> </div> */}
       <nav
         style={{ boxShadow: "0px 0px 20px rgba(0, 0, 0, 0.1)" }}
-        className="flex w-full justify-between items-center px-9 lg:px-10 py-3"
+        className="flex w-full justify-between items-center px-9 lg:px-10 py-3 min-h-[8vh]"
       >
         <div className="flex items-center">
           <Link to="/">

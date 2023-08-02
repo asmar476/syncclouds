@@ -4,25 +4,27 @@ import MainSubHeading from "./MainSubHeading";
 import BoldParagraph from "./BoldParagraph";
 import { FE, BE, CS, other } from "../constant/TechData";
 import bg from "../assets/Images/bgTools&tech.png";
-import map from "../assets/Images/map.png";
 
 function ToolsAndTechnologies() {
   return (
-    <div className="container w-[100%] max-width-[1440px] z-[100] relative mx-auto pt-8 lg:pt-10 px-6">
-      <img className="md:block z-[-1] absolute" src={bg} alt="" />{" "}
-      <img className="md:hidden h-screen z-[-1] absolute" src={bg} alt="" />{" "}
-      <img className="absolute" src={map} alt="" />
-      <div className="">
-        <div className="flex flex-col items-center mt-10 lg:mt-20">
+    <div className="relative">
+      <img className="w-full h-[100%] z-[-1] absolute" src={bg} alt="" />
+      <div className="max-w-[1200px] xl:max-w-[1440px] w-[100%] mx-auto  px-10  sm:px-20  ">
+        <div className="flex flex-col items-center py-5">
           <MainSubHeading text={"Techno"} gradientText={"logies"} ml={"ml-2"} />
-          <BoldParagraph text={"We Love using latest tec to our advantage."} />
+          <BoldParagraph
+            className="max-w-[250px]"
+            text={"We Love using latest tec to our advantage."}
+          />
         </div>
         {/* ============================================================================================ */}
-        <div className="">
-          <h1 className=" font-semibold text-[20.89px]">Front End</h1>
-          <Wrapper>
-            <Marquee>
-              <MarqueeGroup>
+        <div className=" ">
+          <h1 className=" font-semibold  text-[16px]:lg:text-[20.89px]">
+            Front End
+          </h1>
+          <Wrapper className="">
+            <Marquee className="w-[100%]  h-[50px]">
+              <MarqueeGroup className="h-[50px]">
                 {FE.map((el, index) => (
                   <ImageGroup key={index}>
                     <img src={el} />
@@ -41,9 +43,11 @@ function ToolsAndTechnologies() {
         </div>
         {/* ========================================================================== */}
         <div className="">
-          <h1 className=" font-semibold text-[20.89px]">Back End</h1>{" "}
+          <h1 className=" font-semibold text-[16px] lg:text-[20.89px]">
+            Back End
+          </h1>{" "}
           <Wrapper>
-            <Marquee className="sm:[500px] md:w-[800px] lg:w-[1200px] ">
+            <Marquee className="w-[100%]  ">
               <MarqueeGroup2>
                 {BE.map((el, index) => (
                   <ImageGroup key={index}>
@@ -63,9 +67,11 @@ function ToolsAndTechnologies() {
         </div>
         {/* ========================================================================== */}
         <div className="">
-          <h1 className=" font-semibold text-[20.89px]">Cyber Security</h1>{" "}
+          <h1 className=" font-semibold text-[16px] lg:text-[20.89px]">
+            Cyber Security
+          </h1>{" "}
           <Wrapper>
-            <Marquee>
+            <Marquee className="w-[100%]  ">
               <MarqueeGroup>
                 {CS.map((el, index) => (
                   <ImageGroup key={index}>
@@ -85,9 +91,11 @@ function ToolsAndTechnologies() {
         </div>
         {/* ========================================================================== */}
         <div className="">
-          <h1 className=" font-semibold text-[20.89px]">Other</h1>{" "}
+          <h1 className=" font-semibold text-[16px] lg:text-[20.89px]">
+            Other
+          </h1>{" "}
           <Wrapper>
-            <Marquee>
+            <Marquee className="w-[100%]  ">
               <MarqueeGroup2>
                 {other.map((el, index) => (
                   <ImageGroup key={index}>

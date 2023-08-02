@@ -13,7 +13,7 @@ import { clientLogos } from "../constant/Data";
 const OurClients = () => {
   return (
     <div className="">
-      <div className="container mx-auto px-10">
+      <div className="max-w-[1200px] xl:max-w-[1440px] w-[100%] mx-auto  px-10  sm:px-20 mt-20 mb-10">
         <div className="flex flex-col items-center">
           <MainSubHeading text={"Our "} gradientText={"Clients"} ml={"ml-2"} />
           <p

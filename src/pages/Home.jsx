@@ -19,7 +19,7 @@ const Home = () => {
       <HomeFaq />
       <OurAim />
       <GetSynced />
-      <ContactForm />
+      {/* <ContactForm />  */}
     </Layout>
   );
 };
