@@ -79,6 +79,39 @@ export const TestimonialData = [
     rating: 4,
     designation: "React js dev",
   },
+  {
+    profileImage: testimonial,
+    summary:
+      "Everything melancholy uncommonly but solicitude inhabiting projection off. Connection stimulated estimating long. departure ourselves very extreme.",
+    name: "Jawad Shah",
+    rating: 5,
+    designation: "DJ dev",
+  },
+  {
+    profileImage: testimonial,
+    summary:
+      "Everything melancholy uncommonly but solicitude inhabiting projection off. Connection stimulated estimating long. departure ourselves very extreme.",
+    name: "Anam Razzaq",
+    rating: 5,
+
+    designation: "SQA",
+  },
+  {
+    profileImage: testimonial,
+    summary:
+      "Everything melancholy uncommonly but solicitude inhabiting projection off. Connection stimulated estimating long. departure ourselves very extreme.",
+    name: "Uzair Javid",
+    rating: 5,
+    designation: "HR",
+  },
+  {
+    profileImage: testimonial,
+    summary:
+      "Everything melancholy uncommonly but solicitude inhabiting projection off. Connection stimulated estimating long. departure ourselves very extreme.",
+    name: "Azhar Mehmood",
+    rating: 4,
+    designation: "CEO",
+  },
 ];
 
 export const features = [

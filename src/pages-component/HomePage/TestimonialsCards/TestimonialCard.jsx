@@ -32,27 +32,27 @@ const TestimonialCard = ({
 }) => {
   return (
     <>
-      <div key={i}  className="bg-white py-3 px-5">
-        <div className="flex items-center justify-between mb-3">
+      <div key={i} className=" py-3 px-5">
+        <div className="flex items-center justify-between lg:mb-3">
           <h3
             style={{ color: "hsla(226, 53%, 33%, 1)" }}
             className="text-sm lg:text-lg  font-semibold"
           >
             {name}
-          </h3>{" "}
+          </h3>
           <img className="w-[62px]" src={profileImage} alt="Profile" />
         </div>
-        <p className="max-w-[339px] leading-[24px] text-sm font-[400] pb-1">
+        <p className="max-w-[339px] leading-[20px] lg:leading-[24px] text-[12px] lg:text-sm font-[400] lg:pb-1">
           {summary}
         </p>
-        <hr className="border-t border-gray-300 mt-3 md:mt-7  mb-3 md:mb-5" />
+        <hr className="border-t border-gray-300 mt-3 lg:mt-7  mb-3 lg:mb-5" />
         <div
           style={{ color: "hsla(226, 53%, 33%, 1)" }}
-          className="flex font-[600] items-center justify-between mb-1"
+          className="flex font-[600] items-center justify-between lg:mb-1"
         >
-          <p className="text-sm md:text-[16px] pb-1 text-darkBlue">
+          <p className="text-[14px] lg:text-[16px] pb-1 text-darkBlue">
             {designation}
-          </p>{" "}
+          </p>
           <div className=" space-x-1.5   text-darkBlue flex items-center">
             {renderRatingStars(rating)}
           </div>

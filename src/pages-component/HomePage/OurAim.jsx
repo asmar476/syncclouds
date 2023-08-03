@@ -14,7 +14,7 @@ const OurAim = () => {
 
   return (
     <>
-      <div className="relative bg-[#F0F8FF] z-[-2] pb-20 sm:pb-0 ">
+      <div className="relative bg-[#F0F8FF] z-[1]  sm:pb-0 ">
         <img className="absolute right-5 z-[-1]" src={bg} />
         <img
           width={330}
@@ -63,12 +63,9 @@ const OurAim = () => {
             ))}
           </div>
         </div>
-        <div className="hidden  sm:block  z-[100] py-10">
+        <div className=" z-[100] ">
           <Testimonials />
         </div>
-      </div>
-      <div className="sm:hidden z-[100] py-10">
-        <Testimonials />
       </div>
     </>
   );
