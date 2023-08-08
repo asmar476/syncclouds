@@ -7,6 +7,26 @@ import s2 from "../../assets/Services/small screen/s2.svg";
 import s3 from "../../assets/Services/small screen/s3.svg";
 const largeScreen = [Group1, Group2, Group3];
 const smallScreen = [s1, s2, s3];
+const dataArray = [
+  {
+    img: s1,
+    heading: "Evaluation",
+    text: "Following an evaluation of your business requirements, our sales manager contacts you quickly.",
+  },
+  {
+    img: s2,
+    heading: "NDA",
+    text: "In the interim, we affix an NDA to ensure the highest level of privacy.",
+  },
+
+  {
+    img: s3,
+    heading: "Budget",
+    text: "Our pre-sale manager provides project budgets and a rough schedule.",
+  },
+];
+
+console.log(dataArray);
 
 function WhatComesNext() {
   return (
@@ -21,14 +41,19 @@ function WhatComesNext() {
             <img key={i} src={dataLg} alt="img" />
           ))}
         </div>
-        <div className="lg:hidden flex flex-wrap mt-10 justify-center sm:gap-20 md:gap-40">
-          {smallScreen.map((dataSm, i) => (
-            <img
-              className="w-[65%] sm:w-[40%] mb-14 sm:mb-0"
-              key={i}
-              src={dataSm}
-              alt="img"
-            />
+        <div className="lg:hidden flex flex-wrap justify-center mt-10">
+          {dataArray.map((dataSm, i) => (
+            <div
+              className={`w-[53%] text-center flex flex-col justify-center space-y-2 items-center ${
+                i === dataArray.length - 1 ? "" : "mb-10"
+              }`}
+            >
+              <img className="w-[200px]" key={i} src={dataSm.img} alt="img" />
+              <h1 className="text-primary font-semibold text-[18px]">
+                {dataSm.heading}
+              </h1>
+              <p>{dataSm.text}</p>
+            </div>
           ))}
         </div>
       </div>

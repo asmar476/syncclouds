@@ -16,9 +16,9 @@ const OurTeam = () => {
   const [showOverlay, setShowOverlay] = useState(false);
   const [showOverlayIndex, setShowOverlayIndex] = useState("");
   return (
-    <div className="relative z-[-1] mx-auto px-5 md:px-24  my-24">
+    <div className="relative mx-auto px-5 md:px-24  my-24">
       <img
-        className="hidden md:block absolute top-40 z-[100] left-0"
+        className="hidden md:block absolute top-36 z-[100] left-0"
         src={tri3}
         alt="bg side image"
       />
@@ -57,7 +57,7 @@ const OurTeam = () => {
           {TeamMemberData.map((data, index) => (
             <SwiperSlide id={index}>
               <div
-                className="relative z-0 w-[320px]  h-[300px] bg-purpleLight flex  justify-center rounded overflow-hidden"
+                className="relative z-0 w-[320px] cursor-pointer  h-[300px] bg-purpleLight flex  justify-center rounded overflow-hidden"
                 onMouseEnter={() => {
                   setShowOverlay(true);
                   setShowOverlayIndex(index);

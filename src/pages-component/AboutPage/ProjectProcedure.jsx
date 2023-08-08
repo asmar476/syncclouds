@@ -36,7 +36,7 @@ const ProjectProcedure = () => {
           accurately, and with attention to detail.
         </p>
       </div>
-      <div className="bg-white flex  items-center justify-center flex-wrap mt-28 gap-5 md:gap-16 lg:gap-32">
+      <div className="bg-white flex  items-center justify-center flex-wrap mt-28 gap-5 md:gap-10 lg:gap-20">
         {projectProcedureData.map((data, index) => (
           <div
             key={index}

@@ -61,8 +61,8 @@ const OfferCard = () => {
             <div className="relative flex items-center lg:items-start text-center lg:text-left lg:justify-between flex-col gap-5 xl:gap-0  lg:flex-row w-full my-10">
               <div className="relative mb-10 sm:mb-20 lg:mb-0 max-w-full md:max-w-[600px] lg:max-w-full">
                 <h1 className="text-[28px] xl:text-[41.89px] font-[700]">
-                  Bespoke IT Services By
-                  <span className="text-primary">SyncClouds</span>
+                  {"Bespoke IT Services By "}
+                  <span className="text-primary"> SyncClouds</span>
                 </h1>
                 <p className="  mt-5 text-body w-full lg:w-[300px]  xl:w-[350px] xl:max-w-full">
                   Make a statement and drive revenue with our trusted IT
@@ -96,10 +96,9 @@ const OfferCard = () => {
                 itemsToShow={2}
                 pagination={false}
                 showArrows={false}
-
-                // enableAutoPlay
-                // autoPlaySpeed={1000}
-                // isRTL={false}
+                enableAutoPlay
+                autoPlaySpeed={1000}
+                isRTL={false}
               >
                 {offerData.map((card, index) => (
                   <div
@@ -165,13 +164,12 @@ const OfferCard = () => {
               </button>{" "}
             </div>{" "}
           </div>
-
           <div className="lg:hidden">
             <div className="">
               <div className="relative mt-20 mb-10 flex flex-col items-center text-center">
                 <h1 className="text-[28px] xl:text-[41.89px] font-[700]">
                   Bespoke IT Services By
-                  <span className="text-primary">SyncClouds</span>
+                  <span className="text-primary"> SyncClouds</span>
                 </h1>
                 <p className="  mt-3 text-body w-full lg:w-[300px]  xl:w-[350px] xl:max-w-full">
                   Make a statement and drive revenue with our trusted IT
@@ -186,26 +184,14 @@ const OfferCard = () => {
                   alt=""
                 />
               </div>
-              {/* ============================================= ~ vertical swiper cards ~ ============================================== */}
+              {/* ============================================= ~ mobile slider ~ ============================================== */}
               <div className="flex justify-center my-10">
                 <Swiper
                   modules={[Navigation, Pagination, Scrollbar, Autoplay]}
-                  spaceBetween={50}
                   slidesPerView={1}
                   loop={true}
                   draggable={true}
-                  autoplay={{ delay: 2000 }}
-                  breakpoints={{
-                    768: {
-                      slidesPerView: 2,
-                    },
-                    600: {
-                      slidesPerView: 1,
-                    },
-                    320: {
-                      slidesPerView: 1,
-                    },
-                  }}
+                  autoplay={{ delay: 1000 }}
                 >
                   {offerData.map((card, index) => (
                     <SwiperSlide

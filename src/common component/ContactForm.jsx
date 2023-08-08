@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import consultant from "../assets/Images/consultant.png";
 import attachmentIcon from "../assets/icons/attachmentIcon.svg";
-
+// import { BsExclamationCircle } from "react-icons/Bs";
 const ContactForm = () => {
   const [selectedFile, setSelectedFile] = useState(null);
   const [formData, setFormData] = useState({
@@ -81,18 +81,16 @@ const ContactForm = () => {
     event.stopPropagation();
     event.dataTransfer.dropEffect = "copy";
   };
-
   const handleDrop = (event) => {
     event.preventDefault();
     event.stopPropagation();
     const file = event.dataTransfer.files[0];
     setSelectedFile(file);
   };
-
   return (
-    <div className="flex lg:flex-row flex-col-reverse space-y-10 md:space-y-0 mt-14 sm:mb-14 items-center justify-center">
-      <div className="bg-[#EDF2F7] mt-10 lg:mt-0 rounded-sm w-[90%] mx-5 md:max-w-[622px] px-4 pt-5 pb-12 ">
-        <h1 className="font-[500] text-[25.89px] text-[#171923] mb-3">
+    <div className="s flex lg:flex-row flex-col-reverse space-y-10 md:space-y-0 mt-14 sm:mb-14 items-center lg:items-start justify-center">
+      <div className="bg-[#EDF2F7] hidden lg:block mt-10 lg:mt-0 rounded-sm w-[90%] mx-5 md:max-w-[622px] px-4 pt-5 pb-12 ">
+        <h1 className="font-[500] text-[25.89px] text-[#171923] mb-6">
           Book a Meeting
         </h1>
         <p className="text-[12px] sm:text-[16px]  text-[#434343]">
@@ -108,20 +106,20 @@ const ContactForm = () => {
             />
           </div>
           <div className="">
-            <h1 className="mt-8 lg:mt-0 font-[600] text-[14px] sm:text-[25.89px] text-[#171923]">
-              Pitter Vick
+            <h1 className=" sm:text-[25.89px] mt-8 lg:mt-0 text-[14px] text-[#171923]">
+              Azhar Mehmood
             </h1>
-            <div className="font-[500] text-[12px] sm:text-[16px] space-y-2 mt-2 mb- md:mb-10 text-[#434343]">
+            <div className="font-[500] text-[12px] sm:text-[18px] space-y-2 mt-4 mb- md:mb-10 text-[#434343]">
               <p className="text-[#434343]">Consultant</p>
-              <p className="text-[#434343]">+12345678910</p>
-              <p className="text-[#434343] ">johndoe@example.com</p>
+              <p className="text-[#434343]">+92 311 5910778</p>
+              <p className="text-[#434343] ">azhar.m@syncclouds.com</p>
             </div>
             <button className="mt-3 font-[600] text-white bg-[#002680] w-full py-[10px] rounded-sm">
               Send a request
             </button>
           </div>
         </div>
-        <div className="hidden sm:block pt-3 border-t-2 border-[#ccc8c8]">
+        {/* <div className="hidden sm:block pt-3 border-t-2 border-[#ccc8c8]">
           <h1 className="font-[500] text-[25.89px] text-[#171923] leading-[38.83px]">
             Legal Information
           </h1>
@@ -129,8 +127,8 @@ const ContactForm = () => {
             Office No. M-35,36. Mezzanine Floor, Gold Point Shopping Mall,
             Rawalpindi, Pakistan
           </p>
-        </div>
-        <div className="sm:hidden">
+        </div> */}
+        {/* <div className="sm:hidden">
           <h1 className="font-[600] text-[14px] text-[#171923]">
             Legal Information
           </h1>
@@ -138,21 +136,18 @@ const ContactForm = () => {
             Office No. M-35,36. Mezzanine Floor, Gold Point Shopping Mall,
             Rawalpindi, Pakistan
           </p>
-        </div>
+        </div> */}
       </div>
-      <div className="bg-[#EDF2F7] text-black px-4 mb-10 md:px-0 mx-5 w-[90%] md:max-w-[622px] rounded-sm">
-        <form
-          className="px-[10px] md:px-[30px] py-[20px] md:py-[24px]"
-          onSubmit={handleSubmit}
-        >
-          <h5 className="font-[500] text-[25.89px] text-[#171923] mb-3">
+      <div className="bg-[#EDF2F7] text-black px-4 pb-1 mb-10 md:px-0 mx-5 w-[90%] md:max-w-[622px] rounded-sm">
+        <form className="px-[10px] md:px-[30px] py-4" onSubmit={handleSubmit}>
+          <h5 className="font-[500] text-[25.89px] text-[#171923] mb-1">
             Write a Message
           </h5>
-          <div>
+          <div className="h-[68px]">
             <input
               type="text"
               placeholder="Name"
-              className={`my-2 py-[10px] px-3 text-[14px] md:text-[16px] font-[400] leading-[24px] w-[100%] border-b ${
+              className={` py-2 px-3 text-[14px] md:text-[16px] font-[400]  w-[100%] border-b ${
                 formErrors.name ? "border-red-500" : "border-b-gray-200"
               } placeholder-gray-400 outline-none`}
               name="name"
@@ -160,15 +155,22 @@ const ContactForm = () => {
               onChange={handleInputChange}
             />
             {formErrors.name && (
-              <p className="text-red-500 text-xs font-semibold mt-1">
-                {formErrors.name}
-              </p>
+              <div className="flex space-x-1.5 items-center my-1">
+                {" "}
+                {/* <BsExclamationCircle /> */}
+                <img
+                  height={15}
+                  width={15}
+                  src="https://cdn0.iconfinder.com/data/icons/shift-free/32/Block-512.png"
+                />
+                <p className="text-red-500 text-xs  mt-1">{formErrors.name}</p>
+              </div>
             )}
           </div>
-          <div className="flex flex-col sm:flex-row md:flex-col lg:flex-row sm:gap-5 md:gap-0 lg:gap-5">
-            <div>
+          <div className="flex sm:gap-3 flex-col sm:flex-row ">
+            <div className="h-[68px]">
               <input
-                className={`my-2 py-[10px] px-3 text-[14px] md:text-[16px] font-[400] leading-[24px] w-[100%] border-b ${
+                className={`py-2 px-3 text-[14px] md:text-[16px] font-[400]  w-[100%] border-b ${
                   formErrors.email ? "border-red-500" : "border-b-gray-200"
                 } placeholder-gray-400 outline-none`}
                 type="email"
@@ -178,14 +180,22 @@ const ContactForm = () => {
                 onChange={handleInputChange}
               />
               {formErrors.email && (
-                <p className="text-red-500 text-xs font-semibold mt-1">
-                  {formErrors.email}
-                </p>
+                <div className="flex space-x-1.5 items-center my-1">
+                  {" "}
+                  <img
+                    height={15}
+                    width={15}
+                    src="https://cdn0.iconfinder.com/data/icons/shift-free/32/Block-512.png"
+                  />
+                  <p className="text-red-500 text-xs  mt-1">
+                    {formErrors.email}
+                  </p>
+                </div>
               )}
             </div>
-            <div>
+            <div className="h-[68px]">
               <input
-                className={`my-2 py-[10px] px-3 text-[14px] md:text-[16px] font-[400] leading-[24px] w-[100%] border-b ${
+                className={` py-2 px-3 text-[14px] md:text-[16px] font-[400]  w-[100%] border-b ${
                   formErrors.phoneNumber
                     ? "border-red-500"
                     : "border-b-gray-200"
@@ -197,63 +207,80 @@ const ContactForm = () => {
                 onChange={handleInputChange}
               />
               {formErrors.phoneNumber && (
-                <p className="text-red-500 text-xs font-semibold mt-1">
-                  {formErrors.phoneNumber}
-                </p>
+                <div className="flex space-x-1.5 items-center my-1">
+                  {" "}
+                  <img
+                    height={15}
+                    width={15}
+                    src="https://cdn0.iconfinder.com/data/icons/shift-free/32/Block-512.png"
+                  />
+                  <p className="text-red-500 text-xs  mt-1">
+                    {formErrors.phoneNumber}
+                  </p>
+                </div>
               )}
             </div>
           </div>
-          <div
-            className={`gap-2 cursor-pointer bg-white relative my-2  py-[10px] px-3 ${
-              formErrors.message ? "border-red-500" : ""
-            }`}
-            onDrop={handleDrop}
-            onDragOver={handleDragOver}
-            onDragEnter={handleDragEnter}
-            onDragLeave={handleDragLeave}
-            onClick={() => {
-              document.querySelector('input[type="file"]').click();
-            }}
-          >
+          <div className="h-[95px]">
             <div
-              className={`flex gap-2 items-center ${
-                selectedFile ? "bg-green-100" : "bg-white"
+              className={`gap-2 cursor-pointer bg-white relative py-[10px] px-3 ${
+                formErrors.message ? "border-red-500" : ""
               }`}
+              onDrop={handleDrop}
+              onDragOver={handleDragOver}
+              onDragEnter={handleDragEnter}
+              onDragLeave={handleDragLeave}
+              onClick={() => {
+                document.querySelector('input[type="file"]').click();
+              }}
             >
-              <div className=" py-2 rounded-md ">
-                <img src={attachmentIcon} alt="Uploaded" />
+              <div
+                className={`flex gap-2 items-center ${
+                  selectedFile ? "bg-green-100" : "bg-white"
+                }`}
+              >
+                <div className=" py-1 rounded-md ">
+                  <img src={attachmentIcon} alt="Uploaded" />
+                </div>
+                <label>
+                  <input
+                    style={{ display: "none" }}
+                    type="file"
+                    accept=".pdf,.doc,.docx,.odt"
+                    onChange={handleFileChange}
+                    name="file"
+                  />
+                  {selectedFile ? (
+                    <p className="font-[550]">
+                      "{selectedFile.name}"
+                      <span className="font-[400]"> is selected</span>
+                    </p>
+                  ) : (
+                    <p className=" font-[600] text-[16px]">Add Attachment</p>
+                  )}
+                </label>
               </div>
-              <label>
-                <input
-                  style={{ display: "none" }}
-                  type="file"
-                  accept=".pdf,.doc,.docx,.odt"
-                  onChange={handleFileChange}
-                  name="file"
-                />
-                {selectedFile ? (
-                  <p className="font-[550]">
-                    "{selectedFile.name}"
-                    <span className="font-[400]"> is selected</span>
-                  </p>
-                ) : (
-                  <p className=" font-[600] text-[16px]">Add Attachment</p>
-                )}
-              </label>
+              <p className="text-[12px] xl:text-[16px] text-[#8D8D8D]">
+                No Images - only DOC, DOCX, PDF ODT up to 10 MB
+              </p>
             </div>
-            <p className="text-[12px] xl:text-[16px] text-[#8D8D8D]">
-              No Images - only DOC, DOCX, PDF ODT up to 10 MB
-            </p>
+            {formErrors.file && (
+              <div className="flex space-x-1.5 items-center my-1">
+                {" "}
+                {/* <BsExclamationCircle />
+                 */}
+                <img
+                  height={15}
+                  width={15}
+                  src="https://cdn0.iconfinder.com/data/icons/shift-free/32/Block-512.png"
+                />
+                <p className="text-red-500 text-xs  mt-1">{formErrors.file}</p>
+              </div>
+            )}
           </div>
-          {formErrors.file && (
-            <p className="text-red-500 text-xs font-semibold mt-1">
-              {formErrors.file}
-            </p>
-          )}
-
-          <div className="mt-2 justify-center pt-[10px] text-[14px] md:text-[16px] font-[400] leading-[24px] placeholder-gray-400 outline-none">
+          <div className="justify-center pt-[10px] text-[14px] md:text-[16px] font-[400]  placeholder-gray-400 outline-none">
             <textarea
-              className={`w-full placeholder-gray-400   min-h-[153px] max-h-[355px] p-2 ${
+              className={`w-full placeholder-gray-400   min-h-[85px] max-h-[355px] p-2 ${
                 formErrors.message ? "border-red-500" : ""
               }`}
               placeholder="Message"
@@ -262,7 +289,7 @@ const ContactForm = () => {
               onChange={handleInputChange}
             ></textarea>
             {/* {formErrors.message && (
-              <p className="text-red-500 text-xs font-semibold mt-1">{formErrors.message}</p>
+              <img height={15}width={15} src="https://cdn0.iconfinder.com/data/icons/shift-free/32/Block-512.png" /><p className="text-red-500 text-xs  mt-1">{formErrors.message}</p>
             )} */}
           </div>
           <div className="mt-3">
@@ -278,17 +305,17 @@ const ContactForm = () => {
                 I want an NDA to protect my idea.
               </p>
             </div>
-            {formErrors.agreement && (
+            {/* {formErrors.agreement && (
               <p className="pl-8  text-red-500 text-center text-xs mt-1 mb-4 font-semibold">
                 {formErrors.agreement}
               </p>
-            )}
-            <p className="text-center text-[13px] lg:text-[16px] font-[400] leading-[24px] mt-1">
+            )} */}
+            <p className="text-center text-[13px] lg:text-[16px] font-[400]  mt-1">
               We will get back to you within 24 hours, guaranteed.
             </p>
             <button
               type="submit"
-              className="font-[600] leading-[24px] mt-3 text-white bg-[#002680] w-full py-[5px] md:py-[10px] rounded-sm"
+              className="font-[600]  mt-3 text-white bg-[#002680] w-full py-[5px] md:py-[10px] rounded-sm"
             >
               Send a request
             </button>

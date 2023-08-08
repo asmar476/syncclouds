@@ -1,36 +1,10 @@
 import React, { useState } from "react";
-import cardImage from "../../../assets/Images/Mask group.svg";
 import chevronRight from "../../../assets/icons/Vector.svg";
-import web from "../../../assets/SC Icons SVG/Web & Mobile Development.svg";
-import mob from "../../../assets/SC Icons SVG/Mobile App Development.svg";
-import UIUX from "../../../assets/SC Icons SVG/User Experience & Design.svg";
-const cardData = [
-  {
-    icon: UIUX,
-    title: "UIUX  Designing",
-    img: cardImage,
-    description:
-      "Great design can speak to your users in thousands of ways that you can't. Get magnetic UX/UI design followed by a robust UX strategy to grab your user’s attention instantly.",
-  },
-  {
-    icon: mob,
-    title: "IOS App Development",
-    img: cardImage,
-    description:
-      "Great design can speak to your users in thousands of ways that you can't. Get magnetic UX/UI design followed by a robust UX strategy to grab your user’s attention instantly.",
-  },
-  {
-    icon: web,
-    title: "Web & Mobile Applications",
-    img: cardImage,
-    description:
-      "Great design can speak to your users in thousands of ways that you can't. Get magnetic UX/UI design followed by a robust UX strategy to grab your user’s attention instantly.",
-  },
-];
+import { portfolioData } from "../../../constant/PortfolioPageData";
 const PortfolioCard = () => {
   return (
     <div className="flex justify-center items-center gap-0 lg:gap-16 flex-wrap ">
-      {cardData.map((data, index) => (
+      {portfolioData.map((data, index) => (
         <div
           key={index}
           className="max-w-[408px] rounded-br-[100px] mt-10 py-10 px-10 hover:bg-[#DAE2EA]"

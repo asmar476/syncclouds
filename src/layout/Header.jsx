@@ -1,20 +1,19 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import Dropdown from "../assets/icons/chevron-down1.svg";
-import up from "../assets/icons/chevron-up.svg";
+import { Dropdown } from "antd";
+import chevronDown from "../assets/icons/chevron-down1.svg";
+import ChevronUp from "../assets/icons/chevron-up.svg";
 import close from "../assets/icons/x.svg";
-
+import { MenuOutlined } from "@ant-design/icons";
+import SC_logo from "../assets/Images/Navbar/navlogo.svg";
+import { useNavigate } from "react-router-dom";
 import NavbarServicesDropDown from "../component/NavbarServicesDropDown";
 // import { AiOutlineDown,AiOutlineUp} from "react-icons/ai";
 // import { AiOutlineUp } from "react-icons/ai";
 // import MenuOutlined from "../assets/icons/menuIcon.svg";
-import { MenuOutlined } from "@ant-design/icons";
-import SC_logo from "../assets/Images/Navbar/navlogo.svg";
-import { useNavigate } from "react-router-dom";
-import ButtonDark from "../common component/ButtonDark";
 const Header = () => {
   const navigate = useNavigate();
-  const handleClick = () => {
+  const bookCall = () => {
     navigate("/book-call");
   };
   const [arrow, setArrow] = useState(false);
@@ -22,9 +21,7 @@ const Header = () => {
   const click = () => {
     setArrow(!arrow);
   };
-
   const [showServices, setShowServices] = useState(false);
-
   const [isOpen, setIsOpen] = useState(false);
   const openNav = () => {
     setIsOpen(true);
@@ -32,6 +29,18 @@ const Header = () => {
   const closeNav = () => {
     setIsOpen(false);
   };
+  const [showCompanyDropdown, setShowCompanyDropdown] = useState(false);
+  const [selectedOption, setSelectedOption] = useState(null);
+  const options = ["About Us", "Company Profile", "Settings"];
+  const handleSelect = (option) => {
+    setSelectedOption(option);
+  };
+  const items = [
+    {
+      key: "1",
+      label: <p>About</p>,
+    },
+  ];
   return (
     <>
       {/* <div className='mb-2'> </div> */}
@@ -44,9 +53,8 @@ const Header = () => {
             <img src={SC_logo} alt="Logo" className="h-[20px] lg:h-10  mr-2" />
           </Link>
         </div>
-
         <div>
-          <ul className=" text-[10px] text-primary font-[500] lg:text-[16px] hidden sm:flex items-center space-x-3 lg:space-x-7">
+          <ul className=" text-[10px] text-primary font-[500] lg:text-[16px] hidden sm:flex items-center space-x-3 lg:space-x-5">
             <li className="flex justify-center   items-center text-grey-600">
               <Link
                 to={"/services"}
@@ -62,39 +70,63 @@ const Header = () => {
                 <div>Services</div>{" "}
                 <div>
                   {arrow ? (
-                    <img src={up} />
+                    <img src={ChevronUp} />
                   ) : (
-                    <img className="w-4 md:w-5 lg:w-6" src={Dropdown} />
+                    <img className="w-4 md:w-5 lg:w-6" src={chevronDown} />
                   )}
                 </div>
               </Link>
             </li>
             <li className="">
-              <Link to="/">Portfolio</Link>
-            </li>{" "}
-            <li className="">
-              <Link to="/">Technologies</Link>
+              <Link to="/portfolio">Portfolio</Link>
             </li>
             <li className="">
-              <Link to="/">Industry</Link>
+              <Link to="/technologies">Technologies</Link>
             </li>
-            <li className="flex justify-center  items-center">
-              <Link to="/about">Company&nbsp;</Link>
-              <img className="w-4 md:w-5 lg:w-6" src={Dropdown} />
+
+            <li className="">
+              <Link to="/industries">Industry</Link>
+            </li>
+            <li>
+              {/* <Dropdown menu={items} trigger={["click"]} placement="bottomLeft">
+                Company
+              </Dropdown> */}
+            </li>
+            <li className="flex justify-center   items-center text-grey-600">
+              <Link
+                to={"/about"}
+                className=" flex items-center gap-1 hover:text-primaryColor "
+                onClick={click}
+                onMouseEnter={() => {
+                  setShowServices(true);
+                }}
+                onMouseLeave={() => {
+                  setShowServices(false);
+                }}
+              >
+                <div>Company</div>{" "}
+                <div>
+                  {arrow ? (
+                    <img src={ChevronUp} />
+                  ) : (
+                    <img className="w-4 md:w-5 lg:w-6" src={chevronDown} />
+                  )}
+                </div>
+              </Link>
             </li>
             <li className="">
-              <Link to={"/contact"}>
+              <Link to={"/book-call"}>
                 <button className="pulse bg-[#00315A] text-white px-3 py-2 rounded-[0.18rem]">
                   Book my call
                 </button>
               </Link>
             </li>
           </ul>
-          {showServices && (
+          {/* {showServices && (
             <div className="absolute top-14  left-0 w-[100%] z-[100]">
               <NavbarServicesDropDown />
             </div>
-          )}
+          )} */}
           {/* =============================================== ~ MOBILE NAVBAR ~ ================================================ */}
           <div className="sm:hidden">
             <MenuOutlined className="text-[20px] mt-2 " onClick={openNav} />
@@ -113,7 +145,7 @@ const Header = () => {
                 <div className="flex justify-center items-center mb-7">
                   {" "}
                   <a href="/services">Services </a>&nbsp;&nbsp;&nbsp;
-                  <img src={Dropdown} />{" "}
+                  <img src={chevronDown} />{" "}
                 </div>
                 <a className="mb-7" href="#porfolio">
                   Portfolio
@@ -127,7 +159,7 @@ const Header = () => {
                 <div className="flex justify-center mb-7">
                   {" "}
                   <a href="/about">Company </a> &nbsp;&nbsp;&nbsp;
-                  <img src={Dropdown} />{" "}
+                  <img src={chevronDown} />{" "}
                 </div>
                 <Link to="/contact">
                   <button className="pulse bg-[#273C7F] text-white rounded-full py-1 px-4">

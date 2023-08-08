@@ -6,6 +6,9 @@ import { Routes, Route } from "react-router-dom";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsAndConditions from "./pages/TermsAndConditions";
 import BookMyCall from "./common component/BookMyCall";
+import Industries from "./pages/Industries";
+import Portfolio from "./pages/Portfolio";
+import Technologies from "./pages/Technologies";
 export const maintenancePage = () => {
   return <h1>Under Maintenance</h1>;
 };
@@ -19,10 +22,11 @@ const App = () => {
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         <Route path="/terms-conditions" element={<TermsAndConditions />} />
         <Route path="/contact" element={<Contact />} />
-        <Route path="/book-call" element={<BookMyCall />} />
+        <Route path="/industries" element={<Industries />} />\
+        <Route path="/portfolio" element={<Portfolio />} />
+        <Route path="/technologies" element={<Technologies />} />
       </Routes>
     </div>
   );
 };
-
 export default App;

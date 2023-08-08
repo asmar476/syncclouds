@@ -2,116 +2,203 @@ import styled, { keyframes, css } from "styled-components";
 import React from "react";
 import MainSubHeading from "./MainSubHeading";
 import BoldParagraph from "./BoldParagraph";
-import { FE, BE, CS, other } from "../constant/TechData";
+// import { FE, BE, CS, other } from "../constant/TechData";
+import { frontend, backend, cyber, Other } from "../constant/TechData";
 import bg from "../assets/Images/bgTools&tech.png";
-
+import DualMarqueeSlider from "./DualMarqueeSlider";
 function ToolsAndTechnologies() {
   return (
-    <div className="relative">
+    <div id="technologies" className="relative pb-10 my-16">
+      {/* ============================================================================ */}
       <img className="w-full h-[100%] z-[-1] absolute" src={bg} alt="" />
-      <div className="max-w-[1200px] xl:max-w-[1440px] w-[100%] mx-auto  px-10  sm:px-20  ">
-        <div className="flex flex-col items-center py-5">
+      <div className="max-w-[1440px] w-[100%] mx-auto  px-5  sm:px-10  ">
+        <div className="flex flex-col items-center mt-10 pt-20 pb-5">
           <MainSubHeading text={"Techno"} gradientText={"logies"} ml={"ml-2"} />
-          <BoldParagraph
-            className="max-w-[250px]"
-            text={"We Love using latest tec to our advantage."}
-          />
+          <p className="pt-1.5">
+            {"We Love using latest tech to our advantage."}
+          </p>
         </div>
         {/* ============================================================================================ */}
-        <div className=" ">
-          <h1 className=" font-semibold  text-[16px]:lg:text-[20.89px]">
+        <div className="  ">
+          <h1 className="mb-1 md:mb-4 font-semibold text-[20px] lg:text-[26px] text-body">
             Front End
           </h1>
-          <Wrapper className="">
-            <Marquee className="w-[100%]  h-[50px]">
-              <MarqueeGroup className="h-[50px]">
-                {FE.map((el, index) => (
-                  <ImageGroup key={index}>
-                    <img src={el} />
-                  </ImageGroup>
+          <Wrapper>
+            <Marquee className="w-[100%]  ">
+              <MarqueeGroup className="">
+                {frontend.map((logo, index) => (
+                  <div
+                    key={index}
+                    className="h-[100%] overflow-hidden whitespace-no-wrap mr-10 flex items-center w-[160px] space-x-2 bg-white s rounded-lg justify-center px-3 py-1 drop-shadow-lg "
+                  >
+                    <img
+                      className="w-[50px] md:w-[65px]"
+                      src={logo.image}
+                      alt=""
+                    />
+                    <p className="font-[600] text-body text-[14px] md:text-[18px]">
+                      {logo.title}
+                    </p>
+                  </div>
                 ))}
               </MarqueeGroup>
               <MarqueeGroup>
-                {FE.map((el, index) => (
-                  <ImageGroup key={index}>
-                    <img src={el} />
-                  </ImageGroup>
+                {frontend.map((logo, index) => (
+                  <div
+                    key={index}
+                    className="h-[100%] overflow-hidden whitespace-no-wrap mr-10 flex items-center w-[160px] space-x-2 bg-white s rounded-lg justify-center px-3 py-1 drop-shadow-lg "
+                  >
+                    <img
+                      className="w-[50px] md:w-[65px]"
+                      src={logo.image}
+                      alt=""
+                    />
+                    <p className="font-[600] text-body text-[14px] md:text-[18px]">
+                      {logo.title}
+                    </p>
+                  </div>
                 ))}
               </MarqueeGroup>
             </Marquee>
           </Wrapper>
         </div>
+
         {/* ========================================================================== */}
         <div className="">
-          <h1 className=" font-semibold text-[16px] lg:text-[20.89px]">
+          <h1 className="mt-6 md:mt-16 mb-1 md:mb-4 font-semibold text-[20px] lg:text-[26px] text-body">
             Back End
           </h1>{" "}
           <Wrapper>
             <Marquee className="w-[100%]  ">
-              <MarqueeGroup2>
-                {BE.map((el, index) => (
-                  <ImageGroup key={index}>
-                    <img width={500} src={el} />
-                  </ImageGroup>
+              <MarqueeGroup2 className="">
+                {backend.map((logo, index) => (
+                  <div
+                    key={index}
+                    className="h-[100%] overflow-hidden whitespace-no-wrap mr-10 flex items-center w-[160px] space-x-2 bg-white s rounded-lg justify-center px-3 py-1 drop-shadow-lg "
+                  >
+                    <img
+                      className="w-[50px] md:w-[65px]"
+                      src={logo.image}
+                      alt=""
+                    />
+
+                    <p className="font-[600] text-body text-[14px] md:text-[18px]">
+                      {logo.title}
+                    </p>
+                  </div>
                 ))}
               </MarqueeGroup2>
               <MarqueeGroup2>
-                {BE.map((el, index) => (
-                  <ImageGroup key={index}>
-                    <img width={500} src={el} />
-                  </ImageGroup>
+                {backend.map((logo, index) => (
+                  <div
+                    key={index}
+                    className="h-[100%] overflow-hidden whitespace-no-wrap mr-10 flex items-center w-[160px] space-x-2 bg-white s rounded-lg justify-center px-3 py-1 drop-shadow-lg "
+                  >
+                    <img
+                      className="w-[50px] md:w-[65px]"
+                      src={logo.image}
+                      alt=""
+                    />
+                    <p className="font-[600] text-body text-[14px] md:text-[18px]">
+                      {logo.title}
+                    </p>
+                  </div>
                 ))}
               </MarqueeGroup2>
             </Marquee>
-          </Wrapper>{" "}
+          </Wrapper>
         </div>
+
         {/* ========================================================================== */}
         <div className="">
-          <h1 className=" font-semibold text-[16px] lg:text-[20.89px]">
+          <h1 className="mt-6 md:mt-16 mb-1 md:mb-4 font-semibold text-[20px] lg:text-[26px] text-body">
             Cyber Security
-          </h1>{" "}
+          </h1>
           <Wrapper>
             <Marquee className="w-[100%]  ">
-              <MarqueeGroup>
-                {CS.map((el, index) => (
-                  <ImageGroup key={index}>
-                    <img width={500} src={el} />
-                  </ImageGroup>
+              <MarqueeGroup className="">
+                {cyber.map((logo, index) => (
+                  <div
+                    key={index}
+                    className="h-[100%] overflow-hidden whitespace-no-wrap mr-10 flex items-center w-[160px] space-x-2 bg-white s rounded-lg justify-center px-3 py-1 drop-shadow-lg "
+                  >
+                    <img
+                      className="w-[50px] md:w-[65px]"
+                      src={logo.image}
+                      alt=""
+                    />
+
+                    <p className="font-[600] text-body text-[14px] md:text-[18px]">
+                      {logo.title}
+                    </p>
+                  </div>
                 ))}
               </MarqueeGroup>
               <MarqueeGroup>
-                {CS.map((el, index) => (
-                  <ImageGroup key={index}>
-                    <img src={el} />
-                  </ImageGroup>
+                {cyber.map((logo, index) => (
+                  <div
+                    key={index}
+                    className="h-[100%] overflow-hidden whitespace-no-wrap mr-10 flex items-center w-[160px] space-x-2 bg-white s rounded-lg justify-center px-3 py-1 drop-shadow-lg "
+                  >
+                    <img
+                      className="w-[50px] md:w-[65px]"
+                      src={logo.image}
+                      alt=""
+                    />
+                    <p className="font-[600] text-body text-[14px] md:text-[18px]">
+                      {logo.title}
+                    </p>
+                  </div>
                 ))}
               </MarqueeGroup>
             </Marquee>
-          </Wrapper>{" "}
+          </Wrapper>
         </div>
+
         {/* ========================================================================== */}
         <div className="">
-          <h1 className=" font-semibold text-[16px] lg:text-[20.89px]">
+          <h1 className="mt-6 md:mt-16 mb-1 md:mb-4 font-semibold text-[20px] lg:text-[26px] text-body">
             Other
           </h1>{" "}
           <Wrapper>
             <Marquee className="w-[100%]  ">
-              <MarqueeGroup2>
-                {other.map((el, index) => (
-                  <ImageGroup key={index}>
-                    <img src={el} />
-                  </ImageGroup>
+              <MarqueeGroup2 className="">
+                {Other.map((logo, index) => (
+                  <div
+                    key={index}
+                    className="h-[100%] overflow-hidden whitespace-no-wrap mr-10 flex items-center w-[165px] space-x-3  bg-white rounded-lg justify-center py-1 drop-shadow-lg "
+                  >
+                    <img
+                      className="w-[50px] md:w-[65px]"
+                      src={logo.image}
+                      alt=""
+                    />
+
+                    <p className="font-[600] text-body text-[14px] md:text-[18px]">
+                      {logo.title}
+                    </p>
+                  </div>
                 ))}
               </MarqueeGroup2>
               <MarqueeGroup2>
-                {BE.map((el, index) => (
-                  <ImageGroup key={index}>
-                    <img src={el} />
-                  </ImageGroup>
+                {Other.map((logo, index) => (
+                  <div
+                    key={index}
+                    className="h-[100%] overflow-hidden whitespace-no-wrap mr-10 flex items-center w-[165px] space-x-3  bg-white rounded-lg justify-center py-1 drop-shadow-lg "
+                  >
+                    <img
+                      className="w-[50px] md:w-[65px]"
+                      src={logo.image}
+                      alt=""
+                    />
+                    <p className="font-[600] text-body text-[14px] md:text-[18px]">
+                      {logo.title}
+                    </p>
+                  </div>
                 ))}
               </MarqueeGroup2>
             </Marquee>
-          </Wrapper>{" "}
+          </Wrapper>
         </div>
         {/* ========================================================================== */}
         {/* <img className="absolute w-[1440px]" src={bg} alt="" />{" "} */}
@@ -132,16 +219,7 @@ const Wrapper = styled.div`
 const Marquee = styled.div`
   display: flex;
   overflow: hidden;
-  height: 120px;
-  max-width: 1200px;
   user-select: none;
-  mask-image: linear-gradient(
-    to right,
-    hsl(0 0% 0% / 0),
-    hsl(0 0% 0% / 1) 10%,
-    hsl(0 0% 0% / 1) 90%,
-    hsl(0 0% 0% / 0)
-  );
 `;
 const scrollX = keyframes`
   from {
@@ -152,13 +230,12 @@ const scrollX = keyframes`
   }
 `;
 const common = css`
+  flex-shrink: 0;
   display: flex;
   align-items: center;
   justify-content: space-around;
   white-space: nowrap;
-  width: 150%;
-  height: 100px;
-  animation: ${scrollX} 30s linear infinite;
+  animation: ${scrollX} 20s linear infinite;
 `;
 const MarqueeGroup = styled.div`
   ${common}
@@ -171,30 +248,40 @@ const MarqueeGroup2 = styled.div`
 const ImageGroup = styled.div`
   display: grid;
   place-items: center;
-  width: 70rem;
+  width: 10rem;
 `;
-
-// @media screen and (min-width: 425px) {
-//   max-width: 425px;
-//   height: 60px;
-// }
-
-// @media screen and (min-width: 768px) {
-//   max-width: 768px;
-//   height: 105px;
-// }
-
-// @media screen and (min-width: 1024px) {
-//   max-width: 1024px;
-//   height: 105px;
-// }
-
-// @media screen and (min-width: 1280px) {
-//   max-width: 800px;
-//   height: 105px;
-// }
-
-// @media screen and (min-width: 1440px) {
-//   max-width: 1200px;
-//   height: 60px;
-// }
+{
+  /* <div className="marquee-slider  overflow-hidden">
+        <style>
+          {`
+        .marquee-content {
+          display: flex;
+          animation: marquee ${frontend.length * 100}s linear infinite;
+        }
+        @keyframes marquee {
+          0% {
+            transform: translateX(0%);
+          }
+          100% {
+            transform: translateX(-${(100 / frontend.length) * 100}%);
+          }
+        }
+      `}
+        </style>
+        <div className="marquee-content flex">
+          <div className=" flex items-center justify-center gap-4">
+            {frontend.map((logo, index) => (
+              <div
+                key={index}
+                className="items-center bg-white border rounded-md flex-center px-3 py-1 drop-shadow-lg flex logo"
+              >
+                <img className="" src={logo.image} alt="" />
+                <p p className="font-[700] text-[24px]">
+                  {logo.title}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div> */
+}

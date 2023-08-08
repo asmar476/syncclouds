@@ -19,7 +19,7 @@ const ExprtIdeation = () => {
           Expert Ideation At Positions
         </h2>
       </div>
-      <div className="grid md:grid-cols-2 lg:grid-cols-4  my-10">
+      <div className="grid grid-cols-2 lg:grid-cols-4  my-10">
         {data.map((position, index) => (
           <div
             key={index}
@@ -33,10 +33,12 @@ const ExprtIdeation = () => {
                 redraw={true}
                 duration={5}
               >
-                <VisibilitySensor>
-                  {({ countUpRef, start }) => <span ref={countUpRef} />}
-                </VisibilitySensor>
-              </CountUp>{" "}
+                {({ countUpRef, start }) => (
+                  <VisibilitySensor onChange={start} delayedCall>
+                    <span ref={countUpRef} />
+                  </VisibilitySensor>
+                )}
+              </CountUp>
               +
             </h3>
             <p className="text-[12px] sm:text-[16px] font-[600] leading-[24px] text-white">

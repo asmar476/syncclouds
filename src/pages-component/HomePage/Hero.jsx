@@ -12,9 +12,23 @@ const Hero = () => {
         background:
           " linear-gradient(180deg, rgba(0, 38, 128, 0) 0%, rgba(0, 38, 128, 0.05) 100%)",
       }}
-      className="  "
     >
-      <div className="lg:min-h-[92vh] max-w-[1200px] xl:max-w-[1440px] w-[100%] mx-auto lg:flex flex-col md:flex-row items-center justify-center px-10  sm:px-20 py-10 sm:py-20 lg:pb-10">
+      <div>
+        <div className=" flex items-center justify-center right-[5%] top-[70%] fixed z-[100] bg-gray-300  h-[50px]  w-[50px]  rounded-full">
+          <Tooltip title="Scroll to Top">
+            <img
+              onClick={() => {
+                window.scrollTo({ top: 0, behavior: "smooth" });
+              }}
+              className="cursor-pointer  fixed z-[100]"
+              src={arrowUp}
+              alt="arrow up"
+              width={40}
+            />
+          </Tooltip>
+        </div>
+      </div>
+      <div className="max-w-[1200px] xl:max-w-[1440px] w-[100%] mx-auto lg:flex flex-col md:flex-row items-center justify-center px-10  sm:px-20 py-10 sm:py-20 lg:pb-10">
         <div className="flex-1 sm:w-[500px] md:w-[622px] space-y-5 2xl:space-y-10 ">
           <h1 className="text-[24px] sm:text-[30px] xl:text-[50px] font-[800] leading-[38px] xl:leading-[65px] sm:leading-[45px]">
             Unlock your Business's Potential&nbsp;

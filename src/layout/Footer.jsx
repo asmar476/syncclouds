@@ -5,6 +5,8 @@ import fb from "../assets/icons/fb.svg";
 import twitter from "../assets/icons/twiter.svg";
 import insta from "../assets/icons/insta.svg";
 import skype from "../assets/icons/skype.svg";
+import linkedin from "../assets/icons/linkedin.svg";
+
 import { Row, Col } from "antd";
 const Footer = () => {
   const navigate = useNavigate();
@@ -81,13 +83,13 @@ const Footer = () => {
           <div className="text-sm sm:text-[16px] font-[500]">
             {" "}
             <p>We are hiring:</p>
-            <p>hr@syncclouds.com</p>
+            <p>query@syncclouds.com</p>
           </div>
         </Col>
       </Row>
       {/* +++++++++++++++++++++++++++++++++++++++++ web view +++++++++++++++++++++++++++++++++++++++++++++++++ */}
 
-      <div className="hidden border-t-2 border-white mx-0 sm:mx-16 font-semibold text-[12px] md:text-base text-white px-10  py-5 md:flex justify-between">
+      <div className="hidden border-t-2 border-white mx-0 sm:mx-16 font-semibold text-[12px] md:text-base text-white px-10  py-3 md:flex justify-between">
         <div className="flex items-center justify-between gap-16 lg:gap-32">
           <Link to={"/terms-conditions"}>Terms & Conditions</Link>
           <Link to={"/privacy-policy"}>Privacy Policy</Link>
@@ -126,12 +128,20 @@ const Footer = () => {
               rel="noopener noreferrer"
             >
               <img src={skype} alt="skype" />
+            </Link>{" "}
+            <Link
+              to="https://www.linkedin.com/company/syncclouds/mycompany/"
+              className="cursor-pointer ml-2"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img src={linkedin} alt="linkedin" />
             </Link>
           </div>
         </div>
       </div>
       {/* +++++++++++++++++++++++++++++++++++++++++ mobile view +++++++++++++++++++++++++++++++++++++++++++++++++ */}
-      <div className="md:hidden border-t-2 font-semibold  border-white text-[12px] sm:text-[16px] text-white px-10  py-5">
+      <div className="md:hidden border-t-2 font-semibold  border-white text-[12px] sm:text-[16px] text-white px-10  pt-3">
         <div className="flex items-center   justify-between">
           <Link to={"/terms-conditions"}>Terms & Conditions</Link>
           <Link to={"/privacy-policy"}>Privacy Policy</Link>
@@ -174,6 +184,18 @@ const Footer = () => {
               rel="noopener noreferrer"
             >
               <img className="w-[16px] sm:w-[25px]" src={skype} alt="skype" />
+            </Link>
+            <Link
+              to="https://www.linkedin.com/company/syncclouds/mycompany/"
+              className="cursor-pointer ml-2"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                className="w-[16px] sm:w-[25px]"
+                src={linkedin}
+                alt="linkedin"
+              />
             </Link>
           </div>
         </div>

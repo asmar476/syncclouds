@@ -6,7 +6,6 @@ import testing from "../assets/servicesSoftwareStepsIcons/Testing 2.svg";
 import deployment from "../assets/servicesSoftwareStepsIcons/Deployment.svg";
 import maintenance from "../assets/servicesSoftwareStepsIcons/Maintenance.svg";
 import update from "../assets/servicesSoftwareStepsIcons/Update & improvement 2.svg";
-
 import pageWhite from "../assets/services software icon White/Vector.svg";
 import ideaWhite from "../assets/services software icon White/planning.svg";
 import designWhite from "../assets/services software icon White/Design.svg";
@@ -15,7 +14,6 @@ import testingWhite from "../assets/services software icon White/Testing.svg";
 import deploymentWhite from "../assets/services software icon White/Deployment.svg";
 import maintenanceWhite from "../assets/services software icon White/Maintenance.svg";
 import updateWhite from "../assets/services software icon White/Update & improvement.svg";
-
 export const servicesSoftwareSteps = [
   {
     id: 1,

@@ -2,7 +2,8 @@ import React from "react";
 import MainSubHeading from "../../common component/MainSubHeading";
 import { visionData } from "../../constant/VisionGoalData";
 import ExpandCard from "./AboutExpandCard/ExpandCard";
-import aboutHorizon from "../../assets/Images/Expand Your Digital Horizons With SyncClouds.svg";
+// import aboutHorizon from "../../assets/Images/Expand Your Digital Horizons With SyncClouds.svg";
+import aboutHorizon from "../../assets/About illustration/SVG 1.svg";
 
 const ExpandYourHorizon = () => {
   return (
@@ -17,14 +18,14 @@ const ExpandYourHorizon = () => {
           speed up growth. We have vowed to raise the bar for our client’s
           performance continually.
         </p>
-        <img className="w-full" src={aboutHorizon} alt="" />
+        <img className="" src={aboutHorizon} alt="" />
+
+        <div className="grid grid-cols-2 md:grid-cols-4 md:flex-2 flex-1 gap-2 lg:gap-20 mb-10 ">
+          {visionData.map((data, index) => (
+            <ExpandCard id={index} data={data} index={index} />
+          ))}
+        </div>
       </div>
-      {/*  / // / / / expand card / // / /  */}
-      {/* <div className="grid grid-cols-4 gap-5 mt-20">
-        {visionData.map((data, index) => (
-          <ExpandCard id={index} data={data} index={index} />
-        ))}
-      </div> */}
     </div>
   );
 };

@@ -8,7 +8,7 @@ function HomeFaq() {
     <>
       <div className="hidden md:block max-w-[1200px] xl:max-w-[1440px] w-[100%] mx-auto  px-10  sm:px-20 py-10">
         <div className="relative lg:flex-row flex flex-col items-center lg:items-start justify-center gap-5 lg:justify-between ">
-          <div className=" text-[#434343] mb-10 text-center lg:text-left w-[540px]">
+          <div className=" text-[#434343] mb-10 gap-4 text-center lg:text-left w-[540px]">
             <MainSubHeading
               text={"Frequently Asked "}
               gradientText={"Questions"}
