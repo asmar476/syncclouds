@@ -18,13 +18,13 @@ function EntireCatalog() {
           and technology consulting.
         </p>
       </div>
-      <div className="w-full text-[11px] sm:text-[14px] md:text-[18px]  pt-3 flex flex-wrap justify-center gap-2.5 md:space-x-10 lg:space-x-20 ">
+      <div className="w-full text-[11px] sm:text-[14px] md:text-[18px]  pt-3 bg-gray-200  flex flex-wrap justify-between max-w-[900px] px-3">
         {/* <div className="w-full text-[11px] sm:text-[14px] md:text-[18px] bg-gray-100 pt-3 flex flex-wrap justify-center gap-2.5 md:space-x-10 lg:space-x-20 "> */}
         {servicesCatalog.map((service, index) => (
           <div
             key={index}
             onClick={() => setActiveTab(index)}
-            className={`cursor-pointer px-[2px] ${
+            className={`text-[10px] sm:[] md:text-[16px] cursor-pointer px-[2px] ${
               activeTab === index
                 ? "font-semibold transition-duration-3s pb-3 border-b-2 border-primary"
                 : ""
@@ -34,20 +34,20 @@ function EntireCatalog() {
           </div>
         ))}
       </div>
-      <div className="mt-8 md:mt-0">
+      <div className="mt-8 md:mt-0 px-3 max-w-[900px]">
         {servicesCatalog.map((service, index) => (
           <div
             key={index}
-            className={`flex items-center justify-center flex-wrap  ${
+            className={`md:flex-row flex-col flex items-center justify-between ${
               activeTab == index ? "block" : "hidden"
             }`}
           >
-            <div className="px-10 md:w-[50%]">
+            <div className=" md:w-[50%]">
               {" "}
               <h3 className="text-xl font-bold mb-2 text-primary">
                 {service.title}
               </h3>
-              <p className="mb-4">{service.content}</p>
+              <p className="mb-4 text-[16px]">{service.content}</p>
             </div>
             <div>
               {" "}

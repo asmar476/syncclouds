@@ -6,12 +6,29 @@ import black from "../../assets/icons/black.svg";
 import blue from "../../assets/icons/blue.svg";
 import bg from "../../assets/Images/bgTools&tech.png";
 import map from "../../assets/Images/map.png";
+import HomePorfolio from "./PortfolioComponent/HomePorfolio";
 const Portfolio = () => {
   return (
-    <div id="portfolio" className="container mx-auto mt-12 p-5">
-      <div className="flex flex-col justify-between items-center">
+    <div id="portfolio" className="bg-[#edf2f7] container mx-auto mt-12 p-5">
+      <div className="">
         <MainSubHeading text={"Port"} gradientText={"folio"} />
-        <div className="flex flex-wrap items-center justify-center gap-9 lg:gap-20">
+        <div className="flex items-center justify-between">
+          <h1 className="font-[600] text-body text-[16px] sm:text-[20px] md:text-[25.89px]">
+            Our Case Studies
+          </h1>
+          <div className="flex text-left flex-col sm:flex-row space-x-5">
+            <button className="font-[500] text-[11px] md:text-[14] text-primary">
+              All
+            </button>
+            <button className="font-[500] text-[11px] md:text-[14] text-[#434343]">
+              Social Media Marketing
+            </button>
+            <button className="font-[500] text-[11px] md:text-[14] text-[#434343]">
+              Content Marketing
+            </button>
+          </div>
+        </div>
+        {/* <div className="flex flex-wrap items-center justify-center gap-9 lg:gap-20">
           <button
             onClick={() => ""}
             className="hover:font-semibold px-7 text-[18px] font-semibold py-2 rounded-sm cursor-pointer border border-primary hover:shadow-lg bg-primary text-white"
@@ -42,11 +59,12 @@ const Portfolio = () => {
           >
             Hire A Team
           </button>
-        </div>
+        </div> */}
         {/* <div className="md:hidden"><CustomSelect /></div> */}
       </div>
       <div className=" mx-auto">
-        <PortfolioCard />
+        <HomePorfolio />
+        {/* <PortfolioCard /> */}
       </div>
       <center> </center>
     </div>

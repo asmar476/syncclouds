@@ -10,17 +10,19 @@ import ToolsAndTechnologies from "../common component/ToolsAndTechnologies";
 import HomeFaq from "../pages-component/HomePage/HomeFaq";
 const Home = () => {
   return (
-    <Layout>
-      <Hero />
-      <OurClients />
-      <OfferCard />
-      <Portfolio />
-      <ToolsAndTechnologies />
-      <HomeFaq />
-      <OurAim />
-      <GetSynced />
-      <ContactForm />
-    </Layout>
+    <div className="">
+      <Layout>
+        <Hero />
+        <OurClients />
+        <OfferCard />
+        <Portfolio />
+        <ToolsAndTechnologies />
+        <HomeFaq />
+        <OurAim />
+        <GetSynced />
+        <ContactForm />
+      </Layout>
+    </div>
   );
 };
 

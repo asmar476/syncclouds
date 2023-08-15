@@ -1,6 +1,6 @@
 import arrowUp from "../../assets/icons/arrow-up-circle.svg";
 import { Tooltip } from "antd";
-import aboutIllustration from "../../assets/About illustration/aboutIllustration.svg";
+import aboutIllustration from "../../assets/About illustration/About Us-02.svg";
 import ExpandYourHorizon from "../AboutPage/ExpandYourHorizon";
 import { Link } from "react-router-dom";
 const AboutHero = () => {
@@ -19,9 +19,9 @@ const AboutHero = () => {
           />
         </Tooltip>
       </div>
-      <div className="container mx-auto py-10">
-        <div className="ml-5 flex flex-col xl:gap-10 items-center justify-center md:gap-5 lg:gap-0 space-y-10 md:space-y-0 md:flex-row">
-          <div className="max-w-[622px] md:space-y-5 text-center  md:text-left ">
+      <div className=" mx-auto pt-20">
+        <div className="ml-5 pt-20 flex flex-col xl:gap-10 items-center justify-center md:gap-5 lg:gap-0 space-y-10 md:space-y-0 md:flex-row">
+          <div className=" md:space-y-5 text-center  md:text-left ">
             <div>
               <h1 className="text-[28px] md:text-[50px] text-[#002680] font-[700] leading-[65px]">
                 About Us
@@ -51,7 +51,11 @@ const AboutHero = () => {
             </Link>
           </div>
           <div className="hidden md:block">
-            <img src={aboutIllustration} alt="Hero Illustration" className="" />
+            <img
+              className="w-[600px]"
+              src={aboutIllustration}
+              alt="Hero Illustration"
+            />
           </div>
         </div>
         <ExpandYourHorizon />

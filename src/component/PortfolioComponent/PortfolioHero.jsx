@@ -13,8 +13,8 @@ import chevronRight from "../../assets/icons/Vector.svg";
 function PortfolioHero() {
   return (
     <div>
-      <div className="flex flex-col space-y-12 justify-between items-center  pt-20">
-        <img className="w-[100%]" src={PortfolioImage} />
+      <div className="flex flex-col space-y-12 justify-between items-center  sm:mt-20 pt-20">
+        <img className="hidden sm:block w-[100%]" src={PortfolioImage} />
         <MainSubHeading text={"Port"} gradientText={"folio"} />
         <div className="flex flex-wrap items-center justify-center  px-1 gap-3 lg:gap-20">
           <button
@@ -89,7 +89,7 @@ function PortfolioHero() {
           {VidPortfolioData.map((data, index) => (
             <div
               key={index}
-              className={`mx-5 px-5 md:px-0 md:mx-0 md:flex items-center gap-20 md:items-start justify-center rounded-br-[100px] mt-10 py-10 hover:bg-slate-100 lg:hover:bg-white  ${
+              className={`mx-5 px-5 md:px-0 md:mx-0 md:flex items-center gap-20 md:items-start justify-center rounded-br-[100px]  hover:bg-slate-100 lg:hover:bg-white  ${
                 index % 2 === 0 ? "flex-row-reverse" : "flex-row-"
               }`}
             >

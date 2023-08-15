@@ -1,12 +1,28 @@
 import React from "react";
-import languages from "../../assets/Images/TandT1.svg";
-import db from "../../assets/Images/TandT3.svg";
-import cloud from "../../assets/Images/TandT2.svg";
-import web from "../../assets/Images/TandT6.svg";
-import mobile from "../../assets/Images/TandT4.svg";
-import framwork from "../../assets/Images/TandT5.svg";
+import webIcon from "../../assets/Services/servicesTandT/Web/coding-icon(1) 1.svg";
+import dbmsIcon from "../../assets/Services/servicesTandT/DBMS/database-checkmark-icon 1.svg";
+import cloudIcon from "../../assets/Services/servicesTandT/Cloud/cloud-download-icon 1.svg";
+import fwIcon from "../../assets/Services/servicesTandT/Frameworks/big-data-icon 1.svg";
+import languagesIcon from "../../assets/Services/servicesTandT/Language/programmer-icon 1.svg";
+import mobileIcon from "../../assets/Services/servicesTandT/Mobile/programmer-icon 1.svg";
+import {
+  languagesServices,
+  web,
+  dbmsServices,
+  cloud,
+  Mobile,
+  fwServices,
+} from "../../constant/TechData";
 import Carousel from "react-elastic-carousel";
-const Images = [web, db, cloud, languages, framwork, mobile];
+import ServicesTechsCommon from "./ServicesTechsCommon";
+const techCategories = [
+  { icon: webIcon, data: web, category: "Web" },
+  { icon: dbmsIcon, data: dbmsServices, category: "DBMS" },
+  { icon: cloudIcon, data: cloud, category: "Cloud" },
+  { icon: languagesIcon, data: languagesServices, category: "Languages" },
+  { icon: fwIcon, data: fwServices, category: "Frameworks" },
+  { icon: mobileIcon, data: Mobile, category: "Mobile" },
+];
 function ToolsAndTech() {
   return (
     <div>
@@ -22,17 +38,20 @@ function ToolsAndTech() {
           software development, Sync Clouds has developed into a competitor on a
           global scale in the field of software engineering."
         </p>
-        <div className="p-5 hidden sm:grid gap-3 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
-          {Images.map((img, ind) => (
-            <div key={ind}>
-              <img className="" src={img} alt="" />
-            </div>
+
+        <div className="hidden sm:grid grid-cols-2 gap-5 lg:grid-cols-3">
+          {techCategories.map((category, index) => (
+            <ServicesTechsCommon
+              key={index}
+              CategoryIcon={category.icon}
+              categoryData={category.data}
+              Category={category.category}
+            />
           ))}
         </div>
       </div>
       <div className="sm:hidden">
         <Carousel
-          className="lg:block hidden"
           // ref={carouselRef}
           itemsToShow={1}
           pagination={false}
@@ -41,10 +60,13 @@ function ToolsAndTech() {
           // autoPlaySpeed={1000}
           // isRTL={false}
         >
-          {Images.map((img, ind) => (
-            <div key={ind}>
-              <img className="w-[100%]" src={img} alt="image" />
-            </div>
+           {techCategories.map((category, index) => (
+            <ServicesTechsCommon
+              key={index}
+              CategoryIcon={category.icon}
+              categoryData={category.data}
+              Category={category.category}
+            />
           ))}
         </Carousel>
       </div>

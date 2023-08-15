@@ -1,7 +1,9 @@
 import HeroComponent from "../common component/HeroComponent";
 import Layout from "../layout/Layout";
-import contactIllustration from "../assets/contact/Frame.svg";
-import ContactDetailForm from "../pages-component/Contact/ContactDetailForm"
+import contactIllustration from "../assets/contact/Contact-Us-03.svg";
+import ContactDetailForm from "../pages-component/Contact/ContactDetailForm";
+import WhyChoseUs from "../pages-component/Contact/WhyChoseUs";
+import ContactForm from "../common component/ContactForm";
 const Contact = () => {
   return (
     <Layout>
@@ -14,8 +16,8 @@ const Contact = () => {
         Illustration={contactIllustration}
         buttonText={""}
       />
-      {/* <ContactForm /> */}
       <ContactDetailForm />
+      <WhyChoseUs />
     </Layout>
   );
 };

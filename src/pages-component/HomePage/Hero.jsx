@@ -28,7 +28,7 @@ const Hero = () => {
           </Tooltip>
         </div>
       </div>
-      <div className="max-w-[1200px] xl:max-w-[1440px] w-[100%] mx-auto lg:flex flex-col md:flex-row items-center justify-center px-10  sm:px-20 py-10 sm:py-20 lg:pb-10">
+      <div className="max-w-[1200px] xl:max-w-[1440px] w-[100%] mx-auto lg:flex flex-col md:flex-row items-center justify-center px-10  sm:px-20 py-28 lg:pb-10">
         <div className="flex-1 sm:w-[500px] md:w-[622px] space-y-5 2xl:space-y-10 ">
           <h1 className="text-[24px] sm:text-[30px] xl:text-[50px] font-[800] leading-[38px] xl:leading-[65px] sm:leading-[45px]">
             Unlock your Business's Potential&nbsp;
@@ -65,7 +65,7 @@ const Hero = () => {
               </button>
             </Link>
             <div className="flex gap-2 sm:gap-3 items-center  px-[3px] sm:px-3 py-[2px] sm:py-2 rounded-sm border border-[#002680] min-w-[120px] md:min-w-[170px]">
-              <Link to={"/contact"}>
+              <Link to={"/services"}>
                 <button className="text-[12px] sm:text-[18px] font-[550] text-[#002680]">
                   Our Services
                 </button>

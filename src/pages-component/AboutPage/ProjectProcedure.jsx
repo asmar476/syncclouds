@@ -30,8 +30,7 @@ const ProjectProcedure = () => {
             <span className="text-primary">Blueprint for Software</span> Success
           </h1>
         </div>
-
-        <p className="text-body text-center font-[500] text-[18px] leading-[24px] w-[783] mt-5">
+        <p className="text-body text-center font-[500] text-[18px] leading-[24px] max-w-[622px] mt-5">
           Our 3-step process ensures that every task is completed efficiently,
           accurately, and with attention to detail.
         </p>
@@ -57,7 +56,11 @@ const ProjectProcedure = () => {
             <p>{data.description}</p>
             <ul>
               {data.listData.map((li, index) => (
-                <div id={index} className="flex justify-start text-left">
+                <div
+                  key={index}
+                  id={index}
+                  className="flex justify-start text-left"
+                >
                   <BsDot className="text-lg" /> <li>{li.li}</li>
                 </div>
               ))}

@@ -17,7 +17,8 @@ const Images = [
   ExceptionalOffers,
 ];
 const Images2 = [AdequatePrice, ExceptionalOffers];
-const ContactDetailForm = () => {
+const 
+ContactDetailForm = () => {
   return (
     <div className="container mx-auto px-10 ">
       <div className="flex items-center justify-center right-[5%] top-[70%] fixed z-[100] bg-gray-300  h-[50px]  w-[50px]  rounded-full">
@@ -44,20 +45,6 @@ const ContactDetailForm = () => {
         </p>
       </div>
       <ContactForm />
-      <div className="text-center mt-28 mb-16">
-        <MainSubHeading text={"Why "} gradientText={"Choose Us"} />
-      </div>
-      <div className="flex flex-wrap flex-col lg:flex-row items-center justify-center">
-        {Images.map((img, ind) => (
-          <div key={ind}>
-            <img
-              className="w-[100%]"
-              src={img}
-              alt={`image ${ind}`}
-            />
-          </div>
-        ))}
-      </div>
     </div>
   );
 };

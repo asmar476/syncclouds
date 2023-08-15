@@ -13,7 +13,7 @@ const About = () => {
       {/* / / / // /  InnovativeServices  /  / / // / /  */}
       <InnovativeServices />
       {/* Our Team  */}
-      <OurTeam />
+      {/* <OurTeam /> */}
       {/* project procedure */}
       <ProjectProcedure />
       {/* / / / / / / / get synced  / / / // /  / / */}

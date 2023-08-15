@@ -32,7 +32,6 @@ const Services = () => {
       {/* <EntireCatalog /> */}
       <EntireCatalog />
       {/* FAQ Section */}
-      <TwoColFAQs />
       {/* get synced */}
       <GetSynced />
       {/* contact form  */}

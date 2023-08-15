@@ -56,7 +56,7 @@ const FaqSection = ({ faqData }) => {
             <div
               className={` transition-all duration-200 ease-in overflow-hidden${
                 quesIndex.includes(index)
-                  ? "open transition-all duration-500 pl-4 py-3 "
+                  ? "open transition-all duration-700 px-4 py-3 "
                   : " pl-4 h-[0] py-0" /* Add the 'open' class when the accordion is open */
               } `}
             >

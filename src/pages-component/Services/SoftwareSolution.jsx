@@ -28,7 +28,7 @@ const SoftwareSolution = () => {
           {softwareSolutionData.map((data, index) => (
             <div
               key={index}
-              className=" bg-white mx-3 w-[408px] py-10 h-[193px] flex items-center justify-center gap-5 flex-col box-shadow  pb-5 mb-5"
+              className=" bg-white mx-3 w-[307px] sm:w-[408px] flex items-center justify-center gap-5 flex-col box-shadow  pb-5 mb-5"
             >
               <img src={data.img} width={98} alt="icon" />
               <h1 className="font-[600] text-[18px] gradient-text">

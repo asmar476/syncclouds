@@ -4,15 +4,23 @@
 * {
   box-sizing: border-box;
   padding: 0;
-  margin: 0;
+  margin: 0  ;
 }
 html,
 body {
+ 
   scroll-behavior: smooth;
   font-family: "Poppins", sans-serif;
-  /* width: 1440px;   */
+  /* max-width: 1440px; */
+  
 }
-
+.main{
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
 .gradient-text {
   background: -webkit-linear-gradient(left, #273c7f, #2374b1);
   background-clip: text;
@@ -241,9 +249,9 @@ body {
 .fcRlZe {
   color: white !important;
   background-color: #012781 !important;
-  font-size: 1.2em !important;
-  height: 40px !important;
-  width: 45px !important;
+  font-size: 0.8em !important;
+  height: 30px !important;
+  width: 40px !important;
   display: flex !important;
   justify-content: center !important ;
   align-items: center !important;
@@ -253,11 +261,11 @@ body {
   margin-left: 20px;
 }
 .cIuHOQ {
-  font-size: 1.2em !important;
+  font-size: 0.8em !important;
   margin-left: 20px;
   margin-right: 20px;
-  height: 40px !important;
-  width: 45px !important;
+  height: 30px !important;
+  width: 40px !important;
   display: flex !important;
   justify-content: center !important ;
   align-items: center !important;
@@ -265,4 +273,29 @@ body {
 }
 .ant-row {
   margin: 0 !important;
+}
+.PhoneInputInput{
+  outline: none !important;
+  background-color: white !important;
+  
+}
+.PhoneInput-color--focus{background-color:black!important;}
+#phoneNumberInput:-moz-placeholder {
+  background-color: white !important; /* Set the background color you want */
+  color: black; /* Set the text color you want */
+}
+input:-webkit-autofill {
+  /* Set the autofill background color and text color */
+  background-color: white!important;
+  color: black;
+}
+
+/* Customize autofill styles for Firefox */
+input:-moz-placeholder {
+  /* Set the autofill background color and text color */
+  background-color: white!important;
+  color: black;
+}
+input[type="checkbox"]:checked {
+  background-color: green;
 }

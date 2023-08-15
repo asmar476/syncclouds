@@ -1,7 +1,6 @@
 import React from "react";
 import MainSubHeading from "../../common component/MainSubHeading";
 import { TechArea } from "../../constant/TechnologiesPageData";
-
 function TechnologiesArea() {
   return (
     <div className="flex flex-col space-y-12 justify-between items-center mb-16  pt-20">
@@ -20,7 +19,7 @@ function TechnologiesArea() {
           {TechArea.map((item, index) => (
             <div
               key={index}
-              className="bg-[#F7FAFC] p-4 text-center mb-4 mx-2 h-[176px] w-[301px] flex flex-col items-center justify-center rounded"
+              className="bg-[#F7FAFC] p-4 text-center mb-4 mx-2 h-[176px] max-w-[301px] flex flex-col items-center justify-center rounded"
             >
               <img
                 src={item.image}

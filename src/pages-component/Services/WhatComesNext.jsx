@@ -26,8 +26,6 @@ const dataArray = [
   },
 ];
 
-console.log(dataArray);
-
 function WhatComesNext() {
   return (
     <>

@@ -8,11 +8,11 @@ import SoftwareSolution from "./SoftwareSolution";
 function ServicesHero() {
   return (
     <>
-      <div className=" relative mx-auto">
+      <div className=" relative pt-40 mx-auto">
         <div className="">
-          <div className="  flex p-20 flex-col xl:gap-32 items-center justify-center  space-y-10 lg:space-y-0 lg:flex-row">
-            <div className="space-y-10 text-center  w-[327px] md:w-[622px] lg:text-left ">
-              <h1 className="text-[24px] w-[327px] md:w-[622px] md:text-[50px] font-[700] md:leading-[65px]">
+          <div className="  flex px-10 flex-col xl:gap-32 items-center justify-center  space-y-10 lg:space-y-0 lg:flex-row">
+            <div className="space-y-10 text-center  w-[327px] md:w-[750px] md:text-left ">
+              <h1 className="text-[24px] w-[327px] sm:w-[360px] xl:w-[750px] xl:text-[50px] font-[700] xl:leading-[65px]">
                 Elevate Your Business with{" "}
                 <span className="text-[#002680]">
                   Premium Software Services - Unleash Your
@@ -29,7 +29,7 @@ function ServicesHero() {
                 </p>
               </div>
               <Link to={"/contact"}>
-                <button className="bg-[#00315A] mt-10 text-white px-3 py-2 rounded-[0.18rem]">
+                <button className="bg-[#00315A] mt-10 text-white px-3 py-2 rounded-[0.18rem] mb-10">
                   Let's Get Started
                 </button>
               </Link>

@@ -1,8 +1,7 @@
-import vision from "../assets/aboutVision icon/Group (1).svg";
+import vision from "../assets/aboutVision icon/Group (2).svg";
 import mission from "../assets/aboutVision icon/Group (1).svg";
-import values from "../assets/aboutVision icon/Group (2).svg";
+import values from "../assets/aboutVision icon/Group (4).svg";
 import goals from "../assets/aboutVision icon/Group (3).svg";
-
 export const visionData = [
   {
     title: "Mission",

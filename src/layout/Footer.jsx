@@ -15,7 +15,7 @@ const Footer = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
   const handleAboutUsClick = () => {
-    navigate("/about-us");
+    navigate("/about");
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
   return (
@@ -48,7 +48,7 @@ const Footer = () => {
           <div className="space-y-1 font-[400] text-[16px] ">
             <p>
               {" "}
-              <Link to="/about-us" onClick={handleAboutUsClick}>
+              <Link to="/about" onClick={handleAboutUsClick}>
                 About Us
               </Link>
             </p>
@@ -77,13 +77,13 @@ const Footer = () => {
           <div className="text-sm sm:text-[16px] font-[500]">
             {" "}
             <p>Contact Us at:</p>
-            <p>hello@syncclouds.com</p>
+            <p>query@syncclouds.com</p>
           </div>
           <br />
           <div className="text-sm sm:text-[16px] font-[500]">
             {" "}
             <p>We are hiring:</p>
-            <p>query@syncclouds.com</p>
+            <p>hr@syncclouds.com</p>
           </div>
         </Col>
       </Row>

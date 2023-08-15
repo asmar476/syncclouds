@@ -4,7 +4,7 @@ import { portfolioData } from "../../../constant/PortfolioPageData";
 const PortfolioCard = () => {
   return (
     <div className="flex justify-center items-center gap-0 lg:gap-16 flex-wrap ">
-      {portfolioData.map((data, index) => (
+      {/* {portfolioData.map((data, index) => (
         <div
           key={index}
           className="max-w-[408px] rounded-br-[100px] mt-10 py-10 px-10 hover:bg-[#DAE2EA]"
@@ -20,7 +20,7 @@ const PortfolioCard = () => {
             <img src={chevronRight} alt="" />
           </div>
         </div>
-      ))}
+      ))} */}
 
       {/* {cardData.map((data, index) => (
         <div

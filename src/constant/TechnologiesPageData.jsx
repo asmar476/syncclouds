@@ -12,10 +12,10 @@ export const TechArea = [
   { image: mob, text: "Mobile App Development" },
   { image: qa, text: "Software QA and Testing Services" },
   { image: uiux, text: "UI/UX Design" },
-  { image: ai, text: "3D Product Configurator" },
-  { image: virR, text: "Virtual Reality" },
-  { image: iot, text: "IoT Application Development" },
-  { image: threeD, text: "3D Product Configurator" },
+  // { image: ai, text: "3D Product Configurator" },
+  // { image: virR, text: "Virtual Reality" },
+  // { image: iot, text: "IoT Application Development" },
+  // { image: threeD, text: "3D Product Configurator" },
 ];
 
 // export const technologiesData
