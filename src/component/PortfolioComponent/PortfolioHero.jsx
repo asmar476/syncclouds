@@ -1,52 +1,117 @@
-import React from "react";
+import React, { useRef, useState } from "react";
 import PortfolioImage from "../../assets/PortfolioPage/porfolioHero.svg";
 import Portfolio from "../../pages-component/HomePage/Portfolio";
 import ContactForm from "../../common component/ContactForm";
 import MainSubHeading from "../../common component/MainSubHeading";
-import arrowDown from "../../assets/icons/arrowDown.svg";
 import vid from "../../assets/vid.mp4";
 import {
   portfolioData,
   VidPortfolioData,
 } from "../../constant/PortfolioPageData";
 import chevronRight from "../../assets/icons/Vector.svg";
+import { useInView } from "react-intersection-observer";
+import arrowUp from "../../assets/icons/black_arrow-up.svg";
+import arrowDown from "../../assets/icons/black-arrow-down.svg";
+import Header from "../../layout/Header";
 function PortfolioHero() {
+  const [isIntersectingHero, setIsIntersectingHero] = useState(true);
+  const { ref, inView, entry } = useInView({
+    /* Optional options */
+    threshold: 0.5,
+  });
+
+  const scrollToBottom = () => {
+    const windowHeight = window.innerHeight;
+    const bodyHeight = document.body.scrollHeight;
+    const scrollPosition = bodyHeight - windowHeight;
+    window.scrollTo({
+      top: scrollPosition,
+      behavior: "smooth",
+    });
+  };
+
+  const heroRef = useRef();
+
+  const headerFunc = (entries, observer) => {
+    setIsIntersectingHero(entries[0].isIntersecting);
+  };
+  const options = {
+    root: null,
+    threshold: 0,
+  };
+  const observer = new IntersectionObserver(headerFunc, options);
+
+  heroRef?.current && observer.observe(heroRef?.current);
   return (
     <div>
+      {inView ? (
+        <div className=" flex items-center justify-center right-[2%] bottom-[5%] fixed z-[100]   h-[90px]  w-[90px]  rounded-full">
+          <img
+            onClick={scrollToBottom}
+            className="scroll-img cursor-pointer  fixed z-[100]"
+            src={arrowDown}
+            alt="arrow up"
+            width={40}
+          />
+          <p className="scroll-text text-[12px] font-bold absolute -bottom-5  text-black">
+            Scroll Down
+          </p>
+        </div>
+      ) : (
+        <div className=" flex items-center justify-center right-[2%] bottom-[0%] fixed z-[100]   h-[90px]  w-[90px]  rounded-full">
+          <p className=" scroll-text text-[12px] font-bold absolute top-0 text-black">
+            Scroll Up
+          </p>
+          <img
+            onClick={() => {
+              window.scrollTo({ top: 0, behavior: "smooth" });
+            }}
+            className="scroll-img-2 cursor-pointer  fixed z-[100]"
+            src={arrowUp}
+            alt="arrow up"
+            width={40}
+          />
+        </div>
+      )}
+      {!isIntersectingHero ? <Header fixed={true} /> : <Header />}
       <div className="flex flex-col space-y-12 justify-between items-center  sm:mt-20 pt-20">
-        <img className="hidden sm:block w-[100%]" src={PortfolioImage} />
-        <MainSubHeading text={"Port"} gradientText={"folio"} />
-        <div className="flex flex-wrap items-center justify-center  px-1 gap-3 lg:gap-20">
-          <button
-            onClick={() => ""}
-            className="hover:font-semibold px-7 text-[18px] font-semibold py-2 rounded-sm cursor-pointer border border-primary hover:shadow-lg bg-primary text-white"
-          >
-            All
-          </button>
-          <button
-            onClick={() => ""}
-            className="hover:font-semibold px-4 py-2 py-rounded-sm cursor-pointer hover:shadow-lg border border-primary text-primary font-[500] text-[18px]"
-          >
-            Social Media Marketing
-          </button>
-          <button
-            onClick={() => ""}
-            className="hover:font-semibold px-4 py-2 py-rounded-sm cursor-pointer hover:shadow-lg border border-primary text-primary font-[500] text-[18px]"
-          >
-            Cyber Security
-          </button>
-          <button
-            onClick={() => ""}
-            className="hover:font-semibold rounded-sm px-4 py-2 py-rounded-sm cursor-pointer hover:shadow-lg border border-primary text-primary font-[500] text-[18px]"
-          >
-            Hire A Developer
-          </button>
-          <button
-            onClick={() => ""}
-            className="hover:font-semibold px-4 py-2 py-rounded-sm cursor-pointer hover:shadow-lg border border-primary text-primary font-[500] text-[18px]"
-          >
-            Hire A Team
-          </button>
+        <div ref={ref}>
+          <div ref={heroRef}>
+            <img className="hidden sm:block w-[100%]" src={PortfolioImage} />
+            <MainSubHeading text={"Port"} gradientText={"folio"} />
+            <div className="flex flex-wrap items-center justify-center  px-1 gap-3 lg:gap-20">
+              <button
+                onClick={() => ""}
+                className="hover:font-semibold px-7 text-[18px] font-semibold py-2 rounded-sm cursor-pointer border border-primary hover:shadow-lg bg-primary text-white"
+              >
+                All
+              </button>
+              <button
+                onClick={() => ""}
+                className="hover:font-semibold px-4 py-2 py-rounded-sm cursor-pointer hover:shadow-lg border border-primary text-primary font-[500] text-[18px]"
+              >
+                Social Media Marketing
+              </button>
+              <button
+                onClick={() => ""}
+                className="hover:font-semibold px-4 py-2 py-rounded-sm cursor-pointer hover:shadow-lg border border-primary text-primary font-[500] text-[18px]"
+              >
+                Cyber Security
+              </button>
+              <button
+                onClick={() => ""}
+                className="hover:font-semibold rounded-sm px-4 py-2 py-rounded-sm cursor-pointer hover:shadow-lg border border-primary text-primary font-[500] text-[18px]"
+              >
+                Hire A Developer
+              </button>
+              <button
+                onClick={() => ""}
+                className="hover:font-semibold px-4 py-2 py-rounded-sm cursor-pointer hover:shadow-lg border border-primary text-primary font-[500] text-[18px]"
+              >
+                Hire A Team
+              </button>
+            </div>
+          </div>
         </div>
         {/* __________________________________________________________________________________________________ */}
 

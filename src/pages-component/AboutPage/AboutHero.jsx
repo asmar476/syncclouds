@@ -6,19 +6,6 @@ import { Link } from "react-router-dom";
 const AboutHero = () => {
   return (
     <>
-      <div className=" flex items-center justify-center right-[5%] top-[70%] fixed z-[100] bg-gray-300  h-[50px]  w-[50px] rounded-full">
-        <Tooltip title="Scroll to Top">
-          <img
-            onClick={() => {
-              window.scrollTo({ top: 0, behavior: "smooth" });
-            }}
-            className="cursor-pointer fixed z-[100]"
-            src={arrowUp}
-            alt="arrow up"
-            width={40}
-          />
-        </Tooltip>
-      </div>
       <div className=" mx-auto pt-20">
         <div className="ml-5 pt-20 flex flex-col xl:gap-10 items-center justify-center md:gap-5 lg:gap-0 space-y-10 md:space-y-0 md:flex-row">
           <div className=" md:space-y-5 text-center  md:text-left ">
@@ -58,7 +45,6 @@ const AboutHero = () => {
             />
           </div>
         </div>
-        <ExpandYourHorizon />
       </div>
     </>
   );

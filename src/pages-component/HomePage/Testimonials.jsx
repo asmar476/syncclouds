@@ -88,7 +88,7 @@ const Testimonials = () => {
                     Scrollbar,
                     Autoplay,
                   ]}
-                  className="mySwiper"
+                  // className="mySwiper"
                 >
                   {TestimonialData.map((data, i) => (
                     <SwiperSlide
@@ -111,44 +111,6 @@ const Testimonials = () => {
                   ))}
                 </Swiper>
               </div>
-
-              {/* <Swiper
-                // width={800}
-                modules={[Navigation, Pagination, Scrollbar, Autoplay]}
-                spaceBetween={50}
-                slidesPerView={1}
-                draggable={true}
-                loop={true}
-                pagination={{
-                  clickable: true,
-                  bulletClass: `swiper-pagination-bullet`,
-                }}
-                autoplay={{ delay: 2000 }}
-                style={{
-                  flex: 1,
-                  height: "100%",
-                }}
-              >
-                {TestimonialData.map((data, i) => (
-                  <SwiperSlide
-                    key={i}
-                    className="border border-gray-100 rounded-md shadow-md"
-                    style={{
-                      "& .Swiper__slide": { width: "calc(0%)" },
-                      boxShadow: "0 2px 8px rgba(0, 0, 0, 0.1)",
-                    }}
-                  >
-                    <TestimonialCard
-                      i={i}
-                      rating={data.rating}
-                      designation={data.designation}
-                      name={data.name}
-                      summary={data.summary}
-                      profileImage={data.profileImage}
-                    />
-                  </SwiperSlide>
-                ))}
-              </Swiper> */}
             </div>
           </div>
         </div>

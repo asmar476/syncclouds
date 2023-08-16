@@ -4,17 +4,15 @@
 * {
   box-sizing: border-box;
   padding: 0;
-  margin: 0  ;
+  margin: 0;
 }
 html,
 body {
- 
   scroll-behavior: smooth;
   font-family: "Poppins", sans-serif;
   /* max-width: 1440px; */
-  
 }
-.main{
+.main {
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -113,6 +111,50 @@ body {
   width: 2.5px;
   z-index: -100;
 } */
+
+/* scroll image */
+
+.scroll-img {
+  animation: scroll-image 0.5s ease-in infinite alternate-reverse;
+}
+
+.scroll-img-2 {
+  animation: scroll-image-2 0.5s ease-in infinite alternate-reverse;
+}
+
+.scroll-text {
+  font-family: "Orbitron", sans-serif;
+  /* font-family: "Poppins", sans-serif; */
+}
+
+.mySwiper {
+  height: 600px !important;
+  width: 50%;
+}
+
+.swiper-button-prev::after,
+.swiper-button-next::after {
+  display: none !important;
+}
+
+@keyframes scroll-image {
+  0% {
+    transform: translateY(25px);
+  }
+  100% {
+    transform: translateY(10px);
+  }
+}
+
+@keyframes scroll-image-2 {
+  0% {
+    transform: translateY(-5px);
+  }
+  100% {
+    transform: translateY(5px);
+  }
+}
+
 /*  / / / / hero text custom media / / / //  */
 
 @media only screen and (max-width: 628px) {
@@ -274,26 +316,27 @@ body {
 .ant-row {
   margin: 0 !important;
 }
-.PhoneInputInput{
+.PhoneInputInput {
   outline: none !important;
   background-color: white !important;
-  
 }
-.PhoneInput-color--focus{background-color:black!important;}
+.PhoneInput-color--focus {
+  background-color: black !important;
+}
 #phoneNumberInput:-moz-placeholder {
   background-color: white !important; /* Set the background color you want */
   color: black; /* Set the text color you want */
 }
 input:-webkit-autofill {
   /* Set the autofill background color and text color */
-  background-color: white!important;
+  background-color: white !important;
   color: black;
 }
 
 /* Customize autofill styles for Firefox */
 input:-moz-placeholder {
   /* Set the autofill background color and text color */
-  background-color: white!important;
+  background-color: white !important;
   color: black;
 }
 input[type="checkbox"]:checked {

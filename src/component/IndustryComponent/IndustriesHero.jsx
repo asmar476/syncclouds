@@ -2,10 +2,12 @@ import React from "react";
 import IndustryImage from "../../assets/Images/IndustriesHero.svg";
 import { IndustriesPageData } from "../../constant/IndustriesPageData";
 import MainSubHeading from "../../common component/MainSubHeading";
+
 function IndustriesHero() {
   return (
     <div className="mx-auto max-w-[1440px] w-[100%] flex items-center justify-center flex-col pt-20 mt-20">
       <img className="hidden  sm:block" src={IndustryImage} />
+
       <div className="text-center mt-8">
         <h1 className="hidden sm:block font-[700] text-[41.89px] leading-[62.83px] text-[#171923]">
           Industries
