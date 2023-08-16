@@ -20,14 +20,14 @@ export const frontend = [
 
 //======================================Web========================================
 export const web = [
-  { title: "React .js", image: ReactJs },
+  { title: "ReactJs", image: ReactJs },
   { title: "Angular", image: Angular },
-  { title: "Next .js", image: Nextjs },
+  { title: "NextJs", image: Nextjs },
   // { title: "Vue.js", image: VueJs },
   // { title: "D3 .js", image: D3Js },
   // { title: "Chart .js", image: chartjs },
   // { title: "Bootstrap", image: bootstrap },
-  { title: "Tailwind CSS", image: tailwind },
+  { title: "TailwindCSS", image: tailwind },
 ];
 //======================================Back end========================================
 import python from "../assets/Images/tools_and_techs/backend/Python.svg";

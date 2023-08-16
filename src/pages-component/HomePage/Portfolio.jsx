@@ -1,11 +1,6 @@
 import React from "react";
 import MainSubHeading from "../../common component/MainSubHeading";
-import PortfolioCard from "./PortfolioComponent/PortfolioCard";
-import CustomSelect from "../../common component/CustomSelect";
-import black from "../../assets/icons/black.svg";
-import blue from "../../assets/icons/blue.svg";
-import bg from "../../assets/Images/bgTools&tech.png";
-import map from "../../assets/Images/map.png";
+import { DataportfolioHome } from "../../constant/PortfolioPageData";
 import HomePorfolio from "./PortfolioComponent/HomePorfolio";
 const Portfolio = () => {
   return (
@@ -62,9 +57,18 @@ const Portfolio = () => {
         </div> */}
         {/* <div className="md:hidden"><CustomSelect /></div> */}
       </div>
-      <div className=" mx-auto">
-        <HomePorfolio />
-        {/* <PortfolioCard /> */}
+      <div className="flex flex-col justify-center  items-center ">
+        <div className=" grid lg:grid-cols-2">
+          {DataportfolioHome.map((data, ind) => (
+            <HomePorfolio
+              key={ind}
+              arr={data.arr}
+              category={data.Category}
+              projName={data.projName}
+              projDesc={data.projDesc}
+            />
+          ))}
+        </div>
       </div>
       <center> </center>
     </div>

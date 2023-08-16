@@ -33,7 +33,7 @@ function ToolsAndTech() {
           Tools & Technologies Our
           <span className="gradient-text"> Software Developers Use</span>
         </h2>
-        <p className="text-body text-center text-[14px] md:text-[20px] font-[500] md:w-[670px] mb-7">
+        <p className="text-body text-center text-[10px] md:text-[15pxte] lg:text-[18px] font-[500] md:w-[750px] lg:w-[858px] mb-7">
           "With extensive knowledge in every field required for dependable
           software development, Sync Clouds has developed into a competitor on a
           global scale in the field of software engineering."
@@ -60,7 +60,7 @@ function ToolsAndTech() {
           // autoPlaySpeed={1000}
           // isRTL={false}
         >
-           {techCategories.map((category, index) => (
+          {techCategories.map((category, index) => (
             <ServicesTechsCommon
               key={index}
               CategoryIcon={category.icon}

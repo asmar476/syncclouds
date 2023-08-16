@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+ import React, { useState, useRef } from "react";
 import { offerData } from "../../constant/Data";
 import MainSubHeading from "../../common component/MainSubHeading";
 import InnerPageHeading from "../../common component/InnerPageHeading";

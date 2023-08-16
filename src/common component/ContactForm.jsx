@@ -25,12 +25,15 @@ const ContactForm = () => {
     const isValid = validateForm();
     if (isValid) {
       try {
-        const response = await emailjs.send(
-          "YOUR_EMAILJS_SERVICE_ID",
-          "YOUR_EMAILJS_TEMPLATE_ID",
-          formData,
-          "YOUR_EMAILJS_USER_ID"
-        );
+        const message = `
+        Name: ${formData.name}
+        Email: ${formData.email}
+        Phone number:${phoneNumber}
+        Service: ${formData.service}
+        Message: ${formData.message}
+        
+      `;
+        alert(message);
 
         console.log("Email sent successfully:", response);
       } catch (error) {
@@ -45,6 +48,7 @@ const ContactForm = () => {
     name: "",
     email: "",
     file: "",
+    service: "",
     message: "",
     agreement: false,
   });
@@ -61,7 +65,6 @@ const ContactForm = () => {
       [name]: "",
     });
   };
-
   const validateForm = () => {
     let errors = {};
     if (!formData.name.trim()) {
@@ -72,20 +75,23 @@ const ContactForm = () => {
     } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
       errors.email = "Invalid email format";
     }
-    // if (!phoneNumber.trim()) {
+    if (!formData.service.trim()) {
+      errors.service = "Select your Service";
+    }
+    // if (formData.phoneNumber.trim()) {
     //   errors.phoneNumber = "Phone Number is required";
     // }
-    if (!formData.message.trim()) {
-      errors.message = "Message is required";
-    }
-    if (!selectedFile) {
-      errors.file = "File is required";
-    } else if (selectedFile.size > 10 * 1024 * 1024) {
-      errors.file = "File size must be less than 10 MB";
-    }
-    if (!formData.agreement) {
-      errors.agreement = "Kindly agree to the NDA by check in the box";
-    }
+    // if (!formData.message.trim()) {
+    //   errors.message = "Message is required";
+    // }
+    // if (!selectedFile) {
+    //   errors.file = "File is required";
+    // } else if (selectedFile.size > 10 * 1024 * 1024) {
+    //   errors.file = "File size must be less than 10 MB";
+    // }
+    // if (!formData.agreement) {
+    //   errors.agreement = "Kindly agree to the NDA by check in the box";
+    // }
     setFormErrors(errors);
     return Object.keys(errors).length === 0;
   };
@@ -118,7 +124,7 @@ const ContactForm = () => {
     setSelectedFile(file);
     fileInput.value = "";
   };
-
+  console.log("name", formData.service);
   return (
     <div className="s flex lg:flex-row flex-col-reverse space-y-10 md:space-y-0 mt-14 sm:mb-14 items-center lg:items-start justify-center">
       <div className="bg-[#EDF2F7] h-[530px] hidden lg:block mt-10 lg:mt-0 rounded-sm w-[90%] mx-5 md:max-w-[622px] px-4 pt-5 pb-12 ">
@@ -203,12 +209,10 @@ const ContactForm = () => {
               {formErrors.name && (
                 <div className="flex space-x-1.5 items-center my-1">
                   <BsExclamationCircle className="text-red-500 text-[15px]" />
-                  <p className="text-red-500 text-xs  mt-1">
-                    {formErrors.name}
-                  </p>
+                  <p className="text-red-500 text-xs">{formErrors.name}</p>
                 </div>
               )}
-            </div>{" "}
+            </div>
             <div className=" w-[100%] sm:w-[50%] h-[68px]">
               <input
                 className={`py-2 px-3 text-[14px] md:text-[16px] font-[400]  w-[100%] border-b ${
@@ -224,9 +228,7 @@ const ContactForm = () => {
                 <div className="flex space-x-1.5 items-center my-1">
                   {" "}
                   <BsExclamationCircle className="text-red-500 text-[15px]" />
-                  <p className="text-red-500 text-xs  mt-1">
-                    {formErrors.email}
-                  </p>
+                  <p className="text-red-500 text-xs  ">{formErrors.email}</p>
                 </div>
               )}
             </div>
@@ -276,36 +278,59 @@ const ContactForm = () => {
                 </div>
               )} */}
           </div>
-          <div className=" w-[100%]  h-[68px]">
-            <div className="bg-white">
-              <PhoneInput
-                international
-                className={`${
-                  error ? "border-b border-red-500 " : " "
-                }placeholder-gray-400 outline-transparent py-2 px-3 text-[14px]  md:text-[16px] font-[400]  w-[100%]`}
-                placeholder="Phone"
-                id="phoneNumberInput"
-                value={phoneNumber}
-                onChange={handlePhoneNumberChange}
-              />
+          <div className="flex sm:gap-3 flex-col sm:flex-row">
+            <div className="h-[60px] w-[100%]  mb-2  sm:w-[50%]">
+              <div className="bg-white">
+                <PhoneInput
+                  international
+                  className={`${
+                    error ? "border-b border-red-500 " : " "
+                  }placeholder-gray-400 outline-transparent py-2 px-3 text-[14px]  md:text-[16px] font-[400]  w-[100%]`}
+                  placeholder="Phone"
+                  id="phoneNumberInput"
+                  value={phoneNumber}
+                  onChange={handlePhoneNumberChange}
+                />
+              </div>
+              {error && (
+                <div className="flex space-x-1.5 items-center my-1">
+                  <BsExclamationCircle className="text-red-500 text.-[15px]" />
+                  <p className="text-red-500 text-xs  ">{error}</p>
+                </div>
+              )}
             </div>
-            {/* {formErrors.phoneNumber && (
-              <div className="flex space-x-1.5 items-center my-1">
-                {" "}
-                <BsExclamationCircle className="text-red-500 text-[15px]" />
-                <p className="text-red-500 text-xs  mt-1">
-                  {formErrors.phoneNumber}
-                </p>
-              </div>
-            )} */}{" "}
-            {error && (
-              <div className="flex space-x-1.5 items-center my-1">
-                <BsExclamationCircle className="text-red-500 text.-[15px]" />
-                <p className="text-red-500 text-xs  mt-1">{error}</p>
-              </div>
-            )}
+            <div className=" w-[50%] h-[60px] mb-2">
+              <select
+                className={` py-2 px-3 text-[14px] md:text-[16px] font-[400] bg-white w-[100%] border-b ${
+                  formErrors.service ? "border-red-500" : ""
+                } placeholder-gray-400 outline-none`}
+                name="service"
+                value={formData.service}
+                onChange={handleInputChange}
+              >
+                <option value="" disabled>
+                  Select Service
+                </option>
+                <option value="UIUX Designing">UI/UX Designing</option>
+                <option value="IOS App Development">iOS App Development</option>
+                <option value="Cyber Security">Cyber Security</option>
+                <option value="Web Development">Web Development</option>
+                <option value="Digital Marketing">Digital Marketing</option>
+                <option value="Web & Mobile Applications">
+                  Web & Mobile Applications
+                </option>
+              </select>{" "}
+              {formErrors.service && (
+                <div className="flex space-x-1.5 items-center bg-[#EDF2F7] ">
+                  {" "}
+                  <BsExclamationCircle className="text-red-500 text-[15px] mt-1 " />
+                  <p className="text-red-500 text-xs mt-1 ">
+                    {formErrors.service}
+                  </p>
+                </div>
+              )}
+            </div>
           </div>
-
           <div
             className="bg-white px-4 mb-5 flex justify-between py-1"
             onDrop={handleDrop}
@@ -319,7 +344,6 @@ const ContactForm = () => {
               }`}
             >
               <div className="flex gap-2">
-                {" "}
                 <img
                   className="cursor-pointer"
                   src={attachmentIcon}
@@ -340,7 +364,10 @@ const ContactForm = () => {
                     {" "}
                     <p className="font-[550]">
                       "{selectedFile.name}"
-                      <span className="font-[400] mr-4"> is selected</span>
+                      <span className="text-body font-[400] mr-4">
+                        {" "}
+                        is selected
+                      </span>
                     </p>
                   </div>
                 ) : (
@@ -391,6 +418,7 @@ const ContactForm = () => {
                 className=" h-[20px] w-[20px] md:mt-0"
                 type="checkbox"
                 name="agreement"
+                value={formData.agreement}
                 // checked={formData.agreement}
                 onChange={handleInputChange}
               />

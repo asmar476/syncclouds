@@ -89,7 +89,7 @@ const Footer = () => {
       </Row>
       {/* +++++++++++++++++++++++++++++++++++++++++ web view +++++++++++++++++++++++++++++++++++++++++++++++++ */}
 
-      <div className="hidden border-t-2 border-white mx-0 sm:mx-16 font-semibold text-[12px] md:text-base text-white px-10  py-3 md:flex justify-between">
+      <div className="hidden border-t-2 border-white mx-0 sm:mx-16 font-semibold text-[12px] md:text-base text-white   py-3 md:flex justify-between">
         <div className="flex items-center justify-between gap-16 lg:gap-32">
           <Link to={"/terms-conditions"}>Terms & Conditions</Link>
           <Link to={"/privacy-policy"}>Privacy Policy</Link>

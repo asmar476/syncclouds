@@ -42,3 +42,43 @@ export const VidPortfolioData = [
       "Great design can speak to your users in thousands of ways that you can't. Get magnetic UX/UI design followed by a robust UX strategy to grab your user’s attention instantly.",
   },
 ];
+import QuranApp from "../assets/Portfolio/QuranApp.svg";
+import QuranApp1 from "../assets/Portfolio/QuranApp1.svg";
+import QuranApp2 from "../assets/Portfolio/QuranApp2.svg";
+import portfolioimg from "../assets/Portfolio/portfolioImg.svg";
+const QuranAppProject = [QuranApp, QuranApp1, QuranApp2];
+const project1 = [portfolioimg, portfolioimg, portfolioimg];
+const project2 = [portfolioimg, portfolioimg, portfolioimg];
+const project3 = [portfolioimg, portfolioimg, portfolioimg];
+const project4 = [portfolioimg, portfolioimg, portfolioimg];
+
+export const DataportfolioHome = [
+  {
+    arr: QuranAppProject,
+    Category: "App development",
+    projName: "My Quran",
+    projDesc:
+      "Listen and learn from well-known reciters, My Quran provide audio from seven top reciters. The translation available for English, Indonesian, Urdu, and simple Chinese.",
+  },
+  {
+    arr: project2,
+    Category: "Web development",
+    projName: "X-fussion",
+    projDesc:
+      "Great design can speak to your users in thousands of ways that you can't. Get magnetic UX/U",
+  },
+  {
+    arr: project2,
+    Category: "Web development",
+    projName: "X-fussion",
+    projDesc:
+      "Great design can speak to your users in thousands of ways that you can't. Get magnetic UX/U",
+  },
+  {
+    arr: project2,
+    Category: "Web development",
+    projName: "X-fussion",
+    projDesc:
+      "Great design can speak to your users in thousands of ways that you can't. Get magnetic UX/U",
+  },
+];

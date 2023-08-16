@@ -285,8 +285,7 @@ const Header = ({ fixed }) => {
                       <a href="/about">Company </a> &nbsp;&nbsp;&nbsp;
                       <img src={chevronDown} />{" "}
                     </div> */}
-                      <Calendalycomp />
-                    </div>
+                    <Calendalycomp buttonText="Book My Call" />
                   </div>
                 </div>
               </div>

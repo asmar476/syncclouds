@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { PopupModal } from "react-calendly";
 
 const Calendalycomp = (props) => {
-  console.log("props--------",props)
+  console.log("props--------", props);
   const [isOpen, setIsOpen] = useState(false);
   return (
     <div>
@@ -10,7 +10,7 @@ const Calendalycomp = (props) => {
         className="pulse bg-[#00315A] text-white px-3 py-2 rounded-[0.18rem]"
         onClick={() => setIsOpen(true)}
       >
-        Book My Call
+        {props.btnText || "Book My Call"}
       </button>
       <PopupModal
         url="https://calendly.com/mariabibi/synccloud-project-discussion?month=2023-08"

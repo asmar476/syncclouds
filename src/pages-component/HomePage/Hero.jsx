@@ -3,13 +3,18 @@ import clouds from "../../assets/Images/Main.svg";
 import arrowRight from "../../assets/icons/arrow-right.svg";
 import bluearrowRight from "../../assets/icons/blue-arrow-right.svg";
 import blurPlus from "../../assets/home illustration/Ellipse 196.svg";
+import arrowUp from "../../assets/icons/arrow-up-circle.svg";
+import { Tooltip } from "antd";
+const scrollToBottom = () => {
+  const windowHeight = window.innerHeight;
+  const bodyHeight = document.body.scrollHeight;
+  const scrollPosition = bodyHeight - windowHeight;
 
-// const { ref, inView, entry } = useInView({
-//   /* Optional options */
-//   threshold: 0,
-// });
-
-// console.log("entry", entry);
+  window.scrollTo({
+    top: scrollPosition,
+    behavior: "smooth",
+  });
+};
 const Hero = () => {
   return (
     <div
@@ -18,7 +23,20 @@ const Hero = () => {
           " linear-gradient(180deg, rgba(0, 38, 128, 0) 0%, rgba(0, 38, 128, 0.05) 100%)",
       }}
     >
-      <div className="max-w-[1200px] xl:max-w-[1440px] w-[100%] mx-auto lg:flex flex-col md:flex-row items-center justify-center px-10   py-28 lg:pb-10">
+      <div>
+        <div className=" flex items-center justify-center right-[5%] top-[70%] fixed z-[100] bg-gray-300  h-[50px]  w-[50px]  rounded-full">
+          <Tooltip title="Scroll to Top">
+            <img
+              onClick={scrollToBottom}
+              className="cursor-pointer  fixed z-[100]"
+              src={arrowUp}
+              alt="arrow up"
+              width={40}
+            />
+          </Tooltip>
+        </div>
+      </div>
+      <div className="max-w-[1200px] xl:max-w-[1440px] w-[100%] mx-auto lg:flex flex-col md:flex-row items-center justify-center px-10  sm:px-20 py-28 lg:pb-10">
         <div className="flex-1 sm:w-[500px] md:w-[622px] space-y-5 2xl:space-y-10 ">
           <h1 className="text-[24px] sm:text-[30px] xl:text-[50px] font-[800] leading-[38px] xl:leading-[65px] sm:leading-[45px]">
             Unlock your Business's Potential&nbsp;

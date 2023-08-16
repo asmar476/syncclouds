@@ -9,7 +9,6 @@ import "swiper/css/scrollbar";
 import MainSubHeading from "./MainSubHeading";
 import BoldParagraph from "./BoldParagraph";
 import { clientLogos } from "../constant/Data";
-
 const OurClients = () => {
   return (
     <div className="">
@@ -17,7 +16,7 @@ const OurClients = () => {
         <div className="flex flex-col items-center">
           <MainSubHeading text={"Our "} gradientText={"Clients"} ml={"ml-2"} />
           <p
-            className={`w-[327px] md:w-[495px]    text-center text-[14px] md:text-[18px]  font-[500] `}
+            className={`w-[327px] md:w-[495px] text-center text-[14px] md:text-[18px]  font-[500] `}
           >
             We have been working with some Fortune 500+ clients
           </p>

@@ -9,8 +9,6 @@ import "swiper/css/autoplay";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
-import tri1 from "../../assets/About illustration/triangle1.svg";
-import tri2 from "../../assets/About illustration/triangle2.svg";
 import tri3 from "../../assets/About illustration/aboutTeam.svg";
 const OurTeam = () => {
   const [showOverlay, setShowOverlay] = useState(false);

@@ -41,7 +41,7 @@ function ServicesTechsCommon({ CategoryIcon, categoryData, Category }) {
                 src={data.image}
                 alt=""
               />
-              <h1 className=" text-body font-semibold mx-3 text-[10px]">
+              <h1 className=" text-body font-semibold mx-3 text-[7px]">
                 {data.title}
               </h1>
             </div>
