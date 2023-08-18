@@ -62,7 +62,7 @@ innovation. Discover more now!"
             alt="arrow up"
             width={40}
           />
-          <p className="scroll-text text-[12px] font-bold absolute -bottom-5  text-black">
+          <p className="scroll-text text-[12px] font-bold absolute bottom-5  text-black">
             Scroll Down
           </p>
         </div>

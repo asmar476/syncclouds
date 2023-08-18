@@ -56,28 +56,26 @@ const Home = () => {
           <div className=" flex items-center justify-center right-[2%] bottom-[5%] fixed z-[100]   h-[90px]  w-[90px]  rounded-full">
             <img
               onClick={scrollToBottom}
-              className="scroll-img cursor-pointer  fixed z-[100]"
+              className="w-[25px] sm:w-[35px] scroll-img cursor-pointer  fixed z-[100]"
               src={arrowDown}
               alt="arrow up"
-              width={40}
             />
-            <p className="scroll-text text-[12px] font-bold absolute -bottom-5  text-black">
-              Scroll Down
+            <p className="scroll-text text-[9px] font-bold absolute -bottom-3  text-black">
+              Scroll to Bottom
             </p>
           </div>
         ) : (
           <div className=" flex items-center justify-center right-[2%] bottom-[0%] fixed z-[100]   h-[90px]  w-[90px]  rounded-full">
-            <p className=" scroll-text text-[12px] font-bold absolute top-0 text-black">
+            <p className=" hidden sm:block scroll-text text-[10px] font-bold absolute top-0 text-black">
               Scroll To Top
             </p>
             <img
               onClick={() => {
                 window.scrollTo({ top: 0, behavior: "smooth" });
               }}
-              className="scroll-img-2 cursor-pointer  fixed z-[100]"
+              className="w-[25px] md:w-[35px] scroll-img-2 cursor-pointer  fixed z-[100] bottom-[85px]"
               src={arrowUp}
               alt="arrow up"
-              width={40}
             />
           </div>
         )}

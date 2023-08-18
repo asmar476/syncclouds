@@ -10,15 +10,17 @@ import whiteLogo from "../assets/SyncCloudsLogo/updated SyncClouds-logo white.sv
 
 const Header = ({ fixed }) => {
   const navigate = useNavigate();
-  const bookCall = () => {
-    navigate("/book-call");
-  };
   const [arrow, setArrow] = useState(false);
   const [arrowCompany, setArrowCompany] = useState(false);
   const click = () => {
     setArrow(!arrow);
   };
   const [showServices, setShowServices] = useState(false);
+  const [calendalyOpen, setcalendalyOpen] = useState(false);
+
+  const closeCalendaly = () => {
+    setcalendalyOpen(false);
+  };
   const [isOpen, setIsOpen] = useState(false);
   const openNav = () => {
     setIsOpen(true);
@@ -100,19 +102,19 @@ const Header = ({ fixed }) => {
                         onMouseLeave={() => {
                           setShowServices(false);
                         }}
-                      >
-                        {/* <div>Company</div>{" "} */}
-                        {/* <div>
-                      {arrow ? (
-                        <img src={ChevronUp} />
-                      ) : (
-                        <img className="w-4 md:w-5 lg:w-6" src={chevronDown} />
-                      )}
-                    </div> */}
-                      </Link>
+                      ></Link>
                     </li>
                     <li className="">
-                      <Calendalycomp />
+                      <button
+                        className="pulse bg-[#00315A] text-white px-3 py-2 rounded-[0.18rem]"
+                        onClick={() => setcalendalyOpen(true)}
+                      >
+                        Book My Call
+                      </button>
+                      <Calendalycomp
+                        isOpen={calendalyOpen}
+                        close={closeCalendaly}
+                      />
                     </li>
                   </ul>
 
@@ -146,21 +148,54 @@ const Header = ({ fixed }) => {
                       </div>
                       <div className=" text-primary space-y-7 font-[600] py-12 overlayNav-content">
                         <Link
-                          className="text-white cursor-pointer font-[700]"
+                          className={`${
+                            isOpen ? "link-ani" : ""
+                          }   text-white cursor-pointer font-[700]`}
                           to="/about"
                         >
                           About Us
-                        </Link>{" "}
-                        <div className="flex justify-center items-center">
-                          <Link className="text-white" to="/services">
-                            Services&nbsp;&nbsp;&nbsp;
-                            {/* <img src={chevronDown} />{" "} */}
-                          </Link>
+                        </Link>
+
+                        <Link
+                          className={`${isOpen ? "link-ani-servce" : ""} `}
+                          to="/services"
+                        >
+                          Services
+                        </Link>
+
+                        <Link
+                          className={`${isOpen ? "link-ani-protfolio" : ""} `}
+                          to="/portfolio"
+                        >
+                          Portfolio
+                        </Link>
+                        <Link
+                          className={`${isOpen ? "link-ani-tech" : ""} `}
+                          to="/technologies"
+                        >
+                          Technologies
+                        </Link>
+                        <Link
+                          className={`${isOpen ? "link-ani-industry" : ""} `}
+                          to="/industries"
+                        >
+                          Industry
+                        </Link>
+                        <div>
+                          <button
+                            className="pulse bg-white text-primary px-3 py-2 rounded-[0.18rem]"
+                            onClick={() => {
+                              setcalendalyOpen(true);
+                              setIsOpen(false);
+                            }}
+                          >
+                            Book My Call
+                          </button>
+                          <Calendalycomp
+                            isOpen={calendalyOpen}
+                            close={closeCalendaly}
+                          />
                         </div>
-                        <Link to="/portfolio">Portfolio</Link>
-                        <Link to="/technologies">Technologies</Link>
-                        <Link to="/industries">Industry</Link>
-                        <Calendalycomp buttonText="Book My Call" white={true} />
                       </div>
                     </div>
                   </div>
@@ -232,7 +267,16 @@ const Header = ({ fixed }) => {
                   </Link>
                 </li>
                 <li className="">
-                  <Calendalycomp />
+                  <button
+                    className="pulse bg-[#00315A] text-white px-3 py-2 rounded-[0.18rem]"
+                    onClick={() => setcalendalyOpen(true)}
+                  >
+                    Book My Call
+                  </button>
+                  <Calendalycomp
+                    isOpen={calendalyOpen}
+                    close={closeCalendaly}
+                  />
                 </li>
               </ul>
               {/* {showServices && (
@@ -265,24 +309,54 @@ const Header = ({ fixed }) => {
                     </a>
                   </div>{" "}
                   <div className=" text-primary space-y-7 font-[600] py-12 overlayNav-content">
-                    <Link className=" cursor-pointer font-[700]" to="/about">
+                    <Link
+                      className={`${
+                        isOpen ? "link-ani" : ""
+                      }   text-white cursor-pointer font-[700]`}
+                      to="/about"
+                    >
                       About Us
                     </Link>{" "}
-                    <div className="flex justify-center items-center">
-                      <Link to="/services">
-                        Services&nbsp;&nbsp;&nbsp;
-                        {/* <img src={chevronDown} />{" "} */}
-                      </Link>
+                    <Link
+                      className={`${isOpen ? "link-ani-servce" : ""} `}
+                      to="/services"
+                    >
+                      Services
+                    </Link>
+                    <Link
+                      className={`${isOpen ? "link-ani-protfolio" : ""} `}
+                      to="/portfolio"
+                    >
+                      Portfolio
+                    </Link>
+                    <Link
+                      className={`${isOpen ? "link-ani-tech" : ""} `}
+                      to="/technologies"
+                    >
+                      Technologies
+                    </Link>
+                    <Link
+                      className={`${isOpen ? "link-ani-industry" : ""} `}
+                      to="/industries"
+                    >
+                      Industry
+                    </Link>
+                    <div>
+                      <button
+                        className="pulse bg-white text-primary px-3 py-2 rounded-[0.18rem]"
+                        onClick={() => {
+                          setcalendalyOpen(true);
+
+                          setIsOpen(false);
+                        }}
+                      >
+                        Book My Call
+                      </button>
+                      <Calendalycomp
+                        isOpen={calendalyOpen}
+                        close={closeCalendaly}
+                      />
                     </div>
-                    <Link to="/portfolio">Portfolio</Link>
-                    <Link to="/technologies">Technologies</Link>
-                    <Link to="/industries">Industry</Link>
-                    {/* <div className="flex justify-center mb-7">
-                      {" "}
-                      <a href="/about">Company </a> &nbsp;&nbsp;&nbsp;
-                      <img src={chevronDown} />{" "}
-                    </div> */}
-                    <Calendalycomp buttonText="Book My Call" white={true} />
                   </div>
                 </div>
               </div>

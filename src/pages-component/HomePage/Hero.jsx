@@ -8,7 +8,6 @@ import { useState } from "react";
 
 import Particales from "../../component/ParticalesOverlay";
 
-
 const Hero = () => {
   const [isOpen, setIsOpen] = useState(false);
   const closeCalendaly = () => {
@@ -21,7 +20,6 @@ const Hero = () => {
           " linear-gradient(180deg, rgba(0, 38, 128, 0) 0%, rgba(0, 38, 128, 0.05) 100%)",
       }}
     >
-
       {/* <div>
         <Particales />
       </div> */}
@@ -54,15 +52,17 @@ const Hero = () => {
               </p>
             </div>
             <div className="flex gap-3 sm:gap-5 mt-5 sm:mt-10">
-              <Link to={"/contact"}>
+              <div>
                 <button
+                  onClick={() => setIsOpen(true)}
                   className="bg-[#00315A] text-white text-[14px] sm:text-[18px] min-w-[120px] md:min-w-[170px]
                 font-[500] px-[5px] sm:px-3 py-1 sm:py-2 rounded-[0.18rem]"
                 >
-                  Book my call
-
+                  Book a call
                 </button>
-              </Link>
+                <Calendalycomp isOpen={isOpen} close={closeCalendaly} />
+              </div>
+
               <div className="flex gap-2 sm:gap-3 items-center  px-[3px] sm:px-3 py-[2px] sm:py-2 rounded-sm border border-[#002680] min-w-[120px] md:min-w-[170px]">
                 <Link to={"/services"}>
                   <button className="text-[12px] sm:text-[18px] font-[550] text-[#002680]">
