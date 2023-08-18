@@ -6,15 +6,15 @@ import { Link } from "react-router-dom";
 const AboutHero = () => {
   return (
     <>
-      <div className=" mx-auto pt-20">
-        <div className="ml-5  px-5 pt-20 flex flex-col xl:gap-10 items-center justify-center md:gap-5 lg:gap-0 space-y-10 md:space-y-0 md:flex-row">
+      <div className="w-full px-10 max-w-[1200px] pt-10 md:pt-20 xl:max-w-[1400px]  mx-auto ">
+        <div className="   pt-5 flex flex-col  items-center justify-between  space-y-10 md:space-y-0 md:flex-row">
           <div className=" md:space-y-5 text-center  md:text-left ">
             <div>
               <h1 className="text-[28px] md:text-[50px] text-[#002680] font-[700] leading-[65px]">
                 About Us
               </h1>
             </div>
-            <div className=" text-body font-500 leading-[27px] text-[14px] lg:text-[18px] text-sm md:text-left w-[327px] md:w-[350px] lg:w-[550px]">
+            <div className=" text-body font-500 leading-[27px] text-[14px] lg:text-[18px] text-sm md:text-left sm:w-[327px] md:w-[350px] lg:w-[550px]">
               <p className="mb-10 ">
                 SyncClouds is an industry-leading Digital Transformation and
                 Engineering Firm offering end-to-end software development

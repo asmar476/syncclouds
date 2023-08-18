@@ -21,7 +21,7 @@ const OurAim = () => {
           className="hidden md:block absolute top-[17%] left-0"
           src={bgCircle}
         />
-        <div className="max-w-[1200px] 2xl:max-w-[1400px] mx-auto sm:px-0">
+        <div className="max-w-[1200px] 2xl:max-w-[1400px] px-10 mx-auto sm:px-0">
           <div className="flex flex-col items-center justify-center">
             <h2 className="text-center text-[41.89px] font-[0700] leading-[62.83px max-w-[787px] my-20">
               Our Aim: From Disruptive Creativity to{" "}

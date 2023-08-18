@@ -32,7 +32,7 @@ const TestimonialCard = ({
 }) => {
   return (
     <>
-      <div key={i} className=" py-3 px-5">
+      <div key={i} className=" py-3 px-5 w-full">
         <div className="flex items-center justify-between lg:mb-3">
           <h3
             style={{ color: "hsla(226, 53%, 33%, 1)" }}

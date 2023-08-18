@@ -7,7 +7,11 @@ const Calendalycomp = (props) => {
   return (
     <div>
       <button
-        className="pulse bg-[#00315A] text-white px-3 py-2 rounded-[0.18rem]"
+        className={`${
+          props.white
+            ? "bg-white text-primary pulseWhite"
+            : "pulse bg-[#00315A] text-white"
+        }    px-3 py-2 rounded-[0.18rem]`}
         onClick={() => setIsOpen(true)}
       >
         {props.btnText || "Book My Call"}

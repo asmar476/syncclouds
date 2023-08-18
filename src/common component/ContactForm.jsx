@@ -78,20 +78,7 @@ const ContactForm = () => {
     if (!formData.service.trim()) {
       errors.service = "Select your Service";
     }
-    // if (formData.phoneNumber.trim()) {
-    //   errors.phoneNumber = "Phone Number is required";
-    // }
-    // if (!formData.message.trim()) {
-    //   errors.message = "Message is required";
-    // }
-    // if (!selectedFile) {
-    //   errors.file = "File is required";
-    // } else if (selectedFile.size > 10 * 1024 * 1024) {
-    //   errors.file = "File size must be less than 10 MB";
-    // }
-    // if (!formData.agreement) {
-    //   errors.agreement = "Kindly agree to the NDA by check in the box";
-    // }
+
     setFormErrors(errors);
     return Object.keys(errors).length === 0;
   };
@@ -126,8 +113,8 @@ const ContactForm = () => {
   };
   console.log("name", formData.service);
   return (
-    <div className="s flex lg:flex-row flex-col-reverse space-y-10 md:space-y-0 mt-14 sm:mb-14 items-center lg:items-start justify-center">
-      <div className="bg-[#EDF2F7] h-[530px] hidden lg:block mt-10 lg:mt-0 rounded-sm w-[90%] mx-5 md:max-w-[622px] px-4 pt-5 pb-12 ">
+    <div className="w-full flex lg:flex-row flex-col-reverse space-y-10 md:space-y-0 mt-14 sm:mb-14 items-center lg:items-start justify-between max-w-[1200px] xl:max-w-[1400px] mx-auto px-10 lg:px-5">
+      <div className=" bg-[#EDF2F7] h-[530px] hidden lg:block mt-10 lg:mt-0 rounded-sm w-full  md:max-w-[622px] px-4 pt-5 pb-12 ">
         <h1 className="font-[500] text-[25.89px] text-[#171923] mb-6">
           Book a Meeting
         </h1>
@@ -171,7 +158,7 @@ const ContactForm = () => {
           </p>
         </div> */}
       </div>
-      <div className="bg-[#EDF2F7] min-h-[530px]  text-black px-4 pb-1 mb-10 md:px-0 mx-5 w-[90%] md:max-w-[622px] rounded-sm">
+      <div className="bg-[#EDF2F7] min-h-[530px]  text-black px-4 pb-1 mb-10 md:px-0 w-full md:max-w-[622px] rounded-sm">
         <form className="px-[10px] md:px-[30px] py-4" onSubmit={handleSubmit}>
           <h5 className="font-[500] text-[25.89px] text-[#171923] mb-1">
             Write a Message

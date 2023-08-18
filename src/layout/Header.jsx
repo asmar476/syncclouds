@@ -5,6 +5,8 @@ import { MenuOutlined } from "@ant-design/icons";
 import SC_logo from "../assets/Images/Navbar/navlogo.svg";
 import { useNavigate } from "react-router-dom";
 import Calendalycomp from "../common component/CalendlyComp";
+import whiteTimes from "../assets/white icons/whitetimes.jpg";
+import whiteLogo from "../assets/SyncCloudsLogo/updated SyncClouds-logo white.svg";
 
 const Header = ({ fixed }) => {
   const navigate = useNavigate();
@@ -45,9 +47,9 @@ const Header = ({ fixed }) => {
           className="  bg-white flex  justify-center w-full"
         >
           {fixed ? (
-            <div className="w-full fixed top-0 left-0 bg-gray-100 shadow-lg z-[1000]">
+            <div className="w-full fixed top-0 left-0 bg-white shadow-lg z-[1000]">
               <nav
-                className={` flex z-[100]  w-full  max-w-[1440px] mx-auto    justify-between items-center px-10   py-3 min-h-[8vh]`}
+                className={` flex z-[100] w-full   max-w-[1200px] xl:max-w-[1440px] mx-auto  justify-between items-center px-10   py-3 min-h-[8vh]`}
               >
                 <div className="flex items-center">
                   <Link to="/">
@@ -113,43 +115,44 @@ const Header = ({ fixed }) => {
                       <Calendalycomp />
                     </li>
                   </ul>
-                  {/* {showServices && (
-            <div className="absolute top-14  left-0 w-[100%] z-[100]">
-              <NavbarServicesDropDown />
-            </div>
-          )} */}
+
                   {/* =============================================== ~ MOBILE NAVBAR ~ ================================================ */}
                   <div className="sm:hidden">
-                    <MenuOutlined
-                      className="text-[20px] mt-2 "
-                      onClick={openNav}
-                    />
+                    {!isOpen && (
+                      <MenuOutlined
+                        className="text-[20px] mt-2 z-[1000]"
+                        onClick={openNav}
+                      />
+                    )}
                     <div
-                      className={`shadow-lg h-screen overlayNav ${
+                      className={`shadow-lg h-screen overlayNav bg-opacity-5 ${
                         isOpen ? "open" : ""
                       }`}
                     >
                       <div className="flex justify-between px-10">
                         <Link to="/">
                           <img
-                            src={SC_logo}
+                            src={whiteLogo}
                             alt="Logo"
-                            className="h-5 md:h-20 mt-5"
+                            className="h-10 mt-3"
                           />
                         </Link>
                         <a href="#!" onClick={closeNav}>
-                          <img src={close} className="float-right mt-5" />
+                          <img
+                            src={whiteTimes}
+                            className="float-right mt-5  h-[20px] w-[20px]"
+                          />
                         </a>
                       </div>
                       <div className=" text-primary space-y-7 font-[600] py-12 overlayNav-content">
                         <Link
-                          className=" cursor-pointer font-[700]"
+                          className="text-white cursor-pointer font-[700]"
                           to="/about"
                         >
                           About Us
                         </Link>{" "}
                         <div className="flex justify-center items-center">
-                          <Link to="/services">
+                          <Link className="text-white" to="/services">
                             Services&nbsp;&nbsp;&nbsp;
                             {/* <img src={chevronDown} />{" "} */}
                           </Link>
@@ -157,7 +160,7 @@ const Header = ({ fixed }) => {
                         <Link to="/portfolio">Portfolio</Link>
                         <Link to="/technologies">Technologies</Link>
                         <Link to="/industries">Industry</Link>
-                        <Calendalycomp />
+                        <Calendalycomp buttonText="Book My Call" white={true} />
                       </div>
                     </div>
                   </div>
@@ -177,115 +180,109 @@ const Header = ({ fixed }) => {
                   />
                 </Link>
               </div>
-              <div>
-                <ul className=" text-[10px] text-primary font-[500] lg:text-[16px] hidden sm:flex items-center space-x-3 lg:space-x-5">
-                  <li className="">
-                    <Link to="/about">About Us</Link>
-                  </li>{" "}
-                  <li className="flex justify-center   items-center text-grey-600">
-                    <Link
-                      to={"/services"}
-                      className=" flex items-center gap-1 hover:text-primaryColor "
-                      onClick={click}
-                      onMouseEnter={() => {
-                        setShowServices(true);
-                      }}
-                      onMouseLeave={() => {
-                        setShowServices(false);
-                      }}
-                    >
-                      <div>Services</div>{" "}
-                      {/* <div>
+
+              <ul className=" text-[10px] text-primary font-[500] lg:text-[16px] hidden sm:flex items-center space-x-3 lg:space-x-5">
+                <li className="">
+                  <Link to="/about">About Us</Link>
+                </li>{" "}
+                <li className="flex justify-center   items-center text-grey-600">
+                  <Link
+                    to={"/services"}
+                    className=" flex items-center gap-1 hover:text-primaryColor "
+                    onClick={click}
+                    onMouseEnter={() => {
+                      setShowServices(true);
+                    }}
+                    onMouseLeave={() => {
+                      setShowServices(false);
+                    }}
+                  >
+                    <div>Services</div>{" "}
+                  </Link>
+                </li>
+                <li className="">
+                  <Link to="/portfolio">Portfolio</Link>
+                </li>
+                <li className="">
+                  <Link to="/technologies">Technologies</Link>
+                </li>
+                <li className="">
+                  <Link to="/industries">Industry</Link>
+                </li>
+                <li className="flex justify-center   items-center text-grey-600">
+                  <Link
+                    to={"/about"}
+                    className=" flex items-center gap-1 hover:text-primaryColor "
+                    onClick={click}
+                    onMouseEnter={() => {
+                      setShowServices(true);
+                    }}
+                    onMouseLeave={() => {
+                      setShowServices(false);
+                    }}
+                  >
+                    {/* <div>Company</div>{" "} */}
+                    {/* <div>
                       {arrow ? (
                         <img src={ChevronUp} />
                       ) : (
                         <img className="w-4 md:w-5 lg:w-6" src={chevronDown} />
                       )}
                     </div> */}
-                    </Link>
-                  </li>
-                  <li className="">
-                    <Link to="/portfolio">Portfolio</Link>
-                  </li>
-                  <li className="">
-                    <Link to="/technologies">Technologies</Link>
-                  </li>
-                  <li className="">
-                    <Link to="/industries">Industry</Link>
-                  </li>
-                  <li className="flex justify-center   items-center text-grey-600">
-                    <Link
-                      to={"/about"}
-                      className=" flex items-center gap-1 hover:text-primaryColor "
-                      onClick={click}
-                      onMouseEnter={() => {
-                        setShowServices(true);
-                      }}
-                      onMouseLeave={() => {
-                        setShowServices(false);
-                      }}
-                    >
-                      {/* <div>Company</div>{" "} */}
-                      {/* <div>
-                      {arrow ? (
-                        <img src={ChevronUp} />
-                      ) : (
-                        <img className="w-4 md:w-5 lg:w-6" src={chevronDown} />
-                      )}
-                    </div> */}
-                    </Link>
-                  </li>
-                  <li className="">
-                    <Calendalycomp />
-                  </li>
-                </ul>
-                {/* {showServices && (
+                  </Link>
+                </li>
+                <li className="">
+                  <Calendalycomp />
+                </li>
+              </ul>
+              {/* {showServices && (
             <div className="absolute top-14  left-0 w-[100%] z-[100]">
               <NavbarServicesDropDown />
             </div>
           )} */}
-                {/* =============================================== ~ MOBILE NAVBAR ~ ================================================ */}
-                <div className="sm:hidden">
+              {/* =============================================== ~ MOBILE NAVBAR ~ ================================================ */}
+              <div className="sm:hidden">
+                {!isOpen && (
                   <MenuOutlined
-                    className="text-[20px] mt-2 "
+                    className="text-[20px] mt-2 z-[1000]"
                     onClick={openNav}
                   />
-                  <div
-                    className={`shadow-lg h-screen overlayNav ${
-                      isOpen ? "open" : ""
-                    }`}
-                  >
-                    <div className="flex justify-between px-10">
-                      <Link to="/">
-                        <img
-                          src={SC_logo}
-                          alt="Logo"
-                          className="h-5 md:h-20 mt-5"
-                        />
+                )}
+                <div
+                  className={`shadow-lg h-screen overlayNav z-[10] ${
+                    isOpen ? "open" : ""
+                  }`}
+                >
+                  <div className="flex justify-between px-10">
+                    <Link to="/">
+                      <img src={whiteLogo} alt="Logo" className="h-10 mt-3" />
+                    </Link>
+                    <a href="#!" onClick={closeNav}>
+                      <img
+                        src={whiteTimes}
+                        className="float-right mt-5 h-[20px] w-[20px]"
+                      />
+                    </a>
+                  </div>{" "}
+                  <div className=" text-primary space-y-7 font-[600] py-12 overlayNav-content">
+                    <Link className=" cursor-pointer font-[700]" to="/about">
+                      About Us
+                    </Link>{" "}
+                    <div className="flex justify-center items-center">
+                      <Link to="/services">
+                        Services&nbsp;&nbsp;&nbsp;
+                        {/* <img src={chevronDown} />{" "} */}
                       </Link>
-                      <a href="#!" onClick={closeNav}>
-                        <img src={close} className="float-right mt-5" />
-                      </a>
-                    </div>{" "}
-                    <div className=" text-primary space-y-7 font-[600] py-12 overlayNav-content">
-                      <Link className=" cursor-pointer font-[700]" to="/about">
-                        About Us
-                      </Link>{" "}
-                      <div className="flex justify-center items-center">
-                        <Link to="/services">
-                          Services&nbsp;&nbsp;&nbsp;
-                          {/* <img src={chevronDown} />{" "} */}
-                        </Link>
-                      </div>
-                      <Link to="/portfolio">Portfolio</Link>
-                      <Link to="/technologies">Technologies</Link>
-                      <Link to="/industries">Industry</Link>
-                      {/* <div className="flex justify-center mb-7">
+                    </div>
+                    <Link to="/portfolio">Portfolio</Link>
+                    <Link to="/technologies">Technologies</Link>
+                    <Link to="/industries">Industry</Link>
+                    {/* <div className="flex justify-center mb-7">
                       {" "}
                       <a href="/about">Company </a> &nbsp;&nbsp;&nbsp;
                       <img src={chevronDown} />{" "}
                     </div> */}
-                    <Calendalycomp buttonText="Book My Call" />
+                    <Calendalycomp buttonText="Book My Call" white={true} />
                   </div>
                 </div>
               </div>

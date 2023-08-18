@@ -12,6 +12,8 @@ import { Tooltip } from "antd";
 import { useEffect, useRef, useState } from "react";
 import Header from "../layout/Header";
 import ExpandYourHorizon from "../pages-component/AboutPage/ExpandYourHorizon";
+import { Helmet } from "react-helmet-async";
+
 const About = () => {
   const [isIntersectingHero, setIsIntersectingHero] = useState(true);
   const { ref, inView, entry } = useInView({
@@ -44,6 +46,15 @@ const About = () => {
 
   return (
     <Layout>
+      <Helmet>
+        <title>About Company-Sync Clouds</title>
+        <meta
+          name="description"
+          content="Explore the heart of Sync Clouds: Pioneering 
+excellence in software development services. Join our journey towards 
+innovation. Discover more now!"
+        />
+      </Helmet>
       {inView ? (
         <div className=" flex items-center justify-center right-[2%] bottom-[5%] fixed z-[100]   h-[90px]  w-[90px]  rounded-full">
           <img
@@ -60,7 +71,7 @@ const About = () => {
       ) : (
         <div className=" flex items-center justify-center right-[2%] bottom-[0%] fixed z-[100]   h-[90px]  w-[90px]  rounded-full">
           <p className=" scroll-text text-[12px] font-bold absolute top-0 text-black">
-            Scroll Up
+            Scroll To Top
           </p>
           <img
             onClick={() => {

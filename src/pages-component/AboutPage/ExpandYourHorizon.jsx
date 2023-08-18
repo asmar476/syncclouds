@@ -6,7 +6,7 @@ import aboutHorizon from "../../assets/About illustration/SVG 1.svg";
 
 const ExpandYourHorizon = () => {
   return (
-    <div className="container mx-auto px-10 mt-16">
+    <div className="max-w-[1200px] xl:max-w-[1400px]  mx-auto px-10 mt-16">
       <div className="flex flex-col items-center justify-center text-center ">
         <MainSubHeading
           text={"Expand Your Digital "}

@@ -8,7 +8,7 @@ import SoftwareSolution from "./SoftwareSolution";
 function ServicesHero() {
   return (
     <>
-      <div className=" relative max-w-[1450px] px-3 width-[100%] pt-20 md:pt-40 mx-auto">
+      <div className=" relative max-w-[1450px] px-3 width-[100%] pt-20 mx-auto">
         <div className="">
           <div className="  flex px-10 flex-col xl:gap-32 items-center justify-center  space-y-10 lg:space-y-0 lg:flex-row">
             <div className="space-y-10 text-center  w-[327px] md:w-[550px] md:text-left ">

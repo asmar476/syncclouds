@@ -28,17 +28,17 @@ const techCategories = [
 
 function TechnologiesHero() {
   return (
-    <div className="flex justify-center flex-col items-center px-20 space-y-8 mt-20 pt-20">
+    <div className="max-w-[1200px] xl:max-w-[1400px] mx-auto flex justify-center flex-col items-center  px-10 mt-10 md:space-y-8 lg:mt-20 md:pt-20">
       <img
         className="hidden sm:block w-[100%]"
         src={techImage}
         alt="Technology"
       />
       <MainSubHeading text={"Techno"} gradientText={"logies"} />
-      <p className="sm:text-[20px] text-[14px] text-center text-[#434343]">
+      <p className="sm:text-[20px] text-[14px] text-center text-[#434343] sm:mb-5">
         We Love using the latest tech to our advantage.
       </p>
-      <div className="space-y-10">
+      <div className="w-full space-y-10 ">
         {techCategories.map(({ name, techArray }) => (
           <TechnologiesCommonComp
             key={name}

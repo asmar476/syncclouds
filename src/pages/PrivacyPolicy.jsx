@@ -2,54 +2,119 @@ import React from "react";
 import image from "../assets/privacyPloicy/headerImage.png";
 import Layout from "../layout/Layout";
 import PrivacyHeading from "../common component/PrivacyHeading";
-import arrowUp from "../assets/icons/arrow-up-circle.svg";
+
 import { Tooltip } from "antd";
 import { privacy } from "../constant/PrivacyAndTermsData";
+import { useInView } from "react-intersection-observer";
+import arrowUp from "../assets/icons/black_arrow-up.svg";
+import arrowDown from "../assets/icons/black-arrow-down.svg";
+import { useRef, useState } from "react";
+import Header from "../layout/Header";
+import { Helmet } from "react-helmet-async";
 function PrivacyPolicy() {
+  const [isIntersectingHero, setIsIntersectingHero] = useState(true);
+  const { ref, inView, entry } = useInView({
+    /* Optional options */
+    threshold: 0.5,
+  });
+
+  const scrollToBottom = () => {
+    const windowHeight = window.innerHeight;
+    const bodyHeight = document.body.scrollHeight;
+    const scrollPosition = bodyHeight - windowHeight;
+    window.scrollTo({
+      top: scrollPosition,
+      behavior: "smooth",
+    });
+  };
+
+  const heroRef = useRef();
+
+  const headerFunc = (entries, observer) => {
+    setIsIntersectingHero(entries[0].isIntersecting);
+  };
+  const options = {
+    root: null,
+    threshold: 0,
+  };
+  const observer = new IntersectionObserver(headerFunc, options);
+
+  heroRef?.current && observer.observe(heroRef?.current);
   return (
     <Layout>
+      <Helmet>
+        <title>Privacy Policy-Sync Clouds</title>
+        <meta
+          name="description"
+          content="Your privacy matters to us. Dive into our Privacy Policy
+at Sync Clouds. Learn how we safeguard your information and ensure a 
+secure digital environment."
+        />
+      </Helmet>
+      {inView ? (
+        <div className=" flex items-center justify-center right-[2%] bottom-[5%] fixed z-[100]   h-[90px]  w-[90px]  rounded-full">
+          <img
+            onClick={scrollToBottom}
+            className="scroll-img cursor-pointer  fixed z-[100]"
+            src={arrowDown}
+            alt="arrow up"
+            width={40}
+          />
+          <p className="scroll-text text-[12px] font-bold absolute -bottom-5  text-black">
+            Scroll Down
+          </p>
+        </div>
+      ) : (
+        <div className=" flex items-center justify-center right-[2%] bottom-[0%] fixed z-[100]   h-[90px]  w-[90px]  rounded-full">
+          <p className=" scroll-text text-[12px] font-bold absolute top-0 text-black">
+            Scroll To Top
+          </p>
+          <img
+            onClick={() => {
+              window.scrollTo({ top: 0, behavior: "smooth" });
+            }}
+            className="scroll-img-2 cursor-pointer  fixed z-[100]"
+            src={arrowUp}
+            alt="arrow up"
+            width={40}
+          />
+        </div>
+      )}
+      {!isIntersectingHero ? <Header fixed={true} /> : <Header />}
       <div className="bg-[#EDF2F7] pb-5 md:py-7">
-        <div className=" flex items-center justify-center right-[1%] top-[70%] fixed z-[100] bg-gray-300  h-[50px]  w-[50px]  rounded-full">
-          <Tooltip title="Scroll to Top">
-            <img
-              onClick={() => {
-                window.scrollTo({ top: 0, behavior: "smooth" });
-              }}
-              className="cursor-pointer  fixed z-[100]"
-              src={arrowUp}
-              alt="arrow up"
-              width={40}
-            />
-          </Tooltip>
-        </div>{" "}
-        <div className="lg:flex justify-between items-center py-3 md:py-5 lg:py-0  px-3 bg-primary text-center font-[700] text-[] md:text-[35px] xl:text-[41.89px] text-white my-5">
+        <div
+          ref={heroRef}
+          className="lg:flex justify-between items-center py-3 md:py-5 lg:py-0  px-3 bg-primary text-center font-[700] text-[] md:text-[35px] xl:text-[41.89px] text-white my-5"
+        >
           <img className="hidden lg:block" src={image} alt="" />
           <h1>SyncClouds Privacy Statement</h1>
           <img className="hidden lg:block" src={image} alt="" />
         </div>
         <div className="bg-white rounded mx-5 md:mx-24 border px-7 py-5 md:mb-0 md:py-10 border-gray-300">
-          <h3 className="border-b border-gray-300 italic text-sm md:text-[20px] mb-6 font-[500]">
-            Last Updated: 25 July 2023
-          </h3>
-          <PrivacyHeading
-            h="Introduction"
-            p="SyncClouds is dedicated to offering services that adhere to privacy regulations. So that you are aware of how your personal information is handled and safeguarded, we work to make our Privacy Policy as simple, transparent, and understandable as possible.
+          <div ref={ref}>
+            <h3 className="border-b border-gray-300 italic text-sm md:text-[20px] mb-6 font-[500]">
+              Last Updated: 25 July 2023
+            </h3>
+            <PrivacyHeading
+              h="Introduction"
+              p="SyncClouds is dedicated to offering services that adhere to privacy regulations. So that you are aware of how your personal information is handled and safeguarded, we work to make our Privacy Policy as simple, transparent, and understandable as possible.
             At SyncClouds, we take the privacy of our users very seriously. This Privacy Policy explains how we collect, use, and protect the information you provide through our services."
-          />
-          <PrivacyHeading
-            h="Information We Collect"
-            p="We may collect certain information from you when you use our services. This information may include the following:"
-          />
-          {privacy.map((item, index) => (
-            <div key={index}>
-              <h5 className="font-[600] text-[#171923] text-[12px] md:text-[18px]">
-                {item.heading}
-              </h5>
-              <p className="font-[400] text-[12px] md:text-[18px] text-body leading-[20px] md:leading-[27px] mb-5">
-                {item.paragraph}
-              </p>
-            </div>
-          ))}
+            />
+            <PrivacyHeading
+              h="Information We Collect"
+              p="We may collect certain information from you when you use our services. This information may include the following:"
+            />
+            {privacy.map((item, index) => (
+              <div key={index}>
+                <h5 className="font-[600] text-[#171923] text-[12px] md:text-[18px]">
+                  {item.heading}
+                </h5>
+                <p className="font-[400] text-[12px] md:text-[18px] text-body leading-[20px] md:leading-[27px] mb-5">
+                  {item.paragraph}
+                </p>
+              </div>
+            ))}
+          </div>
           <PrivacyHeading
             h="How We Use Your Information"
             p="When you sign up for an account or contact us through one of our services, we may gather your name, email address, and other contact details."

@@ -1,4 +1,4 @@
- import React, { useState, useRef } from "react";
+import React, { useState, useRef } from "react";
 import { offerData } from "../../constant/Data";
 import MainSubHeading from "../../common component/MainSubHeading";
 import InnerPageHeading from "../../common component/InnerPageHeading";
@@ -43,7 +43,7 @@ const OfferCard = () => {
             alt=""
           />
         </div>
-        <div className="max-w-[1200px] xl:max-w-[1440px] w-[100%] mx-auto  px-10  sm:px-20  pb-20  sm:my-10">
+        <div className="max-w-[1200px] xl:max-w-[1440px] w-[100%] mx-auto  px-10 sm:px-20  pb-20  sm:my-10">
           <div className="hidden lg:block">
             <div className="relative flex items-center lg:items-start text-center lg:text-left lg:justify-between flex-col gap-5 xl:gap-0  lg:flex-row w-full my-10 pr-10">
               <div className="relative mb-10 sm:mb-20 lg:mb-0 max-w-full md:max-w-[600px] lg:max-w-full">
@@ -59,7 +59,7 @@ const OfferCard = () => {
               <div className="hidden lg:block">
                 {" "}
                 <img
-                  className="absolute bottom-5 -left-[110px] xl:top-[8%]   xl:-left-[130px] w-[52%]  xl:w-[55%]     "
+                  className="absolute bottom-5 -left-[110px] xl:top-[8%]   xl:-left-[130px] w-[52%]  xl:w-[58%]     "
                   src={linesHero}
                   alt=""
                 />
@@ -123,7 +123,7 @@ const OfferCard = () => {
           <div className="lg:hidden">
             <div className="">
               <div className="relative mt-20 mb-10 flex flex-col items-center text-center">
-                <h1 className="text-[28px] xl:text-[41.89px] font-[700]">
+                <h1 className="text-[28px] md:text-[41.89px] font-[700]">
                   Bespoke IT Services By
                   <span className="text-primary"> SyncClouds</span>
                 </h1>

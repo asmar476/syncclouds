@@ -6,6 +6,7 @@ import { useInView } from "react-intersection-observer";
 import arrowUp from "../assets/icons/black_arrow-up.svg";
 import arrowDown from "../assets/icons/black-arrow-down.svg";
 import Header from "../layout/Header";
+import { Helmet } from "react-helmet-async";
 
 function Technologies() {
   const [isIntersectingHero, setIsIntersectingHero] = useState(true);
@@ -39,6 +40,14 @@ function Technologies() {
   return (
     <div>
       <Layout>
+        <Helmet>
+          <title>Advanced Technologies for Innovation - Sync Clouds</title>
+          <meta
+            name="description"
+            content="Empower your projects with the latest tools and 
+            frameworks used at Sync Clouds. Discover the tech that drives our success."
+          />
+        </Helmet>
         {inView ? (
           <div className=" flex items-center justify-center right-[2%] bottom-[5%] fixed z-[100]   h-[90px]  w-[90px]  rounded-full">
             <img
@@ -55,7 +64,7 @@ function Technologies() {
         ) : (
           <div className=" flex items-center justify-center right-[2%] bottom-[0%] fixed z-[100]   h-[90px]  w-[90px]  rounded-full">
             <p className=" scroll-text text-[12px] font-bold absolute top-0 text-black">
-              Scroll Up
+              Scroll To Top
             </p>
             <img
               onClick={() => {

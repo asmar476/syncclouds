@@ -17,6 +17,7 @@ import arrowDown from "../assets/icons/black-arrow-down.svg";
 import { Tooltip } from "antd";
 import { useEffect, useRef, useState } from "react";
 import Header from "../layout/Header";
+import { Helmet } from "react-helmet-async";
 const Services = () => {
   const [isIntersectingHero, setIsIntersectingHero] = useState(true);
   const { ref, inView, entry } = useInView({
@@ -48,6 +49,15 @@ const Services = () => {
   heroRef?.current && observer.observe(heroRef?.current);
   return (
     <Layout>
+      <Helmet>
+        <title>Explore Our Services at Sync Clouds</title>
+        <meta
+          name="description"
+          content="Dive into a spectrum of exceptional services at Sync 
+Clouds. Explore expert solutions for optimal Impact--your gateway to tailored
+solutions. Explore more here!"
+        />
+      </Helmet>
       {inView ? (
         <div className=" flex items-center justify-center right-[2%] bottom-[5%] fixed z-[100]   h-[90px]  w-[90px]  rounded-full">
           <img
@@ -64,7 +74,7 @@ const Services = () => {
       ) : (
         <div className=" flex items-center justify-center right-[2%] bottom-[0%] fixed z-[100]   h-[90px]  w-[90px]  rounded-full">
           <p className=" scroll-text text-[12px] font-bold absolute top-0 text-black">
-            Scroll Up
+            Scroll To Top
           </p>
           <img
             onClick={() => {
