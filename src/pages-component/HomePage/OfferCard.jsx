@@ -1,8 +1,9 @@
+
 import React, { useState, useRef } from "react";
+
 import { offerData } from "../../constant/Data";
 import MainSubHeading from "../../common component/MainSubHeading";
 import InnerPageHeading from "../../common component/InnerPageHeading";
-import Carousel from "react-elastic-carousel";
 import { Link } from "react-router-dom";
 import line from "../../assets/Images/line.svg";
 import transform from "../../assets/Images/Transform Digital Experience with SyncClouds-01.svg";
@@ -23,7 +24,7 @@ import "swiper/css/autoplay";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
-import { clientLogos } from "../../constant/Data";
+
 SwiperCore.use([Navigation]);
 const style = {
   background:
@@ -185,7 +186,7 @@ const OfferCard = () => {
                   ))}
                 </Swiper>
               </div>
-            </div>{" "}
+            </div>
           </div>
 
           {/* ===================================================================================== */}

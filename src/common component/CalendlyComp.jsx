@@ -1,11 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
 import { PopupModal } from "react-calendly";
-
+const calendlyLink = import.meta.env.VITE_REACT_APP_CALENDLY_LINK;
 const Calendalycomp = (props) => {
-  console.log("props--------", props);
-  const [isOpen, setIsOpen] = useState(false);
   return (
     <div>
+
       <button
         className={`${
           props.white
@@ -16,17 +15,14 @@ const Calendalycomp = (props) => {
       >
         {props.btnText || "Book My Call"}
       </button>
+
       <PopupModal
-        url="https://calendly.com/mariabibi/synccloud-project-discussion?month=2023-08"
+        url={calendlyLink}
         pageSettings={props.pageSettings}
         utm={props.utm}
         prefill={props.prefill}
-        onModalClose={() => setIsOpen(false)}
-        open={isOpen}
-        /*
-         * react-calendly uses React's Portal feature (https://reactjs.org/docs/portals.html) to render the popup modal. As a result, you'll need to
-         * specify the rootElement property to ensure that the modal is inserted into the correct domNode.
-         */
+        onModalClose={props.close}
+        open={props.isOpen}
         rootElement={document.getElementById("root")}
       />
     </div>

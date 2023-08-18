@@ -10,7 +10,9 @@ import Industries from "./pages/Industries";
 import Portfolio from "./pages/Portfolio";
 import Technologies from "./pages/Technologies";
 import WebDevelopment from "./pages/WebDevelopment";
+
 import { HelmetProvider } from "react-helmet-async";
+
 export const maintenancePage = () => {
   return <h1>Under Maintenance</h1>;
 };

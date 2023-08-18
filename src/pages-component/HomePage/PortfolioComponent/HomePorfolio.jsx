@@ -7,16 +7,16 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 
-function HomePorfolio({ category, arr, projName, projDesc }) {
+function HomePorfolio({ category, arr, projName, projDesc, index }) {
   return (
-    <div className="w-[327px] sm:w-[400px] 2xl:w-[500px] bg-white pb-3 m-2">
+    <div className="w-[327px] sm:w-[400px] 2xl:w-[500px] drop-shadow-lg bg-white pb-3 m-2">
       <Swiper
         modules={[Navigation, Pagination, Scrollbar, Autoplay]}
         spaceBetween={50}
         slidesPerView={1}
         loop={true}
         draggable={true}
-        // autoplay={{ delay: 1000 }}
+        autoplay={{ delay: 1000 * index }}
       >
         {arr.map((img, ind) => (
           <SwiperSlide>
@@ -45,5 +45,4 @@ function HomePorfolio({ category, arr, projName, projDesc }) {
     </div>
   );
 }
-
 export default HomePorfolio;

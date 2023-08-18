@@ -1,10 +1,19 @@
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import clouds from "../../assets/Images/Main.svg";
 import arrowRight from "../../assets/icons/arrow-right.svg";
 import bluearrowRight from "../../assets/icons/blue-arrow-right.svg";
+
+import Calendalycomp from "../../common component/CalendlyComp";
+import { useState } from "react";
+
 import Particales from "../../component/ParticalesOverlay";
 
+
 const Hero = () => {
+  const [isOpen, setIsOpen] = useState(false);
+  const closeCalendaly = () => {
+    setIsOpen(false);
+  };
   return (
     <div
       style={{
@@ -12,6 +21,7 @@ const Hero = () => {
           " linear-gradient(180deg, rgba(0, 38, 128, 0) 0%, rgba(0, 38, 128, 0.05) 100%)",
       }}
     >
+
       {/* <div>
         <Particales />
       </div> */}
@@ -50,6 +60,7 @@ const Hero = () => {
                 font-[500] px-[5px] sm:px-3 py-1 sm:py-2 rounded-[0.18rem]"
                 >
                   Book my call
+
                 </button>
               </Link>
               <div className="flex gap-2 sm:gap-3 items-center  px-[3px] sm:px-3 py-[2px] sm:py-2 rounded-sm border border-[#002680] min-w-[120px] md:min-w-[170px]">

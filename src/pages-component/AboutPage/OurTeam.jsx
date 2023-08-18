@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import MainSubHeading from "../../common component/MainSubHeading";
+
 import TeamMemberData from "../../constant/TeamMemberData";
 import Carousel from "react-elastic-carousel";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -21,7 +21,7 @@ const OurTeam = () => {
         alt="bg side image"
       />
       <div className="flex justify-center items-center">
-        <h1 className="text-center text-[14px] md:text-[25px] lg:text-[36.89px] w-[327px]  md:w-[950px]  font-[700]">
+        <h1 className="text-center text-[14px] md:text-[35px] lg:text-[40.89px] w-[327px]  md:w-[950px]  font-[700]">
           Give Your Dreams a Digital Reality with our
           <br />
           <span className="text-[#002680]"> Passionate Team</span>

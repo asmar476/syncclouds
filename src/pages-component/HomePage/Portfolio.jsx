@@ -4,8 +4,8 @@ import { DataportfolioHome } from "../../constant/PortfolioPageData";
 import HomePorfolio from "./PortfolioComponent/HomePorfolio";
 const Portfolio = () => {
   return (
-    <div id="portfolio" className="bg-[#edf2f7] container mx-auto mt-12 p-5">
-      <div className="">
+    <div id="portfolio" className="bg-[#edf2f7]  mx-auto mt-12 p-5">
+      <div className="max-w-[1440px] w-[100%] mx-auto">
         <MainSubHeading text={"Port"} gradientText={"folio"} />
         <div className="flex items-center justify-between">
           <h1 className="font-[600] text-body text-[16px] sm:text-[20px] md:text-[25.89px]">
@@ -59,10 +59,11 @@ const Portfolio = () => {
       </div>
       <div className="flex flex-col justify-center  items-center ">
         <div className=" grid lg:grid-cols-2">
-          {DataportfolioHome.map((data, ind) => (
+          {DataportfolioHome.map((data, index) => (
             <HomePorfolio
-              key={ind}
+              key={index}
               arr={data.arr}
+              index={index + 1}
               category={data.Category}
               projName={data.projName}
               projDesc={data.projDesc}

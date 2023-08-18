@@ -10,11 +10,11 @@ import ToolsAndTechnologies from "../common component/ToolsAndTechnologies";
 import HomeFaq from "../pages-component/HomePage/HomeFaq";
 import arrowUp from "../assets/icons/black_arrow-up.svg";
 import arrowDown from "../assets/icons/black-arrow-down.svg";
+
 import Particales from "../component/ParticalesOverlay";
 
 import { useInView } from "react-intersection-observer";
-import { Tooltip } from "antd";
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import Header from "../layout/Header";
 import { Helmet } from "react-helmet-async";
 const Home = () => {
@@ -23,7 +23,6 @@ const Home = () => {
     /* Optional options */
     threshold: 0,
   });
-
   const scrollToBottom = () => {
     const windowHeight = window.innerHeight;
     const bodyHeight = document.body.scrollHeight;
@@ -33,9 +32,7 @@ const Home = () => {
       behavior: "smooth",
     });
   };
-
   const heroRef = useRef();
-
   const headerFunc = (entries, observer) => {
     setIsIntersectingHero(entries[0].isIntersecting);
   };
@@ -44,9 +41,7 @@ const Home = () => {
     threshold: 0,
   };
   const observer = new IntersectionObserver(headerFunc, options);
-
   heroRef?.current && observer.observe(heroRef?.current);
-
   return (
     <div className="">
       <Layout>
@@ -86,18 +81,15 @@ const Home = () => {
             />
           </div>
         )}
-
         <div ref={ref}>
           {!isIntersectingHero ? <Header fixed={true} /> : <Header />}
           <div ref={heroRef} className="home-hero">
             <Hero />
           </div>
-
           <OurClients />
           <OfferCard />
         </div>
         <Portfolio />
-
         <ToolsAndTechnologies />
         <HomeFaq />
         <OurAim />

@@ -46,7 +46,7 @@ export function LeftToRightMarquee({ category, dataArray }) {
     <div className="">
       <h1 className="mt-6 md:mt-16 mb-1 md:mb-4 font-semibold text-[20px] lg:text-[26px] text-body">
         {category}
-      </h1>{" "}
+      </h1>
       <Wrapper>
         <Marquee className="w-[100%]  ">
           <MarqueeGroup2 className="">
@@ -81,7 +81,6 @@ export function LeftToRightMarquee({ category, dataArray }) {
     </div>
   );
 }
-
 const Wrapper = styled.div`
   max-width: 100%;
   display: flex;
@@ -117,9 +116,4 @@ const MarqueeGroup2 = styled.div`
   ${common}
   animation-direction: reverse;
   animation-delay: -3s;
-`;
-const ImageGroup = styled.div`
-  display: grid;
-  place-items: center;
-  width: 10rem;
 `;

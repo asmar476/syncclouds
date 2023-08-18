@@ -12,6 +12,9 @@ import { Tooltip } from "antd";
 import { useEffect, useRef, useState } from "react";
 import Header from "../layout/Header";
 import ExpandYourHorizon from "../pages-component/AboutPage/ExpandYourHorizon";
+
+import OurTeamNew from "../pages-component/AboutPage/AboutExpandCard/OurTeamNew";
+
 import { Helmet } from "react-helmet-async";
 
 const About = () => {
@@ -29,11 +32,8 @@ const About = () => {
       behavior: "smooth",
     });
   };
-
   const heroRef = useRef();
-
   const headerFunc = (entries, observer) => {
-    console.log(entries[0]);
     setIsIntersectingHero(entries[0].isIntersecting);
   };
   const options = {
@@ -41,9 +41,7 @@ const About = () => {
     threshold: 0,
   };
   const observer = new IntersectionObserver(headerFunc, options);
-
   heroRef?.current && observer.observe(heroRef?.current);
-
   return (
     <Layout>
       <Helmet>
@@ -95,7 +93,7 @@ innovation. Discover more now!"
         <InnovativeServices />
       </div>
       {/* Our Team  */}
-      {/* <OurTeam /> */}
+      <OurTeamNew />
       {/* project procedure */}
       <ProjectProcedure />
       {/* / / / / / / / get synced  / / / // /  / / */}

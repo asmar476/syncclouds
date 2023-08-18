@@ -2,14 +2,11 @@ import React, { useState } from "react";
 import Calendar from "react-calendar";
 import "react-calendar/dist/Calendar.css";
 import TimezoneSelect from "react-timezone-select";
-// import 'react-timezone-select/dist/react-TimezoneSelect.css'
 import "react-time-picker/dist/TimePicker.css";
-import TimePicker from "react-time-picker";
 import bg_img from "../assets/map.png";
 import logo1 from "../assets/SyncCloudsLogo/logoH-0.svg";
 import clock from "../assets/icons/clock.svg";
 import video from "../assets/icons/video.svg";
-import { Link } from "react-router-dom";
 import Header from "../layout/Header";
 function BookMyCall() {
   const [date, setDate] = useState(new Date());
@@ -28,13 +25,6 @@ function BookMyCall() {
     <>
       <Header />
       <div className="container h-[1120px] overflow-y-hidden pb-3 md:w-[1100px] md:h-screen mb-0 mx-auto bg-[#F3F4FF] flex flex-col pt-8 items-center">
-        {/* <Link
-          className="float-right font-medium text-primary hover:underline"
-          to="/"
-        >
-          Back
-        </Link> */}
-
         <h1 className="font-bold text-center  text-[14px] sm:text-[20px] md:text-[41px]">
           Book a <span className="text-[#002680]">Free Session </span> At
           AnyTime
@@ -112,7 +102,6 @@ function BookMyCall() {
                     Select a Date & Time
                   </h3>
                   <Calendar
-                    // style={{ border:'none' }}
                     className="py-2"
                     value={date}
                     onChange={handleDateChange}

@@ -7,7 +7,12 @@ import PhoneInput from "react-phone-number-input";
 // import RxCrossCircled from "react-icons/rx";
 import { TiDelete } from "react-icons/ti";
 import { BsExclamationCircle } from "react-icons/bs";
+import Calendalycomp from "./CalendlyComp";
 const ContactForm = () => {
+  const [isOpen, setIsOpen] = useState(false);
+  const closeCalendaly = () => {
+    setIsOpen(false);
+  };
   const [phoneNumber, setPhoneNumber] = useState("");
   const [error, setError] = useState("");
   const handlePhoneNumberChange = (value) => {
@@ -111,10 +116,12 @@ const ContactForm = () => {
     setSelectedFile(file);
     fileInput.value = "";
   };
-  console.log("name", formData.service);
+
   return (
-    <div className="w-full flex lg:flex-row flex-col-reverse space-y-10 md:space-y-0 mt-14 sm:mb-14 items-center lg:items-start justify-between max-w-[1200px] xl:max-w-[1400px] mx-auto px-10 lg:px-5">
-      <div className=" bg-[#EDF2F7] h-[530px] hidden lg:block mt-10 lg:mt-0 rounded-sm w-full  md:max-w-[622px] px-4 pt-5 pb-12 ">
+
+    <div className="mb-10 flex lg:flex-row flex-col-reverse space-y-10 md:space-y-0 mt-14 sm:mb-14 items-center lg:items-start justify-center">
+      <div className="bg-[#EDF2F7] h-[530px] hidden lg:block mt-10 lg:mt-0 rounded-sm w-[90%] mx-5 md:max-w-[622px] px-4 pt-5 pb-12 ">
+
         <h1 className="font-[500] text-[25.89px] text-[#171923] mb-6">
           Book a Meeting
         </h1>
@@ -134,9 +141,15 @@ const ContactForm = () => {
               <p className="text-[#434343]">+92 311 5910778</p>
               <p className="text-[#434343] mr-3">azhar.m@syncclouds.com</p>
             </div>
-            <button className=" font-[600] text-white bg-[#002680] w-full py-[8px] rounded-sm">
-              Book a Meeting
-            </button>
+            <div>
+              <button
+                onClick={() => setIsOpen(true)}
+                className=" font-[600] text-white bg-[#002680] w-full py-[8px] rounded-sm"
+              >
+                Book a Meeting
+              </button>
+              <Calendalycomp isOpen={isOpen} close={closeCalendaly} />
+            </div>
           </div>
         </div>
         {/* <div className="hidden sm:block pt-3 border-t-2 border-[#ccc8c8]">
@@ -158,8 +171,10 @@ const ContactForm = () => {
           </p>
         </div> */}
       </div>
-      <div className="bg-[#EDF2F7] min-h-[530px]  text-black px-4 pb-1 mb-10 md:px-0 w-full md:max-w-[622px] rounded-sm">
-        <form className="px-[10px] md:px-[30px] py-4" onSubmit={handleSubmit}>
+
+      <div className="bg-[#EDF2F7] min-h-[530px]  text-black px-4 pb-1 mb-10 md:px-0 mx-5 w-[90%] md:max-w-[622px] rounded-sm">
+        <form className="px-[10px]  md:px-[30px] py-4" onSubmit={handleSubmit}>
+
           <h5 className="font-[500] text-[25.89px] text-[#171923] mb-1">
             Write a Message
           </h5>

@@ -1,11 +1,12 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useState } from "react";
 import servicesIllustration from "../../assets/Services/servicesIllustration.svg";
-import bg_services from "../../assets/Services/OBJECTS.svg";
-import arrowUp from "../../assets/icons/arrow-up-circle.svg";
-import { Tooltip } from "antd";
 import SoftwareSolution from "./SoftwareSolution";
+import Calendalycomp from "../../common component/CalendlyComp";
 function ServicesHero() {
+  const [isOpen, setIsOpen] = useState(false);
+  const closeCalendaly = () => {
+    setIsOpen(false);
+  };
   return (
     <>
       <div className=" relative max-w-[1450px] px-3 width-[100%] pt-20 mx-auto">
@@ -28,11 +29,16 @@ function ServicesHero() {
                   your business goals and stay ahead of the competition.
                 </p>
               </div>
-              <Link to={"/contact"}>
-                <button className="bg-[#00315A] mt-10 text-white px-3 py-2 rounded-[0.18rem] mb-10">
+
+              <div>
+                <button
+                  onClick={() => setIsOpen(true)}
+                  className="pulse bg-[#00315A] mt-10 text-white px-3 py-2 rounded-[0.18rem] mb-10"
+                >
                   Let's Get Started
                 </button>
-              </Link>
+                <Calendalycomp isOpen={isOpen} close={closeCalendaly} />
+              </div>
             </div>
             <div className="hidden lg:block">
               <img

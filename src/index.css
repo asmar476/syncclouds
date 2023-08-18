@@ -25,10 +25,6 @@ body {
   -webkit-text-fill-color: transparent;
 }
 
-/* .main-Heading {
-  line-height: 3.5rem !important;
-} */
-
 .accordian {
   box-shadow: 0 0 10px 0 rgb(223, 222, 222);
 }
@@ -71,12 +67,12 @@ body {
 .box-shadow {
   box-shadow: 0 0 10px 0 rgb(223, 222, 222);
 }
-/* / / / / // testimonial card slider pagination custom style / / / / / / / */
+
 
 /* scroll image */
 
 .scroll-img {
-  animation: scroll-image 0.5s ease-in infinite alternate-reverse;
+  animation: scroll-image 0.8s ease-in infinite alternate-reverse;
 }
 
 .scroll-img-2 {
@@ -119,10 +115,10 @@ body {
 
 @keyframes scroll-image-2 {
   0% {
-    transform: translateY(-5px);
+    transform: translateY(-10px);
   }
   100% {
-    transform: translateY(5px);
+    transform: translateY(10px);
   }
 }
 
@@ -163,6 +159,7 @@ body {
     margin-top: 20px;
   }
 }
+/* overlay nav on mobile screen */
 .overlayNav {
   clip-path: circle(0% at 100% -5%);
   width: 100%;
@@ -218,6 +215,7 @@ body {
   }
 }
 
+/* Nav button pulse behavior */
 .pulse {
   display: inline-block;
   cursor: pointer;
@@ -276,6 +274,7 @@ body {
   }
 }
 
+
 @-webkit-keyframes pulseWhite {
   0% {
     -webkit-box-shadow: 0 0 0 0 #fefefe(204, 169, 44, 0.4);
@@ -302,6 +301,7 @@ body {
     box-shadow: 0 0 0 0 rgba(80, 80, 81, 0.4);
   }
 }
+
 .rec-arrow-down:hover,
 .rec-arrow-up:hover {
   background-color: #012781 !important;
@@ -336,6 +336,7 @@ body {
   align-items: center !important;
   min-width: 10px !important;
 }
+/*footer scroll bar */
 .ant-row {
   margin: 0 !important;
 }
@@ -343,25 +344,92 @@ body {
   outline: none !important;
   background-color: white !important;
 }
-.PhoneInput-color--focus {
-  background-color: black !important;
-}
-#phoneNumberInput:-moz-placeholder {
-  background-color: white !important; /* Set the background color you want */
-  color: black; /* Set the text color you want */
-}
-input:-webkit-autofill {
-  /* Set the autofill background color and text color */
-  background-color: white !important;
-  color: black;
-}
 
-/* Customize autofill styles for Firefox */
-input:-moz-placeholder {
-  /* Set the autofill background color and text color */
-  background-color: white !important;
-  color: black;
-}
 input[type="checkbox"]:checked {
   background-color: green;
+}
+/* .flipBack:hover{
+  transform: rotateY(180deg);
+  transition-duration:1s ;
+
+  backface-visibility: hidden;
+}
+.flipBack2:hover{
+  transform: rotateY(-180deg);
+  transition-duration:1s ;
+
+  backface-visibility: hidden;
+} */
+/* / / / / // testimonial card slider pagination custom style / / / / / / / */
+
+/* .swiper-pagination-bullet {
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  align-items: start;
+  justify-content: space-around;
+  z-index: 10;
+  opacity: 1;
+  height: 10px;
+  width: 10px;
+  border-radius: 50%;
+  padding: 4px;
+  border: #012781 1px solid;
+  border-spacing: 10px;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: #161822;
+}
+
+.swiper-pagination {
+  height: 100% !important;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  z-index: 100;
+}
+
+.swiper-pagination::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 7.5px;
+  background: #8b8c8c;
+  height: 100%;
+  width: 2.5px;
+  z-index: -100;
+} */
+
+.card-container {
+  /* perspective: 1000px; */
+  width: 500px;
+  height: 400px;
+}
+
+.card {
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 1s;
+}
+
+.card:hover {
+  transform: rotateY(180deg);
+}
+
+.card-front,
+.card-back {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  backface-visibility: hidden;
+}
+
+.card-front {
+  transform: rotateY(0deg);
+}
+
+.card-back {
+  transform: rotateY(180deg);
 }
