@@ -1,4 +1,3 @@
-
 import React, { useState, useRef } from "react";
 
 import { offerData } from "../../constant/Data";
@@ -188,7 +187,6 @@ const OfferCard = () => {
               </div>
             </div>
           </div>
-
           {/* ===================================================================================== */}
           <div className=" relative  flex flex-col lg:flex-row mt-20 xl:-mt-5 lg:-mt-28 2xl:mt-0   gap-10">
             <div className="flex-1 text-center lg:text-left relative ">

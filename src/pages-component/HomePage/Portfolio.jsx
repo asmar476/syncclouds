@@ -2,12 +2,13 @@ import React from "react";
 import MainSubHeading from "../../common component/MainSubHeading";
 import { DataportfolioHome } from "../../constant/PortfolioPageData";
 import HomePorfolio from "./PortfolioComponent/HomePorfolio";
+import PortfolioCard from "./PortfolioComponent/PortfolioCard";
 const Portfolio = () => {
   return (
-    <div id="portfolio" className="bg-[#edf2f7]  mx-auto mt-12 p-5">
-      <div className="max-w-[1440px] w-[100%] mx-auto">
+    <div id="portfolio" className="  mx-auto  p-10">
+      <div className="pt-5 max-w-[1440px] w-[100%] mx-auto">
         <MainSubHeading text={"Port"} gradientText={"folio"} />
-        <div className="flex items-center justify-between">
+        {/* <div className="flex items-center justify-between">
           <h1 className="font-[600] text-body text-[16px] sm:text-[20px] md:text-[25.89px]">
             Our Case Studies
           </h1>
@@ -22,8 +23,8 @@ const Portfolio = () => {
               Content Marketing
             </button>
           </div>
-        </div>
-        {/* <div className="flex flex-wrap items-center justify-center gap-9 lg:gap-20">
+        </div> */}
+        <div className="mt-5 flex flex-wrap items-center justify-center gap-9 lg:gap-20">
           <button
             onClick={() => ""}
             className="hover:font-semibold px-7 text-[18px] font-semibold py-2 rounded-sm cursor-pointer border border-primary hover:shadow-lg bg-primary text-white"
@@ -54,10 +55,10 @@ const Portfolio = () => {
           >
             Hire A Team
           </button>
-        </div> */}
+        </div>
         {/* <div className="md:hidden"><CustomSelect /></div> */}
       </div>
-      <div className="flex flex-col justify-center  items-center ">
+      {/* <div className="flex flex-col justify-center  items-center ">
         <div className=" grid lg:grid-cols-2">
           {DataportfolioHome.map((data, index) => (
             <HomePorfolio
@@ -70,8 +71,10 @@ const Portfolio = () => {
             />
           ))}
         </div>
+      </div> */}
+      <div className="flex flex-col items-center gap-5 justify-center">
+        <PortfolioCard />
       </div>
-      <center> </center>
     </div>
   );
 };

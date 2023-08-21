@@ -30,29 +30,38 @@ const TestimonialCard = ({
   rating,
   designation,
 }) => {
+  const trimmedSummary =
+    summary.length > 200 ? `${summary.substring(0, 200)}....` : summary;
+
   return (
     <>
       <div key={i} className=" py-3 px-5 w-full">
         <div className="flex items-center justify-between lg:mb-3">
-          <h3
+          {/* <h3
             style={{ color: "hsla(226, 53%, 33%, 1)" }}
             className="text-sm lg:text-lg  font-semibold"
           >
             {name}
-          </h3>
-          <img className="w-[62px]" src={profileImage} alt="Profile" />
+          </h3> */}
+          {/* <img className="w-[62px]" src={profileImage} alt="Profile" /> */}
         </div>
-        <p className="max-w-[339px] leading-[20px] lg:leading-[24px] text-[12px] lg:text-sm font-[400] lg:pb-1">
-          {summary}
+        <p className="max-w-[339px] leading-[20px] italic lg:leading-[24px] text-[12px] lg:text-sm font-[400] lg:pb-1">
+          "{trimmedSummary}"
         </p>
         <hr className="border-t border-gray-300 mt-3 lg:mt-7  mb-3 lg:mb-5" />
         <div
           style={{ color: "hsla(226, 53%, 33%, 1)" }}
           className="flex font-[600] items-center justify-between lg:mb-1"
         >
-          <p className="text-[14px] lg:text-[16px] pb-1 text-darkBlue">
+          {/* <p className="text-[14px] lg:text-[16px] pb-1 text-darkBlue">
             {designation}
-          </p>
+          // </p> */}
+          <h3
+            style={{ color: "hsla(226, 53%, 33%, 1)" }}
+            className="text-sm lg:text-lg  font-semibold"
+          >
+            {name}
+          </h3>
           <div className=" space-x-1.5   text-darkBlue flex items-center">
             {renderRatingStars(rating)}
           </div>

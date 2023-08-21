@@ -7,7 +7,6 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 import MainSubHeading from "./MainSubHeading";
-import BoldParagraph from "./BoldParagraph";
 import { clientLogos } from "../constant/Data";
 const OurClients = () => {
   return (
@@ -49,7 +48,7 @@ const OurClients = () => {
                 key={logo.id}
                 style={{ "& .Swiper__slide": { width: "0%" } }}
               >
-                <img src={logo.src} alt="" className="h-[100px] w-[120px]" />
+                <img src={logo.src} alt="logo" width={160} />
               </SwiperSlide>
             ))}
           </Swiper>

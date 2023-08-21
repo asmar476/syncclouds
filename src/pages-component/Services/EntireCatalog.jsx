@@ -1,13 +1,10 @@
 import React, { useState } from "react";
 import arrowRight from "../../assets/icons/blue-arrow-right.svg";
 import { servicesCatalog } from "../../constant/Data";
-
 function EntireCatalog() {
   const [activeTab, setActiveTab] = useState(0);
-
   return (
     <div className=" flex flex-col items-center mt-16">
-      {" "}
       <div className="mb-8 space-y-3">
         <h2 className="font-[600] text-center text-[18px] md:text-[25px]">
           Entire Catalog of Services
@@ -18,7 +15,7 @@ function EntireCatalog() {
           and technology consulting.
         </p>
       </div>
-      <div className="w-full text-[11px] sm:text-[14px] md:text-[18px]  pt-3 bg-gray-200  flex flex-wrap justify-between max-w-[900px] px-3">
+      <div className="w-full text-[11px] sm:text-[14px] md:text-[18px]  pt-3 bg-gray-200  flex  justify-between max-w-[900px] px-3">
         {/* <div className="w-full text-[11px] sm:text-[14px] md:text-[18px] bg-gray-100 pt-3 flex flex-wrap justify-center gap-2.5 md:space-x-10 lg:space-x-20 "> */}
         {servicesCatalog.map((service, index) => (
           <div

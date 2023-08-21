@@ -87,7 +87,7 @@ const Home = () => {
           <OurClients />
           <OfferCard />
         </div>
-        <Portfolio />
+        {/* <Portfolio /> */}
         <ToolsAndTechnologies />
         <HomeFaq />
         <OurAim />

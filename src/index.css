@@ -72,6 +72,7 @@ body {
 
 .scroll-img {
   animation: scroll-image 0.8s ease-in infinite alternate-reverse;
+  animation-play-state: paused;
 }
 
 .scroll-img-2 {

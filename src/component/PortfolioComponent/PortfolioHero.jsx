@@ -1,6 +1,13 @@
 import React, { useRef, useState } from "react";
 import PortfolioImage from "../../assets/PortfolioPage/porfolioHero.svg";
 import Portfolio from "../../pages-component/HomePage/Portfolio";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay, Pagination, Scrollbar, Navigation } from "swiper ";
+import "swiper/css";
+import "swiper/css/autoplay";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import "swiper/css/scrollbar";
 import ContactForm from "../../common component/ContactForm";
 import MainSubHeading from "../../common component/MainSubHeading";
 import vid from "../../assets/vid.mp4";
@@ -19,7 +26,6 @@ function PortfolioHero() {
     /* Optional options */
     threshold: 0.5,
   });
-
   const scrollToBottom = () => {
     const windowHeight = window.innerHeight;
     const bodyHeight = document.body.scrollHeight;
@@ -29,9 +35,7 @@ function PortfolioHero() {
       behavior: "smooth",
     });
   };
-
   const heroRef = useRef();
-
   const headerFunc = (entries, observer) => {
     setIsIntersectingHero(entries[0].isIntersecting);
   };
@@ -122,31 +126,62 @@ function PortfolioHero() {
         </video> */}
         {/* __________________________________________________________________________________________________ */}
         {/* <div className="md:hidden"><CustomSelect /></div> */}
-        <div>
-          {portfolioData.map((data, index) => (
+        <div className="max-w-[1440px] w-[100%] px-10">
+          {portfolioData?.map((data, index) => (
             <div
               key={index}
-              className={`md:flex gap-20 items-start rounded-br-[100px] mt-10 py-10 hover:bg-slate-100 lg:hover:bg-white  ${
-                index % 2 === 0 ? "flex-row" : "flex-row-reverse"
-              }`}
+              className={`${
+                index % 2 == 0 ? "flex-row" : "flex-row-reverse"
+              } md:flex rounded-br-[100px] md:gap-10   mb-14`}
             >
-              <div className="">
-                <img className="mx-5 " src={data.img} />
+              <div className="w-[100%] md:w-[50%]">
+                <img
+                  className="mt-3 mb-7 rounded-lg "
+                  width={"100%"}
+                  alt="portfoliocard"
+                  src={data.imgPortfolio}
+                />
+                {/* <Swiper
+                  modules={[Navigation, Pagination, Scrollbar, Autoplay]}
+                  spaceBetween={50}
+                  slidesPerView={1}
+                  loop={true}
+                  pagination={{ clickable: true }}
+                  draggable={true}
+                  width={500}
+                >
+                  {data?.img?.map((img, index) => (
+                    <SwiperSlide
+                      key={index}
+                      style={{ "& .Swiper__slide": { width: "0%" } }}
+                    >
+                      <img
+                        className="mt-3 mb-7 rounded-lg "
+                        width={"100%"}
+                        alt="portfoliocard"
+                        src={img}
+                      />
+                    </SwiperSlide>
+                  ))}
+                </Swiper> */}
               </div>
-              <div className="max-w-[500px]">
-                <div className="flex items-center mb-2 gap-6">
-                  <img width={40} src={data.icon} alt="portfoliocard" />
-                  <h4 className="text-left font-[600] text-[18px]">
+              <div className="w-[100%] md:w-[50%]">
+                <div className="flex items-center ">
+                  <img
+                    className="h-[50px]"
+                    src={data.icon}
+                    alt="portfoliocard"
+                  />
+                  <h4 className="text-left font-[600] text-[20px]">
                     {data.title}
                   </h4>
                 </div>
-
                 <p>{data.description}</p>
-                <div className="flex mt-10 gap-5">
-                  <button className="font-[] text-[]">Read more</button>
-                  <img src={chevronRight} alt="" />
-                </div>
               </div>
+              {/* <div className="flex mt-10 gap-5">
+            <button className="font-[] text-[]">Read more</button>
+            <img src={chevronRight} alt="" />
+          </div> */}
             </div>
           ))}
         </div>
@@ -154,7 +189,7 @@ function PortfolioHero() {
           {VidPortfolioData.map((data, index) => (
             <div
               key={index}
-              className={`mx-5 px-5 md:px-0 md:mx-0 md:flex items-center gap-20 md:items-start justify-center rounded-br-[100px]  hover:bg-slate-100 lg:hover:bg-white  ${
+              className={`mx-5 px-5 md:px-0 md:mx-0 md:flex items-center gap-20 md:items-start justify-center rounded-br-[100px]    ${
                 index % 2 === 0 ? "flex-row-reverse" : "flex-row-"
               }`}
             >

@@ -1,27 +1,56 @@
-import React, { useState } from "react";
+import React from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay, Pagination, Scrollbar, Navigation } from "swiper";
+import "swiper/css";
+import "swiper/css/autoplay";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import "swiper/css/scrollbar";
 import chevronRight from "../../../assets/icons/Vector.svg";
 import { portfolioData } from "../../../constant/PortfolioPageData";
 const PortfolioCard = () => {
   return (
-    <div className="flex justify-center items-center gap-0 lg:gap-16 flex-wrap ">
-      {/* {portfolioData.map((data, index) => (
-        <div
-          key={index}
-          className="max-w-[408px] rounded-br-[100px] mt-10 py-10 px-10 hover:bg-[#DAE2EA]"
-        >
-          <div className="flex items-center gap-6">
-            <img width={40} src={data.icon} alt="portfoliocard" />
-            <h4 className="text-left font-[500] text-[18px]">{data.title}</h4>
+    <div className="grid grid-cols-1  sm:grid-cols-2 mt-10">
+      {portfolioData?.map((data, index) => (
+        <div key={index} className="max-w-[607px] rounded-br-[100px]  mb-14">
+          <div className="flex items-center ">
+            <img
+              className="h-[50px] mx-4"
+              src={data.icon}
+              alt="portfoliocard"
+            />
+            <h4 className="text-left font-[600] text-[20px]">{data.title}</h4>
           </div>
-          <img className="my-8" width={"100%"} src={data.img} />
+          <Swiper
+            modules={[Navigation, Pagination, Scrollbar, Autoplay]}
+            spaceBetween={50}
+            slidesPerView={1}
+            loop={true}
+            pagination={{ clickable: true }}
+            draggable={true}
+            width={500}
+          >
+            {data?.img?.map((img, index) => (
+              <SwiperSlide
+                key={index}
+                style={{ "& .Swiper__slide": { width: "0%" } }}
+              >
+                <img
+                  className="mt-3 mb-7 rounded-lg "
+                  width={"100%"}
+                  alt="portfoliocard"
+                  src={img}
+                />
+              </SwiperSlide>
+            ))}
+          </Swiper>
           <p>{data.description}</p>
-          <div className="flex mt-10 gap-5">
+          {/* <div className="flex mt-10 gap-5">
             <button className="font-[] text-[]">Read more</button>
             <img src={chevronRight} alt="" />
-          </div>
+          </div> */}
         </div>
-      ))} */}
-
+      ))}
       {/* {cardData.map((data, index) => (
         <div
           key={index}

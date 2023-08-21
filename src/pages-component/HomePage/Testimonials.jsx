@@ -18,11 +18,6 @@ import TestimonialCard from "./TestimonialsCards/TestimonialCard";
 import bgLines from "../../assets/Images/abstracts.png";
 import bglines2 from "../../assets/Images/abstracts.svg";
 import { TestimonialData } from "../../constant/Data";
-
-import React, { useRef, useState } from "react";
-// Import Swiper React components
-
-// Import Swiper styles
 import "swiper/css";
 import "swiper/css/effect-coverflow";
 import "swiper/css/pagination";
@@ -80,7 +75,7 @@ const Testimonials = () => {
                     },
                   }}
                   draggable={true}
-                  autoplay={{ delay: 1000 }}
+                  autoplay={{ delay: 2000 }}
                   modules={[
                     Navigation,
                     EffectCoverflow,

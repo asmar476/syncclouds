@@ -31,11 +31,10 @@ function HomePorfolio({ category, arr, projName, projDesc, index }) {
           <span className="font-[600] text-[14px]">Service:</span> {category}
         </h1>
         <h1 className="text-[12px] ">
-          <span className="font-[600] text-[14px]">Project Name:</span>{" "}
+          <span className="font-[600] text-[14px]">Project Name:</span>
           {projName}
-        </h1>{" "}
+        </h1>
         <p className="text-body text-[12px]">
-          {" "}
           <span className="text-black font-[600] text-[14px]">
             Description:
           </span>{" "}

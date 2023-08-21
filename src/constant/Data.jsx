@@ -4,7 +4,7 @@ import UIUX from "../assets/SC Icons SVG/User Experience & Design.svg";
 import dm from "../assets/SC Icons SVG/Digital Marketing.svg";
 import cloud from "../assets/SC Icons SVG/Clouds Devops.svg";
 import cs from "../assets/SC Icons SVG/cyber Security-01.svg";
-import testimonial from "../assets/Images/Vector.svg";
+import testimonial from "../assets/Images/testimonial-1.png";
 
 import webWhite from "../assets/SC White Icons/Web App DevelopmentW.svg";
 import mobWhite from "../assets/SC White Icons/Mobile App DevelopmentW.svg";
@@ -25,10 +25,10 @@ import image2 from "../assets/Services/WhyChooseSC/image2.svg";
 import image3 from "../assets/Services/WhyChooseSC/image3.svg";
 import image4 from "../assets/Services/WhyChooseSC/image4.svg";
 
-import kia from "../assets/Images/kia.svg";
-import tesla from "../assets/Images/Tesla,_Inc.-Logo.wine 2.svg";
-import Amazon from "../assets/Images/Amazon_(company)-Logo.wine 1.svg";
-import cocaCola from "../assets/Images/coca-cola-logo-svgrepo-com 2.svg";
+import kia from "../assets/Images/ourClients/appoint pal.webp";
+import tesla from "../assets/Images/ourClients/fboLogo.png";
+import Amazon from "../assets/Images/ourClients/logo-light.png";
+import cocaCola from "../assets/Images/ourClients/logo.png";
 // import kia from "../assets/Images/Kia_Motors-Logo.wine 1.svg";
 // import tesla from "../assets/Images/Tesla,_Inc.-Logo.wine 1.svg";
 // import Amazon from "../assets/Images/Amazone.svg";
@@ -49,68 +49,37 @@ export const TestimonialData = [
   {
     profileImage: testimonial,
     summary:
-      "Everything melancholy uncommonly but solicitude inhabiting projection off. Connection stimulated estimating long. departure ourselves very extreme.",
-    name: "Asmar Tamjid",
+      "SyncClouds has an excellent team  and an elite professional. They are great at what they do and easy to communicate with. They were able to gather requirements and expectations and deliver effective solutions. I enjoyed working with them and would work with him again in the future when the opportunity presents itself.",
+    name: " Adnan",
     rating: 5,
-    designation: "React js dev",
   },
   {
     profileImage: testimonial,
     summary:
-      "Everything melancholy uncommonly but solicitude inhabiting projection off. Connection stimulated estimating long. departure ourselves very extreme.",
-    name: "Aqdas",
+      "The team was outstanding in every sense of the word. They have excellent communication skills, meet deadlines and expectations, and provide overall quality with their expertise. It was a great experience working with Azhar and his team. I believe it is a huge asset for any company to have him on their project. Can’t say enough good things other than the fact that we’re very happy that we had the opportunity to meet and work with them!",
+    name: "Mohammad Shafique",
     rating: 5,
-
-    designation: "React Native dev",
   },
   {
     profileImage: testimonial,
     summary:
-      "Everything melancholy uncommonly but solicitude inhabiting projection off. Connection stimulated estimating long. departure ourselves very extreme.",
-    name: "Azmat",
+      "Syncclouds listens and produces results exactly how you want things. Always fast and professional. We have used them twice now and are so happy with the results. The team is wonderful to work with.",
+    name: "Rebecca Lora",
     rating: 5,
-    designation: "React js dev",
   },
   {
     profileImage: testimonial,
     summary:
-      "Everything melancholy uncommonly but solicitude inhabiting projection off. Connection stimulated estimating long. departure ourselves very extreme.",
-    name: "Maria",
-    rating: 4,
-    designation: "React js dev",
-  },
-  {
-    profileImage: testimonial,
-    summary:
-      "Everything melancholy uncommonly but solicitude inhabiting projection off. Connection stimulated estimating long. departure ourselves very extreme.",
-    name: "Jawad Shah",
+      "Wouldn't hesitate to use Syncclouds again, everyone on their team was amazing, with exceptional quality provided!",
+    name: "William Borgen",
     rating: 5,
-    designation: "DJ dev",
   },
   {
     profileImage: testimonial,
     summary:
-      "Everything melancholy uncommonly but solicitude inhabiting projection off. Connection stimulated estimating long. departure ourselves very extreme.",
-    name: "Anam Razzaq",
+      "I highly recommend Syncclouds, and I cannot say that enough - I worked with him on a large Django project. The team went above and beyond to deliver the best possible result. Furthermore they made a complex project extremely simple with how he was able to break down each aspect of the project into simple, tangible parts. The quality of communication was the best I have received to this day when working on projects. The intricate details on the scope of work was thoughtfully strategized by Azhar and his team to ensure that no detail went without scrutiny in making the end product great. He is very easy to talk with, and certainly worth any investment, from a professional and friendly aspect. Thanks again Azhar!",
+    name: "Ian Luhm , CEO@StableForecast",
     rating: 5,
-
-    designation: "SQA",
-  },
-  {
-    profileImage: testimonial,
-    summary:
-      "Everything melancholy uncommonly but solicitude inhabiting projection off. Connection stimulated estimating long. departure ourselves very extreme.",
-    name: "Uzair Javid",
-    rating: 5,
-    designation: "HR",
-  },
-  {
-    profileImage: testimonial,
-    summary:
-      "Everything melancholy uncommonly but solicitude inhabiting projection off. Connection stimulated estimating long. departure ourselves very extreme.",
-    name: "Azhar Mehmood",
-    rating: 4,
-    designation: "CEO",
   },
 ];
 
@@ -248,4 +217,3 @@ export const servicesCatalog = [
     img: t2,
   },
 ];
-
