@@ -1,53 +1,149 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import arrowRight from "../../assets/icons/blue-arrow-right.svg";
 import { servicesCatalog } from "../../constant/Data";
+import {
+  BsChevronBarDown,
+  BsChevronDown,
+  BsWindowDesktop,
+} from "react-icons/bs";
+
 function EntireCatalog() {
-  const [activeTab, setActiveTab] = useState(0);
+  const [activeTab, setActiveTab] = useState(1);
+  const [windowWidth, setWindowwWidth] = useState(false);
+  const [services, setServices] = useState(
+    servicesCatalog.map((serv) => {
+      return { id: serv.id, title: serv.title };
+    })
+  );
+  const [showMore, setShowMore] = useState(false);
+  const [moreMenu, setMoreMenu] = useState([]);
+
+  const prevWidth = window.innerWidth;
+  const catalogmenu = window.addEventListener("scroll", function () {
+    const lessData = servicesCatalog.map((serv) => {
+      return { id: serv.id, title: serv.title };
+    });
+    if (
+      prevWidth > window.innerWidth &&
+      window.innerWidth <= 500 &&
+      window.innerWidth > 400
+    ) {
+      const resultSer = lessData.splice(0, 4);
+      const resultMore = lessData.splice(lessData.length - 1);
+      setMoreMenu(resultMore);
+      setServices(resultSer);
+      setWindowwWidth(true);
+    } else if (
+      prevWidth > window.innerWidth &&
+      window.innerWidth <= 400 &&
+      window.innerWidth > 300
+    ) {
+      const resultSer = lessData.splice(0, 3);
+      const resultMore = lessData.splice(lessData.length - 2, lessData.length);
+      setServices(resultSer);
+      setMoreMenu(resultMore);
+      setWindowwWidth(true);
+    }
+    if (
+      prevWidth > window.innerWidth &&
+      window.innerWidth <= 600 &&
+      window.innerWidth > 500
+    ) {
+      const resultSer = lessData.splice(0, 5);
+      const resultMore = [];
+      setServices(resultSer);
+      setMoreMenu(resultMore);
+      setWindowwWidth(false);
+    }
+  });
+  const moreRef = useRef();
+
+  const closedMoreMenu = (e) => {
+    if (moreRef.current && !moreRef.current.contains(e.target)) {
+      setShowMore(false);
+    }
+  };
+
+  document.addEventListener("click", closedMoreMenu);
+
   return (
-    <div className=" flex flex-col items-center mt-16">
+    <div className=" flex flex-col items-center mt-16 w-full max-w-[1200px] xl:max-w-[1400px] px-10 mx-auto">
       <div className="mb-8 space-y-3">
         <h2 className="font-[600] text-center text-[18px] md:text-[25px]">
           Entire Catalog of Services
         </h2>
-        <p className="text-center px-4  lg:w-[923px] text-body">
+        <p className="text-center   lg:w-[923px] text-body">
           Our service offerings include system integration, complete lifecycle
           management of custom products, apps, and services, and strategic IT
           and technology consulting.
         </p>
       </div>
-      <div className="w-full text-[11px] sm:text-[14px] md:text-[18px]  pt-3 bg-gray-200  flex  justify-between max-w-[900px] px-3">
-        {/* <div className="w-full text-[11px] sm:text-[14px] md:text-[18px] bg-gray-100 pt-3 flex flex-wrap justify-center gap-2.5 md:space-x-10 lg:space-x-20 "> */}
-        {servicesCatalog.map((service, index) => (
+      <div className="w-full text-[11px] sm:text-[14px] md:text-[18px]  pt-3 bg-gray-200  flex flex-wrap justify-between max-w-[900px] px-3 h-[35px] md:h-[50px]">
+        {services.map((service, index) => (
           <div
-            key={index}
-            onClick={() => setActiveTab(index)}
-            className={`text-[10px] sm:[] md:text-[16px] cursor-pointer px-[2px] ${
-              activeTab === index
-                ? "font-semibold transition-duration-3s pb-3 border-b-2 border-primary"
+            key={service.id}
+            onClick={() => {
+              setActiveTab(service.id);
+              setShowMore(false);
+            }}
+            className={`text-[10px] sm:[] md:text-[16px] cursor-pointer px-[2px]  ${
+              activeTab === service.id
+                ? "font-semibold transition-duration-3s  border-b-2 border-primary"
                 : ""
             }`}
           >
             {service.title}
           </div>
         ))}
+
+        {windowWidth && (
+          <div className="relative" ref={moreRef}>
+            <div
+              onClick={() => {
+                setShowMore(!showMore);
+              }}
+              className="text-[10px] flex items-center gap-1"
+            >
+              <p> More </p>
+              <BsChevronDown />
+            </div>
+            {showMore && moreMenu.length !== 0 && (
+              <div className="  min-w-[80px] rounded bg-gray-300 absolute top-[20px] right-0 py-2 px-1">
+                {moreMenu.map((more, index) => (
+                  <div
+                    key={more.id}
+                    onClick={() => {
+                      setActiveTab(more.id);
+                    }}
+                    className={`text-[10px] sm:[] md:text-[16px] cursor-pointer px-[2px] py-[3px] ${
+                      activeTab === more.id
+                        ? "font-semibold transition-duration-3s border-b-2 border-primary p-[3px] "
+                        : ""
+                    }`}
+                  >
+                    <p>{more.title}</p>
+                  </div>
+                ))}
+              </div>
+            )}
+          </div>
+        )}
       </div>
-      <div className="mt-8 md:mt-0 px-3 max-w-[900px]">
+      <div className="mt-8 md:mt-0  max-w-[900px]">
         {servicesCatalog.map((service, index) => (
           <div
             key={index}
-            className={`md:flex-row flex-col flex items-center justify-between ${
-              activeTab == index ? "block" : "hidden"
+            className={`md:flex-row flex-col flex items-center justify-between text-center md:text-left ${
+              activeTab == service.id ? "block" : "hidden"
             }`}
           >
             <div className=" md:w-[50%]">
-              {" "}
               <h3 className="text-xl font-bold mb-2 text-primary">
                 {service.title}
               </h3>
               <p className="mb-4 text-[16px]">{service.content}</p>
             </div>
             <div>
-              {" "}
               <img
                 src={service.img}
                 alt={service.title}
@@ -61,60 +157,4 @@ function EntireCatalog() {
   );
 }
 
-{
-  /* <div className='flex items-center justify-center'>
-          {cardsData.map((card, index) => (
-          <div key={index} className='h-[300px] w-full md:w-1/2 xl:w-1/3 p-4'>
-            <div className='bg-white rounded-lg shadow-lg p-6'>
-              <h3 className='text-lg font-semibold mb-4'>{card.title}</h3>
-              <p className='text-gray-700'>{card.content}</p>
-            </div>
-          </div>
-        ))}
-        </div> */
-}
-
-{
-  /* <div className="flex flex-col items-center justify-center">
-          {" "}
-          <div className="card  grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {cardsData.map((card, index) => (
-              <div
-                key={index}
-                className={`w-[350px] mx-1 p-5 rounded shadow-lg hover:text-white card-container ${
-                  isHovered && cardIndex === index
-                    ? "hover:bg-[#2261A2]"
-                    : "bg-white"
-                }`}
-                onMouseEnter={() => {
-                  setIsHovered(true);
-                  setCardIndex(index);
-                }}
-                onMouseLeave={() => {
-                  setIsHovered(false);
-                  setCardIndex("");
-                }}
-              >
-                <div className=" group inline-block">
-                  {/* <img
-                  src={
-                    isHovered && cardIndex === index
-                      ? card.whiteIcon
-                      : card.icon
-                  }
-                  alt={card.title}
-                  width='40px'
-                /> */
-}
-{
-  /* </div>
-                <h3 className="font-semibold  md:text-[18px] mb-2">
-                  {card.title}
-                </h3>
-                <p className="text-[14px]">{card.content}</p>
-              </div>
-            ))}
-          </div> 
-        </div> */
-}
 export default EntireCatalog;

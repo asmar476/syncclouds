@@ -10,13 +10,10 @@ import ToolsAndTechnologies from "../common component/ToolsAndTechnologies";
 import HomeFaq from "../pages-component/HomePage/HomeFaq";
 import arrowUp from "../assets/icons/black_arrow-up.svg";
 import arrowDown from "../assets/icons/black-arrow-down.svg";
-
-import Particales from "../component/ParticalesOverlay";
-
 import { useInView } from "react-intersection-observer";
 import { useRef, useState } from "react";
 import Header from "../layout/Header";
-import { Helmet } from "react-helmet-async";
+import Halmet from "../common component/Halmet";
 const Home = () => {
   const [isIntersectingHero, setIsIntersectingHero] = useState(true);
   const { ref, inView, entry } = useInView({
@@ -45,35 +42,34 @@ const Home = () => {
   return (
     <div className="">
       <Layout>
-        <Helmet>
-          <title>Sync Clouds: Software Development Company</title>
-          <meta
-            name="description"
-            content="Elevate your projects with top-tier software development services. Discover new horizons of digital transformation. Learn more and get started today!"
-          />
-        </Helmet>
+        <Halmet
+          title={"SyncClouds: Software Development Company"}
+          description={
+            "Elevate your projects with top-tier software development services. Discover new horizons of digital transformation. Learn more and get started today!"
+          }
+        />
         {inView ? (
-          <div className=" flex items-center justify-center right-[2%] bottom-[5%] fixed z-[100]   h-[90px]  w-[90px]  rounded-full">
+          <div className=" flex items-center justify-center -right-6 lg:right-[2%] bottom-[5%] fixed z-[100]   h-[90px]  w-[90px]  rounded-full">
             <img
               onClick={scrollToBottom}
-              className="w-[25px] sm:w-[35px] scroll-img cursor-pointer  fixed z-[100]"
+              className="scroll-img cursor-pointer  fixed z-[100] lg:w-[40px]"
               src={arrowDown}
               alt="arrow up"
             />
-            <p className="scroll-text text-[9px] font-bold absolute -bottom-3  text-black">
-              Scroll to Bottom
+            <p className="hidden lg:block scroll-text text-[12px] font-bold absolute bottom-5  text-black">
+              Scroll Down
             </p>
           </div>
         ) : (
-          <div className=" flex items-center justify-center right-[2%] bottom-[0%] fixed z-[100]   h-[90px]  w-[90px]  rounded-full">
-            <p className=" hidden sm:block scroll-text text-[10px] font-bold absolute top-0 text-black">
+          <div className="flex items-center justify-center -right-6 lg:right-[2%] bottom-[9%] fixed z-[100]   h-[90px]  w-[90px]  rounded-full">
+            <p className="hidden lg:block scroll-text text-[12px] font-bold absolute top-0 text-black">
               Scroll To Top
             </p>
             <img
               onClick={() => {
                 window.scrollTo({ top: 0, behavior: "smooth" });
               }}
-              className="w-[25px] md:w-[35px] scroll-img-2 cursor-pointer  fixed z-[100] bottom-[85px]"
+              className="scroll-img-2 cursor-pointer  fixed z-[100] lg:w-[40px]"
               src={arrowUp}
               alt="arrow up"
             />

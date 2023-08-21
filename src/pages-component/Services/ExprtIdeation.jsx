@@ -13,39 +13,41 @@ const data = [
 ];
 const ExprtIdeation = () => {
   return (
-    <div className="pt-8 bg-gradient-to-r from-gradientBlueDark to-gradientBlueLight">
-      <div className=" mt-10 ">
-        <h2 className="text-[20px] text-center md:text-[25.89px] font-[600] leading-[30px] md:leading-[38.83px] text-white mt-10">
-          Expert Ideation At Positions
-        </h2>
-      </div>
-      <div className="grid grid-cols-2 lg:grid-cols-4  my-10">
-        {data.map((position, index) => (
-          <div
-            key={index}
-            className="flex items-center justify-between  space-y-[10px] flex-col my-10"
-          >
-            <img width={67} src={position.icon} alt={`icon ${index}`} />
-            <h3 className="text-white text-[25.89px] font-[600] leading-[38.83px]">
-              <CountUp
-                start={position.start}
-                end={position.end}
-                redraw={true}
-                duration={5}
-              >
-                {({ countUpRef, start }) => (
-                  <VisibilitySensor onChange={start} delayedCall>
-                    <span ref={countUpRef} />
-                  </VisibilitySensor>
-                )}
-              </CountUp>
-              +
-            </h3>
-            <p className="text-[12px] sm:text-[16px] font-[600] leading-[24px] text-white">
-              {position.title}
-            </p>
-          </div>
-        ))}
+    <div className="pt-8 bg-gradient-to-r from-gradientBlueDark to-gradientBlueLight ">
+      <div className="w-full max-w-[1200px] xl:max-w-[1400px] px-10 mx-auto">
+        <div className=" mt-10 ">
+          <h2 className="text-[20px] text-center md:text-[25.89px] font-[600] leading-[30px] md:leading-[38.83px] text-white my-10">
+            Expert Ideation At Positions
+          </h2>
+        </div>
+        <div className="grid grid-cols-2  lg:grid-cols-4 gap-x-3 gap-y-10  md:my-10 py-5 md:py-10 ">
+          {data.map((position, index) => (
+            <div
+              key={index}
+              className="flex items-center justify-between  space-y-[10px] flex-col   "
+            >
+              <img width={67} src={position.icon} alt={`icon ${index}`} />
+              <h3 className="text-white text-[25.89px] font-[600] leading-[38.83px]">
+                <CountUp
+                  start={position.start}
+                  end={position.end}
+                  redraw={true}
+                  duration={5}
+                >
+                  {({ countUpRef, start }) => (
+                    <VisibilitySensor onChange={start} delayedCall>
+                      <span ref={countUpRef} />
+                    </VisibilitySensor>
+                  )}
+                </CountUp>
+                +
+              </h3>
+              <p className="text-center text-[12px] sm:text-[16px] font-[600] leading-[24px] text-white">
+                {position.title}
+              </p>
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );

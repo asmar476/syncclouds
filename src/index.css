@@ -144,10 +144,10 @@ body {
 
 @keyframes scroll-image {
   0% {
-    transform: translateY(25px);
+    transform: translateY(-30px);
   }
   100% {
-    transform: translateY(10px);
+    transform: translateY(-7.5px);
   }
 }
 

@@ -11,11 +11,11 @@ import { clientLogos } from "../constant/Data";
 const OurClients = () => {
   return (
     <div className="">
-      <div className="max-w-[1200px] xl:max-w-[1440px] w-[100%] mx-auto  px-10  sm:px-20 my-10">
+      <div className="w-full max-w-[1200px] xl:max-w-[1440px]  mx-auto  px-10  my-10">
         <div className="flex flex-col items-center">
           <MainSubHeading text={"Our "} gradientText={"Clients"} ml={"ml-2"} />
           <p
-            className={`w-[327px] md:w-[495px] text-center text-[14px] md:text-[18px]  font-[500] `}
+            className={` md:w-[495px] text-center text-[14px] md:text-[18px]  font-[500] `}
           >
             We have been working with some Fortune 500+ clients
           </p>

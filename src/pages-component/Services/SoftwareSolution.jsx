@@ -13,7 +13,7 @@ const SoftwareSolution = () => {
         src={bgImage}
         alt="imge"
       />
-      <div className=" flex flex-col items-center justify-center container mx-auto px-10  mb-20">
+      <div className=" flex flex-col items-center justify-center container mx-auto mb-10 xl:mb-20">
         <div className="flex flex-col items-center justify-center">
           <MainSubHeading
             text={"Our Experts Craft Custom "}
@@ -28,7 +28,7 @@ const SoftwareSolution = () => {
           {softwareSolutionData.map((data, index) => (
             <div
               key={index}
-              className=" bg-white mx-3 w-[307px] sm:w-[408px] flex items-center justify-center gap-5 flex-col box-shadow  pb-5 mb-5"
+              className="mb-5 bg-white lg:mx-3 w-full sm:w-[408px] flex items-center justify-center gap-5 flex-col box-shadow  pb-5 lg:mb-5"
             >
               <img src={data.img} width={98} alt="icon" />
               <h1 className="font-[600] text-[18px] gradient-text">

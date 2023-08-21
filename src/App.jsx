@@ -12,6 +12,7 @@ import Technologies from "./pages/Technologies";
 import WebDevelopment from "./pages/WebDevelopment";
 
 import { HelmetProvider } from "react-helmet-async";
+import Halmet from "./common component/Halmet";
 
 export const maintenancePage = () => {
   return <h1>Under Maintenance</h1>;
@@ -20,6 +21,7 @@ const App = () => {
   return (
     <div>
       <HelmetProvider>
+        <Halmet />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
