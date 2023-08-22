@@ -34,9 +34,7 @@ function Industries() {
     threshold: 0,
   };
   const observer = new IntersectionObserver(headerFunc, options);
-
   heroRef?.current && observer.observe(heroRef?.current);
-
   return (
     <div>
       <Layout>
@@ -76,7 +74,6 @@ function Industries() {
         {!isIntersectingHero ? <Header fixed={true} /> : <Header />}
         <div ref={ref}>
           <div ref={heroRef}>
-            {" "}
             <IndustriesHero />
           </div>
         </div>

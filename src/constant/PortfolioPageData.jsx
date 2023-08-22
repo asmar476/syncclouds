@@ -16,34 +16,36 @@ export const portfolioData = [
     icon: mob,
     title: "IOS App Development",
     imgPortfolio: cardImage,
+    projName: "My Quran",
     img: QuranAppProject,
+    link: "https://play.google.com/store/apps/details?id=com.my_quran",
     description:
       "Listen and learn from well-known reciters, My Quran provide audio from seven top reciters. The translation available for English, Indonesian, Urdu, and simple Chinese.",
   },
-  {
-    icon: UIUX,
-    title: "UIUX  Designing",
-    imgPortfolio: cardImage,
-    img: project1,
-    description:
-      "Great design can speak to your users in thousands of ways that you can't. Get magnetic UX/UI design followed by a robust UX strategy to grab your user’s attention instantly.",
-  },
-  {
-    icon: web,
-    title: "Web & Mobile Applications",
-    imgPortfolio: cardImage,
-    img: project1,
-    description:
-      "Great design can speak to your users in thousands of ways that you can't. Get magnetic UX/UI design followed by a robust UX strategy to grab your user’s attention instantly.",
-  },
-  {
-    icon: web,
-    title: "Web & Mobile Applications",
-    imgPortfolio: cardImage,
-    img: project1,
-    description:
-      "Great design can speak to your users in thousands of ways that you can't. Get magnetic UX/UI design followed by a robust UX strategy to grab your user’s attention instantly.",
-  },
+  // {
+  //   icon: UIUX,
+  //   title: "UIUX  Designing",
+  //   imgPortfolio: cardImage,
+  //   img: project1,
+  //   description:
+  //     "Great design can speak to your users in thousands of ways that you can't. Get magnetic UX/UI design followed by a robust UX strategy to grab your user’s attention instantly.",
+  // },
+  // {
+  //   icon: web,
+  //   title: "Web & Mobile Applications",
+  //   imgPortfolio: cardImage,
+  //   img: project1,
+  //   description:
+  //     "Great design can speak to your users in thousands of ways that you can't. Get magnetic UX/UI design followed by a robust UX strategy to grab your user’s attention instantly.",
+  // },
+  // {
+  //   icon: web,
+  //   title: "Web & Mobile Applications",
+  //   imgPortfolio: cardImage,
+  //   img: project1,
+  //   description:
+  //     "Great design can speak to your users in thousands of ways that you can't. Get magnetic UX/UI design followed by a robust UX strategy to grab your user’s attention instantly.",
+  // },
 ];
 export const portfolioPageData = [
   {

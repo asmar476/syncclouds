@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import servicesIllustration from "../../assets/Services/servicesIllustration.svg";
 import SoftwareSolution from "./SoftwareSolution";
 import Calendalycomp from "../../common component/CalendlyComp";
+import webBg from "../../assets/Services/OBJECTS.svg";
+import mobBg from "../../assets/Services/OBJECTS.svg";
 function ServicesHero() {
   const [isOpen, setIsOpen] = useState(false);
   const closeCalendaly = () => {
@@ -9,8 +11,23 @@ function ServicesHero() {
   };
   return (
     <>
-      <div className=" relative w-full max-w-[1200px] xl:max-w-[1450px] px-10 width-[100%] pt-10 lg:pt-20 mx-auto">
-        <div className="">
+      <div className=" relative ">
+        <img
+          className="hidden sm:block w-full md:[80%] xl:h-[100%] z-[-1] absolute"
+          src={webBg}
+          alt=""
+        />{" "}
+        <img
+          className="sm:hidden w-full h-[40%] z-[-1] absolute"
+          src={mobBg}
+          alt=""
+        />{" "}
+        <div className=" w-full max-w-[1200px] xl:max-w-[1450px] px-10 width-[100%] pt-10 lg:pt-20 mx-auto">
+          {/* <img
+            className="hidden md:block w-[] absolute z-[-1]"
+            src={webBg}
+            alt="services hero section bg image"
+          /> */}
           <div className="  flex  flex-col  items-center justify-between  space-y-10 lg:space-y-0 lg:flex-row">
             <div className="space-y-10 text-center w-full  flex-1 md:text-left ">
               <h1 className="text-[25px] md:text-[35px] xl:text-[41px] font-[700]  xl:leading-[65px]">

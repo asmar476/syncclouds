@@ -1,5 +1,4 @@
-import React, { useState, useRef } from "react";
-
+import React, { useState } from "react";
 import { offerData } from "../../constant/Data";
 import MainSubHeading from "../../common component/MainSubHeading";
 import InnerPageHeading from "../../common component/InnerPageHeading";
@@ -32,7 +31,9 @@ const style = {
 const OfferCard = () => {
   const [hover, setHover] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
-
+  const handleSlideChange = (swiper) => {
+    setCurrentIndex(swiper.activeIndex);
+  };
   return (
     <>
       <div style={style} className="relative ">

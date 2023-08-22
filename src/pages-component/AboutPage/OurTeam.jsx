@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-
 import TeamMemberData from "../../constant/TeamMemberData";
 import Carousel from "react-elastic-carousel";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -50,7 +49,7 @@ const OurTeam = () => {
           }}
           loop={true}
           draggable={true}
-          autoplay={{ delay: 2000 }}
+          autoplay={{ delay: 3000 }}
         >
           {TeamMemberData.map((data, index) => (
             <SwiperSlide id={index}>

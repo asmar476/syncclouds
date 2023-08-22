@@ -25,14 +25,58 @@ import image2 from "../assets/Services/WhyChooseSC/image2.svg";
 import image3 from "../assets/Services/WhyChooseSC/image3.svg";
 import image4 from "../assets/Services/WhyChooseSC/image4.svg";
 
-import kia from "../assets/Images/ourClients/appoint pal.webp";
-import tesla from "../assets/Images/ourClients/fboLogo.png";
-import Amazon from "../assets/Images/ourClients/logo-light.png";
-import cocaCola from "../assets/Images/ourClients/logo.png";
+import kia from "../assets/Images/ourClients/appointpal-01.svg";
+import tesla from "../assets/Images/ourClients/FBO Schedule.svg";
+import Amazon from "../assets/Images/ourClients/stable forecast-01.svg";
+import cocaCola from "../assets/Images/ourClients/UPLIT-02.svg";
 // import kia from "../assets/Images/Kia_Motors-Logo.wine 1.svg";
 // import tesla from "../assets/Images/Tesla,_Inc.-Logo.wine 1.svg";
 // import Amazon from "../assets/Images/Amazone.svg";
 // import cocaCola from "../assets/Images/coca-cola-logo-svgrepo-com 1.svg";
+import fb from "../assets/icons/fb.svg";
+import twitter from "../assets/icons/twiter.svg";
+import insta from "../assets/icons/insta.svg";
+import skype from "../assets/icons/skype.svg";
+import linkedin from "../assets/icons/linkedin.svg";
+import Medium from "../assets/icons/medium-icon-svgrepo-com 1.svg";
+export const socialMediaLinks = [
+  {
+    name: "Twitter",
+    url: "https://twitter.com/syncclouds",
+    icon: twitter,
+    alt: "Twitter",
+  },
+  {
+    name: "Facebook",
+    url: "https://facebook.com/syncclouds",
+    icon: fb,
+    alt: "Facebook",
+  },
+  {
+    name: "Instagram",
+    url: "https://www.instagram.com/syncclouds/",
+    icon: insta,
+    alt: "Instagram",
+  },
+  {
+    name: "Skype",
+    url: "https://join.skype.com/invite/x12P8vdREjqJ",
+    icon: skype,
+    alt: "Skype",
+  },
+  {
+    name: "LinkedIn",
+    url: "https://www.linkedin.com/company/syncclouds/mycompany/",
+    icon: linkedin,
+    alt: "LinkedIn",
+  },
+  {
+    name: "Medium",
+    url: "https://medium.com/@synccloudstechnologies",
+    icon: Medium,
+    alt: "Medium",
+  },
+];
 
 export const clientLogos = [
   { id: 1, src: kia },

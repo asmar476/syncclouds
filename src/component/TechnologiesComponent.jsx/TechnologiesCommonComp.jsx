@@ -38,7 +38,12 @@ function TechnologiesCommonComp({ Category, techArray }) {
             {" "}
             {techArray.map((logo, index) => (
               <div key={index}>
-                <img className="w-[30px] sm:w-[40px]" src={logo.image} alt="" />
+                <img
+                  title={logo.title}
+                  className="w-[30px] sm:w-[40px]"
+                  src={logo.image}
+                  alt=""
+                />
               </div>
             ))}
           </div>

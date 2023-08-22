@@ -8,14 +8,15 @@ import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 import chevronRight from "../../../assets/icons/Vector.svg";
 import { portfolioData } from "../../../constant/PortfolioPageData";
+import { Link } from "react-router-dom";
 const PortfolioCard = () => {
   return (
-    <div className="grid grid-cols-1  sm:grid-cols-2 mt-10">
+    <div className="flex items-center justify-center mt-10">
       {portfolioData?.map((data, index) => (
-        <div key={index} className="max-w-[607px] rounded-br-[100px]  mb-14">
+        <div key={index} className="max-w-[550px] rounded-br-[100px]  mb-14">
           <div className="flex items-center ">
             <img
-              className="h-[50px] mx-4"
+              className="h-[50px] mr-4"
               src={data.icon}
               alt="portfoliocard"
             />
@@ -29,22 +30,28 @@ const PortfolioCard = () => {
             pagination={{ clickable: true }}
             draggable={true}
             width={500}
+            autoplay={{ delay: 2000 }}
           >
             {data?.img?.map((img, index) => (
-              <SwiperSlide
-                key={index}
-                style={{ "& .Swiper__slide": { width: "0%" } }}
-              >
-                <img
-                  className="mt-3 mb-7 rounded-lg "
-                  width={"100%"}
-                  alt="portfoliocard"
-                  src={img}
-                />
-              </SwiperSlide>
+              <div>
+                <SwiperSlide key={index}>
+                  <img
+                    className="w-[90%] mt-3 mb-7 text-center rounded-lg "
+                    alt="portfoliocard"
+                    src={img}
+                  />
+                </SwiperSlide>
+              </div>
             ))}
           </Swiper>
-          <p>{data.description}</p>
+          <h1 className="font-[600] text-[22px] ">App name: {data.projName}</h1>
+          <p className="my-3">Description: {data.description}</p>
+          <Link to={data.link}>
+            <button className="text-white bg-blue-600 p-2.5 text-[10px] font-semibold rounded-lg hover:shadow-lg">
+              Available on Googleplay
+            </button>
+          </Link>
+
           {/* <div className="flex mt-10 gap-5">
             <button className="font-[] text-[]">Read more</button>
             <img src={chevronRight} alt="" />

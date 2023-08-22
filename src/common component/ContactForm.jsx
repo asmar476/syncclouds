@@ -3,11 +3,12 @@ import consultant from "../assets/ceo.jpg";
 import attachmentIcon from "../assets/icons/attachmentIcon.svg";
 import "react-phone-number-input/style.css";
 import PhoneInput from "react-phone-number-input";
-// import cross from "../assets/icons/x.svg";
-// import RxCrossCircled from "react-icons/rx";
 import { TiDelete } from "react-icons/ti";
 import { BsExclamationCircle } from "react-icons/bs";
 import Calendalycomp from "./CalendlyComp";
+// -----------------------------------------------------------------
+const baseUrl = import.meta.env.VITE_REACT_APP_BASE_URL;
+// -----------------------------------------------------------------
 const ContactForm = () => {
   const [isOpen, setIsOpen] = useState(false);
   const closeCalendaly = () => {
@@ -27,26 +28,35 @@ const ContactForm = () => {
       // Handle form submission or further processing
       setError("");
     }
-    const isValid = validateForm();
-    if (isValid) {
-      try {
-        const message = `
-        Name: ${formData.name}
-        Email: ${formData.email}
-        Phone number:${phoneNumber}
-        Service: ${formData.service}
-        Message: ${formData.message}
-        
-      `;
-        alert(message);
+    // const isValid = validateForm();
+    // if (isValid) {
+    //   try {
+    //     console.log("Email sent successfully:", response);
+    //   } catch (error) {
+    //     console.error("An error occurred:", error);
+    //   }
+    // } else {
+    //   console.log("Form validation failed");
+    // }
+    var formdata = new FormData();
+    formdata.append("name", formData?.name);
+    formdata.append("email", formData?.email);
+    formdata.append("phone_number", phoneNumber);
+    formdata.append("file", selectedFile);
+    formdata.append("text", formData?.message);
+    formdata.append("agreement", formData?.agreement);
+    formdata.append("to_mail", "azhar.m@syncclouds.com");
+    console.log("form data", formData);
+    var requestOptions = {
+      method: "POST",
+      body: formdata,
+      redirect: "follow",
+    };
 
-        console.log("Email sent successfully:", response);
-      } catch (error) {
-        console.error("An error occurred:", error);
-      }
-    } else {
-      console.log("Form validation failed");
-    }
+    fetch(`${baseUrl}/send-mail/`, requestOptions)
+      .then((response) => response.json())
+      .then((result) => console.log("result", result))
+      .catch((error) => console.log("error", error));
   };
   const [selectedFile, setSelectedFile] = useState(null);
   const [formData, setFormData] = useState({
@@ -118,10 +128,8 @@ const ContactForm = () => {
   };
 
   return (
-
     <div className="mb-10 flex lg:flex-row flex-col-reverse space-y-10 md:space-y-0 mt-14 sm:mb-14 items-center lg:items-start justify-center">
       <div className="bg-[#EDF2F7] h-[530px] hidden lg:block mt-10 lg:mt-0 rounded-sm w-[90%] mx-5 md:max-w-[622px] px-4 pt-5 pb-12 ">
-
         <h1 className="font-[500] text-[25.89px] text-[#171923] mb-6">
           Book a Meeting
         </h1>
@@ -152,51 +160,14 @@ const ContactForm = () => {
             </div>
           </div>
         </div>
-        {/* <div className="hidden sm:block pt-3 border-t-2 border-[#ccc8c8]">
-          <h1 className="font-[500] text-[25.89px] text-[#171923] leading-[38.83px]">
-            Legal Information
-          </h1>
-          <p className="text-[#434343]">
-            Office No. M-35,36. Mezzanine Floor, Gold Point Shopping Mall,
-            Rawalpindi, Pakistan
-          </p>
-        </div> */}
-        {/* <div className="sm:hidden">
-          <h1 className="font-[600] text-[14px] text-[#171923]">
-            Legal Information
-          </h1>
-          <p className="text-[12px] text-[#434343]">
-            Office No. M-35,36. Mezzanine Floor, Gold Point Shopping Mall,
-            Rawalpindi, Pakistan
-          </p>
-        </div> */}
       </div>
-
       <div className="bg-[#EDF2F7] min-h-[530px]  text-black px-4 pb-1 mb-10 md:px-0 mx-5 w-[90%] md:max-w-[622px] rounded-sm">
         <form className="px-[10px]  md:px-[30px] py-4" onSubmit={handleSubmit}>
-
           <h5 className="font-[500] text-[25.89px] text-[#171923] mb-1">
             Write a Message
           </h5>
-          {/* <div className="h-[68px]">
-            <input
-              type="text"
-              placeholder="Name"
-              className={` py-2 px-3 text-[14px] md:text-[16px] font-[400]  w-[100%] border-b ${
-                formErrors.name ? "border-red-500" : "border-b-gray-200"
-              } placeholder-gray-400 outline-none`}
-              name="name"
-              value={formData.name}
-              onChange={handleInputChange}
-            />
-            {formErrors.name && (
-              <div className="flex space-x-1.5 items-center my-1">
-                <BsExclamationCircle className="text-red-500 text-[15px]" />
-                <p className="text-red-500 text-xs  mt-1">{formErrors.name}</p>
-              </div>
-            )}
-          </div> */}
-          <div className="flex sm:gap-3 flex-col sm:flex-row ">
+
+          <div className="flex sm:gap-3 flex-col sm:flex-row">
             <div className="h-[68px] w-[100%] sm:w-[50%]">
               <input
                 type="text"
@@ -234,51 +205,6 @@ const ContactForm = () => {
                 </div>
               )}
             </div>
-            {/* <div className=" w-[100%] sm:w-[50%] h-[68px]">
-              <div className="bg-white">
-                <PhoneInput
-                  international
-                  className={`placeholder-gray-400 outline-transparent py-2 px-3 text-[14px] md:text-[16px] font-[400]  w-[100%] border-b ${
-                    formErrors.phoneNumber
-                      ? "border-red-500"
-                      : "border-b-gray-200"
-                  } `}
-                  placeholder="Phone"
-                  value={phoneNumber}
-                  onChange={setPhoneNumber}
-                />
-              </div>
-              {formErrors.phoneNumber && (
-                <div className="flex space-x-1.5 items-center my-1">
-                  {" "}
-                  <BsExclamationCircle className="text-red-500 text-[15px]" />
-                  <p className="text-red-500 text-xs  mt-1">
-                    {formErrors.phoneNumber}
-                  </p>
-                </div>
-              )}
-            </div> */}
-            {/* <input
-                className={` py-2 px-3 text-[14px] md:text-[16px] font-[400]  w-[100%] border-b ${
-                  formErrors.phoneNumber
-                    ? "border-red-500"
-                    : "border-b-gray-200"
-                } placeholder-gray-400 outline-none`}
-                type="number"
-                placeholder="Phone"
-                name="phoneNumber"
-                value={formData.phoneNumber}
-                onChange={handleInputChange}
-              />
-              {formErrors.phoneNumber && (
-                <div className="flex space-x-1.5 items-center my-1">
-                  {" "}
-                  <BsExclamationCircle className="text-red-500 text-[15px]" />
-                  <p className="text-red-500 text-xs  mt-1">
-                    {formErrors.phoneNumber}
-                  </p>
-                </div>
-              )} */}
           </div>
           <div className="flex sm:gap-3 flex-col sm:flex-row">
             <div className="h-[60px] w-[100%]  mb-2  sm:w-[50%]">
@@ -393,13 +319,6 @@ const ContactForm = () => {
               </div>
             )}{" "}
           </div>
-          {/* {formErrors.file && (
-              <div className="flex space-x-1.5 items-center my-1">
-                <BsExclamationCircle className="text-red-500 text-[15px]" />
-                <p className="text-red-500 text-xs  mt-1">{formErrors.file}</p>
-              </div>
-            )} */}
-
           <div className="justify-center pt-[10px] text-[14px] md:text-[16px] font-[400]  placeholder-gray-400 ">
             <textarea
               className={`w-full placeholder-gray-400   min-h-[85px] max-h-[355px] p-2 ${
@@ -410,9 +329,6 @@ const ContactForm = () => {
               value={formData.message}
               onChange={handleInputChange}
             ></textarea>
-            {/* {formErrors.message && (
-              <img height={15}width={15} src="https://cdn0.iconfinder.com/data/icons/shift-free/32/Block-512.png" /><p className="text-red-500 text-xs  mt-1">{formErrors.message}</p>
-            )} */}
           </div>
           <div className="mt-3">
             <div className="flex md:items-center justify-center gap-3">
@@ -421,18 +337,12 @@ const ContactForm = () => {
                 type="checkbox"
                 name="agreement"
                 value={formData.agreement}
-                // checked={formData.agreement}
                 onChange={handleInputChange}
               />
               <p className="text-center text-[13px] lg:text-[16px] font-[400]">
                 I want an NDA to protect my idea.
               </p>
             </div>
-            {/* {formErrors.agreement && (
-              <p className="pl-8  text-red-500 text-center text-xs mt-1 mb-4 font-semibold">
-                {formErrors.agreement}
-              </p>
-            )} */}
             <p className="text-center text-[13px] lg:text-[16px] font-[400]  mt-1">
               We will get back to you within 24 hours, guaranteed.
             </p>

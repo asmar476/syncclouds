@@ -15,11 +15,13 @@ const AboutHero = () => {
               </h1>
             </div>
             <div className=" text-body font-500 leading-[27px] text-[14px] lg:text-[18px] text-sm md:text-left sm:w-[327px] md:w-[350px] lg:w-[550px]">
+              {/* Digital Transformation and Engineering Firm*/}
+
               <p className="mb-10 ">
-                SyncClouds is an industry-leading Digital Transformation and
-                Engineering Firm offering end-to-end software development
-                solutions to Enterprises, Digital Agencies, and Startups
-                worldwide.
+                SyncClouds is an industry-leading{" "}
+                <span className="italic">Global Solution Provider </span>
+                offering end-to-end software development solutions to
+                Enterprises, Digital Agencies, and Startups worldwide.
               </p>
               <p>
                 Sync clouds bring together a team of brilliant minds to support

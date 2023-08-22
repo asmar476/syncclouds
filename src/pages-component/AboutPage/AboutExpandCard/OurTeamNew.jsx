@@ -93,7 +93,7 @@ function OurTeamNew() {
           slidesPerView={1}
           loop={true}
           draggable={true}
-          autoplay={{ delay: 1000 }}
+          autoplay={{ delay: 2000 }}
         >
           {TeamMemberData.map((data, index) => (
             <SwiperSlide>

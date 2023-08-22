@@ -1,5 +1,5 @@
 import azmatImg from "../assets/TeamMemberImage/azmat.jpeg";
-import asmarImg from "../assets/TeamMemberImage/Asmar.png";
+import asmarImg from "../assets/TeamMemberImage/asmar.jpeg";
 import aqdas from "../assets/TeamMemberImage/aqdas.jpeg";
 import uzair from "../assets/TeamMemberImage/uzair.jpeg";
 import anam from "../assets/TeamMemberImage/anam1.png";
@@ -7,36 +7,38 @@ import maria from "../assets/TeamMemberImage/maria.png";
 import jawad from "../assets/TeamMemberImage/jawad.jpeg";
 import azhar from "../assets/TeamMemberImage/ceo.jpg";
 import Hamza from "../assets/TeamMemberImage/sirHamza.jpeg";
-
 export const TeamMemberData = [
   {
-    name: "Hamza Imtiaz",
-    position: "CEO and Co Founder",
-    img: Hamza,
-    linkeinUrl: "https://www.linkedin.com/in/aqdas-ilyas-b346a6177",
+    name: "Azhar Mehmood",
+    position: "Chief Execuitive Officer and Founder",
+    img: azhar,
+    linkeinUrl: "https://www.linkedin.com/in/azharmehmood1/",
     skillSet: [
-      "React-Native",
-      " React-js",
+      "Django",
+      " Python ",
       " Docker",
-      " TypeScript",
-      " Javascript",
-      " AI Detection",
+      " Database Design and ORM, ",
+      " Git Version Control System",
+      " Debugging and troubleshooting",
+      " AI/ML",
     ],
   },
   {
-    name: "Azhar Mehmood",
-    position: "CEO and Co Founder",
-    img: azhar,
-    linkeinUrl: "https://www.linkedin.com/in/aqdas-ilyas-b346a6177",
+    name: "Hamza Imtiaz",
+    position: "Chief Financial Officer and Co-Founder",
+    img: Hamza,
+    linkeinUrl: "https://www.linkedin.com/in/hamza-qureshi-058053115/",
     skillSet: [
-      "React-Native",
-      " React-js",
-      " Docker",
-      " TypeScript",
-      " Javascript",
-      " AI Detection",
+      "Business Development",
+      "Risk management",
+      "Budgeting",
+      "Compliance",
+      "Accounting Principals",
+      "Marketing Specialist",
+      "Team Management",
     ],
   },
+
   {
     name: "Uzair Javaid",
     position: "HR Manager",
@@ -48,7 +50,7 @@ export const TeamMemberData = [
       "Negotiation",
       "Public Relations",
       "Critical Thinker",
-      "Problem Solver",
+      // "Problem Solver",
       "Consulting",
       "Leadership",
       // "Counseling",
@@ -65,7 +67,7 @@ export const TeamMemberData = [
   },
   {
     name: "Aqdas ilyas",
-    position: "React Native Developer",
+    position: "Team Lead (Senior React Native Developer)",
     img: aqdas,
     linkeinUrl: "https://www.linkedin.com/in/aqdas-ilyas-b346a6177",
     skillSet: [
@@ -78,39 +80,9 @@ export const TeamMemberData = [
     ],
     bio: " My objective is to gain expertise in Artificial Intelligence, specifically concentrating on machine learning and deep learning. I have a high level of  concentration and am capable of accomplishing tasks with precision in a fast-paced environment, even when facing tight deadlines.",
   },
-
-  {
-    name: "Anam Razzaq",
-    position: "Multi Talented QA Engineer",
-    img: anam,
-    skillSet: [
-      "React-Native",
-      " React-js",
-      " Docker",
-      " TypeScript",
-      " Javascript",
-      " AI Detection",
-    ],
-    linkeinUrl: "https://www.linkedin.com/in/anam-razzaq-759ab31b5/",
-  },
-  {
-    name: "Maria Bibi",
-    position: "React Js Developer",
-    img: maria,
-    skillSet: [
-      "React JS",
-      "Javascript",
-      "Redux Tool Kit",
-      "State Management",
-      "Tailwind CSS",
-      "BootStrap",
-      "Version Control System",
-    ],
-    linkeinUrl: "https://www.linkedin.com/in/maria-bibi-0a844624b/",
-  },
   {
     name: "Asmar Tamjid",
-    position: "React Js Developer",
+    position: "Junior Consultant (React Js Developer)",
     img: asmarImg,
     skillSet: [
       "React/Next JS",
@@ -138,13 +110,27 @@ export const TeamMemberData = [
     ],
     linkeinUrl: "https://www.linkedin.com/in/azmat-ullah-77999823b/",
   },
-
+  {
+    name: "Maria Bibi",
+    position: "React Js Developer",
+    img: maria,
+    skillSet: [
+      "React JS",
+      "Javascript",
+      "Redux Tool Kit",
+      "State Management",
+      "Tailwind CSS",
+      "BootStrap",
+      "Version Control System",
+    ],
+    linkeinUrl: "https://www.linkedin.com/in/maria-bibi-0a844624b/",
+  },
   {
     name: "Jawad Hussain",
     position: "Python and Django Developer",
     img: jawad,
     skillSet: [
-      "Django Framework",
+      "Django",
       " Python Programming",
       " RESTful web services and APIs",
       "  Database Design and ORM, ",
@@ -152,6 +138,20 @@ export const TeamMemberData = [
       " Debugging and troubleshooting",
     ],
     linkeinUrl: "https://www.linkedin.com/in/jawad-hussain-shah-9b648b21a",
+  },
+
+  {
+    name: "Anam Razzaq",
+    position: "SQA Engineer",
+    img: anam,
+    skillSet: [
+      " Test progress documentation",
+      "Carrying out manual testing",
+      " Risk calculation",
+      "Glitches and bugs in the software",
+      "Setting standards for the quality of software and apps",
+    ],
+    linkeinUrl: "https://www.linkedin.com/in/anam-razzaq-759ab31b5/",
   },
 ];
 

@@ -20,6 +20,7 @@ import { useInView } from "react-intersection-observer";
 import arrowUp from "../../assets/icons/black_arrow-up.svg";
 import arrowDown from "../../assets/icons/black-arrow-down.svg";
 import Header from "../../layout/Header";
+import PortfolioCard from "../../pages-component/HomePage/PortfolioComponent/PortfolioCard";
 function PortfolioHero() {
   const [isIntersectingHero, setIsIntersectingHero] = useState(true);
   const { ref, inView, entry } = useInView({
@@ -49,29 +50,31 @@ function PortfolioHero() {
   return (
     <div>
       {inView ? (
-        <div className=" flex items-center justify-center -right-6 lg:right-[2%] bottom-[5%] fixed z-[100]   h-[90px]  w-[90px]  rounded-full">
+        <div className=" flex items-center justify-center right-[2%] bottom-[5%] fixed z-[100]   h-[90px]  w-[90px]  rounded-full">
           <img
             onClick={scrollToBottom}
-            className="scroll-img cursor-pointer  fixed z-[100] lg:w-[40px]"
+            className="scroll-img cursor-pointer  fixed z-[100]"
             src={arrowDown}
             alt="arrow up"
+            width={40}
           />
-          <p className="hidden lg:block scroll-text text-[12px] font-bold absolute bottom-5  text-black">
+          <p className="scroll-text text-[12px] font-bold absolute -bottom-5  text-black">
             Scroll Down
           </p>
         </div>
       ) : (
-        <div className="flex items-center justify-center -right-6 lg:right-[2%] bottom-[9%] fixed z-[100]   h-[90px]  w-[90px]  rounded-full">
-          <p className="hidden lg:block scroll-text text-[12px] font-bold absolute top-0 text-black">
-            Scroll To Top
+        <div className=" flex items-center justify-center right-[2%] bottom-[0%] fixed z-[100]   h-[90px]  w-[90px]  rounded-full">
+          <p className=" scroll-text text-[12px] font-bold absolute top-0 text-black">
+            Scroll Up
           </p>
           <img
             onClick={() => {
               window.scrollTo({ top: 0, behavior: "smooth" });
             }}
-            className="scroll-img-2 cursor-pointer  fixed z-[100] lg:w-[40px]"
+            className="scroll-img-2 cursor-pointer  fixed z-[100]"
             src={arrowUp}
             alt="arrow up"
+            width={40}
           />
         </div>
       )}
@@ -125,7 +128,7 @@ function PortfolioHero() {
         {/* __________________________________________________________________________________________________ */}
         {/* <div className="md:hidden"><CustomSelect /></div> */}
         <div className="max-w-[1440px] w-[100%] px-10">
-          {portfolioData?.map((data, index) => (
+          {/* {portfolioData?.map((data, index) => (
             <div
               key={index}
               className={`${
@@ -139,7 +142,7 @@ function PortfolioHero() {
                   alt="portfoliocard"
                   src={data.imgPortfolio}
                 />
-                {/* <Swiper
+                <Swiper
                   modules={[Navigation, Pagination, Scrollbar, Autoplay]}
                   spaceBetween={50}
                   slidesPerView={1}
@@ -161,7 +164,7 @@ function PortfolioHero() {
                       />
                     </SwiperSlide>
                   ))}
-                </Swiper> */}
+                </Swiper>
               </div>
               <div className="w-[100%] md:w-[50%]">
                 <div className="flex items-center ">
@@ -176,14 +179,15 @@ function PortfolioHero() {
                 </div>
                 <p>{data.description}</p>
               </div>
-              {/* <div className="flex mt-10 gap-5">
+              <div className="flex mt-10 gap-5">
             <button className="font-[] text-[]">Read more</button>
             <img src={chevronRight} alt="" />
-          </div> */}
+          </div>
             </div>
-          ))}
+          ))} */}
+          <PortfolioCard />
         </div>
-        <div>
+        {/* <div>
           {VidPortfolioData.map((data, index) => (
             <div
               key={index}
@@ -210,16 +214,16 @@ function PortfolioHero() {
               </div>
             </div>
           ))}
-        </div>
+        </div> */}
 
-        <button
+        {/* <button
           onClick={() => {
             console.log("more case studies shown");
           }}
           className="cursor-pointer hover:drop-shadow-md border border-[#E2E8F0] rounded-md py-2 px-3 text-[14px] sm:text-[18px] text-[#2D3748] font-[600] flex items-center  gap-2"
         >
           Show More Case Studies <img src={arrowDown} />
-        </button>
+        </button> */}
       </div>
       <ContactForm />
     </div>

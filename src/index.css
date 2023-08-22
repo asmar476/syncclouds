@@ -72,7 +72,7 @@ body {
 
 .scroll-img {
   animation: scroll-image 0.8s ease-in infinite alternate-reverse;
-  animation-play-state: paused;
+
 }
 
 .scroll-img-2 {
@@ -82,7 +82,23 @@ body {
 .scroll-text {
   font-family: "Orbitron", sans-serif;
 }
+@keyframes scroll-image {
+  0% {
+    transform: translateY(-30px);
+  }
+  100% {
+    transform: translateY(-7.5px);
+  }
+}
 
+@keyframes scroll-image-2 {
+  0% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(10px);
+  }
+}
 .mySwiper {
   height: 600px !important;
   width: 50%;
