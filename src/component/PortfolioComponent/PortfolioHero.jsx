@@ -1,8 +1,5 @@
 import React, { useRef, useState } from "react";
 import PortfolioImage from "../../assets/PortfolioPage/porfolioHero.svg";
-import Portfolio from "../../pages-component/HomePage/Portfolio";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, Pagination, Scrollbar, Navigation } from "swiper ";
 import "swiper/css";
 import "swiper/css/autoplay";
 import "swiper/css/navigation";
