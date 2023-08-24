@@ -46,11 +46,11 @@ const PortfolioCard = () => {
           </Swiper>
           <h1 className="font-[600] text-[22px] ">App name: {data.projName}</h1>
           <p className="my-3">Description: {data.description}</p>
-          <Link to={data.link}>
+          {/* <Link to={data.link}>
             <button className="text-white bg-blue-600 p-2.5 text-[10px] font-semibold rounded-lg hover:shadow-lg">
               Available on Googleplay
             </button>
-          </Link>
+          </Link> */}
 
           {/* <div className="flex mt-10 gap-5">
             <button className="font-[] text-[]">Read more</button>

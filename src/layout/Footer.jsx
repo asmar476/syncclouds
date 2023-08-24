@@ -5,6 +5,10 @@ import { Row, Col } from "antd";
 import { socialMediaLinks } from "../constant/Data";
 const Footer = () => {
   const navigate = useNavigate();
+  const handleTermsConditions = () => {
+    navigate("/terms-conditions");
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
   const handlePrivacyPolicyClick = () => {
     navigate("/privacy-policy");
     window.scrollTo({ top: 0, behavior: "smooth" });
@@ -88,8 +92,8 @@ const Footer = () => {
 
         <div className="hidden border-t-2 border-white mx-0 sm:mx-16 font-semibold text-[12px] md:text-base text-white   py-3 md:flex justify-between">
           <div className="flex items-center justify-between gap-16 lg:gap-32">
-            <Link to={"/terms-conditions"}>Terms & Conditions</Link>
-            <Link to={"/privacy-policy"}>Privacy Policy</Link>
+            <p className="cursor-pointer" onClick={handleTermsConditions}>Terms & Conditions</p>
+            <p className="cursor-pointer" onClick={handlePrivacyPolicyClick}>Privacy Policy</p>
           </div>
           <div className="flex items-center justify-between lg:gap-24 ">
             <p className="">Follow Us On</p>
@@ -111,8 +115,8 @@ const Footer = () => {
         {/* +++++++++++++++++++++++++++++++++++++++++ mobile view +++++++++++++++++++++++++++++++++++++++++++++++++ */}
         <div className="md:hidden border-t-2 font-semibold  border-white text-[12px] sm:text-[16px] text-white px-10  pt-3">
           <div className="flex items-center   justify-between">
-            <Link to={"/terms-conditions"}>Terms & Conditions</Link>
-            <Link to={"/privacy-policy"}>Privacy Policy</Link>
+            <p className="cursor-pointer" onClick={handleTermsConditions}>Terms & Conditions</p>
+            <p className="cursor-pointer" onClick={handlePrivacyPolicyClick}>Privacy Policy</p>
           </div>
           <div className=" mt-5 pb-5 flex justify-between items-center">
             <p className="">Follow Us On</p>

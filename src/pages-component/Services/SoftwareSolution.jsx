@@ -19,7 +19,7 @@ const SoftwareSolution = () => {
             text={"Our Experts Craft Custom "}
             gradientText={"Software Solutions"}
           />
-          <p className="text-[#335775] font-[500] text-[16px] leading-[24px] md:w-[622px] my-5 text-center">
+          <p className="text-body font-[500] text-[16px] leading-[24px] md:w-[650px] my-5 text-center">
             Skyrocket your sales by providing 24/7 access to your business with
             our best-in-class services for everyone.
           </p>
@@ -28,7 +28,7 @@ const SoftwareSolution = () => {
           {softwareSolutionData.map((data, index) => (
             <div
               key={index}
-              className="mb-5 bg-white lg:mx-3 w-full sm:w-[408px] flex items-center justify-center gap-5 flex-col box-shadow  pb-5 lg:mb-5"
+              className="mb-5 py-10 bg-white lg:mx-3 w-full sm:w-[408px] flex items-center justify-center  flex-col box-shadow  lg:mb-5"
             >
               <img src={data.img} width={98} alt="icon" />
               <h1 className="font-[600] text-[18px] gradient-text">

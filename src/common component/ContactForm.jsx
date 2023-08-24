@@ -11,6 +11,16 @@ const baseUrl = import.meta.env.VITE_REACT_APP_BASE_URL;
 // -----------------------------------------------------------------
 const ContactForm = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [selectedFile, setSelectedFile] = useState(null);
+  const [nda, setNda] = useState(false);
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    file: "",
+    service: "",
+    message: "",
+  });
+  const [formErrors, setFormErrors] = useState({});
   const closeCalendaly = () => {
     setIsOpen(false);
   };
@@ -44,8 +54,8 @@ const ContactForm = () => {
     formdata.append("phone_number", phoneNumber);
     formdata.append("file", selectedFile);
     formdata.append("text", formData?.message);
-    formdata.append("agreement", formData?.agreement);
-    formdata.append("to_mail", "azhar.m@syncclouds.com");
+    formdata.append("agreement", nda);
+    formdata.append("to_mail", "bibimaria705@gmail.com");
     console.log("form data", formData);
     var requestOptions = {
       method: "POST",
@@ -58,16 +68,6 @@ const ContactForm = () => {
       .then((result) => console.log("result", result))
       .catch((error) => console.log("error", error));
   };
-  const [selectedFile, setSelectedFile] = useState(null);
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    file: "",
-    service: "",
-    message: "",
-    agreement: false,
-  });
-  const [formErrors, setFormErrors] = useState({});
 
   const handleInputChange = (event) => {
     const { name, value } = event.target;
@@ -336,8 +336,8 @@ const ContactForm = () => {
                 className=" h-[20px] w-[20px] md:mt-0"
                 type="checkbox"
                 name="agreement"
-                value={formData.agreement}
-                onChange={handleInputChange}
+                checked={nda}
+                onChange={() => setNda((prevNda) => !prevNda)}
               />
               <p className="text-center text-[13px] lg:text-[16px] font-[400]">
                 I want an NDA to protect my idea.
