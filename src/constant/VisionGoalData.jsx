@@ -10,7 +10,7 @@ export const visionData = [
       "Our mission is to develop innovative services that solve complex problems, enhance productivity, and improve people's lives.",
   },
   {
-    title: "Vsion",
+    title: "Vision",
     icon: vision,
     description:
       "Our vision is to empower people and businesses worldwide with transformative services that enable them to achieve their full potential.s.",
