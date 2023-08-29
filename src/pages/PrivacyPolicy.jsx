@@ -2,7 +2,7 @@ import React from "react";
 import image from "../assets/privacyPloicy/headerImage.png";
 import Layout from "../layout/Layout";
 import PrivacyHeading from "../common component/PrivacyHeading";
-
+import useAnalyticsEventTracker from "../common component/useAnalyticsEventTracker";
 import { Tooltip } from "antd";
 import { privacy } from "../constant/PrivacyAndTermsData";
 import { useInView } from "react-intersection-observer";
@@ -40,6 +40,7 @@ function PrivacyPolicy() {
   const observer = new IntersectionObserver(headerFunc, options);
 
   heroRef?.current && observer.observe(heroRef?.current);
+  const gaEventTracker = useAnalyticsEventTracker("Privacy Policy");
   return (
     <Layout>
       <Halmet
@@ -51,7 +52,10 @@ function PrivacyPolicy() {
       {inView ? (
         <div className=" flex items-center justify-center -right-6 lg:right-[2%] bottom-[5%] fixed z-[100]   h-[90px]  w-[90px]  rounded-full">
           <img
-            onClick={scrollToBottom}
+            onClick={() => {
+              scrollToBottom();
+              gaEventTracker("Arrow Up");
+            }}
             className="scroll-img cursor-pointer  fixed z-[100] lg:w-[40px]"
             src={arrowDown}
             alt="arrow up"
@@ -68,6 +72,7 @@ function PrivacyPolicy() {
           <img
             onClick={() => {
               window.scrollTo({ top: 0, behavior: "smooth" });
+              gaEventTracker("Arrow Up");
             }}
             className="scroll-img-2 cursor-pointer  fixed z-[100] lg:w-[40px]"
             src={arrowUp}
@@ -124,7 +129,7 @@ function PrivacyPolicy() {
           />
           <PrivacyHeading
             h="Do we use cookies?"
-            p="When you visit our website, Sync Clouds may collect cookies and other analytical codes on your computer, browser, or webpage to customize your experience, track usage trends, and provide, enhance, and secure our website.
+            p="When you visit our website, SyncClouds may collect cookies and other analytical codes on your computer, browser, or webpage to customize your experience, track usage trends, and provide, enhance, and secure our website.
 Cookies are tiny text files that websites put on your computer or device when you visit them. This way, the website's content can be altered to reflect your preferences the next time you visit.
 In addition, the information obtained via cookies may be linked to personal information that we store about you, even though cookies typically do not contain any information that personally identifies a person."
           />

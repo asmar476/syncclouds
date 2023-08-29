@@ -18,6 +18,7 @@ import arrowUp from "../../assets/icons/black_arrow-up.svg";
 import arrowDown from "../../assets/icons/black-arrow-down.svg";
 import Header from "../../layout/Header";
 import PortfolioCard from "../../pages-component/HomePage/PortfolioComponent/PortfolioCard";
+import useAnalyticsEventTracker from "../../common component/useAnalyticsEventTracker";
 function PortfolioHero() {
   const [isIntersectingHero, setIsIntersectingHero] = useState(true);
   const { ref, inView, entry } = useInView({
@@ -44,12 +45,16 @@ function PortfolioHero() {
   const observer = new IntersectionObserver(headerFunc, options);
 
   heroRef?.current && observer.observe(heroRef?.current);
+  const gaEventTracker = useAnalyticsEventTracker("Portfolio");
   return (
     <div>
       {inView ? (
         <div className=" flex items-center justify-center right-[2%] bottom-[5%] fixed z-[100]   h-[90px]  w-[90px]  rounded-full">
           <img
-            onClick={scrollToBottom}
+            onClick={() => {
+              scrollToBottom();
+              gaEventTracker("Scroll Down");
+            }}
             className="scroll-img cursor-pointer  fixed z-[100]"
             src={arrowDown}
             alt="arrow up"
@@ -66,6 +71,7 @@ function PortfolioHero() {
           </p>
           <img
             onClick={() => {
+              gaEventTracker("Scroll Up");
               window.scrollTo({ top: 0, behavior: "smooth" });
             }}
             className="scroll-img-2 cursor-pointer  fixed z-[100]"
@@ -83,31 +89,31 @@ function PortfolioHero() {
             <MainSubHeading text={"Port"} gradientText={"folio"} />
             <div className="flex flex-wrap items-center justify-center  px-1 gap-3 lg:gap-20">
               <button
-                onClick={() => ""}
+                onClick={() => gaEventTracker("All")}
                 className="hover:font-semibold px-7 text-[18px] font-semibold py-2 rounded-sm cursor-pointer border border-primary hover:shadow-lg bg-primary text-white"
               >
                 All
               </button>
               <button
-                onClick={() => ""}
+                onClick={() => gaEventTracker("Social Media Marketing")}
                 className="hover:font-semibold px-4 py-2 py-rounded-sm cursor-pointer hover:shadow-lg border border-primary text-primary font-[500] text-[18px]"
               >
                 Social Media Marketing
               </button>
               <button
-                onClick={() => ""}
+                onClick={() => gaEventTracker("Cyber Security")}
                 className="hover:font-semibold px-4 py-2 py-rounded-sm cursor-pointer hover:shadow-lg border border-primary text-primary font-[500] text-[18px]"
               >
                 Cyber Security
               </button>
               <button
-                onClick={() => ""}
+                onClick={() => gaEventTracker("Hire a Developer")}
                 className="hover:font-semibold rounded-sm px-4 py-2 py-rounded-sm cursor-pointer hover:shadow-lg border border-primary text-primary font-[500] text-[18px]"
               >
                 Hire A Developer
               </button>
               <button
-                onClick={() => ""}
+                onClick={() => gaEventTracker("Hire a Team")}
                 className="hover:font-semibold px-4 py-2 py-rounded-sm cursor-pointer hover:shadow-lg border border-primary text-primary font-[500] text-[18px]"
               >
                 Hire A Team

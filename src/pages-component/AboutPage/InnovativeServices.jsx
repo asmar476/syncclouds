@@ -5,12 +5,14 @@ import InnerPageHeading from "../../common component/InnerPageHeading";
 import { aboutFaq } from "../../constant/FAQS";
 import FaqSection from "../../common component/FaqSection";
 import Calendalycomp from "../../common component/CalendlyComp";
+import useAnalyticsEventTracker from "../../common component/useAnalyticsEventTracker";
 const InnovativeServices = () => {
   const [isOpen, setIsOpen] = useState(false);
   const closeCalendaly = () => {
     setIsOpen(false);
   };
   const [quesIndex, setQuesIndex] = useState(0);
+  const gaEventTracker = useAnalyticsEventTracker("Innovative Services");
   return (
     <div className="max-w-[1200px] xl:max-w-[1400px] flex flex-col items-center justify-center mx-auto px-10">
       <h1 className="text-center text-[14px] sm:text-[30px] sm:w-[327px] md:w-[622px] lg:w-[622px]  font-[700]">
@@ -37,12 +39,12 @@ const InnovativeServices = () => {
 
           <div>
             <button
-
-              onClick={() => setIsOpen(true)}
-
+              onClick={() => {
+                setIsOpen(true);
+                gaEventTracker("Let's Get Started");
+              }}
               className=" my-5 md:my-10 text-[14px] md:text-[18px] font-[500] bg-[#00315A]
  text-white px-[16px] py-[6px] md:px-[24px] md:py-[12px] rounded-[2px] "
-
             >
               Let's Get Started
             </button>{" "}

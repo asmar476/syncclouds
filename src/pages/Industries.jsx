@@ -7,6 +7,7 @@ import arrowUp from "../assets/icons/black_arrow-up.svg";
 import arrowDown from "../assets/icons/black-arrow-down.svg";
 import Header from "../layout/Header";
 import Halmet from "../common component/Halmet";
+import useAnalyticsEventTracker from "../common component/useAnalyticsEventTracker";
 function Industries() {
   const [isIntersectingHero, setIsIntersectingHero] = useState(true);
   const { ref, inView, entry } = useInView({
@@ -35,6 +36,7 @@ function Industries() {
   };
   const observer = new IntersectionObserver(headerFunc, options);
   heroRef?.current && observer.observe(heroRef?.current);
+  const gaEventTracker = useAnalyticsEventTracker("Industries");
   return (
     <div>
       <Layout>
@@ -47,7 +49,10 @@ function Industries() {
         {inView ? (
           <div className=" flex items-center justify-center -right-6 lg:right-[2%] bottom-[5%] fixed z-[100]   h-[90px]  w-[90px]  rounded-full">
             <img
-              onClick={scrollToBottom}
+              onClick={() => {
+                scrollToBottom();
+                gaEventTracker("Arrow Up");
+              }}
               className="scroll-img cursor-pointer  fixed z-[100] lg:w-[40px]"
               src={arrowDown}
               alt="arrow up"
@@ -64,6 +69,7 @@ function Industries() {
             <img
               onClick={() => {
                 window.scrollTo({ top: 0, behavior: "smooth" });
+                gaEventTracker("Arrow Up");
               }}
               className="scroll-img-2 cursor-pointer  fixed z-[100] lg:w-[40px]"
               src={arrowUp}

@@ -17,23 +17,25 @@ import SwiperCore, {
   Scrollbar,
   Navigation,
 } from "swiper";
+import useAnalyticsEventTracker from "../../common component/useAnalyticsEventTracker";
 import "swiper/css";
 import "swiper/css/autoplay";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
-
 SwiperCore.use([Navigation]);
 const style = {
   background:
     "linear-gradient(180deg, rgba(0, 38, 128, 0) 0%, rgba(0, 38, 128, 0.05) 100%)",
 };
+
 const OfferCard = () => {
   const [hover, setHover] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
   const handleSlideChange = (swiper) => {
     setCurrentIndex(swiper.activeIndex);
   };
+  const gaEventTracker = useAnalyticsEventTracker("Offer Cards");
   return (
     <>
       <div style={style} className="relative ">
@@ -113,10 +115,20 @@ const OfferCard = () => {
                   </SwiperSlide>
                 ))}
               </Swiper>
-              <button className="swiper-button-prev absolute z-[100] top-[5%] left-[100%] ">
+              <button
+                onClick={() => {
+                  gaEventTracker("Arrow Up");
+                }}
+                className="swiper-button-prev absolute z-[100] top-[5%] left-[100%] "
+              >
                 <img className={` `} src={arrowUp} alt="" />
               </button>
-              <button className="swiper-button-next  absolute z-[100] top-[87.5%] left-[100%]">
+              <button
+                onClick={() => {
+                  gaEventTracker("Arrow Down");
+                }}
+                className="swiper-button-next  absolute z-[100] top-[87.5%] left-[100%]"
+              >
                 <img className={` `} src={arrowDown} alt="" />
               </button>{" "}
             </div>
@@ -211,7 +223,7 @@ const OfferCard = () => {
                     Boost Your business Expansion!
                   </h4>
                   <p>
-                    Sync Clouds is committed to providing everyone with complete
+                    SyncClouds is committed to providing everyone with complete
                     custom software development services. No matter what, there
                     is always a chance to flourish, stand out, acquire, and
                     rise..
@@ -225,7 +237,10 @@ const OfferCard = () => {
                     our unmatched solutions and innovative methods.
                   </p>
                   <Link to={"/contact"}>
-                    <button className=" border border-primary rounded-sm py-2 px-4 mt-5 xl:mt-10 hover:bg-primary hover:text-white hover:text-bold text-primary">
+                    <button
+                      onClick={() => gaEventTracker("Get In Touch")}
+                      className=" border border-primary rounded-sm py-2 px-4 mt-5 xl:mt-10 hover:bg-primary hover:text-white hover:text-bold text-primary"
+                    >
                       Get In Touch
                     </button>
                   </Link>

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import InnerPageHeading from "../../../common component/InnerPageHeading";
 import { BsChevronDown, BsChevronUp } from "react-icons/bs";
+import useAnalyticsEventTracker from "../../common component/useAnalyticsEventTracker";
 const questionArray = [
   { id: 1 },
   { id: 2 },
@@ -18,6 +19,7 @@ const questionArray = [
 const PrivacyInformationCordian = () => {
   const [questionOpen, setQuestionOpen] = useState(false);
   const [quesIndex, setQuesIndex] = useState([]);
+  const gaEventTracker = useAnalyticsEventTracker("Privacy Information");
   return (
     <div>
       <div className="w-[100%]  space-y-5">
@@ -46,6 +48,7 @@ const PrivacyInformationCordian = () => {
                     : ""
                 } rounded-full p-1`}
                 onClick={() => {
+                  gaEventTracker("Click");
                   setQuesIndex((prev) => {
                     if (prev.includes(index)) {
                       const filterIndex = prev.filter(

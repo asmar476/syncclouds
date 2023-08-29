@@ -3,7 +3,9 @@ import { Tooltip } from "antd";
 import aboutIllustration from "../../assets/About illustration/About Us-02.svg";
 import ExpandYourHorizon from "../AboutPage/ExpandYourHorizon";
 import { Link } from "react-router-dom";
+import useAnalyticsEventTracker from "../../common component/useAnalyticsEventTracker";
 const AboutHero = () => {
+  const gaEventTracker = useAnalyticsEventTracker("About Hero");
   return (
     <>
       <div className="w-full px-10 max-w-[1200px] pt-10 md:pt-20 xl:max-w-[1400px]  mx-auto ">
@@ -24,13 +26,16 @@ const AboutHero = () => {
                 Enterprises, Digital Agencies, and Startups worldwide.
               </p>
               <p>
-                Sync clouds bring together a team of brilliant minds to support
+                SyncClouds bring together a team of brilliant minds to support
                 you in realizing your ambitions and delivering a superior
                 digital experience.
               </p>
             </div>
             <Link to={"/contact"}>
               <button
+                onClick={() => {
+                  gaEventTracker("About Hero");
+                }}
                 className="bg-[#00315A] mt-10 text-white font-semibold
               px-3 py-2 rounded-[0.18rem]"
               >

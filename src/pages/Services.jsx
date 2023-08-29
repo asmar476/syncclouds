@@ -19,6 +19,7 @@ import { useEffect, useRef, useState } from "react";
 import Header from "../layout/Header";
 import { Helmet } from "react-helmet-async";
 import Halmet from "../common component/Halmet";
+import useAnalyticsEventTracker from "../common component/useAnalyticsEventTracker";
 const Services = () => {
   const [isIntersectingHero, setIsIntersectingHero] = useState(true);
   const { ref, inView, entry } = useInView({
@@ -48,6 +49,7 @@ const Services = () => {
   const observer = new IntersectionObserver(headerFunc, options);
 
   heroRef?.current && observer.observe(heroRef?.current);
+  const gaEventTracker = useAnalyticsEventTracker("Services");
   return (
     <Layout>
       <Halmet
@@ -59,7 +61,10 @@ const Services = () => {
       {inView ? (
         <div className=" flex items-center justify-center -right-6 lg:right-[2%] bottom-[5%] fixed z-[100]   h-[90px]  w-[90px]  rounded-full">
           <img
-            onClick={scrollToBottom}
+            onClick={() => {
+              scrollToBottom();
+              gaEventTracker("Arrow Up");
+            }}
             className="scroll-img cursor-pointer  fixed z-[100] lg:w-[40px]"
             src={arrowDown}
             alt="arrow up"
@@ -76,6 +81,7 @@ const Services = () => {
           <img
             onClick={() => {
               window.scrollTo({ top: 0, behavior: "smooth" });
+              gaEventTracker("Arrow Up");
             }}
             className="scroll-img-2 cursor-pointer  fixed z-[100] lg:w-[40px]"
             src={arrowUp}

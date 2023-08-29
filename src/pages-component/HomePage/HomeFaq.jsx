@@ -14,10 +14,10 @@ function HomeFaq() {
               gradientText={"Questions"}
             />
             <p className="leaing-[27px] text-[18px] my-5 font-[600] text-[#434343]">
-              Discover the power of Sync Clouds with our FAQs section!
+              Discover the power of SyncClouds with our FAQs section!
             </p>
             <p>
-              Discover the power of Sync Clouds with our FAQs section!
+              Discover the power of SyncClouds with our FAQs section!
               <br /> Explore commonly asked questions, gain valuable insights,
               and visit our Services & Solutions to revolutionize your data
               synchronization experience. Don't wait, and connect with us for
@@ -45,7 +45,7 @@ function HomeFaq() {
             Discover the power of Sync Clouds with our FAQs section!
           </p>
           <p className="text-[12px] leading-[18px] mb-16">
-            Discover the power of Sync Clouds with our FAQs section! <br />
+            Discover the power of SyncClouds with our FAQs section! <br />
             Explore commonly asked questions, gain valuable insights, and visit
             our Services & Solutions to revolutionize your data synchronization
             experience. Don't wait, and connect with us for more information!

@@ -6,6 +6,7 @@ import PhoneInput from "react-phone-number-input";
 import { TiDelete } from "react-icons/ti";
 import { BsExclamationCircle } from "react-icons/bs";
 import Calendalycomp from "./CalendlyComp";
+import useAnalyticsEventTracker from "../common component/useAnalyticsEventTracker";
 // -----------------------------------------------------------------
 const baseUrl = import.meta.env.VITE_REACT_APP_BASE_URL;
 // -----------------------------------------------------------------
@@ -126,7 +127,7 @@ const ContactForm = () => {
     setSelectedFile(file);
     fileInput.value = "";
   };
-
+  const gaEventTracker = useAnalyticsEventTracker("Contact us");
   return (
     <div className="mb-10 flex lg:flex-row flex-col-reverse space-y-10 md:space-y-0 mt-14 sm:mb-14 items-center lg:items-start justify-center">
       <div className="bg-[#EDF2F7] h-[530px] hidden lg:block mt-10 lg:mt-0 rounded-sm w-[90%] mx-5 md:max-w-[622px] px-4 pt-5 pb-12 ">
@@ -151,7 +152,10 @@ const ContactForm = () => {
             </div>
             <div>
               <button
-                onClick={() => setIsOpen(true)}
+                onClick={() => {
+                  gaEventTracker("Book a Meeting");
+                  setIsOpen(true);
+                }}
                 className=" font-[600] text-white bg-[#002680] w-full py-[8px] rounded-sm"
               >
                 Book a Meeting
@@ -312,6 +316,7 @@ const ContactForm = () => {
             {selectedFile && (
               <div
                 onClick={() => {
+                  gaEventTracker("Select File");
                   setSelectedFile(null);
                 }}
               >
@@ -347,6 +352,7 @@ const ContactForm = () => {
               We will get back to you within 24 hours, guaranteed.
             </p>
             <button
+              onClick={() => gaEventTracker("Submit")}
               type="submit"
               className="font-[600]  mt-3 text-white bg-[#002680] w-full py-[5px] md:py-[10px] rounded-sm"
             >

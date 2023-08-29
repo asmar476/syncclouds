@@ -7,7 +7,7 @@ import { useNavigate } from "react-router-dom";
 import Calendalycomp from "../common component/CalendlyComp";
 import whiteTimes from "../assets/white icons/whitetimes.jpg";
 import whiteLogo from "../assets/SyncCloudsLogo/updated SyncClouds-logo white.svg";
-
+import useAnalyticsEventTracker from "../common component/useAnalyticsEventTracker";
 const Header = ({ fixed }) => {
   const navigate = useNavigate();
   const [arrow, setArrow] = useState(false);
@@ -40,6 +40,7 @@ const Header = ({ fixed }) => {
       label: <p>About</p>,
     },
   ];
+  const gaEventTracker = useAnalyticsEventTracker("Header");
   return (
     <>
       <div className="">
@@ -71,7 +72,10 @@ const Header = ({ fixed }) => {
                       <Link
                         to={"/services"}
                         className=" flex items-center gap-1 hover:text-primaryColor "
-                        onClick={click}
+                        onClick={() => {
+                          click();
+                          gaEventTracker("Services");
+                        }}
                         onMouseEnter={() => {
                           setShowServices(true);
                         }}
@@ -95,7 +99,10 @@ const Header = ({ fixed }) => {
                       <Link
                         to={"/about"}
                         className=" flex items-center gap-1 hover:text-primaryColor "
-                        onClick={click}
+                        onClick={() => {
+                          click();
+                          gaEventTracker("About");
+                        }}
                         onMouseEnter={() => {
                           setShowServices(true);
                         }}
@@ -107,7 +114,10 @@ const Header = ({ fixed }) => {
                     <li className="">
                       <button
                         className="pulse bg-[#00315A] text-white px-3 py-2 rounded-[0.18rem]"
-                        onClick={() => setcalendalyOpen(true)}
+                        onClick={() => {
+                          setcalendalyOpen(true);
+                          gaEventTracker("Book My Call");
+                        }}
                       >
                         Book My Call
                       </button>
@@ -123,7 +133,10 @@ const Header = ({ fixed }) => {
                     {!isOpen && (
                       <MenuOutlined
                         className="text-[20px] mt-2 z-[1000]"
-                        onClick={openNav}
+                        onClick={() => {
+                          openNav();
+                          gaEventTracker("Open Navbar");
+                        }}
                       />
                     )}
                     <div
@@ -139,7 +152,13 @@ const Header = ({ fixed }) => {
                             className="h-10 mt-3"
                           />
                         </Link>
-                        <a href="#!" onClick={closeNav}>
+                        <a
+                          href="#!"
+                          onClick={() => {
+                            closeNav();
+                            gaEventTracker("Close Navbar");
+                          }}
+                        >
                           <img
                             src={whiteTimes}
                             className="float-right mt-5  h-[20px] w-[20px]"
@@ -148,6 +167,9 @@ const Header = ({ fixed }) => {
                       </div>
                       <div className=" text-primary space-y-7 font-[600] py-12 overlayNav-content">
                         <Link
+                          onClick={() => {
+                            gaEventTracker("About Us");
+                          }}
                           className={`${
                             isOpen ? "link-ani" : ""
                           }   text-white cursor-pointer font-[700]`}
@@ -157,6 +179,9 @@ const Header = ({ fixed }) => {
                         </Link>
 
                         <Link
+                          onClick={() => {
+                            gaEventTracker("Services");
+                          }}
                           className={`${isOpen ? "link-ani-servce" : ""} `}
                           to="/services"
                         >
@@ -164,18 +189,33 @@ const Header = ({ fixed }) => {
                         </Link>
 
                         <Link
+                          onClick={() => {
+                            gaEventTracker("Portfolio");
+                            setcalendalyOpen(true);
+                            setIsOpen(false);
+                          }}
                           className={`${isOpen ? "link-ani-protfolio" : ""} `}
                           to="/portfolio"
                         >
                           Portfolio
                         </Link>
                         <Link
+                          onClick={() => {
+                            gaEventTracker("Technologies");
+                            setcalendalyOpen(true);
+                            setIsOpen(false);
+                          }}
                           className={`${isOpen ? "link-ani-tech" : ""} `}
                           to="/technologies"
                         >
                           Technologies
                         </Link>
                         <Link
+                          onClick={() => {
+                            gaEventTracker("Industries");
+                            setcalendalyOpen(true);
+                            setIsOpen(false);
+                          }}
                           className={`${isOpen ? "link-ani-industry" : ""} `}
                           to="/industries"
                         >
@@ -185,6 +225,7 @@ const Header = ({ fixed }) => {
                           <button
                             className="pulse bg-white text-primary px-3 py-2 rounded-[0.18rem]"
                             onClick={() => {
+                              gaEventTracker("Book My Call");
                               setcalendalyOpen(true);
                               setIsOpen(false);
                             }}
@@ -218,13 +259,24 @@ const Header = ({ fixed }) => {
 
               <ul className=" text-[10px] text-primary font-[500] lg:text-[16px] hidden sm:flex items-center space-x-3 lg:space-x-5">
                 <li className="">
-                  <Link to="/about">About Us</Link>
+                  <Link
+                    to="/about"
+                    onClick={() => {
+                      click();
+                      gaEventTracker("About Us");
+                    }}
+                  >
+                    About Us
+                  </Link>
                 </li>{" "}
                 <li className="flex justify-center   items-center text-grey-600">
                   <Link
                     to={"/services"}
                     className=" flex items-center gap-1 hover:text-primaryColor "
-                    onClick={click}
+                    onClick={() => {
+                      click();
+                      gaEventTracker("Services");
+                    }}
                     onMouseEnter={() => {
                       setShowServices(true);
                     }}
@@ -236,19 +288,46 @@ const Header = ({ fixed }) => {
                   </Link>
                 </li>
                 <li className="">
-                  <Link to="/portfolio">Portfolio</Link>
+                  <Link
+                    onClick={() => {
+                      click();
+                      gaEventTracker("Portfolio");
+                    }}
+                    to="/portfolio"
+                  >
+                    Portfolio
+                  </Link>
                 </li>
                 <li className="">
-                  <Link to="/technologies">Technologies</Link>
+                  <Link
+                    onClick={() => {
+                      click();
+                      gaEventTracker("Technologies");
+                    }}
+                    to="/technologies"
+                  >
+                    Technologies
+                  </Link>
                 </li>
                 <li className="">
-                  <Link to="/industries">Industry</Link>
+                  <Link
+                    to="/industries"
+                    onClick={() => {
+                      click();
+                      gaEventTracker("Industry");
+                    }}
+                  >
+                    Industry
+                  </Link>
                 </li>
                 <li className="flex justify-center   items-center text-grey-600">
                   <Link
                     to={"/about"}
                     className=" flex items-center gap-1 hover:text-primaryColor "
-                    onClick={click}
+                    onClick={() => {
+                      click();
+                      gaEventTracker("About");
+                    }}
                     onMouseEnter={() => {
                       setShowServices(true);
                     }}
@@ -269,7 +348,10 @@ const Header = ({ fixed }) => {
                 <li className="">
                   <button
                     className="pulse bg-[#00315A] text-white px-3 py-2 rounded-[0.18rem]"
-                    onClick={() => setcalendalyOpen(true)}
+                    onClick={() => {
+                      setcalendalyOpen(true);
+                      gaEventTracker("Book My Call");
+                    }}
                   >
                     Book My Call
                   </button>
@@ -289,7 +371,10 @@ const Header = ({ fixed }) => {
                 {!isOpen && (
                   <MenuOutlined
                     className="text-[20px] mt-2 z-[1000]"
-                    onClick={openNav}
+                    onClick={() => {
+                      openNav();
+                      gaEventTracker("Open Navbar");
+                    }}
                   />
                 )}
                 <div
@@ -301,7 +386,13 @@ const Header = ({ fixed }) => {
                     <Link to="/">
                       <img src={whiteLogo} alt="Logo" className="h-10 mt-3" />
                     </Link>
-                    <a href="#!" onClick={closeNav}>
+                    <a
+                      href="#!"
+                      onClick={() => {
+                        closeNav();
+                        gaEventTracker("Close Navbar");
+                      }}
+                    >
                       <img
                         src={whiteTimes}
                         className="float-right mt-5 h-[20px] w-[20px]"
@@ -314,30 +405,50 @@ const Header = ({ fixed }) => {
                         isOpen ? "link-ani" : ""
                       }   text-white cursor-pointer font-[700]`}
                       to="/about"
+                      onClick={() => {
+                        click();
+                        gaEventTracker("About Us");
+                      }}
                     >
                       About Us
                     </Link>{" "}
                     <Link
                       className={`${isOpen ? "link-ani-servce" : ""} `}
                       to="/services"
+                      onClick={() => {
+                        click();
+                        gaEventTracker("Services");
+                      }}
                     >
                       Services
                     </Link>
                     <Link
                       className={`${isOpen ? "link-ani-protfolio" : ""} `}
                       to="/portfolio"
+                      onClick={() => {
+                        click();
+                        gaEventTracker("Portfolio");
+                      }}
                     >
                       Portfolio
                     </Link>
                     <Link
                       className={`${isOpen ? "link-ani-tech" : ""} `}
                       to="/technologies"
+                      onClick={() => {
+                        click();
+                        gaEventTracker("Technologies");
+                      }}
                     >
                       Technologies
                     </Link>
                     <Link
                       className={`${isOpen ? "link-ani-industry" : ""} `}
                       to="/industries"
+                      onClick={() => {
+                        click();
+                        gaEventTracker("Industries");
+                      }}
                     >
                       Industry
                     </Link>
@@ -346,7 +457,7 @@ const Header = ({ fixed }) => {
                         className="pulse bg-white text-primary px-3 py-2 rounded-[0.18rem]"
                         onClick={() => {
                           setcalendalyOpen(true);
-
+                          gaEventTracker("Book My Call");
                           setIsOpen(false);
                         }}
                       >

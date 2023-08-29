@@ -7,9 +7,11 @@ import { servicesSoftwareSteps } from "../../constant/ServicesSoftwaredevelopmen
 import SDLCIllustration from "../../assets/Services/SDLC.svg";
 import smallsdlc from "../../assets/Services/smlSdlc.svg";
 import mobBg from "../../assets/Services/mobileService.svg";
+import useAnalyticsEventTracker from "../../common component/useAnalyticsEventTracker";
 const BuildingVision = () => {
   const [questionOpen, setQuestionOpen] = useState(false);
   const [quesIndex, setQuesIndex] = useState([]);
+  const gaEventTracker = useAnalyticsEventTracker("Building Vision");
   return (
     <div className="container mx-auto px-2 sm:px-10 pt-10">
       <div className="flex items-center justify-center flex-col text-center">
@@ -53,6 +55,7 @@ const BuildingVision = () => {
                       : ""
                   } rounded-full p-1`}
                   onClick={() => {
+                    gaEventTracker("click");
                     setQuesIndex((prev) => {
                       if (prev.includes(index)) {
                         const filterIndex = prev.filter(

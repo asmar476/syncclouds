@@ -13,11 +13,15 @@ import WebDevelopment from "./pages/WebDevelopment";
 
 import { HelmetProvider } from "react-helmet-async";
 import Halmet from "./common component/Halmet";
-
-export const maintenancePage = () => {
-  return <h1>Under Maintenance</h1>;
-};
+import ReactGA from "react-ga";
+import { useEffect } from "react";
+const TRACKING_ID = "G-BH639MYS1Q"; // OUR_TRACKING_ID
+ReactGA.initialize(TRACKING_ID);
 const App = () => {
+  useEffect(() => {
+    ReactGA.pageview(window.location.pathname + window.location.search);
+  }, []);
+
   return (
     <div>
       <HelmetProvider>

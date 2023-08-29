@@ -234,7 +234,7 @@ export const servicesCatalog = [
     id: 1,
     title: "Services",
     content:
-      "Sync Clouds is equipped with the tools, technology, and domain knowledge necessary to produce various professional software development services. We assist our clients in creating and capturing value and enhancing company outcomes by eliminating the operational inefficiencies that impede growth.",
+      "SyncClouds is equipped with the tools, technology, and domain knowledge necessary to produce various professional software development services. We assist our clients in creating and capturing value and enhancing company outcomes by eliminating the operational inefficiencies that impede growth.",
     img: se,
   },
   {

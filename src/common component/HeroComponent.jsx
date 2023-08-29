@@ -1,5 +1,6 @@
 import ButtonDark from "./ButtonDark";
 import MainHeading from "./MainHeading";
+import useAnalyticsEventTracker from "../common component/useAnalyticsEventTracker";
 const HeroComponent = ({
   title1,
   title2,
@@ -9,6 +10,7 @@ const HeroComponent = ({
   buttonText,
   Illustration,
 }) => {
+  const gaEventTracker = useAnalyticsEventTracker("Hero");
   return (
     <div className="mx-auto container  px-10 mt-20">
       <div className="flex flex-col xl:gap-10 items-center justify-center space-x-10 space-y-10 lg:space-y-0 lg:flex-row">
@@ -20,7 +22,14 @@ const HeroComponent = ({
           <p className="text-sm md:text-lg text-justify lg:text-left mt-5 max-w-[750px]">
             {description2}
           </p>
-          {buttonText !== "" && <ButtonDark text={buttonText} />}
+          {buttonText !== "" && (
+            <ButtonDark
+              onClick={() => {
+                gaEventTracker("Dark Button");
+              }}
+              text={buttonText}
+            />
+          )}
         </div>
         <img
           src={Illustration}

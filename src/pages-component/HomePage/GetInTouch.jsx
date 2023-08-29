@@ -3,8 +3,9 @@ import getInTouchIllustration from "../../assets/Group-2784.svg";
 import MainSubHeading from "../../common component/MainSubHeading";
 import InnerPageHeading from "../../common component/InnerPageHeading";
 import circuleIllustration from "../../assets/overlay image/Group 2.svg";
-
+import useAnalyticsEventTracker from "../../common component/useAnalyticsEventTracker";
 const GetInTouch = () => {
+  const gaEventTracker = useAnalyticsEventTracker("Get In Touch");
   return (
     <div className="relative container mx-auto px-[50px] pt-10 lg:py-20 bg-grayLight my-10 lg:my-20">
       <img
@@ -35,7 +36,12 @@ const GetInTouch = () => {
             emerge during their digital evolution journey. Since2020 we have
             been a visionary and as foundations for future growth.
           </p>
-          <button className="px-[20px] py-[10px] rounded-3xl border text-[14px] border-black hover:border-gradientBlueLight hover:bg-gradientBlueLight hover:text-white">
+          <button
+            onClick={() => {
+              gaEventTracker("Get in Touch");
+            }}
+            className="px-[20px] py-[10px] rounded-3xl border text-[14px] border-black hover:border-gradientBlueLight hover:bg-gradientBlueLight hover:text-white"
+          >
             Get in touch
           </button>
         </div>

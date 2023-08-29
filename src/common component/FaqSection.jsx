@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import InnerPageHeading from "./InnerPageHeading";
 import { chevronUp, chevrondown } from "./Images";
+import useAnalyticsEventTracker from "../common component/useAnalyticsEventTracker";
 const FaqSection = ({ faqData }) => {
   const [quesIndex, setQuesIndex] = useState([0]);
+  const gaEventTracker = useAnalyticsEventTracker("FAQ");
   return (
     <div className="space-y-5">
       {faqData.map((arr, index) => (
@@ -31,6 +33,7 @@ const FaqSection = ({ faqData }) => {
                     : ""
                 } rounded-full p-1`}
                 onClick={() => {
+                  gaEventTracker("Ask Question");
                   setQuesIndex((prev) => {
                     if (prev.includes(index)) {
                       const filterIndex = prev.filter(

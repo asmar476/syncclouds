@@ -31,12 +31,12 @@ export const faqData = [
     p: "To find the best software company, evaluate their experience, expertise, development methodology, team members, customer support, and pricing through their portfolio, case studies, references, and reviews.",
   },
   {
-    h: "How is Sync Clouds the best software company for you?",
-    p: "Sync Clouds is a top-rated software company specializing in custom software development, web development, and mobile app development. Their team of skilled developers and designers follows an agile development process and provides ongoing support and maintenance services to ensure high-quality software solutions.",
+    h: "How is SyncClouds the best software company for you?",
+    p: "SyncClouds is a top-rated software company specializing in custom software development, web development, and mobile app development. Their team of skilled developers and designers follows an agile development process and provides ongoing support and maintenance services to ensure high-quality software solutions.",
   },
   {
     h: "What kind of software does your company offer?",
-    p: "Sync Clouds offers a wide range of software solutions, including but not limited to custom software development, web development, mobile app development, and software consulting services.",
+    p: "SyncClouds offers a wide range of software solutions, including but not limited to custom software development, web development, mobile app development, and software consulting services.",
   },
   {
     h: "How can I get in touch with your company?",

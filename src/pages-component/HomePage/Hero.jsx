@@ -5,14 +5,13 @@ import bluearrowRight from "../../assets/icons/blue-arrow-right.svg";
 
 import Calendalycomp from "../../common component/CalendlyComp";
 import { useState } from "react";
-
-import Particales from "../../component/ParticalesOverlay";
-
+import useAnalyticsEventTracker from "../../common component/useAnalyticsEventTracker";
 const Hero = () => {
   const [isOpen, setIsOpen] = useState(false);
   const closeCalendaly = () => {
     setIsOpen(false);
   };
+  const gaEventTracker = useAnalyticsEventTracker("Contact us");
   return (
     <div
       style={{
@@ -54,7 +53,10 @@ const Hero = () => {
             <div className="flex gap-3 sm:gap-5 mt-5 sm:mt-10">
               <div>
                 <button
-                  onClick={() => setIsOpen(true)}
+                  onClick={() => {
+                    setIsOpen(true);
+                    gaEventTracker("Book a call");
+                  }}
                   className="bg-[#00315A] text-white text-[14px] sm:text-[18px] min-w-[120px] md:min-w-[170px]
                 font-[500] px-[5px] sm:px-3 py-1 sm:py-2 rounded-[0.18rem]"
                 >
@@ -65,7 +67,12 @@ const Hero = () => {
 
               <div className="flex gap-2 sm:gap-3 items-center  px-[3px] sm:px-3 py-[2px] sm:py-2 rounded-sm border border-[#002680] min-w-[120px] md:min-w-[170px]">
                 <Link to={"/services"}>
-                  <button className="text-[12px] sm:text-[18px] font-[550] text-[#002680]">
+                  <button
+                    onClick={() => {
+                      gaEventTracker("Services");
+                    }}
+                    className="text-[12px] sm:text-[18px] font-[550] text-[#002680]"
+                  >
                     Our Services
                   </button>
                 </Link>

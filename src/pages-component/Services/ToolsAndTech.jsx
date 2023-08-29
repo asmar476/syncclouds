@@ -35,7 +35,7 @@ function ToolsAndTech() {
         </h2>
         <p className="text-body text-center text-[10px] md:text-[15pxte] lg:text-[18px] font-[500] md:w-[750px] lg:w-[858px] mb-7">
           "With extensive knowledge in every field required for dependable
-          software development, Sync Clouds has developed into a competitor on a
+          software development, SyncClouds has developed into a competitor on a
           global scale in the field of software engineering."
         </p>
 

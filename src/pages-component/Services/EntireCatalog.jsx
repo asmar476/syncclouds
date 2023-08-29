@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import arrowRight from "../../assets/icons/blue-arrow-right.svg";
 import { servicesCatalog } from "../../constant/Data";
+import useAnalyticsEventTracker from "../../common component/useAnalyticsEventTracker";
 import {
   BsChevronBarDown,
   BsChevronDown,
@@ -65,7 +66,7 @@ function EntireCatalog() {
   };
 
   document.addEventListener("click", closedMoreMenu);
-
+  const gaEventTracker = useAnalyticsEventTracker("Entire Catalog");
   return (
     <div className=" flex flex-col items-center mt-16 w-full max-w-[1200px] xl:max-w-[1400px] px-10 mx-auto">
       <div className="mb-8 space-y-3">
@@ -83,6 +84,7 @@ function EntireCatalog() {
           <div
             key={service.id}
             onClick={() => {
+              gaEventTracker("Services");
               setActiveTab(service.id);
               setShowMore(false);
             }}
@@ -100,6 +102,7 @@ function EntireCatalog() {
           <div className="relative" ref={moreRef}>
             <div
               onClick={() => {
+                gaEventTracker("Show More");
                 setShowMore(!showMore);
               }}
               className="text-[10px] flex items-center gap-1"
@@ -113,6 +116,7 @@ function EntireCatalog() {
                   <div
                     key={more.id}
                     onClick={() => {
+                      gaEventTracker("Show More");
                       setActiveTab(more.id);
                     }}
                     className={`text-[10px] sm:[] md:text-[16px] cursor-pointer px-[2px] py-[3px] ${

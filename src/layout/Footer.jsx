@@ -3,6 +3,7 @@ import InnerPageHeading from "../common component/InnerPageHeading";
 import { Link, useNavigate } from "react-router-dom";
 import { Row, Col } from "antd";
 import { socialMediaLinks } from "../constant/Data";
+import useAnalyticsEventTracker from "../common component/useAnalyticsEventTracker";
 const Footer = () => {
   const navigate = useNavigate();
   const handleTermsConditions = () => {
@@ -17,6 +18,7 @@ const Footer = () => {
     navigate("/about");
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
+  const gaEventTracker = useAnalyticsEventTracker("Footer");
   return (
     <div
       style={{
@@ -46,12 +48,24 @@ const Footer = () => {
             <h2 className="font-[600] text-[18px]  my-2">COMPANY</h2>
             <div className="space-y-1 font-[400] text-[14px] ">
               <p>
-                <Link to="/about" onClick={handleAboutUsClick}>
+                <Link
+                  to="/about"
+                  onClick={() => {
+                    gaEventTracker("About Us");
+                    handleAboutUsClick();
+                  }}
+                >
                   About Us
                 </Link>
               </p>
               <p>
-                <Link to="/Contact" onClick={handleAboutUsClick}>
+                <Link
+                  to={"/Contact"}
+                  onClick={() => {
+                    gaEventTracker("Contact Us");
+                    handleAboutUsClick();
+                  }}
+                >
                   Contact Us
                 </Link>
               </p>
@@ -79,7 +93,7 @@ const Footer = () => {
             <h2 className="font-semibold text-lg">Emails</h2>
             <div className="text-sm sm:text-[14px] font-[500]">
               <p>Contact Us at:</p>
-              <p>query@syncclouds.com</p>
+              <a href="contact@syncclouds.com">contact@syncclouds.com</a>
             </div>
             <br />
             <div className="text-sm sm:text-[14px] font-[500]">
@@ -92,14 +106,33 @@ const Footer = () => {
 
         <div className="hidden border-t-2 border-white mx-0 sm:mx-16 font-semibold text-[12px] md:text-base text-white   py-3 md:flex justify-between">
           <div className="flex items-center justify-between gap-16 lg:gap-32">
-            <p className="cursor-pointer" onClick={handleTermsConditions}>Terms & Conditions</p>
-            <p className="cursor-pointer" onClick={handlePrivacyPolicyClick}>Privacy Policy</p>
+            <p
+              className="cursor-pointer"
+              onClick={() => {
+                gaEventTracker("Term and Conditions");
+                handleTermsConditions();
+              }}
+            >
+              Terms & Conditions
+            </p>
+            <p
+              className="cursor-pointer"
+              onClick={() => {
+                handlePrivacyPolicyClick();
+                gaEventTracker("Privacy Policy");
+              }}
+            >
+              Privacy Policy
+            </p>
           </div>
           <div className="flex items-center justify-between lg:gap-24 ">
             <p className="">Follow Us On</p>
             <div className="flex">
               {socialMediaLinks.map((link, index) => (
                 <a
+                  onClick={() => {
+                    gaEventTracker("Social Media");
+                  }}
                   key={index}
                   href={link.url}
                   className="cursor-pointer ml-2"
@@ -115,14 +148,33 @@ const Footer = () => {
         {/* +++++++++++++++++++++++++++++++++++++++++ mobile view +++++++++++++++++++++++++++++++++++++++++++++++++ */}
         <div className="md:hidden border-t-2 font-semibold  border-white text-[12px] sm:text-[16px] text-white px-10  pt-3">
           <div className="flex items-center   justify-between">
-            <p className="cursor-pointer" onClick={handleTermsConditions}>Terms & Conditions</p>
-            <p className="cursor-pointer" onClick={handlePrivacyPolicyClick}>Privacy Policy</p>
+            <p
+              className="cursor-pointer"
+              onClick={() => {
+                handleTermsConditions();
+                gaEventTracker("Terms & Conditions");
+              }}
+            >
+              Terms & Conditions
+            </p>
+            <p
+              className="cursor-pointer"
+              onClick={() => {
+                handlePrivacyPolicyClick();
+                gaEventTracker("Privacy Policy");
+              }}
+            >
+              Privacy Policy
+            </p>
           </div>
           <div className=" mt-5 pb-5 flex justify-between items-center">
             <p className="">Follow Us On</p>
             <div className="flex">
               {socialMediaLinks.map((link, index) => (
                 <a
+                  onClick={() => {
+                    gaEventTracker("Social Media");
+                  }}
                   key={index}
                   href={link.url}
                   className="cursor-pointer ml-2"

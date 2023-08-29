@@ -4,11 +4,13 @@ import SoftwareSolution from "./SoftwareSolution";
 import Calendalycomp from "../../common component/CalendlyComp";
 import webBg from "../../assets/Services/OBJECTS.svg";
 import mobBg from "../../assets/Services/OBJECTS.svg";
+import useAnalyticsEventTracker from "../../common component/useAnalyticsEventTracker";
 function ServicesHero() {
   const [isOpen, setIsOpen] = useState(false);
   const closeCalendaly = () => {
     setIsOpen(false);
   };
+  const gaEventTracker = useAnalyticsEventTracker("Services Hero");
   return (
     <>
       <div className=" relative ">
@@ -49,7 +51,10 @@ function ServicesHero() {
 
               <div>
                 <button
-                  onClick={() => setIsOpen(true)}
+                  onClick={() => {
+                    setIsOpen(true);
+                    gaEventTracker("Let's Get Started");
+                  }}
                   className="pulse bg-[#00315A] mt-10 text-white px-3 py-2 rounded-[0.18rem] mb-10"
                 >
                   Let's Get Started
