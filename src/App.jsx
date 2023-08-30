@@ -16,10 +16,18 @@ import Halmet from "./common component/Halmet";
 import ReactGA from "react-ga";
 import { useEffect } from "react";
 const TRACKING_ID = "G-BH639MYS1Q"; // OUR_TRACKING_ID
+import TagManager from "react-gtm-module";
+const tagManagerArgs = {
+  gtmId: "GTM-TK2SJZ3W",
+};
+TagManager.initialize(tagManagerArgs);
 ReactGA.initialize(TRACKING_ID);
 const App = () => {
   useEffect(() => {
     ReactGA.pageview(window.location.pathname + window.location.search);
+    window.dataLayer.push({
+      event: "pageview",
+    });
   }, []);
 
   return (
@@ -33,7 +41,7 @@ const App = () => {
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           <Route path="/terms-conditions" element={<TermsAndConditions />} />
           <Route path="/contact" element={<Contact />} />
-          <Route path="/industries" element={<Industries />} />\
+          <Route path="/industries" element={<Industries />} />
           <Route path="/portfolio" element={<Portfolio />} />
           <Route path="/technologies" element={<Technologies />} />
           <Route path="/web_dev" element={<WebDevelopment />} />
