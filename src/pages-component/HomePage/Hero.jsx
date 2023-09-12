@@ -5,13 +5,14 @@ import bluearrowRight from "../../assets/icons/blue-arrow-right.svg";
 
 import Calendalycomp from "../../common component/CalendlyComp";
 import { useState } from "react";
-import useAnalyticsEventTracker from "../../common component/useAnalyticsEventTracker";
+
+import Particales from "../../component/ParticalesOverlay";
+
 const Hero = () => {
   const [isOpen, setIsOpen] = useState(false);
   const closeCalendaly = () => {
     setIsOpen(false);
   };
-  const gaEventTracker = useAnalyticsEventTracker("Contact us");
   return (
     <div
       style={{
@@ -28,7 +29,7 @@ const Hero = () => {
             <h1 className="text-[24px] sm:text-[30px] xl:text-[50px] font-[800] leading-[38px] xl:leading-[65px] sm:leading-[45px]">
               Unlock your Business's Potential&nbsp;
               <span className="text-[#002680]">
-                with the best Software Company
+                with the Best Software Company
               </span>
             </h1>
             <div
@@ -53,10 +54,7 @@ const Hero = () => {
             <div className="flex gap-3 sm:gap-5 mt-5 sm:mt-10">
               <div>
                 <button
-                  onClick={() => {
-                    setIsOpen(true);
-                    gaEventTracker("Book a call");
-                  }}
+                  onClick={() => setIsOpen(true)}
                   className="bg-[#00315A] text-white text-[14px] sm:text-[18px] min-w-[120px] md:min-w-[170px]
                 font-[500] px-[5px] sm:px-3 py-1 sm:py-2 rounded-[0.18rem]"
                 >
@@ -67,12 +65,7 @@ const Hero = () => {
 
               <div className="flex gap-2 sm:gap-3 items-center  px-[3px] sm:px-3 py-[2px] sm:py-2 rounded-sm border border-[#002680] min-w-[120px] md:min-w-[170px]">
                 <Link to={"/services"}>
-                  <button
-                    onClick={() => {
-                      gaEventTracker("Services");
-                    }}
-                    className="text-[12px] sm:text-[18px] font-[550] text-[#002680]"
-                  >
+                  <button className="text-[12px] sm:text-[18px] font-[550] text-[#002680]">
                     Our Services
                   </button>
                 </Link>
@@ -86,7 +79,7 @@ const Hero = () => {
             <img
               className="hidden md:block min-w-[580px]"
               src={clouds}
-              alt=""
+              alt="clouds"
             />
           </div>
         </div>

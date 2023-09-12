@@ -95,6 +95,9 @@ const Header = ({ fixed }) => {
                     <li className="">
                       <Link to="/industries">Industry</Link>
                     </li>
+                    <li className="">
+                      <Link to="/blog">Blogs</Link>
+                    </li>
                     <li className="flex justify-center   items-center text-grey-600">
                       <Link
                         to={"/about"}
@@ -319,6 +322,9 @@ const Header = ({ fixed }) => {
                   >
                     Industry
                   </Link>
+                </li>
+                <li className="">
+                  <Link to="/blog">Blogs</Link>
                 </li>
                 <li className="flex justify-center   items-center text-grey-600">
                   <Link

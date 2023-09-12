@@ -1,19 +1,18 @@
+import React from "react";
 import Layout from "../layout/Layout";
 import GetSynced from "../common component/GetSynced";
 import ContactForm from "../common component/ContactForm";
-import InnovativeServices from "../pages-component/AboutPage/InnovativeServices";
-import ProjectProcedure from "../pages-component/AboutPage/ProjectProcedure";
-import AboutHero from "../pages-component/AboutPage/AboutHero";
+import Header from "../layout/Header";
+import Halmet from "../common component/Halmet";
 import { useInView } from "react-intersection-observer";
+import { useRef, useState } from "react";
 import arrowUp from "../assets/icons/black_arrow-up.svg";
 import arrowDown from "../assets/icons/black-arrow-down.svg";
-import { useRef, useState } from "react";
-import Header from "../layout/Header";
-import ExpandYourHorizon from "../pages-component/AboutPage/ExpandYourHorizon";
-import OurTeamNew from "../pages-component/AboutPage/AboutExpandCard/OurTeamNew";
-import Halmet from "../common component/Halmet";
 import useAnalyticsEventTracker from "../common component/useAnalyticsEventTracker";
-const About = () => {
+import BlogsHero from "../component/blog/BlogsHero";
+import ColumnBlogs from "../component/blog/ColumnBlogs";
+
+const Blog = () => {
   const [isIntersectingHero, setIsIntersectingHero] = useState(true);
   const { ref, inView, entry } = useInView({
     threshold: 0,
@@ -38,11 +37,11 @@ const About = () => {
   };
   const observer = new IntersectionObserver(headerFunc, options);
   heroRef?.current && observer.observe(heroRef?.current);
-  const gaEventTracker = useAnalyticsEventTracker("About");
+  const gaEventTracker = useAnalyticsEventTracker("Blog");
   return (
     <Layout>
       <Halmet
-        title={"About Company-SyncClouds"}
+        title={"Blog Company-SyncClouds"}
         description={
           "Explore the heart of SyncClouds: Pioneering excellence in software development services. Join our journey towards innovation. Discover more now!"
         }
@@ -82,22 +81,15 @@ const About = () => {
       {!isIntersectingHero ? <Header fixed={true} /> : <Header />}
       <div ref={ref}>
         <div ref={heroRef} className="about-hero">
-          <AboutHero />
+          <BlogsHero />
         </div>
-        <ExpandYourHorizon />
-        {/* / / / // /  InnovativeServices  /  / / // / /  */}
-        <InnovativeServices />
       </div>
-      {/* Our Team  */}
-      <OurTeamNew />
-      {/* project procedure */}
-      <ProjectProcedure />
-      {/* / / / / / / / get synced  / / / // /  / / */}
+
+      <ColumnBlogs />
       <GetSynced />
-      {/*  / // /  // /  contact from  / // / / / / / */}
       <ContactForm />
     </Layout>
   );
 };
 
-export default About;
+export default Blog;

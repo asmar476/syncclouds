@@ -3,6 +3,7 @@ import { dataContact } from "../../constant/ContactUsPageData";
 import MainSubHeading from "../../common component/MainSubHeading";
 import Carousel from "react-elastic-carousel";
 function WhyChoseUs() {
+  console.log("chnges btranc");
   return (
     <div className="max-w-[1440px] mx-auto md:mb-10">
       <div className="text-center mt-28 mb-10">

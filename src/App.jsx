@@ -17,6 +17,7 @@ import ReactGA from "react-ga";
 import { useEffect } from "react";
 const TRACKING_ID = "G-BH639MYS1Q"; // OUR_TRACKING_ID
 import TagManager from "react-gtm-module";
+import Blog from "./pages/Blog";
 const tagManagerArgs = {
   gtmId: "GTM-TK2SJZ3W",
 };
@@ -44,7 +45,8 @@ const App = () => {
           <Route path="/industries" element={<Industries />} />
           <Route path="/portfolio" element={<Portfolio />} />
           <Route path="/technologies" element={<Technologies />} />
-          <Route path="/web_dev" element={<WebDevelopment />} />
+          <Route path="/web-dev" element={<WebDevelopment />} />
+          <Route path="/blog" element={<Blog />} />
         </Routes>
       </HelmetProvider>
     </div>

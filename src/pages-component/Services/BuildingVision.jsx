@@ -9,7 +9,6 @@ import smallsdlc from "../../assets/Services/smlSdlc.svg";
 import mobBg from "../../assets/Services/mobileService.svg";
 import useAnalyticsEventTracker from "../../common component/useAnalyticsEventTracker";
 const BuildingVision = () => {
-  const [questionOpen, setQuestionOpen] = useState(false);
   const [quesIndex, setQuesIndex] = useState([]);
   const gaEventTracker = useAnalyticsEventTracker("Building Vision");
   return (

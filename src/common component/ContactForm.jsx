@@ -1,12 +1,12 @@
 import React, { useState } from "react";
-import consultant from "../assets/ceo.jpg";
+import consultant from "../assets/Images/consultant.png";
 import attachmentIcon from "../assets/icons/attachmentIcon.svg";
 import "react-phone-number-input/style.css";
 import PhoneInput from "react-phone-number-input";
 import { TiDelete } from "react-icons/ti";
 import { BsExclamationCircle } from "react-icons/bs";
+import contactimg from "../assets/contact/contactusForm.svg";
 import Calendalycomp from "./CalendlyComp";
-import useAnalyticsEventTracker from "../common component/useAnalyticsEventTracker";
 // -----------------------------------------------------------------
 const baseUrl = import.meta.env.VITE_REACT_APP_BASE_URL;
 // -----------------------------------------------------------------
@@ -39,16 +39,16 @@ const ContactForm = () => {
       // Handle form submission or further processing
       setError("");
     }
-    // const isValid = validateForm();
-    // if (isValid) {
-    //   try {
-    //     console.log("Email sent successfully:", response);
-    //   } catch (error) {
-    //     console.error("An error occurred:", error);
-    //   }
-    // } else {
-    //   console.log("Form validation failed");
-    // }
+    const isValid = validateForm();
+    if (isValid) {
+      try {
+        console.log("Email sent successfully:", response);
+      } catch (error) {
+        console.error("An error occurred:", error);
+      }
+    } else {
+      console.log("Form validation failed");
+    }
     var formdata = new FormData();
     formdata.append("name", formData?.name);
     formdata.append("email", formData?.email);
@@ -119,6 +119,7 @@ const ContactForm = () => {
     event.stopPropagation();
     event.dataTransfer.dropEffect = "copy";
   };
+
   const handleDrop = (event) => {
     event.preventDefault();
     event.stopPropagation();
@@ -127,10 +128,10 @@ const ContactForm = () => {
     setSelectedFile(file);
     fileInput.value = "";
   };
-  const gaEventTracker = useAnalyticsEventTracker("Contact us");
+
   return (
-    <div className="mb-10 flex lg:flex-row flex-col-reverse space-y-10 md:space-y-0 mt-14 sm:mb-14 items-center lg:items-start justify-center">
-      <div className="bg-[#EDF2F7] h-[530px] hidden lg:block mt-10 lg:mt-0 rounded-sm w-[90%] mx-5 md:max-w-[622px] px-4 pt-5 pb-12 ">
+    <div className="mb-10 flex lg:flex-row flex-col-reverse space-y-10 md:space-y-0 mt-14 sm:mb-14 items-center lg:items-start justify-center gap-28">
+      {/* <div className="bg-[#EDF2F7] h-[530px] hidden lg:block mt-10 lg:mt-0 rounded-sm w-[90%] mx-5 md:max-w-[622px] px-4 pt-5 pb-12 ">
         <h1 className="font-[500] text-[25.89px] text-[#171923] mb-6">
           Book a Meeting
         </h1>
@@ -143,19 +144,16 @@ const ContactForm = () => {
           </div>
           <div className="w-[50%]">
             <h1 className=" xl:text-[25.89px] mt-8 lg:mt-0 text-[20px]  text-[#171923]">
-              Azhar Mehmood
+              ConsultantName
             </h1>
             <div className="font-[500] text-[16px] xl:text-[18px] space-y-2 my-4 text-[#434343]">
-              <p className="text-[#434343]">Consultant</p>
-              <p className="text-[#434343]">+92 311 5910778</p>
-              <p className="text-[#434343] mr-3">azhar.m@syncclouds.com</p>
+              <p className="text-[#434343]"></p>
+              <p className="text-[#434343]">+92 000000000</p>
+              <p className="text-[#434343] mr-3">abc@gmail.com</p>
             </div>
             <div>
               <button
-                onClick={() => {
-                  gaEventTracker("Book a Meeting");
-                  setIsOpen(true);
-                }}
+                onClick={() => setIsOpen(true)}
                 className=" font-[600] text-white bg-[#002680] w-full py-[8px] rounded-sm"
               >
                 Book a Meeting
@@ -164,8 +162,13 @@ const ContactForm = () => {
             </div>
           </div>
         </div>
-      </div>
-      <div className="bg-[#EDF2F7] min-h-[530px]  text-black px-4 pb-1 mb-10 md:px-0 mx-5 w-[90%] md:max-w-[622px] rounded-sm">
+      </div> */}
+      <img
+        className="ml-10  hidden xl:block"
+        src={contactimg}
+        alt="contact us img"
+      />
+      <div className="bg-[#EDF2F7] py-5  min-h-[530px]  text-black px-4 pb-1 mb-10 md:px-0 mx-5 w-[90%] md:max-w-[622px] rounded-sm">
         <form className="px-[10px]  md:px-[30px] py-4" onSubmit={handleSubmit}>
           <h5 className="font-[500] text-[25.89px] text-[#171923] mb-1">
             Write a Message
@@ -316,7 +319,6 @@ const ContactForm = () => {
             {selectedFile && (
               <div
                 onClick={() => {
-                  gaEventTracker("Select File");
                   setSelectedFile(null);
                 }}
               >
@@ -352,9 +354,8 @@ const ContactForm = () => {
               We will get back to you within 24 hours, guaranteed.
             </p>
             <button
-              onClick={() => gaEventTracker("Submit")}
               type="submit"
-              className="font-[600]  mt-3 text-white bg-[#002680] w-full py-[5px] md:py-[10px] rounded-sm"
+              className="font-[600]  my-5 text-white bg-[#002680] w-full py-[5px] md:py-[10px] rounded-sm"
             >
               Send a request
             </button>
@@ -364,5 +365,4 @@ const ContactForm = () => {
     </div>
   );
 };
-
 export default ContactForm;

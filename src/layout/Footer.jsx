@@ -71,7 +71,26 @@ const Footer = () => {
               </p>
               <p>Career</p>
               <p>Life at SyncClouds</p>
-              <p>View and Blogs</p>
+              <Link
+                to={"/blog"}
+                onClick={() => {
+                  gaEventTracker("Blog");
+                  handleAboutUsClick();
+                }}
+              >
+                View and Blogs
+              </Link>
+              <br />
+              <Link
+                to={"/web-dev"}
+                onClick={() => {
+                  gaEventTracker("Web Developement");
+                  handleAboutUsClick();
+                }}
+              >
+                Web Developement
+              </Link>
+              {/* <p>View and Blogs</p> */}
             </div>
           </Col>
           <Col xs={24} md={12} lg={6}>
