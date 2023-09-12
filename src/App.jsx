@@ -18,10 +18,10 @@ import { useEffect } from "react";
 const TRACKING_ID = "G-BH639MYS1Q"; // OUR_TRACKING_ID
 import TagManager from "react-gtm-module";
 import Blog from "./pages/Blog";
-const tagManagerArgs = {
-  gtmId: "GTM-TK2SJZ3W",
-};
-TagManager.initialize(tagManagerArgs);
+// const tagManagerArgs = {
+//   gtmId: "GTM-TK2SJZ3W",
+// };
+// TagManager.initialize(tagManagerArgs);
 ReactGA.initialize(TRACKING_ID);
 const App = () => {
   useEffect(() => {
