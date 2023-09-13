@@ -16,19 +16,27 @@ import Halmet from "./common component/Halmet";
 import ReactGA from "react-ga";
 import { useEffect } from "react";
 const TRACKING_ID = "G-BH639MYS1Q"; // OUR_TRACKING_ID
-import TagManager from "react-gtm-module";
+// import TagManager from "react-gtm-module";
 import Blog from "./pages/Blog";
-// const tagManagerArgs = {
-//   gtmId: "GTM-TK2SJZ3W",
-// };
-// TagManager.initialize(tagManagerArgs);
 ReactGA.initialize(TRACKING_ID);
+
 const App = () => {
+  // Initialize TagManager
+  // TagManager.initialize({ gtmId: "GTM-TK2SJZ3W" });
+  // TagManager.dataLayer({
+  //   dataLayer: {
+  //     event: "customEvent",
+  //     eventCategory: "Example Category",
+  //     eventAction: "Example Action",
+  //     eventLabel: "Example Label",
+  //   },
+  // });
+  // Initialize ReactGA with your GA tracking ID
+  useEffect(() => {
+    ReactGA.initialize("UA-283015530-1");
+  }, []);
   useEffect(() => {
     ReactGA.pageview(window.location.pathname + window.location.search);
-    window.dataLayer.push({
-      event: "pageview",
-    });
   }, []);
 
   return (
